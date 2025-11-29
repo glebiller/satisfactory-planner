@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satisfactory Planner</title>
+</head>
+<body>
+<div id="sidebar">
+  <h2>Satisfactory Planner</h2>
+
+  <div id="sidebar-dynamic">
+    <div id="sidebar-placeholder">
+      <p style="color:#777; text-align:center; margin-top:50px;">Select a Node or Link to edit</p>
+    </div>
+
+    <div id="edit-node-form" style="display: none;">
+      <div class="control-group">
+        <h3>Edit Node</h3>
+        <label>Name</label>
+        <input type="text" id="inp_name">
+        
+        <div class="row">
+            <div><label>X</label><input type="number" id="inp_x"></div>
+            <div><label>Y</label><input type="number" id="inp_y"></div>
+        </div>
+        <div class="row">
+            <div><label>Width</label><input type="number" id="inp_w"></div>
+            <div><label>Height</label><input type="number" id="inp_h"></div>
+        </div>
+
+        <label>Color</label>
+        <input type="color" id="inp_color">
+
+        <h4>Input Connections</h4>
+        <div id="connections-inputs" class="connections-list"></div>
+
+        <h4>Output Connections</h4>
+        <div id="connections-outputs" class="connections-list"></div>
+
+        <button class="danger" id="btn_del">Delete Node</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <h3>Project</h3>
+    <button class="secondary" id="btn-save">Save</button>
+    <div style="height: 5px"></div>
+    <button class="secondary" id="btn-load">Load</button>
+    <input type="file" id="file-input" style="display: none" />
+  </div>
+</div>
+
+<div id="map"></div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
