@@ -1,6 +1,56 @@
 import L from 'leaflet';
 import { Link } from './Link.js';
 
+class Pin {
+    constructor(node, type, index) {
+        this.node = node;
+        this.type = type;
+        this.index = index;
+        this.circle = null;
+
+        this.create();
+    }
+
+    create() {
+        // Calculate pin position based on type (left/right) and index (top/bottom spread)
+        const xOffset = this.type === 'input' ? 0 : this.node.width;
+        const yOffset = (this.index / 3) * this.node.height;
+
+        const latlng = this.node.mapPlanner.unproject([this.node.x + xOffset, this.node.y + yOffset]);
+        const isConnected = this.node.getConnectionsForPin(this.type, this.index).length > 0;
+        const opacity = isConnected ? 0.8 : 0.3;
+
+        this.circle = L.circle(latlng, {
+            radius: 0.03,
+            color: this.type === 'input' ? 'green' : 'red',
+            fillOpacity: opacity,
+            interactive: true,
+        }).addTo(this.node.mapPlanner.layerGroup);
+
+        this.circle.on('mousedown', (e) => this.node.handlePinMouseDown(e, this.type, this.index));
+
+        this.circle.nodeId = this.node.id;
+        this.circle.pinType = this.type;
+        this.circle.pinIndex = this.index;
+    }
+
+    update() {
+        const xOffset = this.type === 'input' ? 0 : this.node.width;
+        const yOffset = (this.index / 3) * this.node.height;
+
+        const latlng = this.node.mapPlanner.unproject([this.node.x + xOffset, this.node.y + yOffset]);
+        const isConnected = this.node.getConnectionsForPin(this.type, this.index).length > 0;
+        const opacity = isConnected ? 0.8 : 0.3;
+
+        this.circle.setStyle({
+            color: this.type === 'input' ? 'green' : 'red',
+            fillOpacity: opacity,
+        });
+
+        this.circle.setLatLng(latlng);
+    }
+}
+
 export class Node {
     constructor(mapPlanner, data) {
         this.mapPlanner = mapPlanner;
@@ -17,33 +67,32 @@ export class Node {
 
         this.rect = null;
         this.textLayer = null;
-        this.pins = [];
-    }
 
-    /**
-     * Get all links connected to this node
-     */
+        this.pins = [];
+        for (let i = 0; i < 4; i++) {
+            this.pins.push(new Pin(this, 'input', i));
+        }
+        for (let i = 0; i < 4; i++) {
+            this.pins.push(new Pin(this, 'output', i));
+        }
+
+        this.dragThresholdDistance = 8;
+        this.mousedown = null;
+        this.dragging = null;
+
+        this.create();
+    }
     getConnectedLinks() {
         return this.mapPlanner.links.filter(link => link.from === this.id || link.to === this.id);
     }
-
-    /**
-     * Get connections for a specific input/output
-     */
     getConnectionsForPin(pinType, pinIndex) {
         const links = this.getConnectedLinks();
         if (pinType === 'input') {
-            // Input receives from output, so link.to === this.id
             return links.filter(link => link.to === this.id && link.toPin === pinIndex);
         } else {
-            // Output sends to input, so link.from === this.id
             return links.filter(link => link.from === this.id && link.fromPin === pinIndex);
         }
     }
-
-    /**
-     * Get the connected node for a specific pin
-     */
     getConnectedNode(pinType, pinIndex) {
         const connections = this.getConnectionsForPin(pinType, pinIndex);
         if (connections.length === 0) return null;
@@ -56,64 +105,106 @@ export class Node {
         }
     }
 
-    render() {
-        const isSelected = this.mapPlanner.selectedNode === this;
-        const style = {
-            renderer: this.mapPlanner.canvasRenderer,
-            color: this.color,
-            weight: isSelected ? 4 : 2,
-            fillOpacity: 0.8,
-            dashArray: isSelected ? '5, 5' : null,
-            interactive: true,
-        };
-
+    create() {
         const bounds = this.getBounds();
-        this.rect = L.rectangle(bounds, style).addTo(this.mapPlanner.layerGroup);
-        
-        this.rect.on('mousedown', (e) => this.handleMouseDown(e));
-        this.rect.on('mouseup', (e) => this.handleMouseUp(e));
+        this.rect = L.rectangle(bounds, {
+            color: this.color,
+            weight: 2,
+            fillOpacity: 0.8,
+            interactive: true,
+        }).addTo(this.mapPlanner.layerGroup);
 
+        this.rect.on('mousedown', (e) => this.handleMouseDown(e));
         this.mapPlanner.nodeRectangles.set(this.id, this);
 
-        // Add text layer with node name
         const center = this.mapPlanner.unproject([this.x + this.width / 2, this.y + this.height / 2]);
-        if (this.textLayer) {
-            this.mapPlanner.layerGroup.removeLayer(this.textLayer);
-        }
         this.textLayer = L.tooltip(center, {
             permanent: true,
             direction: 'center',
             className: 'node-name-tooltip',
             interactive: false,
         }).setContent(this.name).addTo(this.mapPlanner.layerGroup);
+    }
 
-        this.renderPins();
+    update() {
+        const isSelected = this.mapPlanner.selectedNode === this;
+
+        this.rect.setStyle({
+            color: this.color,
+            weight: isSelected ? 4 : 2,
+            dashArray: isSelected ? '5, 5' : null,
+        });
+
+        this.rect.setBounds(this.getBounds());
+
+        const center = this.mapPlanner.unproject([this.x + this.width / 2, this.y + this.height / 2]);
+        this.textLayer.setLatLng(center);
+        this.textLayer.setContent(this.name);
+
+        for (const pin of this.pins) {
+            pin.update();
+        }
     }
 
     handleMouseDown(e) {
-        L.DomEvent.stop(e);
-        if (this.mapPlanner.interactionState?.type === 'linking') {
-            return;
+        this.mousedown = e;
+        this.mapPlanner.clickedNode = this;
+    }
+
+    handleOnMouseMove(e) {
+        if (this.dragging) {
+            const rasterPoint = this.mapPlanner.project(e.latlng);
+            const gameCoords = this.mapPlanner.convertToGameCoordinates([rasterPoint.x, rasterPoint.y]);
+            const newX = this.mapPlanner.snapToGrid(gameCoords[0] - this.dragging.offset[0]);
+            const newY = this.mapPlanner.snapToGrid(gameCoords[1] - this.dragging.offset[1]);
+
+            const p1 = this.mapPlanner.unproject([newX, newY]);
+            const p2 = this.mapPlanner.unproject([newX + this.width, newY + this.height]);
+            this.dragging.ghostProxy.setBounds([p1, p2]);
+        } else if (this.mousedown) {
+            if (this.mousedown.containerPoint.distanceTo(e.containerPoint) >= this.dragThresholdDistance) {
+                const rasterPoint = this.mapPlanner.project(this.mousedown.latlng);
+                const gameCoords = this.mapPlanner.convertToGameCoordinates([rasterPoint.x, rasterPoint.y]);
+                const offset = [gameCoords[0] - this.x, gameCoords[1] - this.y];
+                this.startDragging(offset);
+            }
         }
-        const rasterPoint = this.mapPlanner.project(e.latlng);
-        const gameCoords = this.mapPlanner.convertToGameCoordinates([rasterPoint.x, rasterPoint.y]);
-        this.mapPlanner.interactionState = {
-            type: 'dragging',
-            node: this,
-            offset: [gameCoords[0] - this.x, gameCoords[1] - this.y],
-            wasDragging: false
-        };
     }
 
     handleMouseUp(e) {
-        L.DomEvent.stop(e);
-        if (this.mapPlanner.interactionState?.type === 'dragging' && this.mapPlanner.interactionState.node === this) {
-            if (!this.mapPlanner.interactionState.wasDragging) {
-                // This was a click, not a drag
-                this.mapPlanner.selectNode(this);
-            }
-            this.mapPlanner.interactionState = null;
+        if (this.dragging) {
+            this.stopDragging(e);
+            this.mapPlanner.clickedNode = null;
+        } else if (this.mousedown) {
+            this.mousedown = null;
+            this.mapPlanner.selectNode(this);
         }
+    }
+
+    startDragging(offset) {
+        const bounds = this.getBounds();
+        const ghostProxy = L.rectangle(bounds, {
+            color: this.color,
+            weight: 2,
+            fillOpacity: 0.4,
+            interactive: false,
+            className: 'ghost-proxy'
+        }).addTo(this.mapPlanner.layerGroup);
+
+        this.dragging = { offset, ghostProxy };
+    }
+
+    stopDragging(e) {
+        const rasterPoint = this.mapPlanner.project(e.latlng);
+        const newGameCoordinates = this.mapPlanner.convertToGameCoordinates([rasterPoint.x, rasterPoint.y]);
+        const newX = newGameCoordinates[0] - this.dragging.offset[0];
+        const newY = newGameCoordinates[1] - this.dragging.offset[1];
+
+        this.updatePosition(newX, newY);
+        this.mapPlanner.layerGroup.removeLayer(this.dragging.ghostProxy);
+
+        this.dragging = null;
+        this.mousedown = null;
     }
 
     handlePinMouseDown(e, pinType, pinIndex) {
@@ -150,50 +241,6 @@ export class Node {
         }
     }
 
-    renderPins() {
-        this.pins.forEach(pin => this.mapPlanner.layerGroup.removeLayer(pin));
-        this.pins = [];
-
-        const pinPositions = [];
-
-        // Create 4 input pins on the left side, evenly spaced
-        for (let i = 0; i < 4; i++) {
-            const y = this.y + ((i + 1) * this.height / 5); // Divide height into 5 sections
-            pinPositions.push({ x: this.x, y, type: 'input', index: i });
-        }
-
-        // Create 4 output pins on the right side, evenly spaced
-        for (let i = 0; i < 4; i++) {
-            const y = this.y + ((i + 1) * this.height / 5); // Divide height into 5 sections
-            pinPositions.push({ x: this.x + this.width, y, type: 'output', index: i });
-        }
-
-        pinPositions.forEach(p => {
-            const latlng = this.mapPlanner.unproject([p.x, p.y]);
-
-            // Check if pin is connected
-            const isConnected = this.getConnectionsForPin(p.type, p.index).length > 0;
-            const opacity = isConnected ? 0.8 : 0.3;
-
-            const pin = L.circle(latlng, {
-                renderer: this.mapPlanner.canvasRenderer,
-                radius: 0.03,
-                color: p.type === 'input' ? 'green' : 'red',
-                fillOpacity: opacity,
-                interactive: true,
-            }).addTo(this.mapPlanner.layerGroup);
-
-            pin.on('mousedown', (e) => this.handlePinMouseDown(e, p.type, p.index));
-
-            // Attach data to the layer for identification
-            pin.nodeId = this.id;
-            pin.pinType = p.type;
-            pin.pinIndex = p.index;
-
-            this.pins.push(pin);
-        });
-    }
-
     getBounds() {
         const p1 = this.mapPlanner.unproject([this.x, this.y]);
         const p2 = this.mapPlanner.unproject([this.x + this.width, this.y + this.height]);
@@ -201,14 +248,9 @@ export class Node {
     }
 
     updatePosition(newX, newY) {
-        this.x = newX;
-        this.y = newY;
-        this.rect.setBounds(this.getBounds());
-        if (this.textLayer) {
-            const center = this.mapPlanner.unproject([this.x + this.width / 2, this.y + this.height / 2]);
-            this.textLayer.setLatLng(center);
-        }
-        this.renderPins();
+        this.x = this.mapPlanner.snapToGrid(newX);
+        this.y = this.mapPlanner.snapToGrid(newY);
+        this.update();
         this.mapPlanner.saveState();
     }
 

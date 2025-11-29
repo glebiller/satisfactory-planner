@@ -20,6 +20,7 @@ class MapPlanner {
     this.mappingBoundSouth = 375e3;
     this.gridSize = 800;
     this.leafletMap = L.map("map", {
+      renderer: L.canvas(),
       crs: L.CRS.Simple,
       minZoom: this.minTileZoom,
       maxZoom: this.maxTileZoom + 4,
@@ -29,7 +30,6 @@ class MapPlanner {
       preferCanvas: !0,
       fullscreenControl: !0
     });
-    this.canvasRenderer = L.canvas();
     this.controls = new Controls(this);
 
     // Data
@@ -37,8 +37,10 @@ class MapPlanner {
     this.links = [];
 
     // State
-    this.interactionState = null; // Can be 'dragging', 'linking', or null
+    this.clickedNode = null;
     this.selectedNode = null;
+    // deprecated
+    this.interactionState = null; // Can be 'dragging', 'linking', or null
     this.nodeRectangles = new Map();
     this.layerGroup = L.layerGroup().addTo(this.leafletMap);
     this.previewLink = null;
@@ -79,7 +81,7 @@ class MapPlanner {
     this.setupInteractionHandlers();
 
     this.loadState();
-    this.render();
+    //this.render();
   }
 
   snapToGrid(value) {
@@ -107,7 +109,8 @@ class MapPlanner {
       this.selectedNode.color = document.getElementById('inp_color').value;
       this.selectedNode.outputs = document.getElementById('inp_out').value.split(',').filter(s => s.trim());
       this.saveState();
-      this.render();
+      this.selectedNode.update();
+      this.renderSidebar();
     });
 
     document.getElementById('btn_del').addEventListener('click', () => {
@@ -139,18 +142,28 @@ class MapPlanner {
     });
 
     this.leafletMap.on('mousemove', (e) => {
+      if (this.clickedNode) {
+        this.clickedNode.handleOnMouseMove(e);
+      }
+
       if (!this.interactionState) return;
 
       if (this.interactionState.type === 'linking') {
         this.updateLinkingPreview(e.latlng);
-      } else if (this.interactionState.type === 'dragging') {
-        this.interactionState.wasDragging = true;
-        const { node, offset } = this.interactionState;
-        const rasterPoint = this.project(e.latlng);
-        const gameCoords = this.convertToGameCoordinates([rasterPoint.x, rasterPoint.y]);
-        const newX = this.snapToGrid(gameCoords[0] - offset[0]);
-        const newY = this.snapToGrid(gameCoords[1] - offset[1]);
-        node.updatePosition(newX, newY);
+      }
+    });
+
+    // Ensure mouseup anywhere finalizes drag or click via the node
+    this.leafletMap.on('mouseup', (e) => {
+      if (this.clickedNode) {
+        this.clickedNode.handleMouseUp(e);
+      }
+
+      if (!this.interactionState) return;
+      if (this.interactionState.type === 'linking') return;
+      const activeNode = this.interactionState.node;
+      if (activeNode && typeof activeNode.handleMouseUp === 'function') {
+        activeNode.handleMouseUp(e);
       }
     });
   }
@@ -165,7 +178,6 @@ class MapPlanner {
     };
 
     this.previewLink = L.polyline([startLatLng, startLatLng], {
-      renderer: this.canvasRenderer,
       color: 'red', // Default to red
       weight: 3,
       dashArray: '5, 5',
@@ -250,7 +262,11 @@ class MapPlanner {
 
   renderNodes() {
     this.nodes.forEach(node => {
-      node.render();
+      if (!node.rect) {
+        node.create();
+      } else {
+        node.update();
+      }
     });
   }
 
@@ -334,8 +350,17 @@ class MapPlanner {
   }
 
   selectNode(node) {
+    const previousNode = this.selectedNode;
     this.selectedNode = node;
-    this.render();
+
+    if (previousNode && previousNode.rect) {
+      previousNode.update();
+    }
+    if (node && node.rect) {
+      node.update();
+    }
+
+    this.renderSidebar();
   }
 
   getStateFromHash() {
@@ -369,7 +394,6 @@ class MapPlanner {
     const latLngs = gameCoords.map(p => this.unproject(p));
 
     L.polyline(latLngs, {
-      renderer: this.canvasRenderer,
       color: 'gray',
       weight: 3
     }).addTo(this.layerGroup);

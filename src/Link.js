@@ -38,7 +38,6 @@ export class Link {
         const latLngs = gameCoords.map(p => this.mapPlanner.unproject(p));
 
         L.polyline(latLngs, {
-            renderer: this.mapPlanner.canvasRenderer,
             color: 'blue',
             weight: 3
         }).addTo(this.mapPlanner.layerGroup);
