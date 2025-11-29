@@ -120,6 +120,16 @@ button.secondary { background: #555; color: white; }
   font-weight: bold;
   text-align: center;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.node-icon {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
 }
 
 /* PORTS - Absolute positioned relative to the .factory-node div */

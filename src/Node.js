@@ -12,7 +12,6 @@ class Pin {
     }
 
     create() {
-        // Calculate pin position based on type (left/right) and index (top/bottom spread)
         const xOffset = this.type === 'input' ? 0 : this.node.width;
         const yOffset = (this.index / 3) * this.node.height;
 
@@ -62,12 +61,20 @@ export class Node {
         this.type = data.type;
         this.color = data.color;
         this.name = data.name || 'Node';
+        this.icon = data.icon || null;
         this.inputs = data.inputs || [];
         this.outputs = data.outputs || [];
 
         this.rect = null;
         this.textLayer = null;
 
+        this.dragThresholdDistance = 8;
+        this.mousedown = null;
+        this.dragging = null;
+
+        this.create();
+
+        // Pins
         this.pins = [];
         for (let i = 0; i < 4; i++) {
             this.pins.push(new Pin(this, 'input', i));
@@ -75,12 +82,6 @@ export class Node {
         for (let i = 0; i < 4; i++) {
             this.pins.push(new Pin(this, 'output', i));
         }
-
-        this.dragThresholdDistance = 8;
-        this.mousedown = null;
-        this.dragging = null;
-
-        this.create();
     }
     getConnectedLinks() {
         return this.mapPlanner.links.filter(link => link.from === this.id || link.to === this.id);
@@ -118,12 +119,15 @@ export class Node {
         this.mapPlanner.nodeRectangles.set(this.id, this);
 
         const center = this.mapPlanner.unproject([this.x + this.width / 2, this.y + this.height / 2]);
+        const content = this.getDisplayContent();
         this.textLayer = L.tooltip(center, {
             permanent: true,
             direction: 'center',
             className: 'node-name-tooltip',
             interactive: false,
-        }).setContent(this.name).addTo(this.mapPlanner.layerGroup);
+        }).setContent(content).addTo(this.mapPlanner.layerGroup);
+
+        this.updateTooltipSize();
     }
 
     update() {
@@ -138,8 +142,10 @@ export class Node {
         this.rect.setBounds(this.getBounds());
 
         const center = this.mapPlanner.unproject([this.x + this.width / 2, this.y + this.height / 2]);
+        const content = this.getDisplayContent();
         this.textLayer.setLatLng(center);
-        this.textLayer.setContent(this.name);
+        this.textLayer.setContent(content);
+        this.updateTooltipSize();
 
         for (const pin of this.pins) {
             pin.update();
@@ -184,6 +190,7 @@ export class Node {
     startDragging(offset) {
         const bounds = this.getBounds();
         const ghostProxy = L.rectangle(bounds, {
+            renderer: L.svg(),
             color: this.color,
             weight: 2,
             fillOpacity: 0.4,
@@ -254,6 +261,28 @@ export class Node {
         this.mapPlanner.saveState();
     }
 
+    updateTooltipSize() {
+        if (!this.textLayer) return;
+
+        const tooltipWidth = Math.max(60, this.width * 0.08 / this.mapPlanner.leafletMap.getZoom());
+        const tooltipHeight = Math.max(60, this.height * 0.08 / this.mapPlanner.leafletMap.getZoom());
+
+        const tooltipElement = this.textLayer.getElement();
+        if (tooltipElement) {
+            tooltipElement.style.width = tooltipWidth + 'px';
+            tooltipElement.style.height = tooltipHeight + 'px';
+            tooltipElement.style.minWidth = '60px';
+            tooltipElement.style.minHeight = '60px';
+        }
+    }
+
+    getDisplayContent() {
+        if (this.icon) {
+            return `<img src="/icons/${this.icon}.png" alt="${this.icon}" class="node-icon" />`;
+        }
+        return this.name;
+    }
+
     toPlainObject() {
         return {
             id: this.id,
@@ -264,6 +293,7 @@ export class Node {
             type: this.type,
             color: this.color,
             name: this.name,
+            icon: this.icon,
             inputs: this.inputs,
             outputs: this.outputs,
         };
