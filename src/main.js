@@ -59,7 +59,7 @@ class MapPlanner {
     this.mappingBoundSouth += this.northOffset;
     this.backgroundSize += 2 * this.extraBackgroundSize;
     this.zoomRatio = this.zoomRatio();
-    this.gameLayer = L.tileLayer("tiles/{z}/{x}/{y}.png", {
+    this.gameLayer = L.tileLayer("tiles/{z}/{x}/{y}.webp", {
       crs: L.CRS.Simple,
       noWrap: !0,
       bounds: this.getBounds(),

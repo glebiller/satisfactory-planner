@@ -152,7 +152,7 @@ export class Node {
         }).addTo(this.mapPlanner.layerGroup);
         this.rect.on('mousedown', (e) => this.handleMouseDown(e));
 
-        this.iconOverlay = L.imageOverlay(`/icons/${this.icon}.png`, bounds, {
+        this.iconOverlay = L.imageOverlay(`icons/${this.icon}.webp`, bounds, {
             zIndex: 400
         }).addTo(this.mapPlanner.layerGroup);
 
@@ -193,7 +193,7 @@ export class Node {
         this.rect.setBounds(bounds);
 
         if (this.icon) {
-            this.iconOverlay.setUrl(`/icons/${this.icon}.png`);
+            this.iconOverlay.setUrl(`icons/${this.icon}.webp`);
             const iconBounds = bounds.pad(-0.85);
             this.iconOverlay.setBounds(iconBounds)
             this.iconOverlay.setOpacity(1);
