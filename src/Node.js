@@ -1,5 +1,4 @@
 import L from 'leaflet';
-import { Link } from './Link.js';
 
 class Pin {
     constructor(node, type, index, enabled = true) {
@@ -10,20 +9,23 @@ class Pin {
         this.circle = null;
         this.linkedLinks = [];
 
+        this.offset = this.getOffset();
         this.create();
     }
 
-    create() {
-        const offset = this.node.getPinOffset(this.type, this.index);
-        const latlng = this.node.mapPlanner.unproject([this.node.x + offset.x, this.node.y + offset.y]);
+    getOffset() {
+        const xFactor = this.type === 'input' ? 0 : 1;
+        const yFactor = (this.index + 0.5) / 4;
+        return { x: xFactor, y: yFactor };
+    }
 
-        this.circle = L.circle(latlng, {
+    create() {
+        this.circle = L.circle([0, 0], {
             radius: 0.05,
             interactive: true,
         }).addTo(this.node.mapPlanner.layerGroup);
 
         this.circle.on('mousedown', (e) => this.handleMouseDown(e));
-
         this.update();
     }
 
@@ -31,16 +33,7 @@ class Pin {
         this.node.mapPlanner.layerGroup.removeLayer(this.circle);
     }
 
-    getLinkedLinks() {
-        return this.node.getConnectionsForPin(this.type, this.index);
-    }
-
     update() {
-        const offset = this.node.getPinOffset(this.type, this.index);
-        const latlng = this.node.mapPlanner.unproject([this.node.x + offset.x, this.node.y + offset.y]);
-
-        this.linkedLinks = this.getLinkedLinks();
-
         const isConnected = this.linkedLinks.length > 0;
         const fillOpacity = isConnected ? 0.8 : 0.3;
 
@@ -50,6 +43,10 @@ class Pin {
             opacity: this.enabled ? 0.8 : 0,
         });
 
+        const nodeBounds = this.node.getBounds();
+        const lat = nodeBounds.getSouth() + (nodeBounds.getNorth() - nodeBounds.getSouth()) * this.offset.y;
+        const lng = nodeBounds.getWest() + (nodeBounds.getEast() - nodeBounds.getWest()) * this.offset.x;
+        const latlng = [lat, lng];
         this.circle.setLatLng(latlng);
 
         for (const link of this.linkedLinks) {
@@ -77,16 +74,14 @@ class Pin {
                 const fromPin = fromType === 'output' ? fromIndex : toIndex;
                 const toPin = fromType === 'output' ? toIndex : fromIndex;
 
-                const newLink = new Link(mapPlanner, {
+                mapPlanner.addLink({
                     from: fromNodeId,
                     to: toNodeId,
                     fromPin,
                     toPin
                 });
-                mapPlanner.links.push(newLink);
                 fromNode.update();
                 toNode.update();
-                mapPlanner.saveState();
             }
 
             mapPlanner.cancelLinking();
@@ -119,23 +114,16 @@ export class Node {
 
         this.create();
     }
-    getPinOffset(pinType, pinIndex) {
-        const xOffset = pinType === 'input' ? 0 : this.width;
-        const yOffset = (pinIndex / 3) * this.height;
-        return { x: xOffset, y: yOffset };
+
+    getPin(type, index) {
+        return this.pins.find(p => p.type === type && p.index === index);
     }
 
-    getConnectedLinks() {
-        return this.mapPlanner.links.filter(link => link.from === this.id || link.to === this.id);
-    }
     getConnectionsForPin(pinType, pinIndex) {
-        const links = this.getConnectedLinks();
-        if (pinType === 'input') {
-            return links.filter(link => link.to === this.id && link.toPin === pinIndex);
-        } else {
-            return links.filter(link => link.from === this.id && link.fromPin === pinIndex);
-        }
+        const pin = this.getPin(pinType, pinIndex);
+        return pin ? pin.linkedLinks : [];
     }
+
     getConnectedNode(pinType, pinIndex) {
         const connections = this.getConnectionsForPin(pinType, pinIndex);
         if (connections.length === 0) return null;
@@ -228,11 +216,12 @@ export class Node {
         }
 
         for (const pin of this.pins) {
-            pin.update();
+            pin.update(bounds);
         }
     }
 
     handleMouseDown(e) {
+        if (this.isResource) return;
         this.mousedown = e;
         this.mapPlanner.clickedNode = this;
     }
@@ -246,7 +235,13 @@ export class Node {
 
             const p1 = this.mapPlanner.unproject([newX, newY]);
             const p2 = this.mapPlanner.unproject([newX + this.width, newY + this.height]);
-            this.dragging.ghostProxy.setBounds([p1, p2]);
+            const newBounds = L.latLngBounds(p1, p2);
+            this.dragging.ghostProxy.setBounds(newBounds);
+
+            for (const pin of this.pins) {
+                pin.update(newBounds);
+            }
+
         } else if (this.mousedown) {
             if (this.mousedown.containerPoint.distanceTo(e.containerPoint) >= this.dragThresholdDistance) {
                 const rasterPoint = this.mapPlanner.project(this.mousedown.latlng);
@@ -314,14 +309,12 @@ export class Node {
                 const fromPin = fromType === 'output' ? fromIndex : toIndex;
                 const toPin = fromType === 'output' ? toIndex : fromIndex;
 
-                const newLink = new Link(mapPlanner, {
+                mapPlanner.addLink({
                     from: fromNodeId,
                     to: toNodeId,
                     fromPin,
                     toPin
                 });
-                mapPlanner.links.push(newLink);
-                mapPlanner.saveState();
             }
 
             mapPlanner.cancelLinking();

@@ -34,7 +34,7 @@ class MapPlanner {
 
     // Data
     this.nodes = [];
-    this.links = [];
+    this.linkMap = new Map();
 
     // State
     this.clickedNode = null;
@@ -170,13 +170,22 @@ class MapPlanner {
     });
 
     document.getElementById('btn_del_node').addEventListener('click', () => {
-      if (this.selectedNode && confirm('Delete node?')) {
-        this.selectedNode.remove();
-        this.nodes = this.nodes.filter(n => n.id !== this.selectedNode.id);
-        this.links = this.links.filter(l => l.from !== this.selectedNode.id && l.to !== this.selectedNode.id);
-        this.saveState();
-        this.selectNode(null);
-      }
+        if (this.selectedNode && confirm('Delete node?')) {
+            const deletedNodeId = this.selectedNode.id;
+            const connectedLinks = this.linkMap.get(deletedNodeId) || [];
+
+            for (const link of [...connectedLinks]) {
+                link.remove();
+                this.removeLink(link);
+            }
+
+            this.selectedNode.remove();
+            this.nodes = this.nodes.filter(n => n.id !== deletedNodeId);
+            this.linkMap.delete(deletedNodeId);
+
+            this.saveState();
+            this.selectNode(null);
+        }
     });
 
     const linkForm = document.getElementById('edit-link-form');
@@ -188,12 +197,13 @@ class MapPlanner {
     });
 
     document.getElementById('btn_del_link').addEventListener('click', () => {
-      if (this.selectedLink && confirm('Delete link?')) {
-        this.selectedLink.remove();
-        this.links = this.links.filter(l => l.id !== this.selectedLink.id);
-        this.selectLink(null);
-        this.saveState();
-      }
+        if (this.selectedLink && confirm('Delete link?')) {
+            const linkToRemove = this.selectedLink;
+            linkToRemove.remove();
+            this.removeLink(linkToRemove);
+            this.selectLink(null);
+            this.saveState();
+        }
     });
   }
 
@@ -299,13 +309,13 @@ class MapPlanner {
   loadState() {
     const savedData = localStorage.getItem(STORAGE_KEY);
     if (savedData) {
-      const data = JSON.parse(savedData);
-      this.nodes = (data.nodes || []).map(nodeData => new Node(this, nodeData));
-      this.links = (data.links || []).map(linkData => new Link(this, linkData));
-      // update links on nodes
-      for (var node of this.nodes) {
-        node.update();
-      }
+        const data = JSON.parse(savedData);
+        this.nodes = (data.nodes || []).map(nodeData => new Node(this, nodeData));
+        (data.links || []).forEach(linkData => this.addLink(linkData, false));
+
+        for (const node of this.nodes) {
+            node.update();
+        }
     }
   }
 
@@ -333,9 +343,10 @@ class MapPlanner {
   }
 
   saveState() {
+    const links = [...new Set(Array.from(this.linkMap.values()).flat())];
     const dataToSave = {
         nodes: this.nodes.map(node => node.toPlainObject()).filter(Boolean),
-        links: this.links.map(link => link.toPlainObject()),
+        links: links.map(link => link.toPlainObject()),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
   }
@@ -364,6 +375,42 @@ class MapPlanner {
     this.nodes.push(newNode);
     this.selectNode(newNode);
     this.saveState();
+  }
+
+  addLink(linkData, save = true) {
+    const newLink = new Link(this, linkData);
+
+    if (!this.linkMap.has(newLink.from)) {
+        this.linkMap.set(newLink.from, []);
+    }
+    this.linkMap.get(newLink.from).push(newLink);
+
+    if (!this.linkMap.has(newLink.to)) {
+        this.linkMap.set(newLink.to, []);
+    }
+    this.linkMap.get(newLink.to).push(newLink);
+
+    if (save) {
+        this.saveState();
+    }
+    return newLink;
+  }
+
+  removeLink(link) {
+    if (this.linkMap.has(link.from)) {
+        const links = this.linkMap.get(link.from);
+        const index = links.indexOf(link);
+        if (index > -1) {
+            links.splice(index, 1);
+        }
+    }
+    if (this.linkMap.has(link.to)) {
+        const links = this.linkMap.get(link.to);
+        const index = links.indexOf(link);
+        if (index > -1) {
+            links.splice(index, 1);
+        }
+    }
   }
 
   updateLinkingPreview(endLatLng) {

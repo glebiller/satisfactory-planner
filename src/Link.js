@@ -23,7 +23,13 @@ export class Link {
             return;
         }
 
-        this.polyline = L.polyline(this.getLatLngs(), {
+        this.startPin = this.startNode.getPin('output', this.fromPin);
+        this.endPin = this.endNode.getPin('input', this.toPin);
+
+        if (this.startPin) this.startPin.linkedLinks.push(this);
+        if (this.endPin) this.endPin.linkedLinks.push(this);
+
+        this.polyline = L.polyline([], {
             weight: 3
         }).addTo(this.mapPlanner.layerGroup);
 
@@ -46,21 +52,21 @@ export class Link {
     }
 
     getLatLngs() {
-        const p1Offset = this.startNode.getPinOffset('output', this.fromPin);
-        const p1 = { x: this.startNode.x + p1Offset.x, y: this.startNode.y + p1Offset.y };
+        if (!this.startPin || !this.endPin) return [];
 
-        const p2Offset = this.endNode.getPinOffset('input', this.toPin);
-        const p2 = { x: this.endNode.x + p2Offset.x, y: this.endNode.y + p2Offset.y };
+        const p1 = this.mapPlanner.leafletMap.project(this.startPin.circle.getLatLng());
+        const p2 = this.mapPlanner.leafletMap.project(this.endPin.circle.getLatLng());
 
         const midX = p1.x + (p2.x - p1.x) / 2;
 
-        const gameCoords = [
-            [p1.x, p1.y],
-            [midX, p1.y],
-            [midX, p2.y],
-            [p2.x, p2.y]
+        const points = [
+            p1,
+            { x: midX, y: p1.y },
+            { x: midX, y: p2.y },
+            p2
         ];
-        return gameCoords.map(p => this.mapPlanner.unproject(p));
+
+        return points.map(p => this.mapPlanner.leafletMap.unproject(p));
     }
 
     toPlainObject() {
@@ -75,6 +81,15 @@ export class Link {
     }
 
     remove() {
+        if (this.startPin) {
+            const index = this.startPin.linkedLinks.indexOf(this);
+            if (index > -1) this.startPin.linkedLinks.splice(index, 1);
+        }
+        if (this.endPin) {
+            const index = this.endPin.linkedLinks.indexOf(this);
+            if (index > -1) this.endPin.linkedLinks.splice(index, 1);
+        }
+
         if (this.polyline) {
             this.mapPlanner.layerGroup.removeLayer(this.polyline);
         }
