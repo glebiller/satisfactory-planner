@@ -82,6 +82,7 @@ class MapPlanner {
     this.setupInteractionHandlers();
 
     this.loadState();
+    this.loadResourceNodes();
     //this.render();
   }
 
@@ -306,9 +307,32 @@ class MapPlanner {
     }
   }
 
+  loadResourceNodes() {
+    fetch('resource_nodes.json')
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(resource => {
+          resource.nodes.forEach(nodeData => {
+            const newNode = new Node(this, {
+              id: 'resource_' + resource.type + '_' + nodeData.x + '_' + nodeData.y,
+              x: nodeData.x,
+              y: nodeData.y,
+              width: nodeData.size[0],
+              height: nodeData.size[1],
+              name: resource.name + ' (' + nodeData.purity + ')',
+              color: '#ff0000',
+              icon: resource.name.replace(/ /g, '_'),
+              isResource: true
+            });
+            this.nodes.push(newNode);
+          });
+        });
+      });
+  }
+
   saveState() {
     const dataToSave = {
-      nodes: this.nodes.map(node => node.toPlainObject()),
+      nodes: this.nodes.filter(node => !node.isResource).map(node => node.toPlainObject()),
       links: this.links.map(link => link.toPlainObject()),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
@@ -469,7 +493,7 @@ class MapPlanner {
     this.createSidebar();
   }
 
-  selectLink(link) {
+selectLink(link) {
     if (this.selectedLink === link) return;
 
     if (this.selectedNode) {

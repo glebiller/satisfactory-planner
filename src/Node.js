@@ -193,10 +193,10 @@ export class Node {
         this.rect.setBounds(bounds);
 
         if (this.icon) {
-            this.iconOverlay.setUrl(`icons/${this.icon}.webp`);
+            /*this.iconOverlay.setUrl(`icons/${this.icon}.webp`);
             const iconBounds = bounds.pad(-0.85);
             this.iconOverlay.setBounds(iconBounds)
-            this.iconOverlay.setOpacity(1);
+            this.iconOverlay.setOpacity(1);*/
         } else {
             this.iconOverlay.setOpacity(0);
         }
