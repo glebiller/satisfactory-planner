@@ -7,6 +7,19 @@ import { Link } from './Link.js';
 
 const STORAGE_KEY = 'satisfactory-planner-data';
 
+const resourceColorMap = {
+    'Iron Ore': '#c0c0c0',
+    'Copper Ore': '#ff7f50',
+    'Limestone': '#a9a9a9',
+    'Coal': '#36454f',
+    'Caterium Ore': '#f5deb3',
+    'Raw Quartz': '#f0e68c',
+    'Sulfur': '#ffff00',
+    'Bauxite': '#c19a6b',
+    'SAM Ore': '#808000',
+    'Uranium': '#00ff00',
+};
+
 class MapPlanner {
   constructor() {
     this.backgroundSize = 32768;
@@ -329,11 +342,10 @@ class MapPlanner {
               id: 'resource_' + resource.type + '_' + nodeData.x + '_' + nodeData.y,
               x: nodeData.x,
               y: nodeData.y,
-              width: nodeData.size[0],
-              height: nodeData.size[1],
+              width: 1200,
+              height: 1200,
               name: resource.name + ' (' + nodeData.purity + ')',
-              color: '#ff0000',
-              icon: resource.name.replace(/ /g, '_'),
+              color: resourceColorMap[resource.name] || '#ff0000',
               isResource: true
             });
             this.nodes.push(newNode);

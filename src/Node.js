@@ -14,6 +14,9 @@ class Pin {
     }
 
     getOffset() {
+        if (this.node.isResource) {
+            return { x: 0.5, y: 0.5 };
+        }
         const xFactor = this.type === 'input' ? 0 : 1;
         const yFactor = (this.index + 0.5) / 4;
         return { x: xFactor, y: yFactor };
@@ -26,14 +29,18 @@ class Pin {
         }).addTo(this.node.mapPlanner.layerGroup);
 
         this.circle.on('mousedown', (e) => this.handleMouseDown(e));
-        this.update();
+        this.update(this.node.getBounds());
     }
 
     remove() {
         this.node.mapPlanner.layerGroup.removeLayer(this.circle);
     }
 
-    update() {
+    update(nodeBounds) {
+        const lat = nodeBounds.getSouth() + (nodeBounds.getNorth() - nodeBounds.getSouth()) * this.offset.y;
+        const lng = nodeBounds.getWest() + (nodeBounds.getEast() - nodeBounds.getWest()) * this.offset.x;
+        const latlng = [lat, lng];
+
         const isConnected = this.linkedLinks.length > 0;
         const fillOpacity = isConnected ? 0.8 : 0.3;
 
@@ -43,10 +50,6 @@ class Pin {
             opacity: this.enabled ? 0.8 : 0,
         });
 
-        const nodeBounds = this.node.getBounds();
-        const lat = nodeBounds.getSouth() + (nodeBounds.getNorth() - nodeBounds.getSouth()) * this.offset.y;
-        const lng = nodeBounds.getWest() + (nodeBounds.getEast() - nodeBounds.getWest()) * this.offset.x;
-        const latlng = [lat, lng];
         this.circle.setLatLng(latlng);
 
         for (const link of this.linkedLinks) {
@@ -139,39 +142,51 @@ export class Node {
     create() {
         const bounds = this.getBounds();
 
-        this.rect = L.rectangle(bounds, {
-            fillOpacity: 0.8,
-            interactive: !this.isResource,
-        }).addTo(this.mapPlanner.layerGroup);
-
-        if (!this.isResource) {
-            this.rect.on('mousedown', (e) => this.handleMouseDown(e));
+        if (this.isResource) {
+            const center = bounds.getCenter();
+            const radius = this.mapPlanner.leafletMap.distance(center, bounds.getNorthWest());
+            this.rect = L.circle(center, {
+                radius: radius,
+                fillOpacity: 0.8,
+                interactive: true,
+            }).addTo(this.mapPlanner.layerGroup);
+        } else {
+            this.rect = L.rectangle(bounds, {
+                fillOpacity: 0.8,
+                interactive: true,
+            }).addTo(this.mapPlanner.layerGroup);
         }
 
-        this.iconOverlay = L.imageOverlay(`icons/${this.icon}.webp`, bounds, {
-            zIndex: 400
-        }).addTo(this.mapPlanner.layerGroup);
+        this.rect.on('mousedown', (e) => this.handleMouseDown(e));
 
-        this.nameTooltip = L.tooltip(bounds.getCenter(), {
-            permanent: true,
-            direction: 'center',
-            className: 'node-name-tooltip',
-            interactive: false,
-            offset: [0, 30]
-        }).setContent(this.name)
-          .addTo(this.mapPlanner.layerGroup);
+        if (!this.isResource) {
+            this.iconOverlay = L.imageOverlay(`icons/${this.icon}.webp`, bounds, {
+                zIndex: 400
+            }).addTo(this.mapPlanner.layerGroup);
+
+            this.nameTooltip = L.tooltip(bounds.getCenter(), {
+                permanent: true,
+                direction: 'center',
+                className: 'node-name-tooltip',
+                interactive: false,
+                offset: [0, 30]
+            }).setContent(this.name)
+              .addTo(this.mapPlanner.layerGroup);
+        }
 
         // Pins
         this.pins = [];
-        if (!this.isResource) {
+        if (this.isResource) {
+            this.pins.push(new Pin(this, 'output', 0, true));
+        } else {
             for (let i = 0; i < 4; i++) {
                 const enabled = this.pinsEnabled[`input-${i}`] !== false;
                 this.pins.push(new Pin(this, 'input', i, enabled));
             }
-        }
-        for (let i = 0; i < 4; i++) {
-            const enabled = this.pinsEnabled[`output-${i}`] !== false;
-            this.pins.push(new Pin(this, 'output', i, enabled));
+            for (let i = 0; i < 4; i++) {
+                const enabled = this.pinsEnabled[`output-${i}`] !== false;
+                this.pins.push(new Pin(this, 'output', i, enabled));
+            }
         }
 
         this.update();
@@ -182,10 +197,13 @@ export class Node {
             pin.remove();
         }
         this.mapPlanner.layerGroup.removeLayer(this.rect);
+        if (this.iconOverlay) this.mapPlanner.layerGroup.removeLayer(this.iconOverlay);
+        if (this.nameTooltip) this.mapPlanner.layerGroup.removeLayer(this.nameTooltip);
     }
 
     update() {
         const isSelected = this.mapPlanner.selectedNode === this;
+        const bounds = this.getBounds();
 
         this.rect.setStyle({
             color: this.color,
@@ -193,26 +211,33 @@ export class Node {
             dashArray: isSelected ? '5, 5' : null,
         });
 
-        const bounds = this.getBounds();
-        this.rect.setBounds(bounds);
-
-        if (this.icon) {
-            this.iconOverlay.setUrl(`icons/${this.icon}.webp`);
-            const iconBounds = bounds.pad(-0.85);
-            this.iconOverlay.setBounds(iconBounds)
-            this.iconOverlay.setOpacity(1);
+        if (this.isResource) {
+            this.rect.setLatLng(bounds.getCenter());
         } else {
-            this.iconOverlay.setOpacity(0);
+            this.rect.setBounds(bounds);
         }
 
-        this.nameTooltip.setContent(this.name);
-        this.nameTooltip.setLatLng(bounds.getCenter());
+        if (this.iconOverlay) {
+            if (this.icon) {
+                this.iconOverlay.setUrl(`icons/${this.icon}.webp`);
+                const iconBounds = bounds.pad(-0.85);
+                this.iconOverlay.setBounds(iconBounds)
+                this.iconOverlay.setOpacity(1);
+            } else {
+                this.iconOverlay.setOpacity(0);
+            }
+        }
 
-        const currentZoom = this.mapPlanner.leafletMap.getZoom();
-        if (currentZoom >= 7.25) {
-            this.nameTooltip.setOpacity(0.9);
-        } else {
-            this.nameTooltip.setOpacity(0);
+        if (this.nameTooltip) {
+            this.nameTooltip.setContent(this.name);
+            this.nameTooltip.setLatLng(bounds.getCenter());
+
+            const currentZoom = this.mapPlanner.leafletMap.getZoom();
+            if (currentZoom >= 7.25) {
+                this.nameTooltip.setOpacity(0.9);
+            } else {
+                this.nameTooltip.setOpacity(0);
+            }
         }
 
         for (const pin of this.pins) {
@@ -319,7 +344,7 @@ export class Node {
 
             mapPlanner.cancelLinking();
         } else {
-            mapPlanner.startLinking(this, pinType, pinIndex, e.latlng);
+            mapPlanner.startDragging(this, pinType, pinIndex, e.latlng);
         }
     }
 
