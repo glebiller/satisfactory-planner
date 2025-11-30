@@ -171,6 +171,7 @@ class MapPlanner {
 
     document.getElementById('btn_del_node').addEventListener('click', () => {
       if (this.selectedNode && confirm('Delete node?')) {
+        this.selectedNode.remove();
         this.nodes = this.nodes.filter(n => n.id !== this.selectedNode.id);
         this.links = this.links.filter(l => l.from !== this.selectedNode.id && l.to !== this.selectedNode.id);
         this.saveState();
@@ -202,9 +203,10 @@ class MapPlanner {
     });
 
     this.leafletMap.on('zoomend', () => {
-        for (const node of this.nodes) {
+      // Performance issue
+        /*for (const node of this.nodes) {
             node.update();
-        }
+        }*/
     });
 
     this.leafletMap.on('mousedown', (e) => {
@@ -332,8 +334,8 @@ class MapPlanner {
 
   saveState() {
     const dataToSave = {
-      nodes: this.nodes.filter(node => !node.isResource).map(node => node.toPlainObject()),
-      links: this.links.map(link => link.toPlainObject()),
+        nodes: this.nodes.map(node => node.toPlainObject()).filter(Boolean),
+        links: this.links.map(link => link.toPlainObject()),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
   }
@@ -483,10 +485,10 @@ class MapPlanner {
     const previousNode = this.selectedNode;
     this.selectedNode = node;
 
-    if (previousNode && previousNode.rect) {
+    if (previousNode) {
       previousNode.update();
     }
-    if (node && node.rect) {
+    if (node) {
       node.update();
     }
 

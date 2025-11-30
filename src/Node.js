@@ -27,6 +27,10 @@ class Pin {
         this.update();
     }
 
+    remove() {
+        this.node.mapPlanner.layerGroup.removeLayer(this.circle);
+    }
+
     getLinkedLinks() {
         return this.node.getConnectionsForPin(this.type, this.index);
     }
@@ -105,6 +109,7 @@ export class Node {
         this.name = data.name || 'Node';
         this.icon = data.icon || null;
         this.pinsEnabled = data.pinsEnabled || {};
+        this.isResource = data.isResource || false;
 
         this.rect = null;
 
@@ -148,9 +153,12 @@ export class Node {
 
         this.rect = L.rectangle(bounds, {
             fillOpacity: 0.8,
-            interactive: true,
+            interactive: !this.isResource,
         }).addTo(this.mapPlanner.layerGroup);
-        this.rect.on('mousedown', (e) => this.handleMouseDown(e));
+
+        if (!this.isResource) {
+            this.rect.on('mousedown', (e) => this.handleMouseDown(e));
+        }
 
         this.iconOverlay = L.imageOverlay(`icons/${this.icon}.webp`, bounds, {
             zIndex: 400
@@ -167,9 +175,11 @@ export class Node {
 
         // Pins
         this.pins = [];
-        for (let i = 0; i < 4; i++) {
-            const enabled = this.pinsEnabled[`input-${i}`] !== false;
-            this.pins.push(new Pin(this, 'input', i, enabled));
+        if (!this.isResource) {
+            for (let i = 0; i < 4; i++) {
+                const enabled = this.pinsEnabled[`input-${i}`] !== false;
+                this.pins.push(new Pin(this, 'input', i, enabled));
+            }
         }
         for (let i = 0; i < 4; i++) {
             const enabled = this.pinsEnabled[`output-${i}`] !== false;
@@ -179,9 +189,15 @@ export class Node {
         this.update();
     }
 
+    remove() {
+        for (var pin of this.pins) {
+            pin.remove();
+        }
+        this.mapPlanner.layerGroup.removeLayer(this.rect);
+    }
+
     update() {
         const isSelected = this.mapPlanner.selectedNode === this;
-        const currentZoom = this.mapPlanner.leafletMap.getZoom();
 
         this.rect.setStyle({
             color: this.color,
@@ -193,10 +209,10 @@ export class Node {
         this.rect.setBounds(bounds);
 
         if (this.icon) {
-            /*this.iconOverlay.setUrl(`icons/${this.icon}.webp`);
+            this.iconOverlay.setUrl(`icons/${this.icon}.webp`);
             const iconBounds = bounds.pad(-0.85);
             this.iconOverlay.setBounds(iconBounds)
-            this.iconOverlay.setOpacity(1);*/
+            this.iconOverlay.setOpacity(1);
         } else {
             this.iconOverlay.setOpacity(0);
         }
@@ -204,6 +220,7 @@ export class Node {
         this.nameTooltip.setContent(this.name);
         this.nameTooltip.setLatLng(bounds.getCenter());
 
+        const currentZoom = this.mapPlanner.leafletMap.getZoom();
         if (currentZoom >= 7.25) {
             this.nameTooltip.setOpacity(0.9);
         } else {
@@ -270,9 +287,12 @@ export class Node {
         const newX = newGameCoordinates[0] - this.dragging.offset[0];
         const newY = newGameCoordinates[1] - this.dragging.offset[1];
 
-        this.updatePosition(newX, newY);
-        this.mapPlanner.layerGroup.removeLayer(this.dragging.ghostProxy);
+        this.x = this.mapPlanner.snapToGrid(newX);
+        this.y = this.mapPlanner.snapToGrid(newY);
+        this.update();
+        this.mapPlanner.saveState();
 
+        this.mapPlanner.layerGroup.removeLayer(this.dragging.ghostProxy);
         this.dragging = null;
         this.mousedown = null;
     }
@@ -316,14 +336,10 @@ export class Node {
         return L.latLngBounds(p1, p2);
     }
 
-    updatePosition(newX, newY) {
-        this.x = this.mapPlanner.snapToGrid(newX);
-        this.y = this.mapPlanner.snapToGrid(newY);
-        this.update();
-        this.mapPlanner.saveState();
-    }
-
     toPlainObject() {
+        if (this.isResource) {
+            return null;
+        }
         const pinsEnabled = {};
         for (const pin of this.pins) {
             pinsEnabled[`${pin.type}-${pin.index}`] = pin.enabled;
