@@ -39,10 +39,10 @@ class MapPlanner {
     // State
     this.clickedNode = null;
     this.selectedNode = null;
+    this.selectedLink = null;
     this.previewLink = null;
     // deprecated
     this.interactionState = null; // Can be 'dragging', 'linking', or null
-    this.nodeRectangles = new Map();
     this.layerGroup = L.layerGroup().addTo(this.leafletMap);
 
     this.start();
@@ -152,9 +152,8 @@ class MapPlanner {
   }
 
   setupSidebarListeners() {
-    const form = document.getElementById('edit-node-form');
-    form.addEventListener('input', (e) => {
-      console.log(e);
+    const nodeForm = document.getElementById('edit-node-form');
+    nodeForm.addEventListener('input', (e) => {
       if (!this.selectedNode) return;
 
       this.selectedNode.name = document.getElementById('inp_name').value;
@@ -169,7 +168,7 @@ class MapPlanner {
       this.saveState();
     });
 
-    document.getElementById('btn_del').addEventListener('click', () => {
+    document.getElementById('btn_del_node').addEventListener('click', () => {
       if (this.selectedNode && confirm('Delete node?')) {
         this.nodes = this.nodes.filter(n => n.id !== this.selectedNode.id);
         this.links = this.links.filter(l => l.from !== this.selectedNode.id && l.to !== this.selectedNode.id);
@@ -177,11 +176,34 @@ class MapPlanner {
         this.selectNode(null);
       }
     });
+
+    const linkForm = document.getElementById('edit-link-form');
+    linkForm.addEventListener('input', (e) => {
+      if (!this.selectedLink) return;
+      this.selectedLink.color = document.getElementById('inp_link_color').value;
+      this.selectedLink.update();
+      this.saveState();
+    });
+
+    document.getElementById('btn_del_link').addEventListener('click', () => {
+      if (this.selectedLink && confirm('Delete link?')) {
+        this.selectedLink.remove();
+        this.links = this.links.filter(l => l.id !== this.selectedLink.id);
+        this.selectLink(null);
+        this.saveState();
+      }
+    });
   }
 
   setupInteractionHandlers() {
     this.leafletMap.on('moveend zoomend', () => {
       this.saveStateToHash();
+    });
+
+    this.leafletMap.on('zoomend', () => {
+        for (const node of this.nodes) {
+            node.update();
+        }
     });
 
     this.leafletMap.on('mousedown', (e) => {
@@ -194,6 +216,7 @@ class MapPlanner {
 
       if (!this.interactionState) {
         this.selectNode(null);
+        this.selectLink(null);
       }
     });
 
@@ -276,6 +299,10 @@ class MapPlanner {
       const data = JSON.parse(savedData);
       this.nodes = (data.nodes || []).map(nodeData => new Node(this, nodeData));
       this.links = (data.links || []).map(linkData => new Link(this, linkData));
+      // update links on nodes
+      for (var node of this.nodes) {
+        node.update();
+      }
     }
   }
 
@@ -290,10 +317,6 @@ class MapPlanner {
   // --- Rendering ---
   render() {
     this.layerGroup.clearLayers();
-    this.nodeRectangles.clear();
-
-    this.renderNodes();
-    this.renderLinks();
     this.createSidebar();
   }
 
@@ -317,22 +340,6 @@ class MapPlanner {
     this.saveState();
   }
 
-  renderNodes() {
-    this.nodes.forEach(node => {
-      if (!node.rect) {
-        node.create();
-      } else {
-        node.update();
-      }
-    });
-  }
-
-  renderLinks() {
-    this.links.forEach(link => {
-      link.render();
-    });
-  }
-
   updateLinkingPreview(endLatLng) {
     if (!this.interactionState || this.interactionState.type !== 'linking') {
       this.cancelLinking();
@@ -353,18 +360,26 @@ class MapPlanner {
   }
 
   createSidebar() {
-    const form = document.getElementById('edit-node-form');
+    const nodeForm = document.getElementById('edit-node-form');
+    const linkForm = document.getElementById('edit-link-form');
     const placeholder = document.getElementById('sidebar-placeholder');
 
-    if (!this.selectedNode) {
-      form.style.display = 'none';
-      placeholder.style.display = 'block';
-      return;
+    nodeForm.style.display = 'none';
+    linkForm.style.display = 'none';
+    placeholder.style.display = 'block';
+
+    if (this.selectedNode) {
+      nodeForm.style.display = 'block';
+      placeholder.style.display = 'none';
+      this.createNodeSidebar();
+    } else if (this.selectedLink) {
+      linkForm.style.display = 'block';
+      placeholder.style.display = 'none';
+      this.createLinkSidebar();
     }
+  }
 
-    form.style.display = 'block';
-    placeholder.style.display = 'none';
-
+  createNodeSidebar() {
     const node = this.selectedNode;
     document.getElementById('inp_name').value = node.name;
     document.getElementById('inp_icon').value = node.icon || '';
@@ -374,38 +389,73 @@ class MapPlanner {
     document.getElementById('inp_h').value = node.height;
     document.getElementById('inp_color').value = node.color;
 
-    // Render input connections
+    const renderPinControl = (container, type, index) => {
+      const pin = node.pins.find(p => p.type === type && p.index === index);
+      if (!pin) return;
+
+      const connections = node.getConnectionsForPin(type, index);
+      const connectionDiv = document.createElement('div');
+      connectionDiv.className = 'connection-item';
+
+      let status = '';
+      if (connections.length > 0) {
+        const connectedNodes = connections.map(link => {
+          const otherNodeId = type === 'input' ? link.from : link.to;
+          const otherNode = this.nodes.find(n => n.id === otherNodeId);
+          return otherNode ? otherNode.name : 'Unknown';
+        });
+        status = `<span class="connection-status connected">Connected to: ${connectedNodes.join(', ')} (${connections.length})</span>`;
+      } else {
+        status = `<span class="connection-status">Not connected</span>`;
+      }
+
+      const toggleButton = document.createElement('button');
+      toggleButton.textContent = pin.enabled ? 'On' : 'Off';
+      toggleButton.className = `pin-toggle ${pin.enabled ? 'pin-on' : 'pin-off'}`;
+      toggleButton.addEventListener('click', () => {
+        pin.enabled = !pin.enabled;
+        this.selectedNode.pinsEnabled[`${type}-${index}`] = pin.enabled;
+        pin.update();
+        this.createSidebar();
+        this.saveState();
+      });
+
+      connectionDiv.innerHTML = `<strong>${index + 1}.</strong> ${status}`;
+      connectionDiv.prepend(toggleButton);
+      container.appendChild(connectionDiv);
+    };
+
     const inputsContainer = document.getElementById('connections-inputs');
     inputsContainer.innerHTML = '';
-    node.inputs.forEach((inputLabel, index) => {
-      const connectedNode = node.getConnectedNode('input', index);
-      const connectionDiv = document.createElement('div');
-      connectionDiv.className = 'connection-item';
-      if (connectedNode) {
-        connectionDiv.innerHTML = `<strong>${index + 1}. ${inputLabel}</strong><br/><span class="connection-status connected">Connected to: ${connectedNode.name}</span>`;
-      } else {
-        connectionDiv.innerHTML = `<strong>${index + 1}. ${inputLabel}</strong><br/><span class="connection-status">Not connected</span>`;
-      }
-      inputsContainer.appendChild(connectionDiv);
-    });
+    for (let i = 0; i < 4; i++) {
+      renderPinControl(inputsContainer, 'input', i);
+    }
 
-    // Render output connections
     const outputsContainer = document.getElementById('connections-outputs');
     outputsContainer.innerHTML = '';
-    node.outputs.forEach((outputLabel, index) => {
-      const connectedNode = node.getConnectedNode('output', index);
-      const connectionDiv = document.createElement('div');
-      connectionDiv.className = 'connection-item';
-      if (connectedNode) {
-        connectionDiv.innerHTML = `<strong>${index + 1}. ${outputLabel}</strong><br/><span class="connection-status connected">Connected to: ${connectedNode.name}</span>`;
-      } else {
-        connectionDiv.innerHTML = `<strong>${index + 1}. ${outputLabel}</strong><br/><span class="connection-status">Not connected</span>`;
-      }
-      outputsContainer.appendChild(connectionDiv);
-    });
+    for (let i = 0; i < 4; i++) {
+      renderPinControl(outputsContainer, 'output', i);
+    }
+  }
+
+  createLinkSidebar() {
+    const link = this.selectedLink;
+    document.getElementById('inp_link_color').value = link.color;
+    const fromNode = this.nodes.find(n => n.id === link.from);
+    const toNode = this.nodes.find(n => n.id === link.to);
+    document.getElementById('link-from-name').textContent = fromNode?.name || 'Unknown';
+    document.getElementById('link-to-name').textContent = toNode?.name || 'Unknown';
   }
 
   selectNode(node) {
+    if (this.selectedNode === node) return;
+
+    if (this.selectedLink) {
+      const prevLink = this.selectedLink;
+      this.selectedLink = null;
+      prevLink.update();
+    }
+
     const previousNode = this.selectedNode;
     this.selectedNode = node;
 
@@ -414,6 +464,28 @@ class MapPlanner {
     }
     if (node && node.rect) {
       node.update();
+    }
+
+    this.createSidebar();
+  }
+
+  selectLink(link) {
+    if (this.selectedLink === link) return;
+
+    if (this.selectedNode) {
+      const prevNode = this.selectedNode;
+      this.selectedNode = null;
+      prevNode.update();
+    }
+
+    const previousLink = this.selectedLink;
+    this.selectedLink = link;
+
+    if (previousLink) {
+      previousLink.update();
+    }
+    if (link) {
+      link.update();
     }
 
     this.createSidebar();

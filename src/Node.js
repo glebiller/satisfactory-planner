@@ -2,51 +2,93 @@ import L from 'leaflet';
 import { Link } from './Link.js';
 
 class Pin {
-    constructor(node, type, index) {
+    constructor(node, type, index, enabled = true) {
         this.node = node;
         this.type = type;
         this.index = index;
+        this.enabled = enabled;
         this.circle = null;
+        this.linkedLinks = [];
 
         this.create();
     }
 
     create() {
-        const xOffset = this.type === 'input' ? 0 : this.node.width;
-        const yOffset = (this.index / 3) * this.node.height;
-
-        const latlng = this.node.mapPlanner.unproject([this.node.x + xOffset, this.node.y + yOffset]);
-        const isConnected = this.node.getConnectionsForPin(this.type, this.index).length > 0;
-        const opacity = isConnected ? 0.8 : 0.3;
+        const offset = this.node.getPinOffset(this.type, this.index);
+        const latlng = this.node.mapPlanner.unproject([this.node.x + offset.x, this.node.y + offset.y]);
 
         this.circle = L.circle(latlng, {
-            radius: 0.03,
-            color: this.type === 'input' ? 'green' : 'red',
-            fillOpacity: opacity,
+            radius: 0.05,
             interactive: true,
         }).addTo(this.node.mapPlanner.layerGroup);
 
-        this.circle.on('mousedown', (e) => this.node.handlePinMouseDown(e, this.type, this.index));
+        this.circle.on('mousedown', (e) => this.handleMouseDown(e));
 
-        this.circle.nodeId = this.node.id;
-        this.circle.pinType = this.type;
-        this.circle.pinIndex = this.index;
+        this.update();
+    }
+
+    getLinkedLinks() {
+        return this.node.getConnectionsForPin(this.type, this.index);
     }
 
     update() {
-        const xOffset = this.type === 'input' ? 0 : this.node.width;
-        const yOffset = (this.index / 3) * this.node.height;
+        const offset = this.node.getPinOffset(this.type, this.index);
+        const latlng = this.node.mapPlanner.unproject([this.node.x + offset.x, this.node.y + offset.y]);
 
-        const latlng = this.node.mapPlanner.unproject([this.node.x + xOffset, this.node.y + yOffset]);
-        const isConnected = this.node.getConnectionsForPin(this.type, this.index).length > 0;
-        const opacity = isConnected ? 0.8 : 0.3;
+        this.linkedLinks = this.getLinkedLinks();
+
+        const isConnected = this.linkedLinks.length > 0;
+        const fillOpacity = isConnected ? 0.8 : 0.3;
 
         this.circle.setStyle({
             color: this.type === 'input' ? 'green' : 'red',
-            fillOpacity: opacity,
+            fillOpacity: this.enabled ? fillOpacity : 0,
+            opacity: this.enabled ? 0.8 : 0,
         });
 
         this.circle.setLatLng(latlng);
+
+        for (const link of this.linkedLinks) {
+            link.update();
+        }
+    }
+
+    handleMouseDown(e) {
+        L.DomEvent.stop(e);
+        const mapPlanner = this.node.mapPlanner;
+
+        if (!mapPlanner.controls.isEditMode) return;
+
+        const interactionState = mapPlanner.interactionState;
+
+        if (interactionState?.type === 'linking') {
+            const { fromNode, fromType, fromIndex } = interactionState;
+            const toNode = this.node;
+            const toType = this.type;
+            const toIndex = this.index;
+
+            if (mapPlanner.isValidLink(fromNode, fromType, toNode, toType)) {
+                const fromNodeId = fromType === 'output' ? fromNode.id : toNode.id;
+                const toNodeId = fromType === 'output' ? toNode.id : fromNode.id;
+                const fromPin = fromType === 'output' ? fromIndex : toIndex;
+                const toPin = fromType === 'output' ? toIndex : fromIndex;
+
+                const newLink = new Link(mapPlanner, {
+                    from: fromNodeId,
+                    to: toNodeId,
+                    fromPin,
+                    toPin
+                });
+                mapPlanner.links.push(newLink);
+                fromNode.update();
+                toNode.update();
+                mapPlanner.saveState();
+            }
+
+            mapPlanner.cancelLinking();
+        } else {
+            mapPlanner.startLinking(this.node, this.type, this.index, e.latlng);
+        }
     }
 }
 
@@ -62,27 +104,22 @@ export class Node {
         this.color = data.color;
         this.name = data.name || 'Node';
         this.icon = data.icon || null;
-        this.inputs = data.inputs || [];
-        this.outputs = data.outputs || [];
+        this.pinsEnabled = data.pinsEnabled || {};
 
         this.rect = null;
-        this.textLayer = null;
 
         this.dragThresholdDistance = 8;
         this.mousedown = null;
         this.dragging = null;
 
         this.create();
-
-        // Pins
-        this.pins = [];
-        for (let i = 0; i < 4; i++) {
-            this.pins.push(new Pin(this, 'input', i));
-        }
-        for (let i = 0; i < 4; i++) {
-            this.pins.push(new Pin(this, 'output', i));
-        }
     }
+    getPinOffset(pinType, pinIndex) {
+        const xOffset = pinType === 'input' ? 0 : this.width;
+        const yOffset = (pinIndex / 3) * this.height;
+        return { x: xOffset, y: yOffset };
+    }
+
     getConnectedLinks() {
         return this.mapPlanner.links.filter(link => link.from === this.id || link.to === this.id);
     }
@@ -108,30 +145,43 @@ export class Node {
 
     create() {
         const bounds = this.getBounds();
+
         this.rect = L.rectangle(bounds, {
-            color: this.color,
-            weight: 2,
             fillOpacity: 0.8,
             interactive: true,
         }).addTo(this.mapPlanner.layerGroup);
-
         this.rect.on('mousedown', (e) => this.handleMouseDown(e));
-        this.mapPlanner.nodeRectangles.set(this.id, this);
 
-        const center = this.mapPlanner.unproject([this.x + this.width / 2, this.y + this.height / 2]);
-        const content = this.getDisplayContent();
-        this.textLayer = L.tooltip(center, {
+        this.iconOverlay = L.imageOverlay(`/icons/${this.icon}.png`, bounds, {
+            zIndex: 400
+        }).addTo(this.mapPlanner.layerGroup);
+
+        this.nameTooltip = L.tooltip(bounds.getCenter(), {
             permanent: true,
             direction: 'center',
             className: 'node-name-tooltip',
             interactive: false,
-        }).setContent(content).addTo(this.mapPlanner.layerGroup);
+            offset: [0, 30]
+        }).setContent(this.name)
+          .addTo(this.mapPlanner.layerGroup);
 
-        this.updateTooltipSize();
+        // Pins
+        this.pins = [];
+        for (let i = 0; i < 4; i++) {
+            const enabled = this.pinsEnabled[`input-${i}`] !== false;
+            this.pins.push(new Pin(this, 'input', i, enabled));
+        }
+        for (let i = 0; i < 4; i++) {
+            const enabled = this.pinsEnabled[`output-${i}`] !== false;
+            this.pins.push(new Pin(this, 'output', i, enabled));
+        }
+
+        this.update();
     }
 
     update() {
         const isSelected = this.mapPlanner.selectedNode === this;
+        const currentZoom = this.mapPlanner.leafletMap.getZoom();
 
         this.rect.setStyle({
             color: this.color,
@@ -139,13 +189,26 @@ export class Node {
             dashArray: isSelected ? '5, 5' : null,
         });
 
-        this.rect.setBounds(this.getBounds());
+        const bounds = this.getBounds();
+        this.rect.setBounds(bounds);
 
-        const center = this.mapPlanner.unproject([this.x + this.width / 2, this.y + this.height / 2]);
-        const content = this.getDisplayContent();
-        this.textLayer.setLatLng(center);
-        this.textLayer.setContent(content);
-        this.updateTooltipSize();
+        if (this.icon) {
+            this.iconOverlay.setUrl(`/icons/${this.icon}.png`);
+            const iconBounds = bounds.pad(-0.85);
+            this.iconOverlay.setBounds(iconBounds)
+            this.iconOverlay.setOpacity(1);
+        } else {
+            this.iconOverlay.setOpacity(0);
+        }
+
+        this.nameTooltip.setContent(this.name);
+        this.nameTooltip.setLatLng(bounds.getCenter());
+
+        if (currentZoom >= 7.25) {
+            this.nameTooltip.setOpacity(0.9);
+        } else {
+            this.nameTooltip.setOpacity(0);
+        }
 
         for (const pin of this.pins) {
             pin.update();
@@ -239,7 +302,6 @@ export class Node {
                 });
                 mapPlanner.links.push(newLink);
                 mapPlanner.saveState();
-                newLink.render();
             }
 
             mapPlanner.cancelLinking();
@@ -251,7 +313,7 @@ export class Node {
     getBounds() {
         const p1 = this.mapPlanner.unproject([this.x, this.y]);
         const p2 = this.mapPlanner.unproject([this.x + this.width, this.y + this.height]);
-        return [p1, p2];
+        return L.latLngBounds(p1, p2);
     }
 
     updatePosition(newX, newY) {
@@ -261,29 +323,12 @@ export class Node {
         this.mapPlanner.saveState();
     }
 
-    updateTooltipSize() {
-        if (!this.textLayer) return;
-
-        const tooltipWidth = Math.max(60, this.width * 0.08 / this.mapPlanner.leafletMap.getZoom());
-        const tooltipHeight = Math.max(60, this.height * 0.08 / this.mapPlanner.leafletMap.getZoom());
-
-        const tooltipElement = this.textLayer.getElement();
-        if (tooltipElement) {
-            tooltipElement.style.width = tooltipWidth + 'px';
-            tooltipElement.style.height = tooltipHeight + 'px';
-            tooltipElement.style.minWidth = '60px';
-            tooltipElement.style.minHeight = '60px';
-        }
-    }
-
-    getDisplayContent() {
-        if (this.icon) {
-            return `<img src="/icons/${this.icon}.png" alt="${this.icon}" class="node-icon" />`;
-        }
-        return this.name;
-    }
-
     toPlainObject() {
+        const pinsEnabled = {};
+        for (const pin of this.pins) {
+            pinsEnabled[`${pin.type}-${pin.index}`] = pin.enabled;
+        }
+
         return {
             id: this.id,
             x: this.x,
@@ -294,8 +339,7 @@ export class Node {
             color: this.color,
             name: this.name,
             icon: this.icon,
-            inputs: this.inputs,
-            outputs: this.outputs,
+            pinsEnabled: pinsEnabled,
         };
     }
 }
