@@ -17,8 +17,30 @@ class Pin {
         if (this.node.isResource) {
             return { x: 0.5, y: 0.5 };
         }
-        const xFactor = this.type === 'input' ? 0 : 1;
-        const yFactor = (this.index + 0.5) / 4;
+
+        let xFactor, yFactor;
+        const pinIndex = (this.index + 0.5) / 4;
+
+        switch (this.node.orientation) {
+            case 'down':
+                xFactor = this.type === 'input' ? 1 : 0;
+                yFactor = 1 - pinIndex;
+                break;
+            case 'left':
+                xFactor = 1 - pinIndex;
+                yFactor = this.type === 'input' ? 0 : 1;
+                break;
+            case 'right':
+                xFactor = pinIndex;
+                yFactor = this.type === 'input' ? 1 : 0;
+                break;
+            case 'up':
+            default:
+                xFactor = this.type === 'input' ? 0 : 1;
+                yFactor = pinIndex;
+                break;
+        }
+
         return { x: xFactor, y: yFactor };
     }
 
@@ -37,6 +59,7 @@ class Pin {
     }
 
     update(nodeBounds) {
+        this.offset = this.getOffset();
         const lat = nodeBounds.getSouth() + (nodeBounds.getNorth() - nodeBounds.getSouth()) * this.offset.y;
         const lng = nodeBounds.getWest() + (nodeBounds.getEast() - nodeBounds.getWest()) * this.offset.x;
         const latlng = [lat, lng];
@@ -108,6 +131,7 @@ export class Node {
         this.icon = data.icon || null;
         this.pinsEnabled = data.pinsEnabled || {};
         this.isResource = data.isResource || false;
+        this.orientation = data.orientation || 'up';
 
         this.rect = null;
 
@@ -374,6 +398,7 @@ export class Node {
             name: this.name,
             icon: this.icon,
             pinsEnabled: pinsEnabled,
+            orientation: this.orientation,
         };
     }
 }

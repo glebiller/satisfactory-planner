@@ -61,7 +61,7 @@ class MapPlanner {
     this.start();
   }
 
-  start() {
+  async start() {
     let e = (Math.abs(this.mappingBoundWest) + Math.abs(this.mappingBoundEast)) / this.backgroundSize
       , t = (Math.abs(this.mappingBoundNorth) + Math.abs(this.mappingBoundSouth)) / this.backgroundSize;
     this.westOffset = e * this.extraBackgroundSize;
@@ -94,9 +94,7 @@ class MapPlanner {
     this.initializeIconDropdown();
     this.setupInteractionHandlers();
 
-    this.loadState();
-    this.loadResourceNodes();
-    //this.render();
+    await this.load();
   }
 
   snapToGrid(value) {
@@ -177,6 +175,10 @@ class MapPlanner {
       this.selectedNode.width = this.snapToGrid(parseInt(document.getElementById('inp_w').value));
       this.selectedNode.height = this.snapToGrid(parseInt(document.getElementById('inp_h').value));
       this.selectedNode.color = document.getElementById('inp_color').value;
+      const orientationInput = document.getElementById('inp_orientation');
+      if (orientationInput) {
+        this.selectedNode.orientation = orientationInput.value;
+      }
 
       this.selectedNode.update();
       this.saveState();
@@ -289,6 +291,12 @@ class MapPlanner {
       dashArray: '5, 5',
       interactive: false
     }).addTo(this.layerGroup);
+
+    for (const link of this.getLinks()) {
+        if (link.polyline) {
+            link.polyline.options.interactive = false;
+        }
+    }
   }
 
   getPinAt(latlng) {
@@ -316,51 +324,60 @@ class MapPlanner {
       this.previewLink = null;
     }
     this.interactionState = null;
-  }
 
-  // --- State Management ---
-  loadState() {
-    const savedData = localStorage.getItem(STORAGE_KEY);
-    if (savedData) {
-        const data = JSON.parse(savedData);
-        this.nodes = (data.nodes || []).map(nodeData => new Node(this, nodeData));
-        (data.links || []).forEach(linkData => this.addLink(linkData, false));
-
-        for (const node of this.nodes) {
-            node.update();
+    for (const link of this.getLinks()) {
+        if (link.polyline) {
+            link.polyline.options.interactive = true;
         }
     }
   }
 
-  loadResourceNodes() {
-    fetch('resource_nodes.json')
-      .then(response => response.json())
-      .then(data => {
-        data.forEach(resource => {
-          resource.nodes.forEach(nodeData => {
-            const newNode = new Node(this, {
-              id: 'resource_' + resource.type + '_' + nodeData.x + '_' + nodeData.y,
-              x: nodeData.x,
-              y: nodeData.y,
-              width: 1200,
-              height: 1200,
-              name: resource.name + ' (' + nodeData.purity + ')',
-              color: resourceColorMap[resource.name] || '#ff0000',
-              isResource: true
-            });
-            this.nodes.push(newNode);
-          });
+  // --- State Management ---
+  async load() {
+    const savedData = localStorage.getItem(STORAGE_KEY);
+    const data = savedData ? JSON.parse(savedData) : {};
+
+    this.nodes = (data.nodes || []).map(nodeData => new Node(this, nodeData));
+
+    await this.loadResourceNodes();
+
+    (data.links || []).forEach(linkData => this.addLink(linkData, false));
+
+    for (const node of this.nodes) {
+        node.update();
+    }
+  }
+
+  async loadResourceNodes() {
+    const response = await fetch('resource_nodes.json');
+    const data = await response.json();
+    data.forEach(resource => {
+      resource.nodes.forEach(nodeData => {
+        const newNode = new Node(this, {
+          id: 'resource_' + resource.type + '_' + nodeData.x + '_' + nodeData.y,
+          x: nodeData.x,
+          y: nodeData.y,
+          width: 1200,
+          height: 1200,
+          name: resource.name + ' (' + nodeData.purity + ')',
+          color: resourceColorMap[resource.name] || '#ff0000',
+          isResource: true
         });
+        this.nodes.push(newNode);
       });
+    });
   }
 
   saveState() {
-    const links = [...new Set(Array.from(this.linkMap.values()).flat())];
     const dataToSave = {
         nodes: this.nodes.map(node => node.toPlainObject()).filter(Boolean),
-        links: links.map(link => link.toPlainObject()),
+        links: this.getLinks().map(link => link.toPlainObject()),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+  }
+
+  getLinks() {
+    return [...new Set(Array.from(this.linkMap.values()).flat())];
   }
 
   // --- Rendering ---
@@ -382,6 +399,7 @@ class MapPlanner {
       height: 3200,
       name: 'New Node',
       color: '#5f5f5f',
+      orientation: 'up',
     };
     const newNode = new Node(this, newNodeData);
     this.nodes.push(newNode);
@@ -454,18 +472,27 @@ class MapPlanner {
     placeholder.style.display = 'block';
 
     if (this.selectedNode) {
-      nodeForm.style.display = 'block';
-      placeholder.style.display = 'none';
-      this.createNodeSidebar();
+        if (this.selectedNode.isResource) {
+            placeholder.innerHTML = `
+                <h3>${this.selectedNode.name}</h3>
+                <p>Resource nodes are not editable.</p>
+            `;
+        } else {
+            nodeForm.style.display = 'block';
+            placeholder.style.display = 'none';
+            this.createNodeSidebar();
+        }
     } else if (this.selectedLink) {
-      linkForm.style.display = 'block';
-      placeholder.style.display = 'none';
-      this.createLinkSidebar();
+        linkForm.style.display = 'block';
+        placeholder.style.display = 'none';
+        this.createLinkSidebar();
     }
   }
 
   createNodeSidebar() {
     const node = this.selectedNode;
+    if (!node) return;
+
     document.getElementById('inp_name').value = node.name;
     document.getElementById('inp_icon').value = node.icon || '';
     document.getElementById('inp_x').value = node.x;
@@ -473,6 +500,10 @@ class MapPlanner {
     document.getElementById('inp_w').value = node.width;
     document.getElementById('inp_h').value = node.height;
     document.getElementById('inp_color').value = node.color;
+    const orientationInput = document.getElementById('inp_orientation');
+    if (orientationInput) {
+        orientationInput.value = node.orientation;
+    }
 
     const renderPinControl = (container, type, index) => {
       const pin = node.pins.find(p => p.type === type && p.index === index);
@@ -500,7 +531,7 @@ class MapPlanner {
       toggleButton.addEventListener('click', () => {
         pin.enabled = !pin.enabled;
         this.selectedNode.pinsEnabled[`${type}-${index}`] = pin.enabled;
-        pin.update();
+        pin.update(this.selectedNode.getBounds());
         this.createSidebar();
         this.saveState();
       });
