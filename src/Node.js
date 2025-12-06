@@ -282,13 +282,37 @@ export class Node {
             const newX = this.mapPlanner.snapToGrid(gameCoords[0] - this.dragging.offset[0]);
             const newY = this.mapPlanner.snapToGrid(gameCoords[1] - this.dragging.offset[1]);
 
-            const p1 = this.mapPlanner.unproject([newX, newY]);
-            const p2 = this.mapPlanner.unproject([newX + this.width, newY + this.height]);
-            const newBounds = L.latLngBounds(p1, p2);
-            this.dragging.ghostProxy.setBounds(newBounds);
+            // Compute delta relative to the clicked node's original position
+            const dx = newX - this.dragging.startX;
+            const dy = newY - this.dragging.startY;
 
-            for (const pin of this.pins) {
-                pin.update(newBounds);
+            // Move ghost proxies for all nodes in the drag group
+            const moveGhost = (entry) => {
+                const gx = this.mapPlanner.snapToGrid(entry.startX + dx);
+                const gy = this.mapPlanner.snapToGrid(entry.startY + dy);
+                const gp1 = this.mapPlanner.unproject([gx, gy]);
+                const gp2 = this.mapPlanner.unproject([gx + entry.width, gy + entry.height]);
+                const gBounds = L.latLngBounds(gp1, gp2);
+                entry.ghostProxy.setBounds(gBounds);
+                // Update pins visuals for that node while dragging
+                for (const pin of entry.node.pins) {
+                    pin.update(gBounds);
+                }
+            };
+
+            if (this.dragging.group && this.dragging.group.length > 0) {
+                for (const entry of this.dragging.group) {
+                    moveGhost(entry);
+                }
+            } else {
+                // Fallback: just move self
+                const p1 = this.mapPlanner.unproject([newX, newY]);
+                const p2 = this.mapPlanner.unproject([newX + this.width, newY + this.height]);
+                const newBounds = L.latLngBounds(p1, p2);
+                this.dragging.ghostProxy.setBounds(newBounds);
+                for (const pin of this.pins) {
+                    pin.update(newBounds);
+                }
             }
 
         } else if (this.mousedown) {
@@ -322,21 +346,81 @@ export class Node {
             className: 'ghost-proxy'
         }).addTo(this.mapPlanner.layerGroup);
 
-        this.dragging = { offset, ghostProxy };
+        // Build group drag entries for all selected editable nodes
+        const selected = (this.mapPlanner.selectedNodes && this.mapPlanner.selectedNodes.length > 0)
+            ? this.mapPlanner.selectedNodes.filter(n => !n.isResource)
+            : [this];
+        // Ensure the clicked node is included
+        if (!selected.includes(this)) selected.push(this);
+
+        const group = [];
+        for (const n of selected) {
+            if (n === this) {
+                group.push({
+                    node: n,
+                    startX: n.x,
+                    startY: n.y,
+                    width: n.width,
+                    height: n.height,
+                    ghostProxy: ghostProxy
+                });
+            } else {
+                const nBounds = n.getBounds();
+                const nGhost = L.rectangle(nBounds, {
+                    renderer: L.svg(),
+                    color: n.color,
+                    weight: 2,
+                    fillOpacity: 0.4,
+                    interactive: false,
+                    className: 'ghost-proxy'
+                }).addTo(this.mapPlanner.layerGroup);
+                group.push({
+                    node: n,
+                    startX: n.x,
+                    startY: n.y,
+                    width: n.width,
+                    height: n.height,
+                    ghostProxy: nGhost
+                });
+            }
+        }
+
+        this.dragging = { offset, ghostProxy, group, startX: this.x, startY: this.y };
     }
 
     stopDragging(e) {
         const rasterPoint = this.mapPlanner.project(e.latlng);
         const newGameCoordinates = this.mapPlanner.convertToGameCoordinates([rasterPoint.x, rasterPoint.y]);
-        const newX = newGameCoordinates[0] - this.dragging.offset[0];
-        const newY = newGameCoordinates[1] - this.dragging.offset[1];
+        const newX = this.mapPlanner.snapToGrid(newGameCoordinates[0] - this.dragging.offset[0]);
+        const newY = this.mapPlanner.snapToGrid(newGameCoordinates[1] - this.dragging.offset[1]);
 
-        this.x = this.mapPlanner.snapToGrid(newX);
-        this.y = this.mapPlanner.snapToGrid(newY);
-        this.update();
+        // Compute snapped delta from clicked node's original position
+        const dx = newX - this.dragging.startX;
+        const dy = newY - this.dragging.startY;
+
+        if (this.dragging.group && this.dragging.group.length > 0) {
+            for (const entry of this.dragging.group) {
+                const nx = this.mapPlanner.snapToGrid(entry.startX + dx);
+                const ny = this.mapPlanner.snapToGrid(entry.startY + dy);
+                entry.node.x = nx;
+                entry.node.y = ny;
+                entry.node.update();
+                if (entry.ghostProxy) {
+                    this.mapPlanner.layerGroup.removeLayer(entry.ghostProxy);
+                }
+            }
+        } else {
+            // Fallback: just apply to this node
+            this.x = newX;
+            this.y = newY;
+            this.update();
+            if (this.dragging.ghostProxy) {
+                this.mapPlanner.layerGroup.removeLayer(this.dragging.ghostProxy);
+            }
+        }
+
         this.mapPlanner.saveState();
 
-        this.mapPlanner.layerGroup.removeLayer(this.dragging.ghostProxy);
         this.dragging = null;
         this.mousedown = null;
     }
