@@ -51,12 +51,14 @@ class MapPlanner {
 
     // State
     this.clickedNode = null;
-    this.selectedNode = null;
+    this.selectedNodes = [];
     this.selectedLink = null;
     this.previewLink = null;
     // deprecated
     this.interactionState = null; // Can be 'dragging', 'linking', or null
     this.layerGroup = L.layerGroup().addTo(this.leafletMap);
+    this.selectionRect = null;
+    this.selectionStartPoint = null;
 
     this.start();
   }
@@ -166,40 +168,43 @@ class MapPlanner {
   setupSidebarListeners() {
     const nodeForm = document.getElementById('edit-node-form');
     nodeForm.addEventListener('input', (e) => {
-      if (!this.selectedNode) return;
+      if (this.selectedNodes.length === 0) return;
+      const selectedNode = this.selectedNodes[0];
 
-      this.selectedNode.name = document.getElementById('inp_name').value;
-      this.selectedNode.icon = document.getElementById('inp_icon').value || null;
-      this.selectedNode.x = this.snapToGrid(parseInt(document.getElementById('inp_x').value));
-      this.selectedNode.y = this.snapToGrid(parseInt(document.getElementById('inp_y').value));
-      this.selectedNode.width = this.snapToGrid(parseInt(document.getElementById('inp_w').value));
-      this.selectedNode.height = this.snapToGrid(parseInt(document.getElementById('inp_h').value));
-      this.selectedNode.color = document.getElementById('inp_color').value;
+      selectedNode.name = document.getElementById('inp_name').value;
+      selectedNode.icon = document.getElementById('inp_icon').value || null;
+      selectedNode.x = this.snapToGrid(parseInt(document.getElementById('inp_x').value));
+      selectedNode.y = this.snapToGrid(parseInt(document.getElementById('inp_y').value));
+      selectedNode.width = this.snapToGrid(parseInt(document.getElementById('inp_w').value));
+      selectedNode.height = this.snapToGrid(parseInt(document.getElementById('inp_h').value));
+      selectedNode.color = document.getElementById('inp_color').value;
       const orientationInput = document.getElementById('inp_orientation');
       if (orientationInput) {
-        this.selectedNode.orientation = orientationInput.value;
+        selectedNode.orientation = orientationInput.value;
       }
 
-      this.selectedNode.update();
+      selectedNode.update();
       this.saveState();
     });
 
     document.getElementById('btn_del_node').addEventListener('click', () => {
-        if (this.selectedNode && confirm('Delete node?')) {
-            const deletedNodeId = this.selectedNode.id;
-            const connectedLinks = this.linkMap.get(deletedNodeId) || [];
+        if (this.selectedNodes.length > 0 && confirm('Delete selected nodes?')) {
+            for (const selectedNode of this.selectedNodes) {
+                const deletedNodeId = selectedNode.id;
+                const connectedLinks = this.linkMap.get(deletedNodeId) || [];
 
-            for (const link of [...connectedLinks]) {
-                link.remove();
-                this.removeLink(link);
+                for (const link of [...connectedLinks]) {
+                    link.remove();
+                    this.removeLink(link);
+                }
+
+                selectedNode.remove();
+                this.nodes = this.nodes.filter(n => n.id !== deletedNodeId);
+                this.linkMap.delete(deletedNodeId);
             }
 
-            this.selectedNode.remove();
-            this.nodes = this.nodes.filter(n => n.id !== deletedNodeId);
-            this.linkMap.delete(deletedNodeId);
-
             this.saveState();
-            this.selectNode(null);
+            this.clearSelection();
         }
     });
 
@@ -242,8 +247,20 @@ class MapPlanner {
         return;
       }
 
+      if (e.originalEvent.target.classList.contains('leaflet-interactive')) {
+        return;
+      }
+
+      this.selectionStartPoint = e.latlng;
+      this.selectionRect = L.rectangle([this.selectionStartPoint, this.selectionStartPoint], {
+        color: '#007bff',
+        weight: 1,
+        fillOpacity: 0.2,
+        interactive: false
+      }).addTo(this.leafletMap);
+
       if (!this.interactionState) {
-        this.selectNode(null);
+        this.clearSelection();
         this.selectLink(null);
       }
     });
@@ -251,6 +268,10 @@ class MapPlanner {
     this.leafletMap.on('mousemove', (e) => {
       if (this.clickedNode) {
         this.clickedNode.handleOnMouseMove(e);
+      }
+
+      if (this.selectionRect) {
+        this.selectionRect.setBounds([this.selectionStartPoint, e.latlng]);
       }
 
       if (!this.interactionState) return;
@@ -264,6 +285,18 @@ class MapPlanner {
     this.leafletMap.on('mouseup', (e) => {
       if (this.clickedNode) {
         this.clickedNode.handleMouseUp(e);
+      }
+
+      if (this.selectionRect) {
+        const selectionBounds = this.selectionRect.getBounds();
+        this.selectionRect.remove();
+        this.selectionRect = null;
+
+        const selectedNodes = this.nodes.filter(node => {
+          const nodeBounds = node.getBounds();
+          return selectionBounds.intersects(nodeBounds) || selectionBounds.contains(nodeBounds);
+        });
+        this.selectNodes(selectedNodes);
       }
 
       if (!this.interactionState) return;
@@ -403,7 +436,7 @@ class MapPlanner {
     };
     const newNode = new Node(this, newNodeData);
     this.nodes.push(newNode);
-    this.selectNode(newNode);
+    this.selectNodes([newNode]);
     this.saveState();
   }
 
@@ -466,32 +499,61 @@ class MapPlanner {
     const nodeForm = document.getElementById('edit-node-form');
     const linkForm = document.getElementById('edit-link-form');
     const placeholder = document.getElementById('sidebar-placeholder');
+    const multiPanel = document.getElementById('multi-select-panel');
+    const selectedList = document.getElementById('selected-nodes-list');
 
+    // Hide everything by default
     nodeForm.style.display = 'none';
     linkForm.style.display = 'none';
     placeholder.style.display = 'block';
+    if (multiPanel) multiPanel.style.display = 'none';
+    if (selectedList) selectedList.innerHTML = '';
 
-    if (this.selectedNode) {
-        if (this.selectedNode.isResource) {
-            placeholder.innerHTML = `
-                <h3>${this.selectedNode.name}</h3>
+    // Prioritize link editing if a link is selected and no nodes are selected
+    if (this.selectedNodes.length === 0 && this.selectedLink) {
+      linkForm.style.display = 'block';
+      placeholder.style.display = 'none';
+      this.createLinkSidebar();
+      return;
+    }
+
+    // If multiple nodes are selected, show the list
+    if (this.selectedNodes.length > 1) {
+      if (multiPanel) multiPanel.style.display = 'block';
+      if (selectedList) {
+        selectedList.innerHTML = '';
+        for (const node of this.selectedNodes) {
+          const li = document.createElement('li');
+          li.textContent = node.name || 'Unnamed node';
+          selectedList.appendChild(li);
+        }
+      }
+      placeholder.style.display = 'none';
+      return;
+    }
+
+    // If exactly one node is selected
+    if (this.selectedNodes.length === 1) {
+      const selectedNode = this.selectedNodes[0];
+      if (selectedNode.isResource) {
+        placeholder.innerHTML = `
+                <h3>${selectedNode.name}</h3>
                 <p>Resource nodes are not editable.</p>
             `;
-        } else {
-            nodeForm.style.display = 'block';
-            placeholder.style.display = 'none';
-            this.createNodeSidebar();
-        }
-    } else if (this.selectedLink) {
-        linkForm.style.display = 'block';
+      } else {
+        nodeForm.style.display = 'block';
         placeholder.style.display = 'none';
-        this.createLinkSidebar();
+        this.createNodeSidebar();
+      }
+      return;
     }
+
+    // Fallback: show placeholder (no selection)
   }
 
   createNodeSidebar() {
-    const node = this.selectedNode;
-    if (!node) return;
+    if (this.selectedNodes.length === 0) return;
+    const node = this.selectedNodes[0];
 
     document.getElementById('inp_name').value = node.name;
     document.getElementById('inp_icon').value = node.icon || '';
@@ -530,8 +592,8 @@ class MapPlanner {
       toggleButton.className = `pin-toggle ${pin.enabled ? 'pin-on' : 'pin-off'}`;
       toggleButton.addEventListener('click', () => {
         pin.enabled = !pin.enabled;
-        this.selectedNode.pinsEnabled[`${type}-${index}`] = pin.enabled;
-        pin.update(this.selectedNode.getBounds());
+        node.pinsEnabled[`${type}-${index}`] = pin.enabled;
+        pin.update(node.getBounds());
         this.createSidebar();
         this.saveState();
       });
@@ -563,36 +625,48 @@ class MapPlanner {
     document.getElementById('link-to-name').textContent = toNode?.name || 'Unknown';
   }
 
-  selectNode(node) {
-    if (this.selectedNode === node) return;
+  clearSelection() {
+    if (this.selectedNodes.length > 0) {
+        const previousSelection = [...this.selectedNodes];
+        this.selectedNodes = [];
+        for (const node of previousSelection) {
+            node.update();
+        }
+    }
+    this.createSidebar();
+  }
 
+  selectNodes(nodes) {
+    this.clearSelection();
+    this.selectedNodes = nodes;
+    for (const node of this.selectedNodes) {
+        node.update();
+    }
+    this.createSidebar();
+  }
+
+  toggleNodeSelection(node) {
     if (this.selectedLink) {
       const prevLink = this.selectedLink;
       this.selectedLink = null;
       prevLink.update();
     }
 
-    const previousNode = this.selectedNode;
-    this.selectedNode = node;
-
-    if (previousNode) {
-      previousNode.update();
-    }
-    if (node) {
-      node.update();
+    const index = this.selectedNodes.indexOf(node);
+    if (index > -1) {
+        this.selectedNodes.splice(index, 1);
+    } else {
+        this.selectedNodes.push(node);
     }
 
     this.createSidebar();
+    node.update();
   }
 
 selectLink(link) {
     if (this.selectedLink === link) return;
 
-    if (this.selectedNode) {
-      const prevNode = this.selectedNode;
-      this.selectedNode = null;
-      prevNode.update();
-    }
+    this.clearSelection();
 
     const previousLink = this.selectedLink;
     this.selectedLink = link;

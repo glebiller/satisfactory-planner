@@ -226,7 +226,7 @@ export class Node {
     }
 
     update() {
-        const isSelected = this.mapPlanner.selectedNode === this;
+        const isSelected = this.mapPlanner.selectedNodes.includes(this);
         const bounds = this.getBounds();
 
         this.rect.setStyle({
@@ -307,7 +307,7 @@ export class Node {
             this.mapPlanner.clickedNode = null;
         } else if (this.mousedown) {
             this.mousedown = null;
-            this.mapPlanner.selectNode(this);
+            this.mapPlanner.toggleNodeSelection(this);
         }
     }
 
