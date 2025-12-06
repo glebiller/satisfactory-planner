@@ -7,6 +7,15 @@ import { Link } from './Link.js';
 
 const STORAGE_KEY = 'satisfactory-planner-data';
 
+// Simple debounce utility for performance-sensitive handlers
+function debounce(fn, wait = 150) {
+  let t;
+  return function debounced(...args) {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
+
 const resourceColorMap = {
     'Iron Ore': '#c0c0c0',
     'Copper Ore': '#ff7f50',
@@ -59,6 +68,12 @@ class MapPlanner {
     this.layerGroup = L.layerGroup().addTo(this.leafletMap);
     this.selectionRect = null;
     this.selectionStartPoint = null;
+
+    // Debounce persistence and hash updates for performance
+    this._saveStateImmediate = this.saveState.bind(this);
+    this.saveState = debounce(this._saveStateImmediate, 150);
+    this._saveStateToHashImmediate = this.saveStateToHash.bind(this);
+    this.saveStateToHash = debounce(this._saveStateToHashImmediate, 120);
 
     this.start();
   }
@@ -233,10 +248,12 @@ class MapPlanner {
     });
 
     this.leafletMap.on('zoomend', () => {
-      // Performance issue
-        /*for (const node of this.nodes) {
-            node.update();
-        }*/
+      // Light-weight zoom handler: only toggle name tooltip visibility
+      const z = this.leafletMap.getZoom();
+      const show = z >= 7.25;
+      for (const node of this.nodes) {
+        if (node.nameTooltip) node.nameTooltip.setOpacity(show ? 0.9 : 0);
+      }
     });
 
     this.leafletMap.on('mousedown', (e) => {
@@ -318,7 +335,6 @@ class MapPlanner {
     };
 
     this.previewLink = L.polyline([startLatLng, startLatLng], {
-      renderer: L.svg(),
       color: 'red',
       weight: 3,
       dashArray: '5, 5',
@@ -333,9 +349,13 @@ class MapPlanner {
   }
 
   getPinAt(latlng) {
+    const lp = this.leafletMap.latLngToContainerPoint(latlng);
     for (const node of this.nodes) {
       const foundPin = node.pins.find(p => {
-        return this.leafletMap.distance(latlng, p.circle.getLatLng()) <= p.circle.getRadius() * 1.5;
+        if (!p.enabled) return false;
+        const pp = this.leafletMap.latLngToContainerPoint(p.circle.getLatLng());
+        const dist = lp.distanceTo(pp);
+        return dist <= (p.circle.getRadius ? p.circle.getRadius() : 6) * 1.5;
       });
       if (foundPin) {
         return { node, pin: foundPin };

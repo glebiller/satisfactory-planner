@@ -45,8 +45,8 @@ class Pin {
     }
 
     create() {
-        this.circle = L.circle([0, 0], {
-            radius: 0.05,
+        this.circle = L.circleMarker([0, 0], {
+            radius: 5,
             interactive: true,
         }).addTo(this.node.mapPlanner.layerGroup);
 
@@ -331,14 +331,20 @@ export class Node {
             this.mapPlanner.clickedNode = null;
         } else if (this.mousedown) {
             this.mousedown = null;
-            this.mapPlanner.toggleNodeSelection(this);
+            const evt = e.originalEvent || {};
+            const multi = !!(evt.ctrlKey || evt.metaKey || evt.shiftKey);
+            if (multi) {
+                this.mapPlanner.toggleNodeSelection(this);
+            } else {
+                this.mapPlanner.selectNodes([this]);
+            }
+            this.mapPlanner.clickedNode = null;
         }
     }
 
     startDragging(offset) {
         const bounds = this.getBounds();
         const ghostProxy = L.rectangle(bounds, {
-            renderer: L.svg(),
             color: this.color,
             weight: 2,
             fillOpacity: 0.4,
@@ -367,7 +373,6 @@ export class Node {
             } else {
                 const nBounds = n.getBounds();
                 const nGhost = L.rectangle(nBounds, {
-                    renderer: L.svg(),
                     color: n.color,
                     weight: 2,
                     fillOpacity: 0.4,
