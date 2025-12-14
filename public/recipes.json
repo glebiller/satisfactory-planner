@@ -1,0 +1,20 @@
+[
+  {
+    "id": "iron_plate",
+    "name": "Iron Plate",
+    "inputs": [{"item": "Iron Ingot", "perMin": 30}],
+    "outputs": [{"item": "Iron Plate", "perMin": 20}]
+  },
+  {
+    "id": "iron_ingot",
+    "name": "Iron Ingot",
+    "inputs": [{"item": "Iron Ore", "perMin": 30}],
+    "outputs": [{"item": "Iron Ingot", "perMin": 30}]
+  },
+  {
+    "id": "iron_ore",
+    "name": "Iron Ore (Mining)",
+    "inputs": [],
+    "outputs": [{"item": "Iron Ore", "perMin": 60}]
+  }
+]

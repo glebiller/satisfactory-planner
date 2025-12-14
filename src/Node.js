@@ -85,6 +85,8 @@ class Pin {
         const mapPlanner = this.node.mapPlanner;
 
         if (!mapPlanner.controls.isEditMode) return;
+        // Do not allow starting or completing links from a disabled pin
+        if (!this.enabled) return;
 
         const interactionState = mapPlanner.interactionState;
 
@@ -94,7 +96,7 @@ class Pin {
             const toType = this.type;
             const toIndex = this.index;
 
-            if (mapPlanner.isValidLink(fromNode, fromType, toNode, toType)) {
+            if (mapPlanner.isValidLink(fromNode, fromType, toNode, toType, fromIndex, toIndex)) {
                 const fromNodeId = fromType === 'output' ? fromNode.id : toNode.id;
                 const toNodeId = fromType === 'output' ? toNode.id : fromNode.id;
                 const fromPin = fromType === 'output' ? fromIndex : toIndex;
@@ -132,6 +134,8 @@ export class Node {
         this.pinsEnabled = data.pinsEnabled || {};
         this.isResource = data.isResource || false;
         this.orientation = data.orientation || 'up';
+        this.recipeLayers = data.recipeLayers || [];
+        this.topRate = data.topRate || 0;
 
         this.rect = null;
 
@@ -548,7 +552,7 @@ export class Node {
             const toType = pinType;
             const toIndex = pinIndex;
 
-            if (mapPlanner.isValidLink(fromNode, fromType, toNode, toType)) {
+            if (mapPlanner.isValidLink(fromNode, fromType, toNode, toType, fromIndex, toIndex)) {
                 const fromNodeId = fromType === 'output' ? fromNode.id : toNode.id;
                 const toNodeId = fromType === 'output' ? toNode.id : fromNode.id;
                 const fromPin = fromType === 'output' ? fromIndex : toIndex;
@@ -602,6 +606,8 @@ export class Node {
             icon: this.icon,
             pinsEnabled: pinsEnabled,
             orientation: this.orientation,
+            recipeLayers: this.recipeLayers || [],
+            topRate: this.topRate || 0,
         };
     }
 }

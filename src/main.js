@@ -120,9 +120,9 @@ class MapPlanner {
 
     this.controls.initialize();
     this.setupSidebarListeners();
-    this.initializeIconDropdown();
     this.setupInteractionHandlers();
 
+    await this.loadRecipes();
     await this.load();
   }
 
@@ -130,58 +130,28 @@ class MapPlanner {
     return Math.round(value / this.gridSize) * this.gridSize;
   }
 
-  initializeIconDropdown() {
-    // List of available icons (based on files in public/icons/)
-    const icons = [
-      'Actual_Snow', 'Adaptive_Control_Unit', 'AI_Limiter', 'Alclad_Aluminum_Sheet',
-      'Alien_Carapace', 'Alien_DNA_Capsule', 'Alien_Organs', 'Alien_Protein',
-      'Aluminum_Casing', 'Aluminum_Ingot', 'Aluminum_Scrap', 'Assembly_Director_System',
-      'Automated_Wiring', 'Bacon_Agaric', 'Battery', 'Bauxite', 'Bauxite_v0347',
-      'Beacon', 'Beryl_Nut', 'Biofuel', 'Biomass', 'Black_Powder', 'Blade_Runners',
-      'Blue_FICSMAS_Ornament', 'Blue_Power_Slug', 'Boom_Box', 'Build_Gun', 'Cable',
-      'Candy_Cane', 'Candy_Cane_Basher', 'Caterium_Ingot', 'Caterium_Ore', 'Caterium_Ore_v0347',
-      'Chainsaw', 'Circuit_Board', 'Cluster_Nobelisk', 'Coal', 'Color_Cartridge',
-      'Color_Gun', 'Compacted_Coal', 'Computer', 'Concrete', 'Cooling_System',
-      'Copper_FICSMAS_Ornament', 'Copper_Ingot', 'Copper_Ore', 'Copper_Ore_v0347',
-      'Copper_Powder', 'Copper_Sheet', 'Crystal_Oscillator', 'Cup', 'Dark_Matter',
-      'Electromagnetic_Control_Rod', 'Empty_Canister', 'Empty_Fluid_Tank', 'Encased_Industrial_Beam',
-      'Encased_Plutonium_Cell', 'Encased_Uranium_Cell', 'Explosive_Rebar', 'Fabric',
-      'Fancy_Fireworks', 'FICSIT_Coupon', 'FICSMAS_Bow', 'FICSMAS_Decoration', 'FICSMAS_Gift',
-      'FICSMAS_Ornament_Bundle', 'FICSMAS_Tree_Branch', 'FICSMAS_Wonder_Star', 'Flower_Petals',
-      'Fused_Modular_Frame', 'Gas_Filter', 'Gas_Mask', 'Gas_Nobelisk', 'Green_Power_Slug',
-      'Hard_Drive', 'Hatcher_Remains', 'Hazmat_Suit', 'Heat_Sink', 'Heavy_Modular_Frame',
-      'High-Speed_Connector', 'Hog_Remains', 'Homing_Rifle_Ammo', 'Hover_Pack', 'HUB_Parts',
-      'Iodine_Infused_Filter', 'Iron_FICSMAS_Ornament', 'Iron_Ingot', 'Iron_Ore', 'Iron_Ore_v0347',
-      'Iron_Plate', 'Iron_Rebar', 'Iron_Rod', 'Jetpack', 'Leaves', 'Limestone',
-      'Magnetic_Field_Generator', 'Medicinal_Inhaler', 'Mercer_Sphere', 'Modular_Engine',
-      'Modular_Frame', 'Modular_Frame_Light', 'Motor', 'Mycelia', 'Nobelisk',
-      'Nobelisk_Detonator', 'Non-fissile_Uranium', 'Nuclear_Pasta', 'Nuke_Nobelisk',
-      'Object_Scanner', 'Packaged_Alumina_Solution', 'Packaged_Fuel', 'Packaged_Heavy_Oil_Residue',
-      'Packaged_Liquid_Biofuel', 'Packaged_Nitric_Acid', 'Packaged_Nitrogen_Gas', 'Packaged_Oil',
-      'Packaged_Sulfuric_Acid', 'Packaged_Turbofuel', 'Packaged_Water', 'Paleberry', 'Parachute',
-      'Petroleum_Coke', 'Plasma_Spitter_Remains', 'Plastic', 'Plutonium_Fuel_Rod', 'Plutonium_Pellet',
-      'Plutonium_Waste', 'Polymer_Resin', 'Portable_Miner', 'Power_Shard', 'Pressure_Conversion_Cube',
-      'Pulse_Nobelisk', 'Purple_Power_Slug', 'Quantum_Computer', 'Quantum_Crystal', 'Quartz_Crystal',
-      'Quickwire', 'Radio_Control_Unit', 'Raw_Quartz', 'Raw_Quartz_v0347', 'Rebar_Gun',
-      'Red_FICSMAS_Ornament', 'Reinforced_Iron_Plate', 'Reinforced_Steel_Plate', 'Rifle',
-      'Rifle_Ammo', 'Rifle_Cartridge', 'Rotor', 'Rubber', 'SAM_Ingot', 'SAM_Ore',
-      'Screw', 'Shatter_Rebar', 'Silica', 'Smart_Plating', 'Smokeless_Powder', 'Snowball',
-      'Snowball_Pile', 'Solid_Biofuel', 'Somersloop', 'Sparkly_Fireworks', 'Spiked_Rebar',
-      'Stator', 'Steel_Beam', 'Steel_Ingot', 'Steel_Pipe', 'Steel_Plate', 'Stinger_Remains',
-      'Stun_Rebar', 'Sulfur', 'Sulfur_v0347', 'Supercomputer', 'Superposition_Oscillator',
-      'Sweet_Fireworks', 'Thermal_Propulsion_Rocket', 'Turbo_Motor', 'Turbo_Rifle_Ammo',
-      'Uranium', 'Uranium_Fuel_Rod', 'Uranium_Pellet', 'Uranium_Waste', 'Uranium_v0347',
-      'Versatile_Framework', 'Vines', 'Wire', 'Wood', 'Xeno-Basher', 'Xeno-Zapper',
-      'Yellow_Power_Slug', 'Zipline'
-    ];
-
-    const select = document.getElementById('inp_icon');
-    icons.forEach(icon => {
-      const option = document.createElement('option');
-      option.value = icon;
-      option.textContent = icon.replace(/_/g, ' ');
-      select.appendChild(option);
-    });
+  // Recipes loader
+  async loadRecipes() {
+    try {
+      const res = await fetch('recipes.json');
+      const data = await res.json();
+      // Normalize into maps for quick lookup
+      this.recipes = data;
+      this.recipesById = new Map(data.map(r => [r.id, r]));
+      this.recipesByOutput = new Map();
+      for (const r of data) {
+        for (const o of r.outputs) {
+          const list = this.recipesByOutput.get(o.item) || [];
+          list.push(r);
+          this.recipesByOutput.set(o.item, list);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to load recipes.json', e);
+      this.recipes = [];
+      this.recipesById = new Map();
+      this.recipesByOutput = new Map();
+    }
   }
 
   enableEdit() {
@@ -199,7 +169,6 @@ class MapPlanner {
       const selectedNode = this.selectedNodes[0];
 
       selectedNode.name = document.getElementById('inp_name').value;
-      selectedNode.icon = document.getElementById('inp_icon').value || null;
       selectedNode.x = this.snapToGrid(parseInt(document.getElementById('inp_x').value));
       selectedNode.y = this.snapToGrid(parseInt(document.getElementById('inp_y').value));
       selectedNode.width = this.snapToGrid(parseInt(document.getElementById('inp_w').value));
@@ -376,11 +345,34 @@ class MapPlanner {
     return null;
   }
 
-  isValidLink(fromNode, fromType, toNode, toType) {
+  isValidLink(fromNode, fromType, toNode, toType, fromIndex, toIndex) {
     if (!toNode || !toType) return false;
     if (fromNode.id === toNode.id) return false; // No self-linking
     if (fromType === toType) return false; // Must be input to output or vice-versa
-    return true;
+
+    // Determine source (output) and target (input) nodes and indices
+    const srcNode = fromType === 'output' ? fromNode : toNode;
+    const dstNode = fromType === 'output' ? toNode : fromNode;
+    const srcIndex = fromType === 'output' ? fromIndex : toIndex;
+    const dstIndex = fromType === 'output' ? toIndex : fromIndex;
+
+    // Both pins must exist and be enabled
+    const srcPin = srcNode.getPin('output', srcIndex);
+    const dstPin = dstNode.getPin('input', dstIndex);
+    if (!srcPin || !dstPin) return false;
+    if (!srcPin.enabled || !dstPin.enabled) return false;
+
+    // Compute/ensure expected IO is present
+    if (!srcNode.isResource) this.applyRecipesToNode(srcNode);
+    if (!dstNode.isResource) this.applyRecipesToNode(dstNode);
+
+    const srcItem = this.getPinItem(srcNode, 'output', srcIndex);
+    const dstItem = this.getPinItem(dstNode, 'input', dstIndex);
+
+    // If either side has no defined item (e.g., missing recipes), allow linking
+    if (!srcItem || !dstItem) return true;
+
+    return srcItem === dstItem;
   }
 
   cancelLinking() {
@@ -409,6 +401,7 @@ class MapPlanner {
     (data.links || []).forEach(linkData => this.addLink(linkData, false));
 
     for (const node of this.nodes) {
+        if (!node.isResource) this.applyRecipesToNode(node);
         node.update();
     }
   }
@@ -514,13 +507,13 @@ class MapPlanner {
       return;
     };
 
-    const { startLatLng, fromNode, fromType } = this.interactionState;
+    const { startLatLng, fromNode, fromType, fromIndex } = this.interactionState;
 
     if (this.previewLink) {
       this.previewLink.setLatLngs([startLatLng, endLatLng]);
 
       const target = this.getPinAt(endLatLng);
-      const isValid = this.isValidLink(fromNode, fromType, target?.node, target?.pin?.type);
+      const isValid = this.isValidLink(fromNode, fromType, target?.node, target?.pin?.type, fromIndex, target?.pin?.index);
       this.previewLink.setStyle({
         color: isValid ? 'green' : 'red'
       });
@@ -587,8 +580,11 @@ class MapPlanner {
     if (this.selectedNodes.length === 0) return;
     const node = this.selectedNodes[0];
 
+    // Ensure fields exist
+    if (!Array.isArray(node.recipeLayers)) node.recipeLayers = [];
+    if (typeof node.topRate !== 'number') node.topRate = 0;
+
     document.getElementById('inp_name').value = node.name;
-    document.getElementById('inp_icon').value = node.icon || '';
     document.getElementById('inp_x').value = node.x;
     document.getElementById('inp_y').value = node.y;
     document.getElementById('inp_w').value = node.width;
@@ -599,53 +595,286 @@ class MapPlanner {
         orientationInput.value = node.orientation;
     }
 
-    const renderPinControl = (container, type, index) => {
-      const pin = node.pins.find(p => p.type === type && p.index === index);
-      if (!pin) return;
+    // Top rate field
+    const rateInput = document.getElementById('inp_top_rate');
+    if (rateInput) {
+      rateInput.value = node.topRate || '';
+      rateInput.oninput = () => {
+        const v = parseFloat(rateInput.value);
+        node.topRate = isNaN(v) ? 0 : v;
+        this.applyRecipesToNode(node);
+        this.saveState();
+      };
+    }
 
+    // Render recipe layers
+    this.renderRecipeLayersUI(node);
+
+    const getExpectedItem = (n, type, idx) => this.getPinItem(n, type, idx);
+
+    const renderPinControl = (container, pin) => {
+      const index = pin.index;
+      const type = pin.type;
       const connections = node.getConnectionsForPin(type, index);
       const connectionDiv = document.createElement('div');
       connectionDiv.className = 'connection-item';
 
-      let status = '';
+      const expected = getExpectedItem(node, type, index);
+
       if (connections.length > 0) {
-        const connectedNodes = connections.map(link => {
+        const parts = connections.map(link => {
           const otherNodeId = type === 'input' ? link.from : link.to;
           const otherNode = this.nodes.find(n => n.id === otherNodeId);
-          return otherNode ? otherNode.name : 'Unknown';
+          const remoteName = otherNode ? otherNode.name : 'Unknown';
+          // Determine item on the remote side
+          const remoteType = type === 'input' ? 'output' : 'input';
+          const remoteIdx = type === 'input' ? link.fromPin : link.toPin;
+          const item = getExpectedItem(otherNode, remoteType, remoteIdx) || 'Unknown item';
+          const text = `${remoteName} — ${item}`;
+          // Validate for inputs: expected must match item
+          if (type === 'input' && expected && item && expected !== item) {
+            return { text, invalid: true };
+          }
+          return { text, invalid: false };
         });
-        status = `<span class="connection-status connected">Connected to: ${connectedNodes.join(', ')} (${connections.length})</span>`;
+        // Build HTML
+        const inner = parts.map(p => `<span class="connection-status ${p.invalid ? 'invalid' : 'connected'}">${p.text}</span>`).join(', ');
+        connectionDiv.innerHTML = `<strong>${index + 1}.</strong> ${inner}`;
+        if (parts.some(p => p.invalid)) connectionDiv.classList.add('invalid');
       } else {
-        status = `<span class="connection-status">Not connected</span>`;
+        // Not connected: show expected item if any
+        const label = expected ? `Expected: ${expected}` : 'Not connected';
+        connectionDiv.innerHTML = `<strong>${index + 1}.</strong> <span class="connection-status">${label}</span>`;
       }
 
-      const toggleButton = document.createElement('button');
-      toggleButton.textContent = pin.enabled ? 'On' : 'Off';
-      toggleButton.className = `pin-toggle ${pin.enabled ? 'pin-on' : 'pin-off'}`;
-      toggleButton.addEventListener('click', () => {
-        pin.enabled = !pin.enabled;
-        node.pinsEnabled[`${type}-${index}`] = pin.enabled;
-        pin.update(node.getBounds());
-        this.createSidebar();
-        this.saveState();
-      });
-
-      connectionDiv.innerHTML = `<strong>${index + 1}.</strong> ${status}`;
-      connectionDiv.prepend(toggleButton);
       container.appendChild(connectionDiv);
     };
 
     const inputsContainer = document.getElementById('connections-inputs');
     inputsContainer.innerHTML = '';
-    for (let i = 0; i < 4; i++) {
-      renderPinControl(inputsContainer, 'input', i);
-    }
+    node.pins.filter(p => p.type === 'input' && p.enabled).forEach(p => renderPinControl(inputsContainer, p));
 
     const outputsContainer = document.getElementById('connections-outputs');
     outputsContainer.innerHTML = '';
-    for (let i = 0; i < 4; i++) {
-      renderPinControl(outputsContainer, 'output', i);
+    node.pins.filter(p => p.type === 'output' && p.enabled).forEach(p => renderPinControl(outputsContainer, p));
+  }
+
+  renderRecipeLayersUI(node) {
+    const container = document.getElementById('recipe-layers');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const makeRow = (idx, selectedId, options) => {
+      const row = document.createElement('div');
+      row.className = 'row';
+
+      const label = document.createElement('label');
+      label.textContent = idx === 0 ? 'Output recipe' : `Layer ${idx + 1}`;
+      row.appendChild(label);
+
+      const sel = document.createElement('select');
+      sel.style.flex = '1';
+      sel.innerHTML = '';
+
+      const empty = document.createElement('option');
+      empty.value = '';
+      empty.textContent = idx === 0 ? 'Select a recipe…' : 'Select next layer…';
+      sel.appendChild(empty);
+
+      for (const r of (options || [])) {
+        const opt = document.createElement('option');
+        opt.value = r.id;
+        opt.textContent = r.name;
+        sel.appendChild(opt);
+      }
+      sel.value = selectedId || '';
+
+      sel.onchange = () => {
+        const val = sel.value;
+        if (!val) {
+          // Clearing this row removes this and all following layers
+          node.recipeLayers = node.recipeLayers.slice(0, idx);
+        } else {
+          if (idx === node.recipeLayers.length) {
+            node.recipeLayers.push({ recipeId: val });
+          } else {
+            node.recipeLayers[idx].recipeId = val;
+            // Also drop following layers when changing current
+            node.recipeLayers = node.recipeLayers.slice(0, idx + 1);
+          }
+        }
+        this.applyRecipesToNode(node);
+        this.saveState();
+        this.renderRecipeLayersUI(node);
+      };
+
+      row.appendChild(sel);
+      container.appendChild(row);
+    };
+
+    // Build rows: one row per existing layer plus one extra empty row (if first is selected)
+    const layers = node.recipeLayers;
+    const layerCount = layers.length;
+    for (let i = 0; i <= layerCount; i++) {
+      let opts = this.recipes || [];
+      if (i > 0 && layers[i - 1]?.recipeId && this.recipesById) {
+        // Filter options for chaining based on previous required inputs
+        const prev = this.recipesById.get(layers[i - 1].recipeId);
+        if (prev) {
+          const requiredItems = new Set(prev.inputs.map(x => x.item));
+          opts = (this.recipes || []).filter(r => r.outputs.length > 0 && r.outputs.every(o => requiredItems.has(o.item)));
+        }
+      }
+      const selectedId = i < layerCount ? layers[i].recipeId : '';
+      makeRow(i, selectedId, opts);
+
+      // If first row not selected, don't add an extra empty row beyond i=0
+      if (layerCount === 0) break;
     }
+  }
+
+  applyRecipesToNode(node) {
+    // Compute pin counts and icon from recipe layers and topRate
+    const result = this.computeRecipeChain(node);
+    // Cache expected IO mapping for validation/display
+    node._expectedIO = result.pinItems || { inputs: {}, outputs: {} };
+    node._ioItems = { inputs: result.inputItems || [], outputs: result.outputItems || [] };
+    this.applyPinCounts(node, result.inputPins, result.outputPins);
+    // Update icon from display item
+    if (result.displayIconItem) {
+      node.icon = this.itemNameToIcon(result.displayIconItem);
+    }
+    node.update();
+    this.createSidebar();
+  }
+
+  computeRecipeChain(node) {
+    // Defaults
+    let outputPins = 0;
+    let inputPins = 0;
+    let displayIconItem = null;
+    const PIN_ORDER = [1,2,0,3];
+
+    if (!node.recipeLayers || node.recipeLayers.length === 0) {
+      return { inputPins, outputPins, displayIconItem, outputItems: [], inputItems: [], pinItems: { inputs: {}, outputs: {} } };
+    }
+
+    const first = this.recipesById?.get(node.recipeLayers[0].recipeId);
+    if (!first) return { inputPins, outputPins, displayIconItem, outputItems: [], inputItems: [], pinItems: { inputs: {}, outputs: {} } };
+
+    // Output pins equal number of outputs of first layer (max 4)
+    const topOutputs = (first.outputs || []).slice(0, 4);
+    outputPins = topOutputs.length;
+
+    // Determine display icon item: use first output item of top layer
+    displayIconItem = first.outputs && first.outputs[0] ? first.outputs[0].item : null;
+
+    // Rate scaling: compute required inputs for the chain based on topRate
+    const topRate = node.topRate || 0;
+    let required = new Map(); // item -> perMin required from previous layer
+
+    if (first.outputs && first.outputs.length > 0) {
+      const mainOut = first.outputs[0];
+      const ratio = topRate > 0 && mainOut.perMin > 0 ? (topRate / mainOut.perMin) : 0;
+      for (const inp of (first.inputs || [])) {
+        const v = (inp.perMin || 0) * ratio;
+        required.set(inp.item, (required.get(inp.item) || 0) + v);
+      }
+    }
+
+    // For each next layer, transform required items into deeper inputs
+    for (let i = 1; i < node.recipeLayers.length; i++) {
+      const rId = node.recipeLayers[i].recipeId;
+      const rcp = this.recipesById?.get(rId);
+      if (!rcp) break;
+      // For each output item of this recipe, see how much is required; compute ratio and add inputs
+      const nextRequired = new Map();
+      for (const out of (rcp.outputs || [])) {
+        const need = required.get(out.item) || 0;
+        if (need <= 0) continue;
+        const ratio = out.perMin > 0 ? (need / out.perMin) : 0;
+        for (const inp of (rcp.inputs || [])) {
+          const add = (inp.perMin || 0) * ratio;
+          nextRequired.set(inp.item, (nextRequired.get(inp.item) || 0) + add);
+        }
+      }
+      required = nextRequired;
+    }
+
+    // Build input items list (distinct)
+    const inputItems = Array.from(required.entries()).map(([item, perMin]) => ({ item, perMin })).slice(0, 4);
+
+    // Input pins equal number of distinct required items at the end (max 4)
+    inputPins = inputItems.length;
+
+    // Build output items list (from top recipe)
+    const outputItems = topOutputs.map(o => ({ item: o.item, perMin: o.perMin })).slice(0, 4);
+
+    // Assign items to pin indexes using priority order
+    const pinItems = { inputs: {}, outputs: {} };
+    for (let i = 0; i < outputItems.length && i < PIN_ORDER.length; i++) {
+      const pinIdx = PIN_ORDER[i];
+      pinItems.outputs[pinIdx] = outputItems[i];
+    }
+    for (let i = 0; i < inputItems.length && i < PIN_ORDER.length; i++) {
+      const pinIdx = PIN_ORDER[i];
+      pinItems.inputs[pinIdx] = inputItems[i];
+    }
+
+    return { inputPins, outputPins, displayIconItem, outputItems, inputItems, pinItems };
+  }
+
+  applyPinCounts(node, inputCount, outputCount) {
+    // Priority order: [1,2,0,3]
+    const order = [1,2,0,3];
+
+    const enablePins = (type, count) => {
+      const pins = node.pins.filter(p => p.type === type);
+      const toEnableIdx = new Set(order.slice(0, Math.min(count, pins.length)));
+      for (const p of pins) {
+        const shouldEnable = toEnableIdx.has(p.index);
+        if (p.enabled !== shouldEnable) {
+          // If disabling, remove connected links
+          if (!shouldEnable) {
+            for (const link of [...p.linkedLinks]) {
+              link.remove();
+              this.removeLink(link);
+            }
+          }
+          p.enabled = shouldEnable;
+          node.pinsEnabled[`${type}-${p.index}`] = shouldEnable;
+        }
+      }
+    };
+
+    enablePins('input', inputCount);
+    enablePins('output', outputCount);
+  }
+
+  itemNameToIcon(name) {
+    if (!name) return null;
+    // Map human name to icon file, crude normalization
+    return name.replace(/\s+/g, '_').replace(/[^A-Za-z0-9_]/g, '');
+  }
+
+  inferResourceItemName(node) {
+    if (!node || !node.isResource || !node.name) return null;
+    // Resource node names look like: "Iron Ore (Normal)" → take part before first '('
+    const m = node.name.split('(')[0].trim();
+    return m || null;
+  }
+
+  getPinItem(node, type, index) {
+    if (!node) return null;
+    // Resource nodes: single output pin 0 with the resource item name
+    if (node.isResource) {
+      if (type === 'output' && index === 0) return this.inferResourceItemName(node);
+      return null;
+    }
+    // Non-resource: use cached mapping from recipe chain
+    const map = node._expectedIO || { inputs: {}, outputs: {} };
+    const entry = (type === 'input' ? map.inputs : map.outputs)[index];
+    return entry ? entry.item : null;
   }
 
   createLinkSidebar() {

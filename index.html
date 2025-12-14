@@ -25,10 +25,13 @@
         <label>Name</label>
         <input type="text" id="inp_name">
 
-        <label>Icon</label>
-        <select id="inp_icon">
-          <option value="">None</option>
-        </select>
+        <h4>Recipe Layers</h4>
+        <div id="recipe-layers" class="recipe-layers"></div>
+        <div class="row" style="margin-top:6px; gap:8px; align-items:center;">
+          <div style="flex:1"></div>
+          <label for="inp_top_rate" style="margin:0 6px 0 0;">Top output rate (/min)</label>
+          <input type="number" id="inp_top_rate" min="0" step="1" style="width:110px;">
+        </div>
 
         <div class="row">
             <div><label>X</label><input type="number" id="inp_x"></div>
