@@ -404,7 +404,7 @@ class MapPlanner {
 
     this.nodes = (data.nodes || []).map(nodeData => new Node(this, nodeData));
 
-    //await this.loadResourceNodes();
+    await this.loadResourceNodes();
 
     (data.links || []).forEach(linkData => this.addLink(linkData, false));
 
