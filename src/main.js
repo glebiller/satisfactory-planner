@@ -69,6 +69,11 @@ class MapPlanner {
     this.selectionRect = null;
     this.selectionStartPoint = null;
 
+    // Debug grid overlay
+    this.showPathGridDebug = false;
+    this.debugGridLayer = L.layerGroup().addTo(this.leafletMap);
+    this._latestAStarDebug = null; // {grid, minX, minY, rows, cols, resolution}
+
     // Debounce persistence and hash updates for performance
     this._saveStateImmediate = this.saveState.bind(this);
     this.saveState = debounce(this._saveStateImmediate, 150);
@@ -76,6 +81,13 @@ class MapPlanner {
     this.saveStateToHash = debounce(this._saveStateToHashImmediate, 120);
 
     this.start();
+
+    // Keyboard toggle for grid debug
+    window.addEventListener('keydown', (ev) => {
+      if (ev.key.toLowerCase() === 'g') {
+        this.toggleGridDebug();
+      }
+    });
   }
 
   async start() {
@@ -392,7 +404,7 @@ class MapPlanner {
 
     this.nodes = (data.nodes || []).map(nodeData => new Node(this, nodeData));
 
-    await this.loadResourceNodes();
+    //await this.loadResourceNodes();
 
     (data.links || []).forEach(linkData => this.addLink(linkData, false));
 
@@ -778,7 +790,97 @@ selectLink(link) {
       , o = r / Math.abs(this.backgroundSize);
     return t = t * i - (s - this.mappingBoundEast),
       a = a * o - (r - this.mappingBoundNorth) + r,
-      [t, a]
+      [Math.round(t), Math.round(a)]
+  }
+
+  // ===== Debug grid (EasyStar) overlay =====
+  setAStarDebugData(data) {
+    this._latestAStarDebug = data; // {grid, minX, minY, rows, cols, resolution}
+    if (this.showPathGridDebug) this.renderDebugGrid();
+  }
+
+  toggleGridDebug() {
+    this.showPathGridDebug = !this.showPathGridDebug;
+    if (this.showPathGridDebug) this.renderDebugGrid();
+    else this.clearDebugGrid();
+  }
+
+  clearDebugGrid() {
+    this.debugGridLayer.clearLayers();
+  }
+
+  renderDebugGrid(options = {}) {
+    if (!this._latestAStarDebug) return;
+    const { grid, minX, minY, rows, cols, resolution } = this._latestAStarDebug;
+    this.debugGridLayer.clearLayers();
+
+    // Performance guard
+    const maxCells = options.maxCells || 4000; // safe upper bound per overlay
+    if (rows * cols > maxCells) {
+      console.warn('Debug grid too big to render:', rows, 'x', cols);
+      return;
+    }
+
+    const costColor = (v) => {
+      // 0=blocked, 1=walkable, >1=costy
+      if (v === 0) return '#000000';
+      if (v === 1) return 'rgba(0,200,0,0.15)';
+      if (v === 3) return 'rgba(0,180,255,0.25)';
+      if (v === 5) return 'rgba(255,255,0,0.25)';
+      if (v === 6) return 'rgba(0,120,255,0.25)';
+      if (v === 9) return 'rgba(255,0,0,0.35)';
+      if (v === 10) return 'rgba(255,140,0,0.35)';
+      if (v === 12) return 'rgba(255,105,180,0.35)';
+      if (v === 14) return 'rgba(186,85,211,0.35)';
+      if (v === 25) return 'rgba(255,0,0,0.45)';
+      if (v === 55) return 'rgba(139,0,0,0.5)';
+      return 'rgba(128,128,128,0.2)';
+    };
+
+    // Draw rectangles for each cell; outline grid lightly
+    for (let cy = 0; cy < rows; cy++) {
+      for (let cx = 0; cx < cols; cx++) {
+        const val = grid[cy][cx];
+        const x0 = minX + cx * resolution;
+        const y0 = minY + cy * resolution;
+        const x1 = x0 + resolution;
+        const y1 = y0 + resolution;
+        const sw = this.unproject([x0, y0]);
+        const ne = this.unproject([x1, y1]);
+        const rect = L.rectangle([sw, ne], {
+          color: 'rgba(0,0,0,0.25)',
+          weight: 0.5,
+          fill: true,
+          fillColor: costColor(val),
+          fillOpacity: 1.0,
+          interactive: false
+        });
+        rect.addTo(this.debugGridLayer);
+
+        // Optionally draw cost label for blocked or higher-cost cells
+        if (val !== 1) {
+          const cxg = x0 + resolution / 2;
+          const cyg = y0 + resolution / 2;
+          const latlng = this.unproject([cxg, cyg]);
+          const label = L.marker(latlng, {
+            interactive: false,
+            keyboard: false,
+            icon: L.divIcon({
+              className: 'grid-cost-label',
+              html: `<div style="font: 10px/10px monospace; color:#111; text-shadow:0 0 2px #fff;">${val}</div>`,
+              iconSize: [1, 1]
+            })
+          });
+          label.addTo(this.debugGridLayer);
+        }
+      }
+    }
+
+    // Draw outer contour box
+    const pSW = this.unproject([minX, minY]);
+    const pNE = this.unproject([minX + cols * resolution, minY + rows * resolution]);
+    L.rectangle([pSW, pNE], { color: '#222', weight: 1, fill: false, dashArray: '4,3' })
+      .addTo(this.debugGridLayer);
   }
 }
 

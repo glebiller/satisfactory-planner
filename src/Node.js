@@ -23,20 +23,20 @@ class Pin {
 
         switch (this.node.orientation) {
             case 'down':
-                xFactor = this.type === 'input' ? 1 : 0;
+                xFactor = this.type === 'input' ? 1 + 1/64 : -1/64;
                 yFactor = 1 - pinIndex;
                 break;
             case 'left':
                 xFactor = 1 - pinIndex;
-                yFactor = this.type === 'input' ? 0 : 1;
+                yFactor = this.type === 'input' ? -1/64 : 1 + 1/64;
                 break;
             case 'right':
                 xFactor = pinIndex;
-                yFactor = this.type === 'input' ? 1 : 0;
+                yFactor = this.type === 'input' ? 1 + 1/64 : -1/64;
                 break;
             case 'up':
             default:
-                xFactor = this.type === 'input' ? 0 : 1;
+                xFactor = this.type === 'input' ? -1/64 : 1 + 1/64;
                 yFactor = pinIndex;
                 break;
         }
@@ -134,6 +134,10 @@ export class Node {
         this.orientation = data.orientation || 'up';
 
         this.rect = null;
+
+        // Transient proxy position while dragging (in game coords, snapped)
+        this._proxyX = null;
+        this._proxyY = null;
 
         this.dragThresholdDistance = 8;
         this.mousedown = null;
@@ -290,6 +294,9 @@ export class Node {
             const moveGhost = (entry) => {
                 const gx = this.mapPlanner.snapToGrid(entry.startX + dx);
                 const gy = this.mapPlanner.snapToGrid(entry.startY + dy);
+                // Record live proxy position in game coords so other systems (A*) can use it
+                entry.node._proxyX = gx;
+                entry.node._proxyY = gy;
                 const gp1 = this.mapPlanner.unproject([gx, gy]);
                 const gp2 = this.mapPlanner.unproject([gx + entry.width, gy + entry.height]);
                 const gBounds = L.latLngBounds(gp1, gp2);
@@ -306,6 +313,8 @@ export class Node {
                 }
             } else {
                 // Fallback: just move self
+                this._proxyX = newX;
+                this._proxyY = newY;
                 const p1 = this.mapPlanner.unproject([newX, newY]);
                 const p2 = this.mapPlanner.unproject([newX + this.width, newY + this.height]);
                 const newBounds = L.latLngBounds(p1, p2);
@@ -409,6 +418,9 @@ export class Node {
                 const ny = this.mapPlanner.snapToGrid(entry.startY + dy);
                 entry.node.x = nx;
                 entry.node.y = ny;
+                // Clear any live proxy now that we committed
+                entry.node._proxyX = null;
+                entry.node._proxyY = null;
                 entry.node.update();
                 if (entry.ghostProxy) {
                     this.mapPlanner.layerGroup.removeLayer(entry.ghostProxy);
@@ -418,6 +430,9 @@ export class Node {
             // Fallback: just apply to this node
             this.x = newX;
             this.y = newY;
+            // Clear proxy
+            this._proxyX = null;
+            this._proxyY = null;
             this.update();
             if (this.dragging.ghostProxy) {
                 this.mapPlanner.layerGroup.removeLayer(this.dragging.ghostProxy);
@@ -465,6 +480,13 @@ export class Node {
         const p1 = this.mapPlanner.unproject([this.x, this.y]);
         const p2 = this.mapPlanner.unproject([this.x + this.width, this.y + this.height]);
         return L.latLngBounds(p1, p2);
+    }
+
+    // Current game-space bounds (x1,y1,x2,y2) using proxy while dragging if available
+    getCurrentGameBounds() {
+        const x = (this._proxyX !== null && this._proxyX !== undefined) ? this._proxyX : this.x;
+        const y = (this._proxyY !== null && this._proxyY !== undefined) ? this._proxyY : this.y;
+        return [x, y, x + this.width, y + this.height];
     }
 
     toPlainObject() {
