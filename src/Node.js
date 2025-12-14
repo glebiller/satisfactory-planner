@@ -439,6 +439,98 @@ export class Node {
             }
         }
 
+        // After committing positions, recompute any links crossed by the moved node(s)
+        try {
+            const movedEntries = (this.dragging && this.dragging.group && this.dragging.group.length > 0)
+                ? this.dragging.group.map(entry => entry.node)
+                : [this];
+
+            // Build moved rects in game coordinates and a set of moved node ids
+            const movedRects = [];
+            const movedIds = new Set();
+            for (const n of movedEntries) {
+                movedIds.add(n.id);
+                const x1 = n.x;
+                const y1 = n.y;
+                const x2 = n.x + n.width;
+                const y2 = n.y + n.height;
+                movedRects.push([Math.min(x1, x2), Math.min(y1, y2), Math.max(x1, x2), Math.max(y1, y2)]);
+            }
+
+            // Small geometry helpers in game space
+            const pointInRect = (x, y, r) => x >= r[0] && x <= r[2] && y >= r[1] && y <= r[3];
+            const segIntersects = (x1, y1, x2, y2, x3, y3, x4, y4) => {
+                const d = (x1, y1, x2, y2, x3, y3) => (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1);
+                const o1 = d(x1, y1, x2, y2, x3, y3);
+                const o2 = d(x1, y1, x2, y2, x4, y4);
+                const o3 = d(x3, y3, x4, y4, x1, y1);
+                const o4 = d(x3, y3, x4, y4, x2, y2);
+                if (((o1 > 0 && o2 < 0) || (o1 < 0 && o2 > 0)) && ((o3 > 0 && o4 < 0) || (o3 < 0 && o4 > 0))) return true;
+                // Colinear cases
+                const onSeg = (x1, y1, x2, y2, x, y) => Math.min(x1, x2) <= x && x <= Math.max(x1, x2) && Math.min(y1, y2) <= y && y <= Math.max(y1, y2);
+                if (o1 === 0 && onSeg(x1, y1, x2, y2, x3, y3)) return true;
+                if (o2 === 0 && onSeg(x1, y1, x2, y2, x4, y4)) return true;
+                if (o3 === 0 && onSeg(x3, y3, x4, y4, x1, y1)) return true;
+                if (o4 === 0 && onSeg(x3, y3, x4, y4, x2, y2)) return true;
+                return false;
+            };
+            const segIntersectsRect = (x1, y1, x2, y2, r) => {
+                // Fast reject by outside on one side
+                if (Math.max(x1, x2) < r[0] || Math.min(x1, x2) > r[2] || Math.max(y1, y2) < r[1] || Math.min(y1, y2) > r[3]) return false;
+                if (pointInRect(x1, y1, r) || pointInRect(x2, y2, r)) return true;
+                // Check against rectangle edges
+                const [rx1, ry1, rx2, ry2] = r;
+                return segIntersects(x1, y1, x2, y2, rx1, ry1, rx2, ry1) || // top
+                       segIntersects(x1, y1, x2, y2, rx2, ry1, rx2, ry2) || // right
+                       segIntersects(x1, y1, x2, y2, rx2, ry2, rx1, ry2) || // bottom
+                       segIntersects(x1, y1, x2, y2, rx1, ry2, rx1, ry1);   // left
+            };
+
+            // Collect candidate links and trigger recompute if any segment intersects any moved rect
+            const links = (typeof this.mapPlanner.getLinks === 'function') ? this.mapPlanner.getLinks() : (this.mapPlanner.links || []);
+            const toRecompute = new Set();
+
+            for (const l of links) {
+                if (!l || movedIds.has(l.from) || movedIds.has(l.to)) continue; // skip attached links; they already updated
+                const pathLL = l._pathLatLngs;
+                if (!pathLL || pathLL.length < 2) continue;
+                // Project path to game space once
+                const gamePts = [];
+                let minLX = Infinity, minLY = Infinity, maxLX = -Infinity, maxLY = -Infinity;
+                for (let i = 0; i < pathLL.length; i++) {
+                    const p = this.mapPlanner.project(pathLL[i]);
+                    const [gx, gy] = this.mapPlanner.convertToGameCoordinates([p.x, p.y]);
+                    gamePts.push([gx, gy]);
+                    if (gx < minLX) minLX = gx; if (gy < minLY) minLY = gy;
+                    if (gx > maxLX) maxLX = gx; if (gy > maxLY) maxLY = gy;
+                }
+                // Link bbox quick reject against all moved rects
+                let bboxOverlap = false;
+                for (const r of movedRects) {
+                    if (!(maxLX < r[0] || minLX > r[2] || maxLY < r[1] || minLY > r[3])) { bboxOverlap = true; break; }
+                }
+                if (!bboxOverlap) continue;
+
+                // Precise check: any segment against any moved rect
+                let hit = false;
+                for (let i = 0; i < gamePts.length - 1 && !hit; i++) {
+                    const a = gamePts[i];
+                    const b = gamePts[i + 1];
+                    for (const r of movedRects) {
+                        if (segIntersectsRect(a[0], a[1], b[0], b[1], r)) { hit = true; break; }
+                    }
+                }
+                if (hit) toRecompute.add(l);
+            }
+
+            for (const l of toRecompute) {
+                if (typeof l._schedulePathRecompute === 'function') l._schedulePathRecompute();
+            }
+        } catch (err) {
+            // Fail-safe: never break drop due to intersection post-processing
+            console.warn('Link intersection recompute pass failed:', err);
+        }
+
         this.mapPlanner.saveState();
 
         this.dragging = null;

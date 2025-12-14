@@ -172,7 +172,15 @@ export class Link {
             markRect(nx1, ny1, nx2, ny2, 9, true);
         }
 
-        const otherLinks = this.mapPlanner.getLinks().filter(l => l !== this && l.polyline);
+        const isNullish = (v) => v === null || v === undefined;
+        const otherLinks = this.mapPlanner.getLinks().filter(l =>
+            l !== this &&
+            l.polyline &&
+            l._pathLatLngs && l._pathLatLngs.length > 0 &&
+            !l._recomputeScheduled &&
+            isNullish(l.startNode?._proxyX) &&
+            isNullish(l.endNode?._proxyX)
+        );
         for (const l of otherLinks) {
             const ll = l.polyline.getLatLngs();
             for (let i = 0; i < ll.length - 1; i++) {
@@ -212,7 +220,7 @@ export class Link {
         easystar.setAcceptableTiles([1, 3, 6]);
         easystar.setTileCost(3, 3);
         easystar.setTileCost(6, 6);
-        easystar.disableDiagonals();
+        easystar.enableDiagonals();
         easystar.setIterationsPerCalculation(2000);
 
         let finished = false;
