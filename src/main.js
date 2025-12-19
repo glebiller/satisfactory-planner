@@ -169,10 +169,10 @@ class MapPlanner {
       const selectedNode = this.selectedNodes[0];
 
       selectedNode.name = document.getElementById('inp_name').value;
-      selectedNode.x = this.snapToGrid(parseInt(document.getElementById('inp_x').value));
+      /*selectedNode.x = this.snapToGrid(parseInt(document.getElementById('inp_x').value));
       selectedNode.y = this.snapToGrid(parseInt(document.getElementById('inp_y').value));
       selectedNode.width = this.snapToGrid(parseInt(document.getElementById('inp_w').value));
-      selectedNode.height = this.snapToGrid(parseInt(document.getElementById('inp_h').value));
+      selectedNode.height = this.snapToGrid(parseInt(document.getElementById('inp_h').value));*/
       selectedNode.color = document.getElementById('inp_color').value;
       const orientationInput = document.getElementById('inp_orientation');
       if (orientationInput) {
@@ -585,10 +585,10 @@ class MapPlanner {
     if (typeof node.topRate !== 'number') node.topRate = 0;
 
     document.getElementById('inp_name').value = node.name;
-    document.getElementById('inp_x').value = node.x;
+    /*document.getElementById('inp_x').value = node.x;
     document.getElementById('inp_y').value = node.y;
     document.getElementById('inp_w').value = node.width;
-    document.getElementById('inp_h').value = node.height;
+    document.getElementById('inp_h').value = node.height;*/
     document.getElementById('inp_color').value = node.color;
     const orientationInput = document.getElementById('inp_orientation');
     if (orientationInput) {
