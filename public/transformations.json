@@ -1,0 +1,4006 @@
+[
+  {
+    "output": "Alumina Solution",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 0.001
+      },
+      {
+        "name": "Water",
+        "perMin": 1.5
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 0.0004
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution"
+    ],
+    "projectParts": false,
+    "tier": "7",
+    "index": 38
+  },
+  {
+    "output": "Aluminum Casing",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 1.5
+      },
+      {
+        "name": "Coal",
+        "perMin": 0.75
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 1.125
+      },
+      {
+        "name": "Water",
+        "perMin": 2250.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 0.625
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Silica"
+    ],
+    "projectParts": false,
+    "tier": "7",
+    "index": 42
+  },
+  {
+    "output": "Aluminum Ingot",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 1.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 0.5
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 0.75
+      },
+      {
+        "name": "Water",
+        "perMin": 1500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 0.4167
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Silica"
+    ],
+    "projectParts": false,
+    "tier": "7",
+    "index": 40
+  },
+  {
+    "output": "Alclad Aluminum Sheet",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 1.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 0.5
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 0.3333
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 0.75
+      },
+      {
+        "name": "Water",
+        "perMin": 1500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 0.4167
+      }
+    ],
+    "Recipes": [
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Copper Ingot",
+      "Silica"
+    ],
+    "projectParts": false,
+    "tier": "7",
+    "index": 41
+  },
+  {
+    "output": "Heat Sink",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 5.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 2.5
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 7.6667
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 3.75
+      },
+      {
+        "name": "Water",
+        "perMin": 7500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 2.0833
+      }
+    ],
+    "Recipes": [
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Heat Sink",
+      "Silica"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 54
+  },
+  {
+    "output": "Aluminum Scrap",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 0.6667
+      },
+      {
+        "name": "Coal",
+        "perMin": 0.3333
+      },
+      {
+        "name": "Water",
+        "perMin": 1000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 0.2778
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Scrap"
+    ],
+    "projectParts": false,
+    "tier": "7",
+    "index": 39
+  },
+  {
+    "output": "Battery",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 3.5
+      },
+      {
+        "name": "Coal",
+        "perMin": 0.75
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 1.125
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 2.5
+      },
+      {
+        "name": "Water",
+        "perMin": 7750.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 1.4583
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Battery",
+      "Silica",
+      "Sulfuric Acid"
+    ],
+    "projectParts": false,
+    "tier": "7",
+    "index": 45
+  },
+  {
+    "output": "Solid Biofuel",
+    "inputs": [
+      {
+        "name": "GenericBiomass",
+        "perMin": 2.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Solid Biofuel"
+    ],
+    "projectParts": false,
+    "tier": "2",
+    "index": 16
+  },
+  {
+    "output": "Liquid Biofuel",
+    "inputs": [
+      {
+        "name": "GenericBiomass",
+        "perMin": 0.003
+      },
+      {
+        "name": "Water",
+        "perMin": 0.75
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Liquid Biofuel",
+      "Solid Biofuel"
+    ],
+    "projectParts": false,
+    "tier": "5",
+    "index": 32
+  },
+  {
+    "output": "Cable",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 1.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Cable",
+      "Copper Ingot",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "0",
+    "index": 7
+  },
+  {
+    "output": "Concrete",
+    "inputs": [
+      {
+        "name": "Limestone",
+        "perMin": 3.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Concrete"
+    ],
+    "projectParts": false,
+    "tier": "0",
+    "index": 8
+  },
+  {
+    "output": "Circuit Board",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 4.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 24000.0
+      },
+      {
+        "name": "Water",
+        "perMin": 4000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 16000.0
+      }
+    ],
+    "Recipes": [
+      "Circuit Board",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Fuel",
+      "Residual Plastic"
+    ],
+    "projectParts": false,
+    "tier": "5",
+    "index": 29
+  },
+  {
+    "output": "AI Limiter",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 10.0
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 12.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Quickwire"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 90
+  },
+  {
+    "output": "CompactedCoal",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 0.5
+      },
+      {
+        "name": "LiquidTurboFuel",
+        "perMin": 6000.0
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 4000.0
+      },
+      {
+        "name": "Water",
+        "perMin": 1000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Rocket Fuel",
+        "perMin": 10000.0
+      }
+    ],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Nitric Acid",
+      "Rocket Fuel"
+    ],
+    "projectParts": false,
+    "tier": null,
+    "index": null
+  },
+  {
+    "output": "Computer",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 24.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 192000.0
+      },
+      {
+        "name": "Water",
+        "perMin": 32000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 128000.0
+      }
+    ],
+    "Recipes": [
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Fuel",
+      "Residual Plastic",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "6",
+    "index": 34
+  },
+  {
+    "output": "Supercomputer",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 157.5426
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 124.3787
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 1005255.3191
+      },
+      {
+        "name": "Water",
+        "perMin": 167542.5532
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 670170.2128
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Computer",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Fuel",
+      "High-Speed Connector",
+      "Quickwire",
+      "Residual Plastic",
+      "Supercomputer",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "7",
+    "index": 46
+  },
+  {
+    "output": "Cooling System",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 10.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 5.0
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 15.3333
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 3000.0
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 25000.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 7.5
+      },
+      {
+        "name": "Water",
+        "perMin": 20000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "HeavyOilResidue",
+        "perMin": 2000.0
+      },
+      {
+        "name": "Silica",
+        "perMin": 4.1667
+      }
+    ],
+    "Recipes": [
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cooling System",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Heat Sink",
+      "Rubber",
+      "Silica"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 55
+  },
+  {
+    "output": "Copper Powder",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 6.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Copper Ingot",
+      "Copper Powder"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 65
+  },
+  {
+    "output": "Copper Ingot",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 1.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Copper Ingot"
+    ],
+    "projectParts": false,
+    "tier": "0",
+    "index": 5
+  },
+  {
+    "output": "Copper Sheet",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 2.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Copper Ingot",
+      "Copper Sheet"
+    ],
+    "projectParts": false,
+    "tier": "2",
+    "index": 12
+  },
+  {
+    "output": "Crystal Oscillator",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 14.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 30.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 30.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Cable",
+      "Copper Ingot",
+      "Crystal Oscillator",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Quartz Crystal",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 94
+  },
+  {
+    "output": "Dark Matter Residue",
+    "inputs": [
+      {
+        "name": "SAM",
+        "perMin": 0.002
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Dark Matter Residue",
+      "Reanimated SAM"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 74
+  },
+  {
+    "output": "Dark Matter Crystal",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 20.0
+      },
+      {
+        "name": "SAM",
+        "perMin": 10.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Reanimated SAM"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 75
+  },
+  {
+    "output": "Diamonds",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 20.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Diamonds"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 68
+  },
+  {
+    "output": "Electromagnetic Control Rod",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 6.75
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 16.0
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 12.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 6.75
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Quickwire",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 49
+  },
+  {
+    "output": "Ficsite Ingot (Iron)",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 24.0
+      },
+      {
+        "name": "SAM",
+        "perMin": 16.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Ficsite Ingot (Iron)",
+      "Iron Ingot",
+      "Reanimated SAM"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 70
+  },
+  {
+    "output": "Ficsite Trigon",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 8.0
+      },
+      {
+        "name": "SAM",
+        "perMin": 5.3333
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Ficsite Ingot (Iron)",
+      "Ficsite Trigon",
+      "Iron Ingot",
+      "Reanimated SAM"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 71
+  },
+  {
+    "output": "Ficsonium",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 17.3
+      },
+      {
+        "name": "Coal",
+        "perMin": 96.8
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 175.4667
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 31.2
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 84.15
+      },
+      {
+        "name": "Limestone",
+        "perMin": 162.6
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 38400.0
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 26500.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 21.975
+      },
+      {
+        "name": "SAM",
+        "perMin": 60.0
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 38.0
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 40.0
+      },
+      {
+        "name": "Water",
+        "perMin": 76350.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 25600.0
+      },
+      {
+        "name": "Silica",
+        "perMin": 7.2083
+      },
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 8000.0
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Powder",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Electromagnetic Control Rod",
+      "Encased Industrial Beam",
+      "Encased Plutonium Cell",
+      "Encased Uranium Cell",
+      "Ficsonium",
+      "Fuel",
+      "Fused Modular Frame",
+      "Heat Sink",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Nitric Acid",
+      "Non-Fissile Uranium",
+      "Nuclear Pasta",
+      "Plutonium Fuel Rod",
+      "Plutonium Pellet",
+      "Plutonium Waste",
+      "Pressure Conversion Cube",
+      "Quartz Crystal",
+      "Quickwire",
+      "Radio Control Unit",
+      "Reanimated SAM",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Screws",
+      "Silica",
+      "Singularity Cell",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Sulfuric Acid",
+      "Uranium Fuel Rod",
+      "Uranium Waste",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 81
+  },
+  {
+    "output": "Ficsonium Fuel Rod",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 34.6
+      },
+      {
+        "name": "Coal",
+        "perMin": 207.1
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 382.9333
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 86.4
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 501.8
+      },
+      {
+        "name": "Limestone",
+        "perMin": 325.2
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 76800.0
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 53000.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 43.95
+      },
+      {
+        "name": "SAM",
+        "perMin": 333.3333
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 76.0
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 80.0
+      },
+      {
+        "name": "Water",
+        "perMin": 152700.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Dark Matter Residue",
+        "perMin": 20000.0
+      },
+      {
+        "name": "Fuel",
+        "perMin": 51200.0
+      },
+      {
+        "name": "Silica",
+        "perMin": 14.4167
+      },
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 16000.0
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Powder",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Electromagnetic Control Rod",
+      "Encased Industrial Beam",
+      "Encased Plutonium Cell",
+      "Encased Uranium Cell",
+      "Excited Photonic Matter",
+      "Ficsite Ingot (Iron)",
+      "Ficsite Trigon",
+      "Ficsonium",
+      "Ficsonium Fuel Rod",
+      "Fuel",
+      "Fused Modular Frame",
+      "Heat Sink",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Nitric Acid",
+      "Non-Fissile Uranium",
+      "Nuclear Pasta",
+      "Plutonium Fuel Rod",
+      "Plutonium Pellet",
+      "Plutonium Waste",
+      "Pressure Conversion Cube",
+      "Quartz Crystal",
+      "Quickwire",
+      "Radio Control Unit",
+      "Reanimated SAM",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Screws",
+      "Silica",
+      "Singularity Cell",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Sulfuric Acid",
+      "Uranium Fuel Rod",
+      "Uranium Waste",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 82
+  },
+  {
+    "output": "Gas Filter",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.0
+      },
+      {
+        "name": "GenericBiomass",
+        "perMin": 10.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 3.0
+      },
+      {
+        "name": "Mycelia",
+        "perMin": 2.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Fabric",
+      "Gas Filter",
+      "Iron Ingot",
+      "Iron Plate"
+    ],
+    "projectParts": false,
+    "tier": null,
+    "index": null
+  },
+  {
+    "output": "Empty Canister",
+    "inputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 3000.0
+      },
+      {
+        "name": "Water",
+        "perMin": 500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 2000.0
+      }
+    ],
+    "Recipes": [
+      "Empty Canister",
+      "Fuel",
+      "Residual Plastic"
+    ],
+    "projectParts": false,
+    "tier": "5",
+    "index": 33
+  },
+  {
+    "output": "Fuel",
+    "inputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 2.25
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Rubber",
+        "perMin": 0.0015
+      }
+    ],
+    "Recipes": [
+      "Residual Fuel",
+      "Rubber"
+    ],
+    "projectParts": false,
+    "tier": "5",
+    "index": 30
+  },
+  {
+    "output": "Empty Fluid Tank",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 1.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 0.5
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 0.75
+      },
+      {
+        "name": "Water",
+        "perMin": 1500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 0.4167
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Empty Fluid Tank",
+      "Silica"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 53
+  },
+  {
+    "output": "Fabric",
+    "inputs": [
+      {
+        "name": "GenericBiomass",
+        "perMin": 5.0
+      },
+      {
+        "name": "Mycelia",
+        "perMin": 1.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Fabric"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 87
+  },
+  {
+    "output": "Caterium Ingot",
+    "inputs": [
+      {
+        "name": "Gold Ore",
+        "perMin": 3.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Caterium Ingot"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 88
+  },
+  {
+    "output": "Black Powder",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 0.5
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 0.5
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Black Powder"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 96
+  },
+  {
+    "output": "Smokeless Powder",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 0.5
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 750.0
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 0.5
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Rubber",
+        "perMin": 0.5
+      }
+    ],
+    "Recipes": [
+      "Black Powder",
+      "Rubber",
+      "Smokeless Powder"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 99
+  },
+  {
+    "output": "HeavyOilResidue",
+    "inputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 1.5
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Rubber",
+        "perMin": 0.001
+      }
+    ],
+    "Recipes": [
+      "Rubber"
+    ],
+    "projectParts": false,
+    "tier": null,
+    "index": null
+  },
+  {
+    "output": "High-Speed Connector",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 14.0
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 33.6
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 24000.0
+      },
+      {
+        "name": "Water",
+        "perMin": 4000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 16000.0
+      }
+    ],
+    "Recipes": [
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Fuel",
+      "High-Speed Connector",
+      "Quickwire",
+      "Residual Plastic",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 91
+  },
+  {
+    "output": "Quickwire",
+    "inputs": [
+      {
+        "name": "Gold Ore",
+        "perMin": 0.6
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Caterium Ingot",
+      "Quickwire"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 89
+  },
+  {
+    "output": "Iodine-Infused Filter",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 1.5
+      },
+      {
+        "name": "Coal",
+        "perMin": 4.75
+      },
+      {
+        "name": "GenericBiomass",
+        "perMin": 10.0
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 4.8
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 3.0
+      },
+      {
+        "name": "Mycelia",
+        "perMin": 2.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 1.125
+      },
+      {
+        "name": "Water",
+        "perMin": 2250.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 0.625
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Caterium Ingot",
+      "Fabric",
+      "Gas Filter",
+      "Iodine-Infused Filter",
+      "Iron Ingot",
+      "Iron Plate",
+      "Quickwire",
+      "Silica"
+    ],
+    "projectParts": false,
+    "tier": null,
+    "index": null
+  },
+  {
+    "output": "Ionized Fuel",
+    "inputs": [
+      {
+        "name": "CrystalShard",
+        "perMin": 0.0001
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 0.0001
+      },
+      {
+        "name": "LiquidTurboFuel",
+        "perMin": 0.6
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 0.4
+      },
+      {
+        "name": "Water",
+        "perMin": 0.1
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "CompactedCoal",
+        "perMin": 0.0002
+      }
+    ],
+    "Recipes": [
+      "Ionized Fuel",
+      "Iron Ingot",
+      "Iron Plate",
+      "Nitric Acid",
+      "Rocket Fuel"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 101
+  },
+  {
+    "output": "Iron Ingot",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 1.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Iron Ingot"
+    ],
+    "projectParts": false,
+    "tier": "0",
+    "index": 2
+  },
+  {
+    "output": "Iron Plate",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 1.5
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Plate"
+    ],
+    "projectParts": false,
+    "tier": "0",
+    "index": 3
+  },
+  {
+    "output": "Reinforced Iron Plate",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 12.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Reinforced Iron Plate",
+      "Screws"
+    ],
+    "projectParts": false,
+    "tier": "0",
+    "index": 10
+  },
+  {
+    "output": "Iron Rod",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 1.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Rod"
+    ],
+    "projectParts": false,
+    "tier": "0",
+    "index": 4
+  },
+  {
+    "output": "Screws",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 0.25
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Rod",
+      "Screws"
+    ],
+    "projectParts": false,
+    "tier": "0",
+    "index": 9
+  },
+  {
+    "output": "Modular Frame",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 24.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Reinforced Iron Plate",
+      "Screws"
+    ],
+    "projectParts": false,
+    "tier": "2",
+    "index": 14
+  },
+  {
+    "output": "Fused Modular Frame",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 75.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 127.5
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 240.0
+      },
+      {
+        "name": "Limestone",
+        "perMin": 90.0
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 25000.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 56.25
+      },
+      {
+        "name": "Water",
+        "perMin": 112500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 31.25
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Concrete",
+      "Encased Industrial Beam",
+      "Fused Modular Frame",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Silica",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 56
+  },
+  {
+    "output": "Heavy Modular Frame",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 90.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 240.0
+      },
+      {
+        "name": "Limestone",
+        "perMin": 90.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Concrete",
+      "Encased Industrial Beam",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe"
+    ],
+    "projectParts": false,
+    "tier": "6",
+    "index": 35
+  },
+  {
+    "output": "Radio Control Unit",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 24.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 12.0
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 31.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 15.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 192000.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 33.0
+      },
+      {
+        "name": "Water",
+        "perMin": 68000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 128000.0
+      },
+      {
+        "name": "Silica",
+        "perMin": 10.0
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Fuel",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Screws",
+      "Silica",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "7",
+    "index": 43
+  },
+  {
+    "output": "Motor",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 9.0
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 8.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 31.5
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Copper Ingot",
+      "Iron Ingot",
+      "Iron Rod",
+      "Motor",
+      "Rotor",
+      "Screws",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "4",
+    "index": 23
+  },
+  {
+    "output": "Turbo Motor",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 87.766
+      },
+      {
+        "name": "Coal",
+        "perMin": 79.7872
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 154.9202
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 155.5851
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 430851.0638
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 99734.0426
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 95.7447
+      },
+      {
+        "name": "Water",
+        "perMin": 215425.5319
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 255319.1489
+      },
+      {
+        "name": "HeavyOilResidue",
+        "perMin": 31914.8936
+      },
+      {
+        "name": "Silica",
+        "perMin": 36.5691
+      }
+    ],
+    "Recipes": [
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Cooling System",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Fuel",
+      "Heat Sink",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Motor",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Rotor",
+      "Rubber",
+      "Screws",
+      "Silica",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Turbo Motor",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 57
+  },
+  {
+    "output": "Nitric Acid",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 0.0005
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 4.0
+      },
+      {
+        "name": "Water",
+        "perMin": 1.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Nitric Acid"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 59
+  },
+  {
+    "output": "Nobelisk",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 3.0
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 1.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Black Powder",
+      "Nobelisk",
+      "Steel Ingot",
+      "Steel Pipe"
+    ],
+    "projectParts": false,
+    "tier": null,
+    "index": null
+  },
+  {
+    "output": "Non-Fissile Uranium",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 1.0463
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 1.2
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 0.9
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 1.1963
+      },
+      {
+        "name": "Limestone",
+        "perMin": 2.16
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 1200.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 0.3
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 1.5
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 1.5
+      },
+      {
+        "name": "Water",
+        "perMin": 1800.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 300.0
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Encased Industrial Beam",
+      "Encased Uranium Cell",
+      "Iron Ingot",
+      "Iron Plate",
+      "Nitric Acid",
+      "Non-Fissile Uranium",
+      "Quickwire",
+      "Silica",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Sulfuric Acid",
+      "Uranium Fuel Rod",
+      "Uranium Waste",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 60
+  },
+  {
+    "output": "Uranium Fuel Rod",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 69.75
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 80.0
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 60.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 69.75
+      },
+      {
+        "name": "Limestone",
+        "perMin": 144.0
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 80.0
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 100.0
+      },
+      {
+        "name": "Water",
+        "perMin": 80000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 20000.0
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Encased Industrial Beam",
+      "Encased Uranium Cell",
+      "Quickwire",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Sulfuric Acid",
+      "Uranium Fuel Rod",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 50
+  },
+  {
+    "output": "Uranium Waste",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 1.395
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 1.6
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 1.2
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 1.395
+      },
+      {
+        "name": "Limestone",
+        "perMin": 2.88
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 1.6
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 2.0
+      },
+      {
+        "name": "Water",
+        "perMin": 1600.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 400.0
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Encased Industrial Beam",
+      "Encased Uranium Cell",
+      "Quickwire",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Sulfuric Acid",
+      "Uranium Fuel Rod",
+      "Uranium Waste",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 51
+  },
+  {
+    "output": "Plutonium Waste",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 5.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 41.65
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 49.2667
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 31.2
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 42.15
+      },
+      {
+        "name": "Limestone",
+        "perMin": 93.6
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 24000.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 9.75
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 38.0
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 40.0
+      },
+      {
+        "name": "Water",
+        "perMin": 51500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 2.0833
+      },
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 8000.0
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Caterium Ingot",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Encased Industrial Beam",
+      "Encased Plutonium Cell",
+      "Encased Uranium Cell",
+      "Heat Sink",
+      "Iron Ingot",
+      "Iron Plate",
+      "Nitric Acid",
+      "Non-Fissile Uranium",
+      "Plutonium Fuel Rod",
+      "Plutonium Pellet",
+      "Plutonium Waste",
+      "Quickwire",
+      "Silica",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Sulfuric Acid",
+      "Uranium Fuel Rod",
+      "Uranium Waste",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 64
+  },
+  {
+    "output": "Petroleum Coke",
+    "inputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Rubber",
+        "perMin": 0.3333
+      }
+    ],
+    "Recipes": [
+      "Petroleum Coke",
+      "Rubber"
+    ],
+    "projectParts": false,
+    "tier": "5",
+    "index": 28
+  },
+  {
+    "output": "Plastic",
+    "inputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 6000.0
+      },
+      {
+        "name": "Water",
+        "perMin": 1000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 4000.0
+      }
+    ],
+    "Recipes": [
+      "Fuel",
+      "Residual Plastic"
+    ],
+    "projectParts": false,
+    "tier": "5",
+    "index": 25
+  },
+  {
+    "output": "Encased Plutonium Cell",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 9.3
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 10.6667
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 8.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 10.3
+      },
+      {
+        "name": "Limestone",
+        "perMin": 31.2
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 8000.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 2.0
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 12.6667
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 13.3333
+      },
+      {
+        "name": "Water",
+        "perMin": 14666.6667
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 2666.6667
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Encased Industrial Beam",
+      "Encased Plutonium Cell",
+      "Encased Uranium Cell",
+      "Iron Ingot",
+      "Iron Plate",
+      "Nitric Acid",
+      "Non-Fissile Uranium",
+      "Plutonium Pellet",
+      "Quickwire",
+      "Silica",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Sulfuric Acid",
+      "Uranium Fuel Rod",
+      "Uranium Waste",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 62
+  },
+  {
+    "output": "Plutonium Fuel Rod",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 50.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 416.5
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 492.6667
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 312.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 421.5
+      },
+      {
+        "name": "Limestone",
+        "perMin": 936.0
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 240000.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 97.5
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 380.0
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 400.0
+      },
+      {
+        "name": "Water",
+        "perMin": 515000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Silica",
+        "perMin": 20.8333
+      },
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 80000.0
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Caterium Ingot",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Encased Industrial Beam",
+      "Encased Plutonium Cell",
+      "Encased Uranium Cell",
+      "Heat Sink",
+      "Iron Ingot",
+      "Iron Plate",
+      "Nitric Acid",
+      "Non-Fissile Uranium",
+      "Plutonium Fuel Rod",
+      "Plutonium Pellet",
+      "Quickwire",
+      "Silica",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Sulfuric Acid",
+      "Uranium Fuel Rod",
+      "Uranium Waste",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 63
+  },
+  {
+    "output": "Plutonium Pellet",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.65
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 5.3333
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 4.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 5.15
+      },
+      {
+        "name": "Limestone",
+        "perMin": 9.6
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 4000.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 1.0
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 6.3333
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 6.6667
+      },
+      {
+        "name": "Water",
+        "perMin": 7333.3333
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 1333.3333
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Encased Industrial Beam",
+      "Encased Uranium Cell",
+      "Iron Ingot",
+      "Iron Plate",
+      "Nitric Acid",
+      "Non-Fissile Uranium",
+      "Plutonium Pellet",
+      "Quickwire",
+      "Silica",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Sulfuric Acid",
+      "Uranium Fuel Rod",
+      "Uranium Waste",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 61
+  },
+  {
+    "output": "PolymerResin",
+    "inputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 2000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 1333.3333
+      }
+    ],
+    "Recipes": [
+      "Fuel"
+    ],
+    "projectParts": false,
+    "tier": null,
+    "index": null
+  },
+  {
+    "output": "Pressure Conversion Cube",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 123.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 151.5
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 62.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 270.0
+      },
+      {
+        "name": "Limestone",
+        "perMin": 90.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 384000.0
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 25000.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 122.25
+      },
+      {
+        "name": "Water",
+        "perMin": 248500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 256000.0
+      },
+      {
+        "name": "Silica",
+        "perMin": 51.25
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Encased Industrial Beam",
+      "Fuel",
+      "Fused Modular Frame",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Pressure Conversion Cube",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Screws",
+      "Silica",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 66
+  },
+  {
+    "output": "Excited Photonic Matter",
+    "inputs": [],
+    "byProducts": [],
+    "Recipes": [
+      "Excited Photonic Matter"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 73
+  },
+  {
+    "output": "Superposition Oscillator",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 9.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 124.5
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 17.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 30.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 36.75
+      },
+      {
+        "name": "SAM",
+        "perMin": 60.0
+      },
+      {
+        "name": "Water",
+        "perMin": 13500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Dark Matter Residue",
+        "perMin": 25000.0
+      },
+      {
+        "name": "Silica",
+        "perMin": 3.75
+      }
+    ],
+    "Recipes": [
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Copper Ingot",
+      "Crystal Oscillator",
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Excited Photonic Matter",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Quartz Crystal",
+      "Reanimated SAM",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Silica",
+      "Superposition Oscillator",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 76
+  },
+  {
+    "output": "Quartz Crystal",
+    "inputs": [
+      {
+        "name": "Raw Quartz",
+        "perMin": 1.6667
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Quartz Crystal"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 92
+  },
+  {
+    "output": "Rocket Fuel",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 0.0001
+      },
+      {
+        "name": "LiquidTurboFuel",
+        "perMin": 0.6
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 0.4
+      },
+      {
+        "name": "Water",
+        "perMin": 0.1
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "CompactedCoal",
+        "perMin": 0.0001
+      }
+    ],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Nitric Acid",
+      "Rocket Fuel"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 100
+  },
+  {
+    "output": "Rotor",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 11.25
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Rod",
+      "Rotor",
+      "Screws"
+    ],
+    "projectParts": false,
+    "tier": "2",
+    "index": 13
+  },
+  {
+    "output": "Rubber",
+    "inputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 1500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "HeavyOilResidue",
+        "perMin": 1000.0
+      }
+    ],
+    "Recipes": [
+      "Rubber"
+    ],
+    "projectParts": false,
+    "tier": "5",
+    "index": 26
+  },
+  {
+    "output": "SAM Fluctuator",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.5
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 2.5
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 4.5
+      },
+      {
+        "name": "SAM",
+        "perMin": 24.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Copper Ingot",
+      "Reanimated SAM",
+      "SAM Fluctuator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 103
+  },
+  {
+    "output": "Reanimated SAM",
+    "inputs": [
+      {
+        "name": "SAM",
+        "perMin": 4.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Reanimated SAM"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 102
+  },
+  {
+    "output": "Silica",
+    "inputs": [
+      {
+        "name": "Raw Quartz",
+        "perMin": 0.6
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Silica"
+    ],
+    "projectParts": false,
+    "tier": "MAM",
+    "index": 93
+  },
+  {
+    "output": "Singularity Cell",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 12.3
+      },
+      {
+        "name": "Coal",
+        "perMin": 55.15
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 126.2
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 42.0
+      },
+      {
+        "name": "Limestone",
+        "perMin": 69.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 38400.0
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 2500.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 12.225
+      },
+      {
+        "name": "SAM",
+        "perMin": 20.0
+      },
+      {
+        "name": "Water",
+        "perMin": 24850.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 25600.0
+      },
+      {
+        "name": "Silica",
+        "perMin": 5.125
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Powder",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Encased Industrial Beam",
+      "Fuel",
+      "Fused Modular Frame",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Nuclear Pasta",
+      "Pressure Conversion Cube",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reanimated SAM",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Screws",
+      "Silica",
+      "Singularity Cell",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 79
+  },
+  {
+    "output": "Smart Plating",
+    "inputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 23.25
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Reinforced Iron Plate",
+      "Rotor",
+      "Screws",
+      "Smart Plating"
+    ],
+    "projectParts": true,
+    "tier": "2",
+    "index": 15
+  },
+  {
+    "output": "Biochemical Sculptor",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 56.25
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 133.3856
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 31.0947
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 291.25
+      },
+      {
+        "name": "Limestone",
+        "perMin": 45.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 503313.8298
+      },
+      {
+        "name": "SAM",
+        "perMin": 106.6667
+      },
+      {
+        "name": "Water",
+        "perMin": 88885.6383
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 335542.5532
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Adaptive Control Unit",
+      "Assembly Director System",
+      "Automated Wiring",
+      "Biochemical Sculptor",
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Encased Industrial Beam",
+      "Ficsite Ingot (Iron)",
+      "Ficsite Trigon",
+      "Fuel",
+      "Heavy Modular Frame",
+      "High-Speed Connector",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Quickwire",
+      "Reanimated SAM",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Screws",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Supercomputer",
+      "Wire"
+    ],
+    "projectParts": true,
+    "tier": "9",
+    "index": 72
+  },
+  {
+    "output": "Ballistic Warp Drive",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 272.266
+      },
+      {
+        "name": "Coal",
+        "perMin": 1592.0372
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 905.9202
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 939.3351
+      },
+      {
+        "name": "Limestone",
+        "perMin": 435.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 688101.0638
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 212234.0426
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 309.1197
+      },
+      {
+        "name": "SAM",
+        "perMin": 620.0
+      },
+      {
+        "name": "Water",
+        "perMin": 539175.5319
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Dark Matter Residue",
+        "perMin": 50000.0
+      },
+      {
+        "name": "Fuel",
+        "perMin": 383319.1489
+      },
+      {
+        "name": "HeavyOilResidue",
+        "perMin": 75414.8936
+      },
+      {
+        "name": "Silica",
+        "perMin": 113.4441
+      }
+    ],
+    "Recipes": [
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Ballistic Warp Drive",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Cooling System",
+      "Copper Ingot",
+      "Copper Powder",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Encased Industrial Beam",
+      "Excited Photonic Matter",
+      "Fuel",
+      "Fused Modular Frame",
+      "Heat Sink",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Engine",
+      "Modular Frame",
+      "Motor",
+      "Nuclear Pasta",
+      "Pressure Conversion Cube",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reanimated SAM",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Rotor",
+      "Rubber",
+      "Screws",
+      "Silica",
+      "Singularity Cell",
+      "Smart Plating",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Superposition Oscillator",
+      "Thermal Propulsion Rocket",
+      "Turbo Motor",
+      "Wire"
+    ],
+    "projectParts": true,
+    "tier": "9",
+    "index": 80
+  },
+  {
+    "output": "AI Expansion Server",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 9.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 391.25
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 190.5426
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 136.3787
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 246.75
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 1005255.3191
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 36.75
+      },
+      {
+        "name": "SAM",
+        "perMin": 140.0
+      },
+      {
+        "name": "Water",
+        "perMin": 181042.5532
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Dark Matter Residue",
+        "perMin": 75000.0
+      },
+      {
+        "name": "Fuel",
+        "perMin": 670170.2128
+      },
+      {
+        "name": "Silica",
+        "perMin": 3.75
+      }
+    ],
+    "Recipes": [
+      "AI Expansion Server",
+      "AI Limiter",
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Computer",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Electromagnetic Control Rod",
+      "Excited Photonic Matter",
+      "Ficsite Ingot (Iron)",
+      "Ficsite Trigon",
+      "Fuel",
+      "High-Speed Connector",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Magnetic Field Generator",
+      "Modular Frame",
+      "Neural-Quantum Processor",
+      "Quartz Crystal",
+      "Quickwire",
+      "Reanimated SAM",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Screws",
+      "Silica",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Supercomputer",
+      "Superposition Oscillator",
+      "Time Crystal",
+      "Versatile Framework",
+      "Wire"
+    ],
+    "projectParts": true,
+    "tier": "9",
+    "index": 78
+  },
+  {
+    "output": "Versatile Framework",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 24.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 36.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Steel Beam",
+      "Steel Ingot",
+      "Versatile Framework"
+    ],
+    "projectParts": true,
+    "tier": "3",
+    "index": 20
+  },
+  {
+    "output": "Automated Wiring",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.5
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 24.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 4.5
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Automated Wiring",
+      "Cable",
+      "Copper Ingot",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ],
+    "projectParts": true,
+    "tier": "4",
+    "index": 24
+  },
+  {
+    "output": "Modular Engine",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 18.0
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 16.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 109.5
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 22500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "HeavyOilResidue",
+        "perMin": 15000.0
+      }
+    ],
+    "Recipes": [
+      "Copper Ingot",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Engine",
+      "Motor",
+      "Reinforced Iron Plate",
+      "Rotor",
+      "Rubber",
+      "Screws",
+      "Smart Plating",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ],
+    "projectParts": true,
+    "tier": "6",
+    "index": 36
+  },
+  {
+    "output": "Adaptive Control Unit",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 112.5
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 188.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 262.5
+      },
+      {
+        "name": "Limestone",
+        "perMin": 90.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 504000.0
+      },
+      {
+        "name": "Water",
+        "perMin": 84000.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 336000.0
+      }
+    ],
+    "Recipes": [
+      "Adaptive Control Unit",
+      "Automated Wiring",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Encased Industrial Beam",
+      "Fuel",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Screws",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ],
+    "projectParts": true,
+    "tier": "6",
+    "index": 37
+  },
+  {
+    "output": "Magnetic Field Generator",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 66.75
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 16.0
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 12.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 96.75
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Magnetic Field Generator",
+      "Modular Frame",
+      "Quickwire",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Versatile Framework",
+      "Wire"
+    ],
+    "projectParts": true,
+    "tier": "8",
+    "index": 52
+  },
+  {
+    "output": "Assembly Director System",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 225.0
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 533.5426
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 124.3787
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 525.0
+      },
+      {
+        "name": "Limestone",
+        "perMin": 180.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 2013255.3191
+      },
+      {
+        "name": "Water",
+        "perMin": 335542.5532
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 1342170.2128
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Adaptive Control Unit",
+      "Assembly Director System",
+      "Automated Wiring",
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Encased Industrial Beam",
+      "Fuel",
+      "Heavy Modular Frame",
+      "High-Speed Connector",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Quickwire",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Screws",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Supercomputer",
+      "Wire"
+    ],
+    "projectParts": true,
+    "tier": "7",
+    "index": 47
+  },
+  {
+    "output": "Thermal Propulsion Rocket",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 192.766
+      },
+      {
+        "name": "Coal",
+        "perMin": 267.2872
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 240.9202
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 669.3351
+      },
+      {
+        "name": "Limestone",
+        "perMin": 90.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 496101.0638
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 199734.0426
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 174.4947
+      },
+      {
+        "name": "Water",
+        "perMin": 387925.5319
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 255319.1489
+      },
+      {
+        "name": "HeavyOilResidue",
+        "perMin": 75414.8936
+      },
+      {
+        "name": "Silica",
+        "perMin": 80.3191
+      }
+    ],
+    "Recipes": [
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Cooling System",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Encased Industrial Beam",
+      "Fuel",
+      "Fused Modular Frame",
+      "Heat Sink",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Engine",
+      "Modular Frame",
+      "Motor",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Rotor",
+      "Rubber",
+      "Screws",
+      "Silica",
+      "Smart Plating",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Thermal Propulsion Rocket",
+      "Turbo Motor",
+      "Wire"
+    ],
+    "projectParts": true,
+    "tier": "8",
+    "index": 58
+  },
+  {
+    "output": "Nuclear Pasta",
+    "inputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 123.0
+      },
+      {
+        "name": "Coal",
+        "perMin": 151.5
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 1262.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 270.0
+      },
+      {
+        "name": "Limestone",
+        "perMin": 90.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 384000.0
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 25000.0
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 122.25
+      },
+      {
+        "name": "Water",
+        "perMin": 248500.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Fuel",
+        "perMin": 256000.0
+      },
+      {
+        "name": "Silica",
+        "perMin": 51.25
+      }
+    ],
+    "Recipes": [
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Powder",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Encased Industrial Beam",
+      "Fuel",
+      "Fused Modular Frame",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Nuclear Pasta",
+      "Pressure Conversion Cube",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reinforced Iron Plate",
+      "Residual Plastic",
+      "Screws",
+      "Silica",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ],
+    "projectParts": true,
+    "tier": "8",
+    "index": 67
+  },
+  {
+    "output": "Stator",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.5
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 4.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 4.5
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Copper Ingot",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "4",
+    "index": 22
+  },
+  {
+    "output": "Steel Ingot",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 1.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 1.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Steel Ingot"
+    ],
+    "projectParts": false,
+    "tier": "3",
+    "index": 17
+  },
+  {
+    "output": "Steel Pipe",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 1.5
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 1.5
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Steel Ingot",
+      "Steel Pipe"
+    ],
+    "projectParts": false,
+    "tier": "3",
+    "index": 19
+  },
+  {
+    "output": "Steel Beam",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 4.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Steel Beam",
+      "Steel Ingot"
+    ],
+    "projectParts": false,
+    "tier": "3",
+    "index": 18
+  },
+  {
+    "output": "Encased Industrial Beam",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 12.0
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 12.0
+      },
+      {
+        "name": "Limestone",
+        "perMin": 18.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Concrete",
+      "Encased Industrial Beam",
+      "Steel Beam",
+      "Steel Ingot"
+    ],
+    "projectParts": false,
+    "tier": "4",
+    "index": 21
+  },
+  {
+    "output": "Sulfuric Acid",
+    "inputs": [
+      {
+        "name": "Sulfur",
+        "perMin": 0.001
+      },
+      {
+        "name": "Water",
+        "perMin": 1.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Sulfuric Acid"
+    ],
+    "projectParts": false,
+    "tier": "7",
+    "index": 44
+  },
+  {
+    "output": "Neural-Quantum Processor",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 200.0
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 157.5426
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 124.3787
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 120.0
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 1005255.3191
+      },
+      {
+        "name": "SAM",
+        "perMin": 80.0
+      },
+      {
+        "name": "Water",
+        "perMin": 167542.5532
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Dark Matter Residue",
+        "perMin": 25000.0
+      },
+      {
+        "name": "Fuel",
+        "perMin": 670170.2128
+      }
+    ],
+    "Recipes": [
+      "AI Limiter",
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Computer",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Diamonds",
+      "Excited Photonic Matter",
+      "Ficsite Ingot (Iron)",
+      "Ficsite Trigon",
+      "Fuel",
+      "High-Speed Connector",
+      "Iron Ingot",
+      "Neural-Quantum Processor",
+      "Quickwire",
+      "Reanimated SAM",
+      "Residual Plastic",
+      "Supercomputer",
+      "Time Crystal",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 77
+  },
+  {
+    "output": "Time Crystal",
+    "inputs": [
+      {
+        "name": "Coal",
+        "perMin": 40.0
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Diamonds",
+      "Time Crystal"
+    ],
+    "projectParts": false,
+    "tier": "9",
+    "index": 69
+  },
+  {
+    "output": "Encased Uranium Cell",
+    "inputs": [
+      {
+        "name": "Limestone",
+        "perMin": 1.8
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 1.6
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 2.0
+      },
+      {
+        "name": "Water",
+        "perMin": 1600.0
+      }
+    ],
+    "byProducts": [
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 400.0
+      }
+    ],
+    "Recipes": [
+      "Concrete",
+      "Encased Uranium Cell",
+      "Sulfuric Acid"
+    ],
+    "projectParts": false,
+    "tier": "8",
+    "index": 48
+  },
+  {
+    "output": "Wire",
+    "inputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 0.5
+      }
+    ],
+    "byProducts": [],
+    "Recipes": [
+      "Copper Ingot",
+      "Wire"
+    ],
+    "projectParts": false,
+    "tier": "0",
+    "index": 6
+  }
+]
