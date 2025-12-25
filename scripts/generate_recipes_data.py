@@ -77,6 +77,9 @@ def main():
         if should_skip_class(class_name):
             skipped += 1
             continue
+        if key.startswith("Recipe_Unpackage"):
+            skipped += 1
+            continue
 
         m_produced_in = entry.get("mProducedIn")
         if produced_in_skippable(m_produced_in):

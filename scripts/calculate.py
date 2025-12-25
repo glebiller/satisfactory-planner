@@ -22,6 +22,7 @@ TIERS_CSV_PATH = SCRIPT_DIR / '../public/tiers.csv'
 OUTPUT_PATH = SCRIPT_DIR / '../public/transformations.json'
 
 RAW_RESOURCE_CATEGORIES = {'ore', 'fluid', 'gas'}
+STOP_AT_ITEMS = {'Plastic', 'Rubber', 'Aluminum Ingot'}
 
 
 def extract_building_name(produced_in_path):
@@ -66,7 +67,7 @@ def is_raw_resource(item_name, item_category_map):
     return category in RAW_RESOURCE_CATEGORIES
 
 
-def compute_production_chain(target_item, items, item_key_map, item_category_map, recipes_by_output, quantity=1.0, visited=None):
+def compute_production_chain(target_item, items, item_key_map, item_category_map, recipes_by_output, quantity=1.0, visited=None, is_root=True):
     if visited is None:
         visited = set()
     
@@ -80,6 +81,14 @@ def compute_production_chain(target_item, items, item_key_map, item_category_map
         }
     
     if is_raw_resource(target_item, item_category_map):
+        return {
+            'item': target_item,
+            'quantity': quantity,
+            'raw_ingredients': {target_item: quantity},
+            'steps': []
+        }
+    
+    if not is_root and target_item in STOP_AT_ITEMS:
         return {
             'item': target_item,
             'quantity': quantity,
@@ -147,7 +156,8 @@ def compute_production_chain(target_item, items, item_key_map, item_category_map
             item_category_map, 
             recipes_by_output, 
             required_qty, 
-            visited_with_current
+            visited_with_current,
+            is_root=False
         )
         ingredient_chains.append(ingredient_chain)
         
