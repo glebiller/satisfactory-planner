@@ -1,14 +1,7 @@
 #!/usr/bin/env python3
 """
-Calculate production chains for Satisfactory items.
-
-Reads items from tiers.csv and computes complete production chains:
-- Raw resource requirements (ore, fluids, gas)
-- All transformation steps with recipes and buildings
-- Byproducts generated during production
-- Quantities scaled to produce 1 unit of target item
-
-Output: transformations.json with full production chain data
+Intelligently optimize production chains by finding minimal intermediate stops
+to meet the 5 input constraint. Only stops at intermediates when necessary.
 """
 import json
 import csv
@@ -22,7 +15,19 @@ TIERS_CSV_PATH = SCRIPT_DIR / '../public/tiers.csv'
 OUTPUT_PATH = SCRIPT_DIR / '../public/transformations.json'
 
 RAW_RESOURCE_CATEGORIES = {'ore', 'fluid', 'gas'}
-STOP_AT_ITEMS = {'Plastic', 'Rubber', 'Aluminum Ingot'}
+
+ALWAYS_STOP = {'Plastic', 'Rubber', 'Aluminum Ingot', 'Cooling System', 'Radio Control Unit',
+                "Fused Modular Frame"}
+
+ITEM_SPECIFIC_STOPS = {
+    'Thermal Propulsion Rocket': {'Turbo Motor'},
+    'Superposition Oscillator': {'Crystal Oscillator'},
+    'AI Expansion Server': {'Superposition Oscillator', 'Neural-Quantum Processor',
+                            'Electromagnetic Control Rod', 'Versatile Framework'},
+    'Ballistic Warp Drive': {'AI Expansion Server', 'Superposition Oscillator', 'Singularity Cell'}
+}
+
+MAX_INPUTS = 5
 
 
 def extract_building_name(produced_in_path):
@@ -67,7 +72,13 @@ def is_raw_resource(item_name, item_category_map):
     return category in RAW_RESOURCE_CATEGORIES
 
 
-def compute_production_chain(target_item, items, item_key_map, item_category_map, recipes_by_output, quantity=1.0, visited=None, is_root=True):
+def compute_production_chain(target_item, items, item_key_map, item_category_map, recipes_by_output, quantity=1.0, visited=None, is_root=True, stop_at_items=None, root_item=None):
+    if stop_at_items is None:
+        stop_at_items = set()
+    
+    if root_item is None:
+        root_item = target_item
+    
     if visited is None:
         visited = set()
     
@@ -80,15 +91,11 @@ def compute_production_chain(target_item, items, item_key_map, item_category_map
             'steps': []
         }
     
-    if is_raw_resource(target_item, item_category_map):
-        return {
-            'item': target_item,
-            'quantity': quantity,
-            'raw_ingredients': {target_item: quantity},
-            'steps': []
-        }
+    effective_stops = stop_at_items.copy()
+    if root_item in ITEM_SPECIFIC_STOPS:
+        effective_stops |= ITEM_SPECIFIC_STOPS[root_item]
     
-    if not is_root and target_item in STOP_AT_ITEMS:
+    if not is_root and target_item in effective_stops:
         return {
             'item': target_item,
             'quantity': quantity,
@@ -98,6 +105,14 @@ def compute_production_chain(target_item, items, item_key_map, item_category_map
     
     available_recipes = recipes_by_output.get(target_item, [])
     if not available_recipes:
+        return {
+            'item': target_item,
+            'quantity': quantity,
+            'raw_ingredients': {target_item: quantity},
+            'steps': []
+        }
+    
+    if is_raw_resource(target_item, item_category_map) and not available_recipes:
         return {
             'item': target_item,
             'quantity': quantity,
@@ -141,28 +156,33 @@ def compute_production_chain(target_item, items, item_key_map, item_category_map
     
     visited_with_current = visited | {target_item}
     
-    for ingredient_key, ingredient_qty in recipe['ingredients'].items():
-        ingredient_name = items.get(ingredient_key, {}).get('name')
-        if not ingredient_name:
-            continue
-        
-        required_qty = ingredient_qty * ratio
-        step['requires'][ingredient_name] = required_qty
-        
-        ingredient_chain = compute_production_chain(
-            ingredient_name, 
-            items, 
-            item_key_map, 
-            item_category_map, 
-            recipes_by_output, 
-            required_qty, 
-            visited_with_current,
-            is_root=False
-        )
-        ingredient_chains.append(ingredient_chain)
-        
-        for raw_item, raw_qty in ingredient_chain['raw_ingredients'].items():
-            raw_ingredients[raw_item] += raw_qty
+    has_ingredients = bool(recipe.get('ingredients'))
+    
+    if has_ingredients:
+        for ingredient_key, ingredient_qty in recipe['ingredients'].items():
+            ingredient_name = items.get(ingredient_key, {}).get('name')
+            if not ingredient_name:
+                continue
+            
+            required_qty = ingredient_qty * ratio
+            step['requires'][ingredient_name] = required_qty
+            
+            ingredient_chain = compute_production_chain(
+                ingredient_name, 
+                items, 
+                item_key_map, 
+                item_category_map, 
+                recipes_by_output, 
+                required_qty, 
+                visited_with_current,
+                is_root=False,
+                stop_at_items=stop_at_items,
+                root_item=root_item
+            )
+            ingredient_chains.append(ingredient_chain)
+            
+            for raw_item, raw_qty in ingredient_chain['raw_ingredients'].items():
+                raw_ingredients[raw_item] += raw_qty
     
     all_steps = [step]
     for chain in ingredient_chains:
@@ -174,6 +194,60 @@ def compute_production_chain(target_item, items, item_key_map, item_category_map
         'raw_ingredients': dict(raw_ingredients),
         'steps': all_steps
     }
+
+
+def find_best_intermediate_stops(target_item, items, item_key_map, item_category_map, recipes_by_output):
+    base_stops = ALWAYS_STOP.copy()
+    if target_item in ITEM_SPECIFIC_STOPS:
+        base_stops |= ITEM_SPECIFIC_STOPS[target_item]
+    
+    base_chain = compute_production_chain(
+        target_item, items, item_key_map, item_category_map, recipes_by_output,
+        quantity=1.0, stop_at_items=base_stops, root_item=target_item
+    )
+    
+    num_inputs = len(base_chain['raw_ingredients'])
+    
+    if num_inputs <= MAX_INPUTS:
+        return base_chain, set()
+    
+    steps = base_chain.get('steps', [])
+    
+    intermediate_candidates = defaultdict(int)
+    for step in steps:
+        for prod_item in step['produces'].keys():
+            if prod_item != target_item:
+                intermediate_candidates[prod_item] += 1
+    
+    candidates = [(item, count) for item, count in intermediate_candidates.items() 
+                  if not is_raw_resource(item, item_category_map)]
+    candidates.sort(key=lambda x: x[1], reverse=True)
+    
+    best_chain = base_chain
+    best_stops = base_stops.copy()
+    
+    for i in range(len(candidates)):
+        for candidate_item, _ in candidates[:i+1]:
+            test_stops = base_stops | {candidate_item}
+            
+            test_chain = compute_production_chain(
+                target_item, items, item_key_map, item_category_map, recipes_by_output,
+                quantity=1.0, stop_at_items=test_stops, root_item=target_item
+            )
+            
+            num_test_inputs = len(test_chain['raw_ingredients'])
+            
+            if num_test_inputs <= MAX_INPUTS:
+                if num_test_inputs < len(best_chain['raw_ingredients']):
+                    best_chain = test_chain
+                    best_stops = test_stops.copy()
+                    break
+        
+        if len(best_chain['raw_ingredients']) <= MAX_INPUTS:
+            break
+    
+    item_specific = ITEM_SPECIFIC_STOPS.get(target_item, set())
+    return best_chain, (best_stops - ALWAYS_STOP - item_specific)
 
 
 def format_transformation(index, tier, item_name, chain):
@@ -225,18 +299,30 @@ def main():
     items, recipes, target_items, item_key_map, item_category_map, recipes_by_output = load_data()
     
     transformations = []
+    optimizations = []
     
     for index, tier, item_name in target_items:
         print(f"Computing production chain for {item_name} (Tier {tier})...")
         
-        chain = compute_production_chain(
+        chain, intermediate_stops = find_best_intermediate_stops(
             item_name, 
             items, 
             item_key_map, 
             item_category_map, 
-            recipes_by_output,
-            quantity=1.0
+            recipes_by_output
         )
+        
+        num_inputs = len(chain['raw_ingredients'])
+        
+        if intermediate_stops:
+            print(f"  → Optimized: {num_inputs} inputs (stopped at: {', '.join(sorted(intermediate_stops))})")
+            optimizations.append({
+                'item': item_name,
+                'stops': sorted(intermediate_stops),
+                'num_inputs': num_inputs
+            })
+        elif num_inputs > MAX_INPUTS:
+            print(f"  ⚠ Could not optimize to {MAX_INPUTS} inputs (has {num_inputs})")
         
         transformation = format_transformation(index, tier, item_name, chain)
         transformations.append(transformation)
@@ -245,7 +331,14 @@ def main():
         json.dump(transformations, f, indent=2)
     
     print(f"\nGenerated {len(transformations)} transformations")
-    print(f"Output written to {OUTPUT_PATH}")
+    print(f"Optimized {len(optimizations)} items with intermediate stops")
+    
+    if optimizations:
+        print("\nOptimizations applied:")
+        for opt in optimizations:
+            print(f"  {opt['item']}: {opt['num_inputs']} inputs, stopped at {', '.join(opt['stops'])}")
+    
+    print(f"\nOutput written to {OUTPUT_PATH}")
 
 
 if __name__ == '__main__':

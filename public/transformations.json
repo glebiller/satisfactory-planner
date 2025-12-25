@@ -11,7 +11,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Iron Plate",
@@ -34,6 +34,17 @@
           "Iron Ore": 1.5
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 1.5
+        },
+        "requires": {
+          "Iron Ore": 1.5
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -49,7 +60,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Iron Rod",
@@ -72,6 +83,17 @@
           "Iron Ore": 1.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 1.0
+        },
+        "requires": {
+          "Iron Ore": 1.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -87,7 +109,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Wire",
@@ -110,6 +132,17 @@
           "Copper Ore": 0.5
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 0.5
+        },
+        "requires": {
+          "Copper Ore": 0.5
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -125,7 +158,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 3,
+    "num_steps": 4,
     "transformation_steps": [
       {
         "recipe": "Cable",
@@ -159,6 +192,17 @@
           "Copper Ore": 1.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 1.0
+        },
+        "requires": {
+          "Copper Ore": 1.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -174,13 +218,24 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 1,
+    "num_steps": 2,
     "transformation_steps": [
       {
         "recipe": "Concrete",
         "building": "ConstructorMk1",
         "produces": {
           "Concrete": 1.0
+        },
+        "requires": {
+          "Limestone": 3.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Limestone",
+        "building": "MinerMk1",
+        "produces": {
+          "Limestone": 3.0
         },
         "requires": {
           "Limestone": 3.0
@@ -201,7 +256,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 6,
+    "num_steps": 8,
     "transformation_steps": [
       {
         "recipe": "Reinforced Iron Plate",
@@ -231,6 +286,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 9.0
+        },
+        "requires": {
+          "Iron Ore": 9.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 9.0
         },
         "requires": {
           "Iron Ore": 9.0
@@ -269,6 +335,17 @@
           "Iron Ore": 3.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 3.0
+        },
+        "requires": {
+          "Iron Ore": 3.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -284,7 +361,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Copper Sheet",
@@ -307,6 +384,17 @@
           "Copper Ore": 2.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 2.0
+        },
+        "requires": {
+          "Copper Ore": 2.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -322,7 +410,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 6,
+    "num_steps": 8,
     "transformation_steps": [
       {
         "recipe": "Rotor",
@@ -352,6 +440,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 5.0
+        },
+        "requires": {
+          "Iron Ore": 5.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 5.0
         },
         "requires": {
           "Iron Ore": 5.0
@@ -390,6 +489,17 @@
           "Iron Ore": 6.25
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 6.25
+        },
+        "requires": {
+          "Iron Ore": 6.25
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -405,7 +515,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 9,
+    "num_steps": 12,
     "transformation_steps": [
       {
         "recipe": "Modular Frame",
@@ -454,6 +564,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 13.5
+        },
+        "requires": {
+          "Iron Ore": 13.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -487,6 +608,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 4.5
+        },
+        "requires": {
+          "Iron Ore": 4.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Iron Rod",
         "building": "ConstructorMk1",
         "produces": {
@@ -507,6 +639,17 @@
           "Iron Ore": 6.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 6.0
+        },
+        "requires": {
+          "Iron Ore": 6.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -522,7 +665,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 13,
+    "num_steps": 17,
     "transformation_steps": [
       {
         "recipe": "Smart Plating",
@@ -571,6 +714,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 9.0
+        },
+        "requires": {
+          "Iron Ore": 9.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -597,6 +751,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 3.0
+        },
+        "requires": {
+          "Iron Ore": 3.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 3.0
         },
         "requires": {
           "Iron Ore": 3.0
@@ -638,6 +803,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 5.0
+        },
+        "requires": {
+          "Iron Ore": 5.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -669,6 +845,17 @@
           "Iron Ore": 6.25
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 6.25
+        },
+        "requires": {
+          "Iron Ore": 6.25
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -688,7 +875,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 4,
     "transformation_steps": [
       {
         "recipe": "Steel Beam",
@@ -712,6 +899,28 @@
           "Coal": 4.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 4.0
+        },
+        "requires": {
+          "Iron Ore": 4.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 4.0
+        },
+        "requires": {
+          "Coal": 4.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -731,7 +940,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 4,
     "transformation_steps": [
       {
         "recipe": "Steel Pipe",
@@ -755,6 +964,28 @@
           "Coal": 1.5
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 1.5
+        },
+        "requires": {
+          "Iron Ore": 1.5
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 1.5
+        },
+        "requires": {
+          "Coal": 1.5
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -774,7 +1005,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 12,
+    "num_steps": 17,
     "transformation_steps": [
       {
         "recipe": "Versatile Framework",
@@ -835,6 +1066,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 6.75
+        },
+        "requires": {
+          "Iron Ore": 6.75
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -868,6 +1110,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 2.25
+        },
+        "requires": {
+          "Iron Ore": 2.25
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Iron Rod",
         "building": "ConstructorMk1",
         "produces": {
@@ -883,6 +1136,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 3.0
+        },
+        "requires": {
+          "Iron Ore": 3.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 3.0
         },
         "requires": {
           "Iron Ore": 3.0
@@ -911,6 +1175,28 @@
           "Coal": 24.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 24.0
+        },
+        "requires": {
+          "Iron Ore": 24.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 24.0
+        },
+        "requires": {
+          "Coal": 24.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -934,7 +1220,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 4,
+    "num_steps": 7,
     "transformation_steps": [
       {
         "recipe": "Encased Industrial Beam",
@@ -972,10 +1258,43 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 12.0
+        },
+        "requires": {
+          "Iron Ore": 12.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 12.0
+        },
+        "requires": {
+          "Coal": 12.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Concrete",
         "building": "ConstructorMk1",
         "produces": {
           "Concrete": 6.0
+        },
+        "requires": {
+          "Limestone": 18.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Limestone",
+        "building": "MinerMk1",
+        "produces": {
+          "Limestone": 18.0
         },
         "requires": {
           "Limestone": 18.0
@@ -1004,7 +1323,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 12,
+    "num_steps": 17,
     "transformation_steps": [
       {
         "recipe": "Motor",
@@ -1053,6 +1372,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 10.0
+        },
+        "requires": {
+          "Iron Ore": 10.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -1079,6 +1409,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 12.5
+        },
+        "requires": {
+          "Iron Ore": 12.5
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 12.5
         },
         "requires": {
           "Iron Ore": 12.5
@@ -1121,6 +1462,28 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 9.0
+        },
+        "requires": {
+          "Iron Ore": 9.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 9.0
+        },
+        "requires": {
+          "Coal": 9.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Wire",
         "building": "ConstructorMk1",
         "produces": {
@@ -1136,6 +1499,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 8.0
+        },
+        "requires": {
+          "Copper Ore": 8.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 8.0
         },
         "requires": {
           "Copper Ore": 8.0
@@ -1164,7 +1538,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 9,
+    "num_steps": 13,
     "transformation_steps": [
       {
         "recipe": "Automated Wiring",
@@ -1214,6 +1588,28 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 4.5
+        },
+        "requires": {
+          "Iron Ore": 4.5
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 4.5
+        },
+        "requires": {
+          "Coal": 4.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Wire",
         "building": "ConstructorMk1",
         "produces": {
@@ -1229,6 +1625,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 4.0
+        },
+        "requires": {
+          "Copper Ore": 4.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 4.0
         },
         "requires": {
           "Copper Ore": 4.0
@@ -1262,6 +1669,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 20.0
+        },
+        "requires": {
+          "Copper Ore": 20.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 20.0
         },
         "requires": {
           "Copper Ore": 20.0
@@ -1376,7 +1794,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 7,
+    "num_steps": 9,
     "transformation_steps": [
       {
         "recipe": "Computer",
@@ -1426,6 +1844,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 16.0
+        },
+        "requires": {
+          "Copper Ore": 16.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Cable",
         "building": "ConstructorMk1",
         "produces": {
@@ -1457,6 +1886,17 @@
           "Copper Ore": 8.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 8.0
+        },
+        "requires": {
+          "Copper Ore": 8.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -1480,7 +1920,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 19,
+    "num_steps": 28,
     "transformation_steps": [
       {
         "recipe": "Heavy Modular Frame",
@@ -1543,6 +1983,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 67.5
+        },
+        "requires": {
+          "Iron Ore": 67.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -1576,6 +2027,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 22.5
+        },
+        "requires": {
+          "Iron Ore": 22.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Iron Rod",
         "building": "ConstructorMk1",
         "produces": {
@@ -1591,6 +2053,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 30.0
+        },
+        "requires": {
+          "Iron Ore": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 30.0
         },
         "requires": {
           "Iron Ore": 30.0
@@ -1616,6 +2089,28 @@
         },
         "requires": {
           "Iron Ore": 30.0,
+          "Coal": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 30.0
+        },
+        "requires": {
+          "Iron Ore": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 30.0
+        },
+        "requires": {
           "Coal": 30.0
         },
         "byproducts": {}
@@ -1656,10 +2151,43 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 60.0
+        },
+        "requires": {
+          "Iron Ore": 60.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 60.0
+        },
+        "requires": {
+          "Coal": 60.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Concrete",
         "building": "ConstructorMk1",
         "produces": {
           "Concrete": 30.0
+        },
+        "requires": {
+          "Limestone": 90.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Limestone",
+        "building": "MinerMk1",
+        "produces": {
+          "Limestone": 90.0
         },
         "requires": {
           "Limestone": 90.0
@@ -1698,6 +2226,17 @@
           "Iron Ore": 30.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 30.0
+        },
+        "requires": {
+          "Iron Ore": 30.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -1725,7 +2264,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 26,
+    "num_steps": 35,
     "transformation_steps": [
       {
         "recipe": "Modular Engine",
@@ -1787,6 +2326,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 20.0
+        },
+        "requires": {
+          "Iron Ore": 20.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -1813,6 +2363,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 25.0
+        },
+        "requires": {
+          "Iron Ore": 25.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 25.0
         },
         "requires": {
           "Iron Ore": 25.0
@@ -1855,6 +2416,28 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 18.0
+        },
+        "requires": {
+          "Iron Ore": 18.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 18.0
+        },
+        "requires": {
+          "Coal": 18.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Wire",
         "building": "ConstructorMk1",
         "produces": {
@@ -1870,6 +2453,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 16.0
+        },
+        "requires": {
+          "Copper Ore": 16.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 16.0
         },
         "requires": {
           "Copper Ore": 16.0
@@ -1923,6 +2517,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 18.0
+        },
+        "requires": {
+          "Iron Ore": 18.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -1949,6 +2554,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 6.0
+        },
+        "requires": {
+          "Iron Ore": 6.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 6.0
         },
         "requires": {
           "Iron Ore": 6.0
@@ -1990,6 +2606,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 10.0
+        },
+        "requires": {
+          "Iron Ore": 10.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -2016,6 +2643,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 12.5
+        },
+        "requires": {
+          "Iron Ore": 12.5
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 12.5
         },
         "requires": {
           "Iron Ore": 12.5
@@ -2052,7 +2690,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 39,
+    "num_steps": 55,
     "transformation_steps": [
       {
         "recipe": "Adaptive Control Unit",
@@ -2116,6 +2754,28 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 22.5
+        },
+        "requires": {
+          "Iron Ore": 22.5
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 22.5
+        },
+        "requires": {
+          "Coal": 22.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Wire",
         "building": "ConstructorMk1",
         "produces": {
@@ -2131,6 +2791,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 20.0
+        },
+        "requires": {
+          "Copper Ore": 20.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 20.0
         },
         "requires": {
           "Copper Ore": 20.0
@@ -2171,6 +2842,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 100.0
+        },
+        "requires": {
+          "Copper Ore": 100.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Circuit Board",
         "building": "AssemblerMk1",
         "produces": {
@@ -2198,6 +2880,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 20.0
+        },
+        "requires": {
+          "Copper Ore": 20.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 20.0
         },
         "requires": {
           "Copper Ore": 20.0
@@ -2265,6 +2958,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 67.5
+        },
+        "requires": {
+          "Iron Ore": 67.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -2298,6 +3002,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 22.5
+        },
+        "requires": {
+          "Iron Ore": 22.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Iron Rod",
         "building": "ConstructorMk1",
         "produces": {
@@ -2313,6 +3028,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 30.0
+        },
+        "requires": {
+          "Iron Ore": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 30.0
         },
         "requires": {
           "Iron Ore": 30.0
@@ -2338,6 +3064,28 @@
         },
         "requires": {
           "Iron Ore": 30.0,
+          "Coal": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 30.0
+        },
+        "requires": {
+          "Iron Ore": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 30.0
+        },
+        "requires": {
           "Coal": 30.0
         },
         "byproducts": {}
@@ -2378,10 +3126,43 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 60.0
+        },
+        "requires": {
+          "Iron Ore": 60.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 60.0
+        },
+        "requires": {
+          "Coal": 60.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Concrete",
         "building": "ConstructorMk1",
         "produces": {
           "Concrete": 30.0
+        },
+        "requires": {
+          "Limestone": 90.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Limestone",
+        "building": "MinerMk1",
+        "produces": {
+          "Limestone": 90.0
         },
         "requires": {
           "Limestone": 90.0
@@ -2415,6 +3196,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 30.0
+        },
+        "requires": {
+          "Iron Ore": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 30.0
         },
         "requires": {
           "Iron Ore": 30.0
@@ -2469,6 +3261,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 32.0
+        },
+        "requires": {
+          "Copper Ore": 32.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Cable",
         "building": "ConstructorMk1",
         "produces": {
@@ -2500,6 +3303,17 @@
           "Copper Ore": 16.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 16.0
+        },
+        "requires": {
+          "Copper Ore": 16.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -2519,7 +3333,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Alclad Aluminum Sheet",
@@ -2538,6 +3352,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 0.3333
+        },
+        "requires": {
+          "Copper Ore": 0.3333
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 0.3333
         },
         "requires": {
           "Copper Ore": 0.3333
@@ -2601,7 +3426,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 20,
+    "num_steps": 26,
     "transformation_steps": [
       {
         "recipe": "Radio Control Unit",
@@ -2652,6 +3477,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Raw Quartz",
+        "building": "MinerMk1",
+        "produces": {
+          "Raw Quartz": 15.0
+        },
+        "requires": {
+          "Raw Quartz": 15.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Cable",
         "building": "ConstructorMk1",
         "produces": {
@@ -2678,6 +3514,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 7.0
+        },
+        "requires": {
+          "Copper Ore": 7.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 7.0
         },
         "requires": {
           "Copper Ore": 7.0
@@ -2719,6 +3566,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 11.25
+        },
+        "requires": {
+          "Iron Ore": 11.25
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -2745,6 +3603,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 3.75
+        },
+        "requires": {
+          "Iron Ore": 3.75
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 3.75
         },
         "requires": {
           "Iron Ore": 3.75
@@ -2799,6 +3668,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 16.0
+        },
+        "requires": {
+          "Copper Ore": 16.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Cable",
         "building": "ConstructorMk1",
         "produces": {
@@ -2830,6 +3710,17 @@
           "Copper Ore": 8.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 8.0
+        },
+        "requires": {
+          "Copper Ore": 8.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -2853,7 +3744,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 22,
+    "num_steps": 29,
     "transformation_steps": [
       {
         "recipe": "Supercomputer",
@@ -2917,6 +3808,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 64.0
+        },
+        "requires": {
+          "Copper Ore": 64.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Cable",
         "building": "ConstructorMk1",
         "produces": {
@@ -2943,6 +3845,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 32.0
+        },
+        "requires": {
+          "Copper Ore": 32.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 32.0
         },
         "requires": {
           "Copper Ore": 32.0
@@ -2984,6 +3897,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 20.0
+        },
+        "requires": {
+          "Copper Ore": 20.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Quickwire",
         "building": "ConstructorMk1",
         "produces": {
@@ -2999,6 +3923,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Caterium Ingot": 8.0
+        },
+        "requires": {
+          "Caterium Ore": 24.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Caterium Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Caterium Ore": 24.0
         },
         "requires": {
           "Caterium Ore": 24.0
@@ -3041,6 +3976,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Caterium Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Caterium Ore": 100.8
+        },
+        "requires": {
+          "Caterium Ore": 100.8
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Cable",
         "building": "ConstructorMk1",
         "produces": {
@@ -3067,6 +4013,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 30.0
+        },
+        "requires": {
+          "Copper Ore": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 30.0
         },
         "requires": {
           "Copper Ore": 30.0
@@ -3106,6 +4063,17 @@
           "Copper Ore": 12.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 12.0
+        },
+        "requires": {
+          "Copper Ore": 12.0
+        },
+        "byproducts": {}
       }
     ]
   },
@@ -3116,32 +4084,24 @@
     "output_quantity": 1.0,
     "inputs": [
       {
+        "name": "Adaptive Control Unit",
+        "quantity": 2.0
+      },
+      {
         "name": "Caterium Ore",
         "quantity": 124.8
       },
       {
-        "name": "Coal",
-        "quantity": 225.0
-      },
-      {
         "name": "Copper Ore",
-        "quantity": 534.0
-      },
-      {
-        "name": "Iron Ore",
-        "quantity": 525.0
-      },
-      {
-        "name": "Limestone",
-        "quantity": 180.0
+        "quantity": 158.0
       },
       {
         "name": "Plastic",
-        "quantity": 336.0
+        "quantity": 168.0
       }
     ],
     "byproducts": [],
-    "num_steps": 62,
+    "num_steps": 30,
     "transformation_steps": [
       {
         "recipe": "Assembly Director System",
@@ -3152,453 +4112,6 @@
         "requires": {
           "Adaptive Control Unit": 2.0,
           "Supercomputer": 1.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Adaptive Control Unit",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Adaptive Control Unit": 2.0
-        },
-        "requires": {
-          "Automated Wiring": 10.0,
-          "Circuit Board": 10.0,
-          "Heavy Modular Frame": 2.0,
-          "Computer": 4.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Automated Wiring",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Automated Wiring": 10.0
-        },
-        "requires": {
-          "Stator": 10.0,
-          "Cable": 200.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Stator",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Stator": 10.0
-        },
-        "requires": {
-          "Steel Pipe": 30.0,
-          "Wire": 80.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Pipe",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Pipe": 30.0
-        },
-        "requires": {
-          "Steel Ingot": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 45.0
-        },
-        "requires": {
-          "Iron Ore": 45.0,
-          "Coal": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 80.0
-        },
-        "requires": {
-          "Copper Ingot": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 40.0
-        },
-        "requires": {
-          "Copper Ore": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 200.0
-        },
-        "requires": {
-          "Wire": 400.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 400.0
-        },
-        "requires": {
-          "Copper Ingot": 200.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 200.0
-        },
-        "requires": {
-          "Copper Ore": 200.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 10.0
-        },
-        "requires": {
-          "Copper Sheet": 20.0,
-          "Plastic": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 20.0
-        },
-        "requires": {
-          "Copper Ingot": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 40.0
-        },
-        "requires": {
-          "Copper Ore": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Heavy Modular Frame",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Heavy Modular Frame": 2.0
-        },
-        "requires": {
-          "Modular Frame": 10.0,
-          "Steel Pipe": 40.0,
-          "Encased Industrial Beam": 10.0,
-          "Screws": 240.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Modular Frame",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Modular Frame": 10.0
-        },
-        "requires": {
-          "Reinforced Iron Plate": 15.0,
-          "Iron Rod": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 15.0
-        },
-        "requires": {
-          "Iron Plate": 90.0,
-          "Screws": 180.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Plate",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Plate": 90.0
-        },
-        "requires": {
-          "Iron Ingot": 135.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 135.0
-        },
-        "requires": {
-          "Iron Ore": 135.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 180.0
-        },
-        "requires": {
-          "Iron Rod": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 45.0
-        },
-        "requires": {
-          "Iron Ingot": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 45.0
-        },
-        "requires": {
-          "Iron Ore": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 60.0
-        },
-        "requires": {
-          "Iron Ingot": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 60.0
-        },
-        "requires": {
-          "Iron Ore": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Pipe",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Pipe": 40.0
-        },
-        "requires": {
-          "Steel Ingot": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 60.0
-        },
-        "requires": {
-          "Iron Ore": 60.0,
-          "Coal": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Encased Industrial Beam",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Encased Industrial Beam": 10.0
-        },
-        "requires": {
-          "Steel Beam": 30.0,
-          "Concrete": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Beam",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Beam": 30.0
-        },
-        "requires": {
-          "Steel Ingot": 120.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 120.0
-        },
-        "requires": {
-          "Iron Ore": 120.0,
-          "Coal": 120.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Concrete",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Concrete": 60.0
-        },
-        "requires": {
-          "Limestone": 180.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 240.0
-        },
-        "requires": {
-          "Iron Rod": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 60.0
-        },
-        "requires": {
-          "Iron Ingot": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 60.0
-        },
-        "requires": {
-          "Iron Ore": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Computer",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Computer": 4.0
-        },
-        "requires": {
-          "Circuit Board": 16.0,
-          "Cable": 32.0,
-          "Plastic": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 16.0
-        },
-        "requires": {
-          "Copper Sheet": 32.0,
-          "Plastic": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 32.0
-        },
-        "requires": {
-          "Copper Ingot": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 64.0
-        },
-        "requires": {
-          "Copper Ore": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 32.0
-        },
-        "requires": {
-          "Wire": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 64.0
-        },
-        "requires": {
-          "Copper Ingot": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 32.0
-        },
-        "requires": {
-          "Copper Ore": 32.0
         },
         "byproducts": {}
       },
@@ -3664,6 +4177,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 64.0
+        },
+        "requires": {
+          "Copper Ore": 64.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Cable",
         "building": "ConstructorMk1",
         "produces": {
@@ -3690,6 +4214,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 32.0
+        },
+        "requires": {
+          "Copper Ore": 32.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 32.0
         },
         "requires": {
           "Copper Ore": 32.0
@@ -3731,6 +4266,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 20.0
+        },
+        "requires": {
+          "Copper Ore": 20.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Quickwire",
         "building": "ConstructorMk1",
         "produces": {
@@ -3746,6 +4292,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Caterium Ingot": 8.0
+        },
+        "requires": {
+          "Caterium Ore": 24.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Caterium Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Caterium Ore": 24.0
         },
         "requires": {
           "Caterium Ore": 24.0
@@ -3788,6 +4345,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Caterium Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Caterium Ore": 100.8
+        },
+        "requires": {
+          "Caterium Ore": 100.8
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Cable",
         "building": "ConstructorMk1",
         "produces": {
@@ -3814,6 +4382,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 30.0
+        },
+        "requires": {
+          "Copper Ore": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 30.0
         },
         "requires": {
           "Copper Ore": 30.0
@@ -3848,6 +4427,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 12.0
+        },
+        "requires": {
+          "Copper Ore": 12.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 12.0
         },
         "requires": {
           "Copper Ore": 12.0
@@ -3880,7 +4470,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 24,
+    "num_steps": 34,
     "transformation_steps": [
       {
         "recipe": "Magnetic Field Generator",
@@ -3953,6 +4543,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 16.875
+        },
+        "requires": {
+          "Iron Ore": 16.875
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -3986,6 +4587,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 5.625
+        },
+        "requires": {
+          "Iron Ore": 5.625
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Iron Rod",
         "building": "ConstructorMk1",
         "produces": {
@@ -4001,6 +4613,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 7.5
+        },
+        "requires": {
+          "Iron Ore": 7.5
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 7.5
         },
         "requires": {
           "Iron Ore": 7.5
@@ -4026,6 +4649,28 @@
         },
         "requires": {
           "Iron Ore": 60.0,
+          "Coal": 60.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 60.0
+        },
+        "requires": {
+          "Iron Ore": 60.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 60.0
+        },
+        "requires": {
           "Coal": 60.0
         },
         "byproducts": {}
@@ -4078,6 +4723,28 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 6.75
+        },
+        "requires": {
+          "Iron Ore": 6.75
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 6.75
+        },
+        "requires": {
+          "Coal": 6.75
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Wire",
         "building": "ConstructorMk1",
         "produces": {
@@ -4093,6 +4760,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 6.0
+        },
+        "requires": {
+          "Copper Ore": 6.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 6.0
         },
         "requires": {
           "Copper Ore": 6.0
@@ -4134,6 +4812,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 10.0
+        },
+        "requires": {
+          "Copper Ore": 10.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Quickwire",
         "building": "ConstructorMk1",
         "produces": {
@@ -4149,6 +4838,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Caterium Ingot": 4.0
+        },
+        "requires": {
+          "Caterium Ore": 12.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Caterium Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Caterium Ore": 12.0
         },
         "requires": {
           "Caterium Ore": 12.0
@@ -4185,7 +4885,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 7,
+    "num_steps": 10,
     "transformation_steps": [
       {
         "recipe": "Cooling System",
@@ -4237,6 +4937,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 3.3333
+        },
+        "requires": {
+          "Copper Ore": 3.3333
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Copper Sheet",
         "building": "ConstructorMk1",
         "produces": {
@@ -4259,6 +4970,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 12.0
+        },
+        "requires": {
+          "Copper Ore": 12.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Water",
         "building": "WaterPump",
         "produces": {
@@ -4266,6 +4988,17 @@
         },
         "requires": {
           "Water": 5000.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Nitrogen Gas",
+        "building": "FrackingExtractor",
+        "produces": {
+          "Nitrogen Gas": 25000.0
+        },
+        "requires": {
+          "Nitrogen Gas": 25000.0
         },
         "byproducts": {}
       }
@@ -4299,7 +5032,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 21,
+    "num_steps": 31,
     "transformation_steps": [
       {
         "recipe": "Fused Modular Frame",
@@ -4375,6 +5108,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 67.5
+        },
+        "requires": {
+          "Iron Ore": 67.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -4408,6 +5152,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 22.5
+        },
+        "requires": {
+          "Iron Ore": 22.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Iron Rod",
         "building": "ConstructorMk1",
         "produces": {
@@ -4423,6 +5178,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 30.0
+        },
+        "requires": {
+          "Iron Ore": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 30.0
         },
         "requires": {
           "Iron Ore": 30.0
@@ -4448,6 +5214,28 @@
         },
         "requires": {
           "Iron Ore": 30.0,
+          "Coal": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 30.0
+        },
+        "requires": {
+          "Iron Ore": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 30.0
+        },
+        "requires": {
           "Coal": 30.0
         },
         "byproducts": {}
@@ -4488,10 +5276,43 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 60.0
+        },
+        "requires": {
+          "Iron Ore": 60.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 60.0
+        },
+        "requires": {
+          "Coal": 60.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Concrete",
         "building": "ConstructorMk1",
         "produces": {
           "Concrete": 30.0
+        },
+        "requires": {
+          "Limestone": 90.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Limestone",
+        "building": "MinerMk1",
+        "produces": {
+          "Limestone": 90.0
         },
         "requires": {
           "Limestone": 90.0
@@ -4532,6 +5353,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 30.0
+        },
+        "requires": {
+          "Iron Ore": 30.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Aluminum Casing",
         "building": "ConstructorMk1",
         "produces": {
@@ -4539,6 +5371,17 @@
         },
         "requires": {
           "Aluminum Ingot": 75.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Nitrogen Gas",
+        "building": "FrackingExtractor",
+        "produces": {
+          "Nitrogen Gas": 25000.0
+        },
+        "requires": {
+          "Nitrogen Gas": 25000.0
         },
         "byproducts": {}
       }
@@ -4551,44 +5394,24 @@
     "output_quantity": 1.0,
     "inputs": [
       {
-        "name": "Aluminum Ingot",
-        "quantity": 88.0
+        "name": "Cooling System",
+        "quantity": 4.0
       },
       {
-        "name": "Coal",
-        "quantity": 36.0
+        "name": "Motor",
+        "quantity": 4.0
       },
       {
-        "name": "Copper Ore",
-        "quantity": 155.3333
-      },
-      {
-        "name": "Iron Ore",
-        "quantity": 156.0
-      },
-      {
-        "name": "Nitrogen Gas",
-        "quantity": 100000.0
-      },
-      {
-        "name": "Plastic",
-        "quantity": 64.0
-      },
-      {
-        "name": "Raw Quartz",
-        "quantity": 30.0
+        "name": "Radio Control Unit",
+        "quantity": 2.0
       },
       {
         "name": "Rubber",
-        "quantity": 32.0
-      },
-      {
-        "name": "Water",
-        "quantity": 20000.0
+        "quantity": 24.0
       }
     ],
     "byproducts": [],
-    "num_steps": 40,
+    "num_steps": 1,
     "transformation_steps": [
       {
         "recipe": "Turbo Motor",
@@ -4603,452 +5426,6 @@
           "Rubber": 24.0
         },
         "byproducts": {}
-      },
-      {
-        "recipe": "Cooling System",
-        "building": "Blender",
-        "produces": {
-          "Cooling System": 4.0
-        },
-        "requires": {
-          "Heat Sink": 8.0,
-          "Rubber": 8.0,
-          "Water": 20000.0,
-          "Nitrogen Gas": 100000.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Heat Sink",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Heat Sink": 8.0
-        },
-        "requires": {
-          "Alclad Aluminum Sheet": 40.0,
-          "Copper Sheet": 24.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Alclad Aluminum Sheet",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Alclad Aluminum Sheet": 40.0
-        },
-        "requires": {
-          "Aluminum Ingot": 40.0,
-          "Copper Ingot": 13.3333
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 13.3333
-        },
-        "requires": {
-          "Copper Ore": 13.3333
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 24.0
-        },
-        "requires": {
-          "Copper Ingot": 48.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 48.0
-        },
-        "requires": {
-          "Copper Ore": 48.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Water",
-        "building": "WaterPump",
-        "produces": {
-          "Water": 20000.0
-        },
-        "requires": {
-          "Water": 20000.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Radio Control Unit",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Radio Control Unit": 2.0
-        },
-        "requires": {
-          "Aluminum Casing": 32.0,
-          "Crystal Oscillator": 1.0,
-          "Computer": 2.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Aluminum Casing",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Aluminum Casing": 32.0
-        },
-        "requires": {
-          "Aluminum Ingot": 48.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Crystal Oscillator",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Crystal Oscillator": 1.0
-        },
-        "requires": {
-          "Quartz Crystal": 18.0,
-          "Cable": 14.0,
-          "Reinforced Iron Plate": 2.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quartz Crystal",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quartz Crystal": 18.0
-        },
-        "requires": {
-          "Raw Quartz": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 14.0
-        },
-        "requires": {
-          "Wire": 28.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 28.0
-        },
-        "requires": {
-          "Copper Ingot": 14.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 14.0
-        },
-        "requires": {
-          "Copper Ore": 14.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 2.5
-        },
-        "requires": {
-          "Iron Plate": 15.0,
-          "Screws": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Plate",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Plate": 15.0
-        },
-        "requires": {
-          "Iron Ingot": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 22.5
-        },
-        "requires": {
-          "Iron Ore": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 30.0
-        },
-        "requires": {
-          "Iron Rod": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 7.5
-        },
-        "requires": {
-          "Iron Ingot": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 7.5
-        },
-        "requires": {
-          "Iron Ore": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Computer",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Computer": 2.0
-        },
-        "requires": {
-          "Circuit Board": 8.0,
-          "Cable": 16.0,
-          "Plastic": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 8.0
-        },
-        "requires": {
-          "Copper Sheet": 16.0,
-          "Plastic": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 16.0
-        },
-        "requires": {
-          "Copper Ingot": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 32.0
-        },
-        "requires": {
-          "Copper Ore": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 16.0
-        },
-        "requires": {
-          "Wire": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 32.0
-        },
-        "requires": {
-          "Copper Ingot": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 16.0
-        },
-        "requires": {
-          "Copper Ore": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Motor",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Motor": 4.0
-        },
-        "requires": {
-          "Rotor": 8.0,
-          "Stator": 8.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Rotor",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Rotor": 8.0
-        },
-        "requires": {
-          "Iron Rod": 40.0,
-          "Screws": 200.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 40.0
-        },
-        "requires": {
-          "Iron Ingot": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 40.0
-        },
-        "requires": {
-          "Iron Ore": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 200.0
-        },
-        "requires": {
-          "Iron Rod": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 50.0
-        },
-        "requires": {
-          "Iron Ingot": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 50.0
-        },
-        "requires": {
-          "Iron Ore": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Stator",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Stator": 8.0
-        },
-        "requires": {
-          "Steel Pipe": 24.0,
-          "Wire": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Pipe",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Pipe": 24.0
-        },
-        "requires": {
-          "Steel Ingot": 36.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 36.0
-        },
-        "requires": {
-          "Iron Ore": 36.0,
-          "Coal": 36.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 64.0
-        },
-        "requires": {
-          "Copper Ingot": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 32.0
-        },
-        "requires": {
-          "Copper Ore": 32.0
-        },
-        "byproducts": {}
       }
     ]
   },
@@ -5059,48 +5436,24 @@
     "output_quantity": 1.0,
     "inputs": [
       {
-        "name": "Aluminum Ingot",
-        "quantity": 193.0
+        "name": "Cooling System",
+        "quantity": 3.0
       },
       {
-        "name": "Coal",
-        "quantity": 171.0
+        "name": "Fused Modular Frame",
+        "quantity": 1.0
       },
       {
-        "name": "Copper Ore",
-        "quantity": 241.3333
+        "name": "Modular Engine",
+        "quantity": 2.5
       },
       {
-        "name": "Iron Ore",
-        "quantity": 669.75
-      },
-      {
-        "name": "Limestone",
-        "quantity": 90.0
-      },
-      {
-        "name": "Nitrogen Gas",
-        "quantity": 200000.0
-      },
-      {
-        "name": "Plastic",
-        "quantity": 64.0
-      },
-      {
-        "name": "Raw Quartz",
-        "quantity": 30.0
-      },
-      {
-        "name": "Rubber",
-        "quantity": 75.5
-      },
-      {
-        "name": "Water",
-        "quantity": 35000.0
+        "name": "Turbo Motor",
+        "quantity": 1.0
       }
     ],
     "byproducts": [],
-    "num_steps": 95,
+    "num_steps": 1,
     "transformation_steps": [
       {
         "recipe": "Thermal Propulsion Rocket",
@@ -5115,1084 +5468,6 @@
           "Fused Modular Frame": 1.0
         },
         "byproducts": {}
-      },
-      {
-        "recipe": "Modular Engine",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Modular Engine": 2.5
-        },
-        "requires": {
-          "Motor": 5.0,
-          "Rubber": 37.5,
-          "Smart Plating": 5.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Motor",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Motor": 5.0
-        },
-        "requires": {
-          "Rotor": 10.0,
-          "Stator": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Rotor",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Rotor": 10.0
-        },
-        "requires": {
-          "Iron Rod": 50.0,
-          "Screws": 250.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 50.0
-        },
-        "requires": {
-          "Iron Ingot": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 50.0
-        },
-        "requires": {
-          "Iron Ore": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 250.0
-        },
-        "requires": {
-          "Iron Rod": 62.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 62.5
-        },
-        "requires": {
-          "Iron Ingot": 62.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 62.5
-        },
-        "requires": {
-          "Iron Ore": 62.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Stator",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Stator": 10.0
-        },
-        "requires": {
-          "Steel Pipe": 30.0,
-          "Wire": 80.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Pipe",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Pipe": 30.0
-        },
-        "requires": {
-          "Steel Ingot": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 45.0
-        },
-        "requires": {
-          "Iron Ore": 45.0,
-          "Coal": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 80.0
-        },
-        "requires": {
-          "Copper Ingot": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 40.0
-        },
-        "requires": {
-          "Copper Ore": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Smart Plating",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Smart Plating": 5.0
-        },
-        "requires": {
-          "Reinforced Iron Plate": 5.0,
-          "Rotor": 5.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 5.0
-        },
-        "requires": {
-          "Iron Plate": 30.0,
-          "Screws": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Plate",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Plate": 30.0
-        },
-        "requires": {
-          "Iron Ingot": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 45.0
-        },
-        "requires": {
-          "Iron Ore": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 60.0
-        },
-        "requires": {
-          "Iron Rod": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 15.0
-        },
-        "requires": {
-          "Iron Ingot": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 15.0
-        },
-        "requires": {
-          "Iron Ore": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Rotor",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Rotor": 5.0
-        },
-        "requires": {
-          "Iron Rod": 25.0,
-          "Screws": 125.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 25.0
-        },
-        "requires": {
-          "Iron Ingot": 25.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 25.0
-        },
-        "requires": {
-          "Iron Ore": 25.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 125.0
-        },
-        "requires": {
-          "Iron Rod": 31.25
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 31.25
-        },
-        "requires": {
-          "Iron Ingot": 31.25
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 31.25
-        },
-        "requires": {
-          "Iron Ore": 31.25
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Turbo Motor",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Turbo Motor": 1.0
-        },
-        "requires": {
-          "Cooling System": 4.0,
-          "Radio Control Unit": 2.0,
-          "Motor": 4.0,
-          "Rubber": 24.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cooling System",
-        "building": "Blender",
-        "produces": {
-          "Cooling System": 4.0
-        },
-        "requires": {
-          "Heat Sink": 8.0,
-          "Rubber": 8.0,
-          "Water": 20000.0,
-          "Nitrogen Gas": 100000.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Heat Sink",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Heat Sink": 8.0
-        },
-        "requires": {
-          "Alclad Aluminum Sheet": 40.0,
-          "Copper Sheet": 24.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Alclad Aluminum Sheet",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Alclad Aluminum Sheet": 40.0
-        },
-        "requires": {
-          "Aluminum Ingot": 40.0,
-          "Copper Ingot": 13.3333
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 13.3333
-        },
-        "requires": {
-          "Copper Ore": 13.3333
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 24.0
-        },
-        "requires": {
-          "Copper Ingot": 48.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 48.0
-        },
-        "requires": {
-          "Copper Ore": 48.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Water",
-        "building": "WaterPump",
-        "produces": {
-          "Water": 20000.0
-        },
-        "requires": {
-          "Water": 20000.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Radio Control Unit",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Radio Control Unit": 2.0
-        },
-        "requires": {
-          "Aluminum Casing": 32.0,
-          "Crystal Oscillator": 1.0,
-          "Computer": 2.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Aluminum Casing",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Aluminum Casing": 32.0
-        },
-        "requires": {
-          "Aluminum Ingot": 48.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Crystal Oscillator",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Crystal Oscillator": 1.0
-        },
-        "requires": {
-          "Quartz Crystal": 18.0,
-          "Cable": 14.0,
-          "Reinforced Iron Plate": 2.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quartz Crystal",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quartz Crystal": 18.0
-        },
-        "requires": {
-          "Raw Quartz": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 14.0
-        },
-        "requires": {
-          "Wire": 28.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 28.0
-        },
-        "requires": {
-          "Copper Ingot": 14.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 14.0
-        },
-        "requires": {
-          "Copper Ore": 14.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 2.5
-        },
-        "requires": {
-          "Iron Plate": 15.0,
-          "Screws": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Plate",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Plate": 15.0
-        },
-        "requires": {
-          "Iron Ingot": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 22.5
-        },
-        "requires": {
-          "Iron Ore": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 30.0
-        },
-        "requires": {
-          "Iron Rod": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 7.5
-        },
-        "requires": {
-          "Iron Ingot": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 7.5
-        },
-        "requires": {
-          "Iron Ore": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Computer",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Computer": 2.0
-        },
-        "requires": {
-          "Circuit Board": 8.0,
-          "Cable": 16.0,
-          "Plastic": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 8.0
-        },
-        "requires": {
-          "Copper Sheet": 16.0,
-          "Plastic": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 16.0
-        },
-        "requires": {
-          "Copper Ingot": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 32.0
-        },
-        "requires": {
-          "Copper Ore": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 16.0
-        },
-        "requires": {
-          "Wire": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 32.0
-        },
-        "requires": {
-          "Copper Ingot": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 16.0
-        },
-        "requires": {
-          "Copper Ore": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Motor",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Motor": 4.0
-        },
-        "requires": {
-          "Rotor": 8.0,
-          "Stator": 8.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Rotor",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Rotor": 8.0
-        },
-        "requires": {
-          "Iron Rod": 40.0,
-          "Screws": 200.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 40.0
-        },
-        "requires": {
-          "Iron Ingot": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 40.0
-        },
-        "requires": {
-          "Iron Ore": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 200.0
-        },
-        "requires": {
-          "Iron Rod": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 50.0
-        },
-        "requires": {
-          "Iron Ingot": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 50.0
-        },
-        "requires": {
-          "Iron Ore": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Stator",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Stator": 8.0
-        },
-        "requires": {
-          "Steel Pipe": 24.0,
-          "Wire": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Pipe",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Pipe": 24.0
-        },
-        "requires": {
-          "Steel Ingot": 36.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 36.0
-        },
-        "requires": {
-          "Iron Ore": 36.0,
-          "Coal": 36.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 64.0
-        },
-        "requires": {
-          "Copper Ingot": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 32.0
-        },
-        "requires": {
-          "Copper Ore": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cooling System",
-        "building": "Blender",
-        "produces": {
-          "Cooling System": 3.0
-        },
-        "requires": {
-          "Heat Sink": 6.0,
-          "Rubber": 6.0,
-          "Water": 15000.0,
-          "Nitrogen Gas": 75000.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Heat Sink",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Heat Sink": 6.0
-        },
-        "requires": {
-          "Alclad Aluminum Sheet": 30.0,
-          "Copper Sheet": 18.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Alclad Aluminum Sheet",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Alclad Aluminum Sheet": 30.0
-        },
-        "requires": {
-          "Aluminum Ingot": 30.0,
-          "Copper Ingot": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 10.0
-        },
-        "requires": {
-          "Copper Ore": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 18.0
-        },
-        "requires": {
-          "Copper Ingot": 36.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 36.0
-        },
-        "requires": {
-          "Copper Ore": 36.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Water",
-        "building": "WaterPump",
-        "produces": {
-          "Water": 15000.0
-        },
-        "requires": {
-          "Water": 15000.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Fused Modular Frame",
-        "building": "Blender",
-        "produces": {
-          "Fused Modular Frame": 1.0
-        },
-        "requires": {
-          "Heavy Modular Frame": 1.0,
-          "Aluminum Casing": 50.0,
-          "Nitrogen Gas": 25000.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Heavy Modular Frame",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Heavy Modular Frame": 1.0
-        },
-        "requires": {
-          "Modular Frame": 5.0,
-          "Steel Pipe": 20.0,
-          "Encased Industrial Beam": 5.0,
-          "Screws": 120.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Modular Frame",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Modular Frame": 5.0
-        },
-        "requires": {
-          "Reinforced Iron Plate": 7.5,
-          "Iron Rod": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 7.5
-        },
-        "requires": {
-          "Iron Plate": 45.0,
-          "Screws": 90.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Plate",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Plate": 45.0
-        },
-        "requires": {
-          "Iron Ingot": 67.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 67.5
-        },
-        "requires": {
-          "Iron Ore": 67.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 90.0
-        },
-        "requires": {
-          "Iron Rod": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 22.5
-        },
-        "requires": {
-          "Iron Ingot": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 22.5
-        },
-        "requires": {
-          "Iron Ore": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 30.0
-        },
-        "requires": {
-          "Iron Ingot": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 30.0
-        },
-        "requires": {
-          "Iron Ore": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Pipe",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Pipe": 20.0
-        },
-        "requires": {
-          "Steel Ingot": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 30.0
-        },
-        "requires": {
-          "Iron Ore": 30.0,
-          "Coal": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Encased Industrial Beam",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Encased Industrial Beam": 5.0
-        },
-        "requires": {
-          "Steel Beam": 15.0,
-          "Concrete": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Beam",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Beam": 15.0
-        },
-        "requires": {
-          "Steel Ingot": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 60.0
-        },
-        "requires": {
-          "Iron Ore": 60.0,
-          "Coal": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Concrete",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Concrete": 30.0
-        },
-        "requires": {
-          "Limestone": 90.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 120.0
-        },
-        "requires": {
-          "Iron Rod": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 30.0
-        },
-        "requires": {
-          "Iron Ingot": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 30.0
-        },
-        "requires": {
-          "Iron Ore": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Aluminum Casing",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Aluminum Casing": 50.0
-        },
-        "requires": {
-          "Aluminum Ingot": 75.0
-        },
-        "byproducts": {}
       }
     ]
   },
@@ -6203,40 +5478,20 @@
     "output_quantity": 1.0,
     "inputs": [
       {
-        "name": "Aluminum Ingot",
-        "quantity": 123.0
-      },
-      {
-        "name": "Coal",
-        "quantity": 90.0
-      },
-      {
         "name": "Copper Ore",
-        "quantity": 1262.0
+        "quantity": 1200.0
       },
       {
-        "name": "Iron Ore",
-        "quantity": 270.0
+        "name": "Fused Modular Frame",
+        "quantity": 1.0
       },
       {
-        "name": "Limestone",
-        "quantity": 90.0
-      },
-      {
-        "name": "Nitrogen Gas",
-        "quantity": 25000.0
-      },
-      {
-        "name": "Plastic",
-        "quantity": 64.0
-      },
-      {
-        "name": "Raw Quartz",
-        "quantity": 30.0
+        "name": "Radio Control Unit",
+        "quantity": 2.0
       }
     ],
     "byproducts": [],
-    "num_steps": 45,
+    "num_steps": 5,
     "transformation_steps": [
       {
         "recipe": "Nuclear Pasta",
@@ -6273,6 +5528,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 1200.0
+        },
+        "requires": {
+          "Copper Ore": 1200.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Pressure Conversion Cube",
         "building": "AssemblerMk1",
         "produces": {
@@ -6281,475 +5547,6 @@
         "requires": {
           "Fused Modular Frame": 1.0,
           "Radio Control Unit": 2.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Fused Modular Frame",
-        "building": "Blender",
-        "produces": {
-          "Fused Modular Frame": 1.0
-        },
-        "requires": {
-          "Heavy Modular Frame": 1.0,
-          "Aluminum Casing": 50.0,
-          "Nitrogen Gas": 25000.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Heavy Modular Frame",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Heavy Modular Frame": 1.0
-        },
-        "requires": {
-          "Modular Frame": 5.0,
-          "Steel Pipe": 20.0,
-          "Encased Industrial Beam": 5.0,
-          "Screws": 120.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Modular Frame",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Modular Frame": 5.0
-        },
-        "requires": {
-          "Reinforced Iron Plate": 7.5,
-          "Iron Rod": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 7.5
-        },
-        "requires": {
-          "Iron Plate": 45.0,
-          "Screws": 90.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Plate",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Plate": 45.0
-        },
-        "requires": {
-          "Iron Ingot": 67.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 67.5
-        },
-        "requires": {
-          "Iron Ore": 67.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 90.0
-        },
-        "requires": {
-          "Iron Rod": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 22.5
-        },
-        "requires": {
-          "Iron Ingot": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 22.5
-        },
-        "requires": {
-          "Iron Ore": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 30.0
-        },
-        "requires": {
-          "Iron Ingot": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 30.0
-        },
-        "requires": {
-          "Iron Ore": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Pipe",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Pipe": 20.0
-        },
-        "requires": {
-          "Steel Ingot": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 30.0
-        },
-        "requires": {
-          "Iron Ore": 30.0,
-          "Coal": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Encased Industrial Beam",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Encased Industrial Beam": 5.0
-        },
-        "requires": {
-          "Steel Beam": 15.0,
-          "Concrete": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Beam",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Beam": 15.0
-        },
-        "requires": {
-          "Steel Ingot": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 60.0
-        },
-        "requires": {
-          "Iron Ore": 60.0,
-          "Coal": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Concrete",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Concrete": 30.0
-        },
-        "requires": {
-          "Limestone": 90.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 120.0
-        },
-        "requires": {
-          "Iron Rod": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 30.0
-        },
-        "requires": {
-          "Iron Ingot": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 30.0
-        },
-        "requires": {
-          "Iron Ore": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Aluminum Casing",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Aluminum Casing": 50.0
-        },
-        "requires": {
-          "Aluminum Ingot": 75.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Radio Control Unit",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Radio Control Unit": 2.0
-        },
-        "requires": {
-          "Aluminum Casing": 32.0,
-          "Crystal Oscillator": 1.0,
-          "Computer": 2.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Aluminum Casing",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Aluminum Casing": 32.0
-        },
-        "requires": {
-          "Aluminum Ingot": 48.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Crystal Oscillator",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Crystal Oscillator": 1.0
-        },
-        "requires": {
-          "Quartz Crystal": 18.0,
-          "Cable": 14.0,
-          "Reinforced Iron Plate": 2.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quartz Crystal",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quartz Crystal": 18.0
-        },
-        "requires": {
-          "Raw Quartz": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 14.0
-        },
-        "requires": {
-          "Wire": 28.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 28.0
-        },
-        "requires": {
-          "Copper Ingot": 14.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 14.0
-        },
-        "requires": {
-          "Copper Ore": 14.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 2.5
-        },
-        "requires": {
-          "Iron Plate": 15.0,
-          "Screws": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Plate",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Plate": 15.0
-        },
-        "requires": {
-          "Iron Ingot": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 22.5
-        },
-        "requires": {
-          "Iron Ore": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 30.0
-        },
-        "requires": {
-          "Iron Rod": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 7.5
-        },
-        "requires": {
-          "Iron Ingot": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 7.5
-        },
-        "requires": {
-          "Iron Ore": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Computer",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Computer": 2.0
-        },
-        "requires": {
-          "Circuit Board": 8.0,
-          "Cable": 16.0,
-          "Plastic": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 8.0
-        },
-        "requires": {
-          "Copper Sheet": 16.0,
-          "Plastic": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 16.0
-        },
-        "requires": {
-          "Copper Ingot": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 32.0
-        },
-        "requires": {
-          "Copper Ore": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 16.0
-        },
-        "requires": {
-          "Wire": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 32.0
-        },
-        "requires": {
-          "Copper Ingot": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 16.0
-        },
-        "requires": {
-          "Copper Ore": 16.0
         },
         "byproducts": {}
       }
@@ -6767,7 +5564,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Time Crystal",
@@ -6785,6 +5582,17 @@
         "building": "HadronCollider",
         "produces": {
           "Diamonds": 2.0
+        },
+        "requires": {
+          "Coal": 40.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 40.0
         },
         "requires": {
           "Coal": 40.0
@@ -6809,7 +5617,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 4,
+    "num_steps": 6,
     "transformation_steps": [
       {
         "recipe": "Ficsite Trigon",
@@ -6846,10 +5654,32 @@
         "byproducts": {}
       },
       {
+        "recipe": "SAM",
+        "building": "MinerMk1",
+        "produces": {
+          "SAM": 5.3333
+        },
+        "requires": {
+          "SAM": 5.3333
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Iron Ingot",
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 8.0
+        },
+        "requires": {
+          "Iron Ore": 8.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 8.0
         },
         "requires": {
           "Iron Ore": 8.0
@@ -6865,28 +5695,12 @@
     "output_quantity": 1.0,
     "inputs": [
       {
-        "name": "Caterium Ore",
-        "quantity": 31.2
-      },
-      {
-        "name": "Coal",
-        "quantity": 56.25
-      },
-      {
-        "name": "Copper Ore",
-        "quantity": 133.5
+        "name": "Assembly Director System",
+        "quantity": 0.25
       },
       {
         "name": "Iron Ore",
-        "quantity": 291.25
-      },
-      {
-        "name": "Limestone",
-        "quantity": 45.0
-      },
-      {
-        "name": "Plastic",
-        "quantity": 84.0
+        "quantity": 160.0
       },
       {
         "name": "SAM",
@@ -6898,7 +5712,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 68,
+    "num_steps": 8,
     "transformation_steps": [
       {
         "recipe": "Biochemical Sculptor",
@@ -6910,717 +5724,6 @@
           "Assembly Director System": 0.25,
           "Ficsite Trigon": 20.0,
           "Water": 5000.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Assembly Director System",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Assembly Director System": 0.25
-        },
-        "requires": {
-          "Adaptive Control Unit": 0.5,
-          "Supercomputer": 0.25
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Adaptive Control Unit",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Adaptive Control Unit": 0.5
-        },
-        "requires": {
-          "Automated Wiring": 2.5,
-          "Circuit Board": 2.5,
-          "Heavy Modular Frame": 0.5,
-          "Computer": 1.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Automated Wiring",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Automated Wiring": 2.5
-        },
-        "requires": {
-          "Stator": 2.5,
-          "Cable": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Stator",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Stator": 2.5
-        },
-        "requires": {
-          "Steel Pipe": 7.5,
-          "Wire": 20.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Pipe",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Pipe": 7.5
-        },
-        "requires": {
-          "Steel Ingot": 11.25
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 11.25
-        },
-        "requires": {
-          "Iron Ore": 11.25,
-          "Coal": 11.25
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 20.0
-        },
-        "requires": {
-          "Copper Ingot": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 10.0
-        },
-        "requires": {
-          "Copper Ore": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 50.0
-        },
-        "requires": {
-          "Wire": 100.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 100.0
-        },
-        "requires": {
-          "Copper Ingot": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 50.0
-        },
-        "requires": {
-          "Copper Ore": 50.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 2.5
-        },
-        "requires": {
-          "Copper Sheet": 5.0,
-          "Plastic": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 5.0
-        },
-        "requires": {
-          "Copper Ingot": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 10.0
-        },
-        "requires": {
-          "Copper Ore": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Heavy Modular Frame",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Heavy Modular Frame": 0.5
-        },
-        "requires": {
-          "Modular Frame": 2.5,
-          "Steel Pipe": 10.0,
-          "Encased Industrial Beam": 2.5,
-          "Screws": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Modular Frame",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Modular Frame": 2.5
-        },
-        "requires": {
-          "Reinforced Iron Plate": 3.75,
-          "Iron Rod": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 3.75
-        },
-        "requires": {
-          "Iron Plate": 22.5,
-          "Screws": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Plate",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Plate": 22.5
-        },
-        "requires": {
-          "Iron Ingot": 33.75
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 33.75
-        },
-        "requires": {
-          "Iron Ore": 33.75
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 45.0
-        },
-        "requires": {
-          "Iron Rod": 11.25
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 11.25
-        },
-        "requires": {
-          "Iron Ingot": 11.25
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 11.25
-        },
-        "requires": {
-          "Iron Ore": 11.25
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 15.0
-        },
-        "requires": {
-          "Iron Ingot": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 15.0
-        },
-        "requires": {
-          "Iron Ore": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Pipe",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Pipe": 10.0
-        },
-        "requires": {
-          "Steel Ingot": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 15.0
-        },
-        "requires": {
-          "Iron Ore": 15.0,
-          "Coal": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Encased Industrial Beam",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Encased Industrial Beam": 2.5
-        },
-        "requires": {
-          "Steel Beam": 7.5,
-          "Concrete": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Beam",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Beam": 7.5
-        },
-        "requires": {
-          "Steel Ingot": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 30.0
-        },
-        "requires": {
-          "Iron Ore": 30.0,
-          "Coal": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Concrete",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Concrete": 15.0
-        },
-        "requires": {
-          "Limestone": 45.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 60.0
-        },
-        "requires": {
-          "Iron Rod": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 15.0
-        },
-        "requires": {
-          "Iron Ingot": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 15.0
-        },
-        "requires": {
-          "Iron Ore": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Computer",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Computer": 1.0
-        },
-        "requires": {
-          "Circuit Board": 4.0,
-          "Cable": 8.0,
-          "Plastic": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 4.0
-        },
-        "requires": {
-          "Copper Sheet": 8.0,
-          "Plastic": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 8.0
-        },
-        "requires": {
-          "Copper Ingot": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 16.0
-        },
-        "requires": {
-          "Copper Ore": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 8.0
-        },
-        "requires": {
-          "Wire": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 16.0
-        },
-        "requires": {
-          "Copper Ingot": 8.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 8.0
-        },
-        "requires": {
-          "Copper Ore": 8.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Supercomputer",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Supercomputer": 0.25
-        },
-        "requires": {
-          "Computer": 1.0,
-          "AI Limiter": 0.5,
-          "High-Speed Connector": 0.75,
-          "Plastic": 7.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Computer",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Computer": 1.0
-        },
-        "requires": {
-          "Circuit Board": 4.0,
-          "Cable": 8.0,
-          "Plastic": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 4.0
-        },
-        "requires": {
-          "Copper Sheet": 8.0,
-          "Plastic": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 8.0
-        },
-        "requires": {
-          "Copper Ingot": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 16.0
-        },
-        "requires": {
-          "Copper Ore": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 8.0
-        },
-        "requires": {
-          "Wire": 16.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 16.0
-        },
-        "requires": {
-          "Copper Ingot": 8.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 8.0
-        },
-        "requires": {
-          "Copper Ore": 8.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "AI Limiter",
-        "building": "AssemblerMk1",
-        "produces": {
-          "AI Limiter": 0.5
-        },
-        "requires": {
-          "Copper Sheet": 2.5,
-          "Quickwire": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 2.5
-        },
-        "requires": {
-          "Copper Ingot": 5.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 5.0
-        },
-        "requires": {
-          "Copper Ore": 5.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quickwire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quickwire": 10.0
-        },
-        "requires": {
-          "Caterium Ingot": 2.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Caterium Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Caterium Ingot": 2.0
-        },
-        "requires": {
-          "Caterium Ore": 6.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "High-Speed Connector",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "High-Speed Connector": 0.75
-        },
-        "requires": {
-          "Quickwire": 42.0,
-          "Cable": 7.5,
-          "Circuit Board": 0.75
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quickwire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quickwire": 42.0
-        },
-        "requires": {
-          "Caterium Ingot": 8.4
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Caterium Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Caterium Ingot": 8.4
-        },
-        "requires": {
-          "Caterium Ore": 25.2
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 7.5
-        },
-        "requires": {
-          "Wire": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 15.0
-        },
-        "requires": {
-          "Copper Ingot": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 7.5
-        },
-        "requires": {
-          "Copper Ore": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 0.75
-        },
-        "requires": {
-          "Copper Sheet": 1.5,
-          "Plastic": 3.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 1.5
-        },
-        "requires": {
-          "Copper Ingot": 3.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 3.0
-        },
-        "requires": {
-          "Copper Ore": 3.0
         },
         "byproducts": {}
       },
@@ -7659,10 +5762,32 @@
         "byproducts": {}
       },
       {
+        "recipe": "SAM",
+        "building": "MinerMk1",
+        "produces": {
+          "SAM": 106.6667
+        },
+        "requires": {
+          "SAM": 106.6667
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Iron Ingot",
         "building": "SmelterMk1",
         "produces": {
           "Iron Ingot": 160.0
+        },
+        "requires": {
+          "Iron Ore": 160.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 160.0
         },
         "requires": {
           "Iron Ore": 160.0
@@ -7698,23 +5823,15 @@
       },
       {
         "name": "Copper Ore",
-        "quantity": 17.0
+        "quantity": 3.0
       },
       {
-        "name": "Dark Matter Residue",
-        "quantity": 30000.0
+        "name": "Crystal Oscillator",
+        "quantity": 1.0
       },
       {
-        "name": "Excited Photonic Matter",
-        "quantity": 25000.0
-      },
-      {
-        "name": "Iron Ore",
-        "quantity": 30.0
-      },
-      {
-        "name": "Raw Quartz",
-        "quantity": 30.0
+        "name": "SAM",
+        "quantity": 60.0
       }
     ],
     "byproducts": [
@@ -7723,7 +5840,7 @@
         "quantity": 25000.0
       }
     ],
-    "num_steps": 16,
+    "num_steps": 11,
     "transformation_steps": [
       {
         "recipe": "Superposition Oscillator",
@@ -7765,126 +5882,46 @@
         "byproducts": {}
       },
       {
-        "recipe": "Crystal Oscillator",
-        "building": "ManufacturerMk1",
+        "recipe": "Coal",
+        "building": "MinerMk1",
         "produces": {
-          "Crystal Oscillator": 1.0
+          "Coal": 120.0
         },
         "requires": {
-          "Quartz Crystal": 18.0,
-          "Cable": 14.0,
-          "Reinforced Iron Plate": 2.5
+          "Coal": 120.0
         },
         "byproducts": {}
       },
       {
-        "recipe": "Quartz Crystal",
+        "recipe": "Dark Matter Residue",
+        "building": "Converter",
+        "produces": {
+          "Dark Matter Residue": 30000.0
+        },
+        "requires": {
+          "Reanimated SAM": 15.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Reanimated SAM",
         "building": "ConstructorMk1",
         "produces": {
-          "Quartz Crystal": 18.0
+          "Reanimated SAM": 15.0
         },
         "requires": {
-          "Raw Quartz": 30.0
+          "SAM": 60.0
         },
         "byproducts": {}
       },
       {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
+        "recipe": "SAM",
+        "building": "MinerMk1",
         "produces": {
-          "Cable": 14.0
+          "SAM": 60.0
         },
         "requires": {
-          "Wire": 28.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 28.0
-        },
-        "requires": {
-          "Copper Ingot": 14.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 14.0
-        },
-        "requires": {
-          "Copper Ore": 14.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 2.5
-        },
-        "requires": {
-          "Iron Plate": 15.0,
-          "Screws": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Plate",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Plate": 15.0
-        },
-        "requires": {
-          "Iron Ingot": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 22.5
-        },
-        "requires": {
-          "Iron Ore": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 30.0
-        },
-        "requires": {
-          "Iron Rod": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 7.5
-        },
-        "requires": {
-          "Iron Ingot": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 7.5
-        },
-        "requires": {
-          "Iron Ore": 7.5
+          "SAM": 60.0
         },
         "byproducts": {}
       },
@@ -7910,6 +5947,26 @@
           "Copper Ore": 3.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 3.0
+        },
+        "requires": {
+          "Copper Ore": 3.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Excited Photonic Matter",
+        "building": "Converter",
+        "produces": {
+          "Excited Photonic Matter": 25000.0
+        },
+        "requires": {},
+        "byproducts": {}
       }
     ]
   },
@@ -7920,32 +5977,20 @@
     "output_quantity": 1.0,
     "inputs": [
       {
-        "name": "Caterium Ore",
-        "quantity": 124.8
-      },
-      {
         "name": "Coal",
         "quantity": 200.0
-      },
-      {
-        "name": "Copper Ore",
-        "quantity": 158.0
-      },
-      {
-        "name": "Excited Photonic Matter",
-        "quantity": 25000.0
       },
       {
         "name": "Iron Ore",
         "quantity": 120.0
       },
       {
-        "name": "Plastic",
-        "quantity": 168.0
-      },
-      {
         "name": "SAM",
         "quantity": 80.0
+      },
+      {
+        "name": "Supercomputer",
+        "quantity": 1.0
       }
     ],
     "byproducts": [
@@ -7954,7 +5999,7 @@
         "quantity": 25000.0
       }
     ],
-    "num_steps": 29,
+    "num_steps": 11,
     "transformation_steps": [
       {
         "recipe": "Neural-Quantum Processor",
@@ -7995,254 +6040,13 @@
         "byproducts": {}
       },
       {
-        "recipe": "Supercomputer",
-        "building": "ManufacturerMk1",
+        "recipe": "Coal",
+        "building": "MinerMk1",
         "produces": {
-          "Supercomputer": 1.0
+          "Coal": 200.0
         },
         "requires": {
-          "Computer": 4.0,
-          "AI Limiter": 2.0,
-          "High-Speed Connector": 3.0,
-          "Plastic": 28.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Computer",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Computer": 4.0
-        },
-        "requires": {
-          "Circuit Board": 16.0,
-          "Cable": 32.0,
-          "Plastic": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 16.0
-        },
-        "requires": {
-          "Copper Sheet": 32.0,
-          "Plastic": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 32.0
-        },
-        "requires": {
-          "Copper Ingot": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 64.0
-        },
-        "requires": {
-          "Copper Ore": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 32.0
-        },
-        "requires": {
-          "Wire": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 64.0
-        },
-        "requires": {
-          "Copper Ingot": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 32.0
-        },
-        "requires": {
-          "Copper Ore": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "AI Limiter",
-        "building": "AssemblerMk1",
-        "produces": {
-          "AI Limiter": 2.0
-        },
-        "requires": {
-          "Copper Sheet": 10.0,
-          "Quickwire": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 10.0
-        },
-        "requires": {
-          "Copper Ingot": 20.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 20.0
-        },
-        "requires": {
-          "Copper Ore": 20.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quickwire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quickwire": 40.0
-        },
-        "requires": {
-          "Caterium Ingot": 8.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Caterium Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Caterium Ingot": 8.0
-        },
-        "requires": {
-          "Caterium Ore": 24.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "High-Speed Connector",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "High-Speed Connector": 3.0
-        },
-        "requires": {
-          "Quickwire": 168.0,
-          "Cable": 30.0,
-          "Circuit Board": 3.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quickwire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quickwire": 168.0
-        },
-        "requires": {
-          "Caterium Ingot": 33.6
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Caterium Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Caterium Ingot": 33.6
-        },
-        "requires": {
-          "Caterium Ore": 100.8
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 30.0
-        },
-        "requires": {
-          "Wire": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 60.0
-        },
-        "requires": {
-          "Copper Ingot": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 30.0
-        },
-        "requires": {
-          "Copper Ore": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 3.0
-        },
-        "requires": {
-          "Copper Sheet": 6.0,
-          "Plastic": 12.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 6.0
-        },
-        "requires": {
-          "Copper Ingot": 12.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 12.0
-        },
-        "requires": {
-          "Copper Ore": 12.0
+          "Coal": 200.0
         },
         "byproducts": {}
       },
@@ -8281,6 +6085,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "SAM",
+        "building": "MinerMk1",
+        "produces": {
+          "SAM": 80.0
+        },
+        "requires": {
+          "SAM": 80.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Iron Ingot",
         "building": "SmelterMk1",
         "produces": {
@@ -8289,6 +6104,26 @@
         "requires": {
           "Iron Ore": 120.0
         },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 120.0
+        },
+        "requires": {
+          "Iron Ore": 120.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Excited Photonic Matter",
+        "building": "Converter",
+        "produces": {
+          "Excited Photonic Matter": 25000.0
+        },
+        "requires": {},
         "byproducts": {}
       }
     ]
@@ -8300,53 +6135,29 @@
     "output_quantity": 1.0,
     "inputs": [
       {
-        "name": "Aluminum Ingot",
-        "quantity": 9.0
+        "name": "Electromagnetic Control Rod",
+        "quantity": 1.0
       },
       {
-        "name": "Caterium Ore",
-        "quantity": 136.8
+        "name": "Neural-Quantum Processor",
+        "quantity": 1.0
       },
       {
-        "name": "Coal",
-        "quantity": 386.75
+        "name": "Superposition Oscillator",
+        "quantity": 1.0
       },
       {
-        "name": "Copper Ore",
-        "quantity": 191.0
-      },
-      {
-        "name": "Dark Matter Residue",
-        "quantity": 30000.0
-      },
-      {
-        "name": "Excited Photonic Matter",
-        "quantity": 75000.0
-      },
-      {
-        "name": "Iron Ore",
-        "quantity": 246.75
-      },
-      {
-        "name": "Plastic",
-        "quantity": 168.0
-      },
-      {
-        "name": "Raw Quartz",
-        "quantity": 30.0
-      },
-      {
-        "name": "SAM",
-        "quantity": 80.0
+        "name": "Versatile Framework",
+        "quantity": 2.5
       }
     ],
     "byproducts": [
       {
         "name": "Dark Matter Residue",
-        "quantity": 75000.0
+        "quantity": 25000.0
       }
     ],
-    "num_steps": 70,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "AI Expansion Server",
@@ -8377,290 +6188,69 @@
         "byproducts": {}
       },
       {
-        "recipe": "Versatile Framework",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Versatile Framework": 2.5
-        },
-        "requires": {
-          "Modular Frame": 1.25,
-          "Steel Beam": 15.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Modular Frame",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Modular Frame": 1.25
-        },
-        "requires": {
-          "Reinforced Iron Plate": 1.875,
-          "Iron Rod": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 1.875
-        },
-        "requires": {
-          "Iron Plate": 11.25,
-          "Screws": 22.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Plate",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Plate": 11.25
-        },
-        "requires": {
-          "Iron Ingot": 16.875
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 16.875
-        },
-        "requires": {
-          "Iron Ore": 16.875
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Screws",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Screws": 22.5
-        },
-        "requires": {
-          "Iron Rod": 5.625
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 5.625
-        },
-        "requires": {
-          "Iron Ingot": 5.625
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 5.625
-        },
-        "requires": {
-          "Iron Ore": 5.625
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Iron Rod": 7.5
-        },
-        "requires": {
-          "Iron Ingot": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 7.5
-        },
-        "requires": {
-          "Iron Ore": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Beam",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Beam": 15.0
-        },
-        "requires": {
-          "Steel Ingot": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 60.0
-        },
-        "requires": {
-          "Iron Ore": 60.0,
-          "Coal": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Electromagnetic Control Rod",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Electromagnetic Control Rod": 1.0
-        },
-        "requires": {
-          "Stator": 1.5,
-          "AI Limiter": 1.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Stator",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Stator": 1.5
-        },
-        "requires": {
-          "Steel Pipe": 4.5,
-          "Wire": 12.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Pipe",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Steel Pipe": 4.5
-        },
-        "requires": {
-          "Steel Ingot": 6.75
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Steel Ingot",
-        "building": "FoundryMk1",
-        "produces": {
-          "Steel Ingot": 6.75
-        },
-        "requires": {
-          "Iron Ore": 6.75,
-          "Coal": 6.75
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 12.0
-        },
-        "requires": {
-          "Copper Ingot": 6.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 6.0
-        },
-        "requires": {
-          "Copper Ore": 6.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "AI Limiter",
-        "building": "AssemblerMk1",
-        "produces": {
-          "AI Limiter": 1.0
-        },
-        "requires": {
-          "Copper Sheet": 5.0,
-          "Quickwire": 20.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 5.0
-        },
-        "requires": {
-          "Copper Ingot": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 10.0
-        },
-        "requires": {
-          "Copper Ore": 10.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quickwire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quickwire": 20.0
-        },
-        "requires": {
-          "Caterium Ingot": 4.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Caterium Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Caterium Ingot": 4.0
-        },
-        "requires": {
-          "Caterium Ore": 12.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Neural-Quantum Processor",
-        "building": "QuantumEncoder",
-        "produces": {
-          "Neural-Quantum Processor": 1.0
-        },
-        "requires": {
-          "Time Crystal": 5.0,
-          "Supercomputer": 1.0,
-          "Ficsite Trigon": 15.0,
-          "Excited Photonic Matter": 25000.0
-        },
-        "byproducts": {
-          "Dark Matter Residue": 25000.0
-        }
-      },
-      {
-        "recipe": "Time Crystal",
+        "recipe": "Excited Photonic Matter",
         "building": "Converter",
         "produces": {
-          "Time Crystal": 5.0
+          "Excited Photonic Matter": 25000.0
+        },
+        "requires": {},
+        "byproducts": {}
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "tier": "9",
+    "output": "Singularity Cell",
+    "output_quantity": 1.0,
+    "inputs": [
+      {
+        "name": "Coal",
+        "quantity": 40.0
+      },
+      {
+        "name": "Iron Ore",
+        "quantity": 15.0
+      },
+      {
+        "name": "Limestone",
+        "quantity": 60.0
+      },
+      {
+        "name": "Nuclear Pasta",
+        "quantity": 0.1
+      },
+      {
+        "name": "SAM",
+        "quantity": 20.0
+      }
+    ],
+    "byproducts": [],
+    "num_steps": 12,
+    "transformation_steps": [
+      {
+        "recipe": "Singularity Cell",
+        "building": "ManufacturerMk1",
+        "produces": {
+          "Singularity Cell": 1.0
         },
         "requires": {
-          "Diamonds": 10.0
+          "Nuclear Pasta": 0.1,
+          "Dark Matter Crystal": 2.0,
+          "Iron Plate": 10.0,
+          "Concrete": 20.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Dark Matter Crystal",
+        "building": "HadronCollider",
+        "produces": {
+          "Dark Matter Crystal": 2.0
+        },
+        "requires": {
+          "Diamonds": 2.0,
+          "Dark Matter Residue": 10000.0
         },
         "byproducts": {}
       },
@@ -8668,285 +6258,32 @@
         "recipe": "Diamonds",
         "building": "HadronCollider",
         "produces": {
-          "Diamonds": 10.0
+          "Diamonds": 2.0
         },
         "requires": {
-          "Coal": 200.0
+          "Coal": 40.0
         },
         "byproducts": {}
       },
       {
-        "recipe": "Supercomputer",
-        "building": "ManufacturerMk1",
+        "recipe": "Coal",
+        "building": "MinerMk1",
         "produces": {
-          "Supercomputer": 1.0
+          "Coal": 40.0
         },
         "requires": {
-          "Computer": 4.0,
-          "AI Limiter": 2.0,
-          "High-Speed Connector": 3.0,
-          "Plastic": 28.0
+          "Coal": 40.0
         },
         "byproducts": {}
       },
       {
-        "recipe": "Computer",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Computer": 4.0
-        },
-        "requires": {
-          "Circuit Board": 16.0,
-          "Cable": 32.0,
-          "Plastic": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 16.0
-        },
-        "requires": {
-          "Copper Sheet": 32.0,
-          "Plastic": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 32.0
-        },
-        "requires": {
-          "Copper Ingot": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 64.0
-        },
-        "requires": {
-          "Copper Ore": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 32.0
-        },
-        "requires": {
-          "Wire": 64.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 64.0
-        },
-        "requires": {
-          "Copper Ingot": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 32.0
-        },
-        "requires": {
-          "Copper Ore": 32.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "AI Limiter",
-        "building": "AssemblerMk1",
-        "produces": {
-          "AI Limiter": 2.0
-        },
-        "requires": {
-          "Copper Sheet": 10.0,
-          "Quickwire": 40.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 10.0
-        },
-        "requires": {
-          "Copper Ingot": 20.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 20.0
-        },
-        "requires": {
-          "Copper Ore": 20.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quickwire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quickwire": 40.0
-        },
-        "requires": {
-          "Caterium Ingot": 8.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Caterium Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Caterium Ingot": 8.0
-        },
-        "requires": {
-          "Caterium Ore": 24.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "High-Speed Connector",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "High-Speed Connector": 3.0
-        },
-        "requires": {
-          "Quickwire": 168.0,
-          "Cable": 30.0,
-          "Circuit Board": 3.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quickwire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quickwire": 168.0
-        },
-        "requires": {
-          "Caterium Ingot": 33.6
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Caterium Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Caterium Ingot": 33.6
-        },
-        "requires": {
-          "Caterium Ore": 100.8
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 30.0
-        },
-        "requires": {
-          "Wire": 60.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 60.0
-        },
-        "requires": {
-          "Copper Ingot": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 30.0
-        },
-        "requires": {
-          "Copper Ore": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Circuit Board",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Circuit Board": 3.0
-        },
-        "requires": {
-          "Copper Sheet": 6.0,
-          "Plastic": 12.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Sheet",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Copper Sheet": 6.0
-        },
-        "requires": {
-          "Copper Ingot": 12.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 12.0
-        },
-        "requires": {
-          "Copper Ore": 12.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Ficsite Trigon",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Ficsite Trigon": 15.0
-        },
-        "requires": {
-          "Ficsite Ingot": 5.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Ficsite Ingot (Iron)",
+        "recipe": "Dark Matter Residue",
         "building": "Converter",
         "produces": {
-          "Ficsite Ingot": 5.0
+          "Dark Matter Residue": 10000.0
         },
         "requires": {
-          "Reanimated SAM": 20.0,
-          "Iron Ingot": 120.0
+          "Reanimated SAM": 5.0
         },
         "byproducts": {}
       },
@@ -8954,129 +6291,21 @@
         "recipe": "Reanimated SAM",
         "building": "ConstructorMk1",
         "produces": {
-          "Reanimated SAM": 20.0
+          "Reanimated SAM": 5.0
         },
         "requires": {
-          "SAM": 80.0
+          "SAM": 20.0
         },
         "byproducts": {}
       },
       {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
+        "recipe": "SAM",
+        "building": "MinerMk1",
         "produces": {
-          "Iron Ingot": 120.0
+          "SAM": 20.0
         },
         "requires": {
-          "Iron Ore": 120.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Superposition Oscillator",
-        "building": "QuantumEncoder",
-        "produces": {
-          "Superposition Oscillator": 1.0
-        },
-        "requires": {
-          "Dark Matter Crystal": 6.0,
-          "Crystal Oscillator": 1.0,
-          "Alclad Aluminum Sheet": 9.0,
-          "Excited Photonic Matter": 25000.0
-        },
-        "byproducts": {
-          "Dark Matter Residue": 25000.0
-        }
-      },
-      {
-        "recipe": "Dark Matter Crystal",
-        "building": "HadronCollider",
-        "produces": {
-          "Dark Matter Crystal": 6.0
-        },
-        "requires": {
-          "Diamonds": 6.0,
-          "Dark Matter Residue": 30000.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Diamonds",
-        "building": "HadronCollider",
-        "produces": {
-          "Diamonds": 6.0
-        },
-        "requires": {
-          "Coal": 120.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Crystal Oscillator",
-        "building": "ManufacturerMk1",
-        "produces": {
-          "Crystal Oscillator": 1.0
-        },
-        "requires": {
-          "Quartz Crystal": 18.0,
-          "Cable": 14.0,
-          "Reinforced Iron Plate": 2.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Quartz Crystal",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Quartz Crystal": 18.0
-        },
-        "requires": {
-          "Raw Quartz": 30.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Cable",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Cable": 14.0
-        },
-        "requires": {
-          "Wire": 28.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Wire",
-        "building": "ConstructorMk1",
-        "produces": {
-          "Wire": 28.0
-        },
-        "requires": {
-          "Copper Ingot": 14.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 14.0
-        },
-        "requires": {
-          "Copper Ore": 14.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Reinforced Iron Plate",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Reinforced Iron Plate": 2.5
-        },
-        "requires": {
-          "Iron Plate": 15.0,
-          "Screws": 30.0
+          "SAM": 20.0
         },
         "byproducts": {}
       },
@@ -9084,10 +6313,10 @@
         "recipe": "Iron Plate",
         "building": "ConstructorMk1",
         "produces": {
-          "Iron Plate": 15.0
+          "Iron Plate": 10.0
         },
         "requires": {
-          "Iron Ingot": 22.5
+          "Iron Ingot": 15.0
         },
         "byproducts": {}
       },
@@ -9095,73 +6324,163 @@
         "recipe": "Iron Ingot",
         "building": "SmelterMk1",
         "produces": {
-          "Iron Ingot": 22.5
+          "Iron Ingot": 15.0
         },
         "requires": {
-          "Iron Ore": 22.5
+          "Iron Ore": 15.0
         },
         "byproducts": {}
       },
       {
-        "recipe": "Screws",
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 15.0
+        },
+        "requires": {
+          "Iron Ore": 15.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Concrete",
         "building": "ConstructorMk1",
         "produces": {
-          "Screws": 30.0
+          "Concrete": 20.0
         },
         "requires": {
-          "Iron Rod": 7.5
+          "Limestone": 60.0
         },
         "byproducts": {}
       },
       {
-        "recipe": "Iron Rod",
-        "building": "ConstructorMk1",
+        "recipe": "Limestone",
+        "building": "MinerMk1",
         "produces": {
-          "Iron Rod": 7.5
+          "Limestone": 60.0
         },
         "requires": {
-          "Iron Ingot": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Iron Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Iron Ingot": 7.5
-        },
-        "requires": {
-          "Iron Ore": 7.5
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Alclad Aluminum Sheet",
-        "building": "AssemblerMk1",
-        "produces": {
-          "Alclad Aluminum Sheet": 9.0
-        },
-        "requires": {
-          "Aluminum Ingot": 9.0,
-          "Copper Ingot": 3.0
-        },
-        "byproducts": {}
-      },
-      {
-        "recipe": "Copper Ingot",
-        "building": "SmelterMk1",
-        "produces": {
-          "Copper Ingot": 3.0
-        },
-        "requires": {
-          "Copper Ore": 3.0
+          "Limestone": 60.0
         },
         "byproducts": {}
       }
     ]
   },
   {
-    "index": 40,
+    "index": 41,
+    "tier": "9",
+    "output": "Ballistic Warp Drive",
+    "output_quantity": 1.0,
+    "inputs": [
+      {
+        "name": "Coal",
+        "quantity": 800.0
+      },
+      {
+        "name": "SAM",
+        "quantity": 400.0
+      },
+      {
+        "name": "Singularity Cell",
+        "quantity": 5.0
+      },
+      {
+        "name": "Superposition Oscillator",
+        "quantity": 2.0
+      },
+      {
+        "name": "Thermal Propulsion Rocket",
+        "quantity": 1.0
+      }
+    ],
+    "byproducts": [],
+    "num_steps": 7,
+    "transformation_steps": [
+      {
+        "recipe": "Ballistic Warp Drive",
+        "building": "ManufacturerMk1",
+        "produces": {
+          "Ballistic Warp Drive": 1.0
+        },
+        "requires": {
+          "Thermal Propulsion Rocket": 1.0,
+          "Singularity Cell": 5.0,
+          "Superposition Oscillator": 2.0,
+          "Dark Matter Crystal": 40.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Dark Matter Crystal",
+        "building": "HadronCollider",
+        "produces": {
+          "Dark Matter Crystal": 40.0
+        },
+        "requires": {
+          "Diamonds": 40.0,
+          "Dark Matter Residue": 200000.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Diamonds",
+        "building": "HadronCollider",
+        "produces": {
+          "Diamonds": 40.0
+        },
+        "requires": {
+          "Coal": 800.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 800.0
+        },
+        "requires": {
+          "Coal": 800.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Dark Matter Residue",
+        "building": "Converter",
+        "produces": {
+          "Dark Matter Residue": 200000.0
+        },
+        "requires": {
+          "Reanimated SAM": 100.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Reanimated SAM",
+        "building": "ConstructorMk1",
+        "produces": {
+          "Reanimated SAM": 100.0
+        },
+        "requires": {
+          "SAM": 400.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "SAM",
+        "building": "MinerMk1",
+        "produces": {
+          "SAM": 400.0
+        },
+        "requires": {
+          "SAM": 400.0
+        },
+        "byproducts": {}
+      }
+    ]
+  },
+  {
+    "index": 42,
     "tier": "MAM",
     "output": "Quickwire",
     "output_quantity": 1.0,
@@ -9172,7 +6491,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Quickwire",
@@ -9195,11 +6514,22 @@
           "Caterium Ore": 0.6
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Caterium Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Caterium Ore": 0.6
+        },
+        "requires": {
+          "Caterium Ore": 0.6
+        },
+        "byproducts": {}
       }
     ]
   },
   {
-    "index": 41,
+    "index": 43,
     "tier": "MAM",
     "output": "AI Limiter",
     "output_quantity": 1.0,
@@ -9214,7 +6544,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 5,
+    "num_steps": 7,
     "transformation_steps": [
       {
         "recipe": "AI Limiter",
@@ -9251,6 +6581,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 10.0
+        },
+        "requires": {
+          "Copper Ore": 10.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Quickwire",
         "building": "ConstructorMk1",
         "produces": {
@@ -9271,11 +6612,22 @@
           "Caterium Ore": 12.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Caterium Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Caterium Ore": 12.0
+        },
+        "requires": {
+          "Caterium Ore": 12.0
+        },
+        "byproducts": {}
       }
     ]
   },
   {
-    "index": 42,
+    "index": 44,
     "tier": "MAM",
     "output": "High-Speed Connector",
     "output_quantity": 1.0,
@@ -9294,7 +6646,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 9,
+    "num_steps": 12,
     "transformation_steps": [
       {
         "recipe": "High-Speed Connector",
@@ -9325,6 +6677,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Caterium Ingot": 11.2
+        },
+        "requires": {
+          "Caterium Ore": 33.6
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Caterium Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Caterium Ore": 33.6
         },
         "requires": {
           "Caterium Ore": 33.6
@@ -9365,6 +6728,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 10.0
+        },
+        "requires": {
+          "Copper Ore": 10.0
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Circuit Board",
         "building": "AssemblerMk1",
         "produces": {
@@ -9397,11 +6771,22 @@
           "Copper Ore": 4.0
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 4.0
+        },
+        "requires": {
+          "Copper Ore": 4.0
+        },
+        "byproducts": {}
       }
     ]
   },
   {
-    "index": 43,
+    "index": 45,
     "tier": "MAM",
     "output": "Quartz Crystal",
     "output_quantity": 1.0,
@@ -9412,7 +6797,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 1,
+    "num_steps": 2,
     "transformation_steps": [
       {
         "recipe": "Quartz Crystal",
@@ -9424,11 +6809,22 @@
           "Raw Quartz": 1.6667
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Raw Quartz",
+        "building": "MinerMk1",
+        "produces": {
+          "Raw Quartz": 1.6667
+        },
+        "requires": {
+          "Raw Quartz": 1.6667
+        },
+        "byproducts": {}
       }
     ]
   },
   {
-    "index": 44,
+    "index": 46,
     "tier": "MAM",
     "output": "Crystal Oscillator",
     "output_quantity": 1.0,
@@ -9447,7 +6843,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 11,
+    "num_steps": 15,
     "transformation_steps": [
       {
         "recipe": "Crystal Oscillator",
@@ -9467,6 +6863,17 @@
         "building": "ConstructorMk1",
         "produces": {
           "Quartz Crystal": 18.0
+        },
+        "requires": {
+          "Raw Quartz": 30.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Raw Quartz",
+        "building": "MinerMk1",
+        "produces": {
+          "Raw Quartz": 30.0
         },
         "requires": {
           "Raw Quartz": 30.0
@@ -9500,6 +6907,17 @@
         "building": "SmelterMk1",
         "produces": {
           "Copper Ingot": 14.0
+        },
+        "requires": {
+          "Copper Ore": 14.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 14.0
         },
         "requires": {
           "Copper Ore": 14.0
@@ -9541,6 +6959,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 22.5
+        },
+        "requires": {
+          "Iron Ore": 22.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Screws",
         "building": "ConstructorMk1",
         "produces": {
@@ -9572,11 +7001,22 @@
           "Iron Ore": 7.5
         },
         "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 7.5
+        },
+        "requires": {
+          "Iron Ore": 7.5
+        },
+        "byproducts": {}
       }
     ]
   },
   {
-    "index": 45,
+    "index": 47,
     "tier": "MAM",
     "output": "SAM Fluctuator",
     "output_quantity": 1.0,
@@ -9599,7 +7039,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 6,
+    "num_steps": 10,
     "transformation_steps": [
       {
         "recipe": "SAM Fluctuator",
@@ -9619,6 +7059,17 @@
         "building": "ConstructorMk1",
         "produces": {
           "Reanimated SAM": 6.0
+        },
+        "requires": {
+          "SAM": 24.0
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "SAM",
+        "building": "MinerMk1",
+        "produces": {
+          "SAM": 24.0
         },
         "requires": {
           "SAM": 24.0
@@ -9648,6 +7099,17 @@
         "byproducts": {}
       },
       {
+        "recipe": "Copper Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Copper Ore": 2.5
+        },
+        "requires": {
+          "Copper Ore": 2.5
+        },
+        "byproducts": {}
+      },
+      {
         "recipe": "Steel Pipe",
         "building": "ConstructorMk1",
         "produces": {
@@ -9666,6 +7128,28 @@
         },
         "requires": {
           "Iron Ore": 4.5,
+          "Coal": 4.5
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Iron Ore",
+        "building": "MinerMk1",
+        "produces": {
+          "Iron Ore": 4.5
+        },
+        "requires": {
+          "Iron Ore": 4.5
+        },
+        "byproducts": {}
+      },
+      {
+        "recipe": "Coal",
+        "building": "MinerMk1",
+        "produces": {
+          "Coal": 4.5
+        },
+        "requires": {
           "Coal": 4.5
         },
         "byproducts": {}
