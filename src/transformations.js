@@ -4,6 +4,10 @@ const el = {
   rows: document.getElementById('rows'),
   filter: document.getElementById('filter'),
   counts: document.getElementById('counts'),
+  modalOverlay: document.getElementById('modalOverlay'),
+  modalContent: document.getElementById('modalContent'),
+  modalClose: document.getElementById('modalClose'),
+  modalTitle: document.getElementById('modalTitle'),
 };
 
 let data = [];
@@ -21,6 +25,7 @@ async function init() {
   view = data.slice();
   wireSorting();
   wireFiltering();
+  wireModal();
   applyFilter();
 }
 
@@ -89,6 +94,88 @@ function wireFiltering() {
     rafId = requestAnimationFrame(() => applyFilter());
   };
   el.filter.addEventListener('input', schedule);
+}
+
+function wireModal() {
+  // Close button
+  el.modalClose?.addEventListener('click', closeModal);
+  // Overlay click (outside dialog)
+  el.modalOverlay?.addEventListener('click', (e) => {
+    if (e.target === el.modalOverlay) closeModal();
+  });
+  // Escape key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !el.modalOverlay.hasAttribute('hidden')) closeModal();
+  });
+  // Delegate clicks from table for opening the modal
+  el.rows.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-open-modal]');
+    if (!btn) return;
+    const idx = btn.getAttribute('data-row-index');
+    if (!idx) return;
+    const row = data.find(r => String(r.index) === String(idx));
+    if (row) openModalForRow(row);
+  });
+}
+
+function openModalForRow(row) {
+  el.modalTitle.textContent = `${row.tier != null ? `Tier ${escapeHtml(String(row.tier))}` : ''} • ${row.output || 'Transformation'}`;
+  el.modalContent.innerHTML = buildModalHtml(row);
+  el.modalOverlay.removeAttribute('hidden');
+  // Prevent background scroll
+  document.documentElement.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
+  // Focus close button for accessibility
+  el.modalClose?.focus();
+}
+
+function closeModal() {
+  el.modalOverlay.setAttribute('hidden', '');
+  el.modalContent.innerHTML = '';
+  document.documentElement.style.overflow = '';
+  document.body.style.overflow = '';
+}
+
+function buildModalHtml(row) {
+  const steps = row.transformation_steps || [];
+  const header = `
+    <table>
+      <thead>
+        <tr>
+          <th style="width:52px">Step</th>
+          <th>Recipe</th>
+          <th>Building</th>
+          <th style="width:28%">Inputs</th>
+          <th style="width:28%">Outputs</th>
+          <th style="width:16%">By‑products</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+  const rowsHtml = steps.map((s, i) => {
+    const inputs = kvTags(s.requires);
+    const outputs = kvTags(s.produces);
+    const byps = kvTags(s.byproducts);
+    return `
+      <tr>
+        <td class="meta">${i + 1}</td>
+        <td>${escapeHtml(String(s.recipe || ''))}</td>
+        <td><span class="tag">${escapeHtml(String(s.building || ''))}</span></td>
+        <td>${inputs || '<span class="meta">—</span>'}</td>
+        <td>${outputs || '<span class="meta">—</span>'}</td>
+        <td>${byps || '<span class="meta">—</span>'}</td>
+      </tr>
+    `;
+  }).join('');
+  const footer = '</tbody></table>';
+  return header + rowsHtml + footer;
+}
+
+function kvTags(obj) {
+  if (!obj || typeof obj !== 'object') return '';
+  return Object.entries(obj)
+    .map(([k, v]) => `<span class="tag">${escapeHtml(String(k))} <small>${formatNumber(v)}/min</small></span>`) 
+    .join('');
 }
 
 function applyFilter() {
@@ -172,8 +259,7 @@ function rowHtml(row) {
   const steps = row.transformation_steps || [];
   const buildingsArr = steps.map(s => s.building).filter(b => b);
   const buildingsCount = buildingsArr.length;
-  const buildingsTitle = buildingsArr.join('\n');
-  const recipesCell = `<span class="badge" title="${escapeHtml(buildingsTitle)}">${buildingsCount}</span>`;
+  const recipesCell = `<button type="button" class="pill pill-btn" data-open-modal data-row-index="${escapeHtml(String(row.index))}">${buildingsCount}</button>`;
   
   const idx = row.index == null ? '<span class="meta">—</span>' : String(row.index);
   const tier = row.tier == null ? '<span class="meta">—</span>' : escapeHtml(String(row.tier));
