@@ -1,0 +1,1969 @@
+[
+  {
+    "id": "Recipe_IronPlate_C",
+    "name": "Iron Plate",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronIngot/Desc_IronIngot.Desc_IronIngot_C",
+        "perMin": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronPlate/Desc_IronPlate.Desc_IronPlate_C",
+        "perMin": 20.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_IronRod_C",
+    "name": "Iron Rod",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronIngot/Desc_IronIngot.Desc_IronIngot_C",
+        "perMin": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronRod/Desc_IronRod.Desc_IronRod_C",
+        "perMin": 15.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_IngotIron_C",
+    "name": "Iron Ingot",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/OreIron/Desc_OreIron.Desc_OreIron_C",
+        "perMin": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronIngot/Desc_IronIngot.Desc_IronIngot_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_RocketFuel_C",
+    "name": "Rocket Fuel",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Turbofuel/Desc_LiquidTurboFuel.Desc_LiquidTurboFuel_C",
+        "perMin": 60000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NitricAcid/Desc_NitricAcid.Desc_NitricAcid_C",
+        "perMin": 10000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/RocketFuel/Desc_RocketFuel.Desc_RocketFuel_C",
+        "perMin": 100000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CompactedCoal/Desc_CompactedCoal.Desc_CompactedCoal_C",
+        "perMin": 10.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_DarkEnergy_C",
+    "name": "Dark Matter Residue",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C",
+        "perMin": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkEnergy/Desc_DarkEnergy.Desc_DarkEnergy_C",
+        "perMin": 100000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_QuantumEnergy_C",
+    "name": "Excited Photonic Matter",
+    "inputs": [],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/QuantumEnergy/Desc_QuantumEnergy.Desc_QuantumEnergy_C",
+        "perMin": 200000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_DarkMatter_C",
+    "name": "Dark Matter Crystal",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Diamond/Desc_Diamond.Desc_Diamond_C",
+        "perMin": 30.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkEnergy/Desc_DarkEnergy.Desc_DarkEnergy_C",
+        "perMin": 150000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkMatter/Desc_DarkMatter.Desc_DarkMatter_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SuperpositionOscillator_C",
+    "name": "Superposition Oscillator",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkMatter/Desc_DarkMatter.Desc_DarkMatter_C",
+        "perMin": 30.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CrystalOscillator/Desc_CrystalOscillator.Desc_CrystalOscillator_C",
+        "perMin": 5.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumPlate/Desc_AluminumPlate.Desc_AluminumPlate_C",
+        "perMin": 45.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/QuantumEnergy/Desc_QuantumEnergy.Desc_QuantumEnergy_C",
+        "perMin": 125000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/QuantumOscillator/Desc_QuantumOscillator.Desc_QuantumOscillator_C",
+        "perMin": 5.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkEnergy/Desc_DarkEnergy.Desc_DarkEnergy_C",
+        "perMin": 125000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_TemporalProcessor_C",
+    "name": "Neural-Quantum Processor",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/TimeCrystal/Desc_TimeCrystal.Desc_TimeCrystal_C",
+        "perMin": 15.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ComputerSuper/Desc_ComputerSuper.Desc_ComputerSuper_C",
+        "perMin": 3.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/FicsiteMesh/Desc_FicsiteMesh.Desc_FicsiteMesh_C",
+        "perMin": 45.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/QuantumEnergy/Desc_QuantumEnergy.Desc_QuantumEnergy_C",
+        "perMin": 75000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/TemporalProcessor/Desc_TemporalProcessor.Desc_TemporalProcessor_C",
+        "perMin": 3.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkEnergy/Desc_DarkEnergy.Desc_DarkEnergy_C",
+        "perMin": 75000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_12_C",
+    "name": "AI Expansion Server",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_6.Desc_SpaceElevatorPart_6_C",
+        "perMin": 4.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/TemporalProcessor/Desc_TemporalProcessor.Desc_TemporalProcessor_C",
+        "perMin": 4.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/QuantumOscillator/Desc_QuantumOscillator.Desc_QuantumOscillator_C",
+        "perMin": 4.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/QuantumEnergy/Desc_QuantumEnergy.Desc_QuantumEnergy_C",
+        "perMin": 100000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_12.Desc_SpaceElevatorPart_12_C",
+        "perMin": 4.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkEnergy/Desc_DarkEnergy.Desc_DarkEnergy_C",
+        "perMin": 100000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_IonizedFuel_C",
+    "name": "Ionized Fuel",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/RocketFuel/Desc_RocketFuel.Desc_RocketFuel_C",
+        "perMin": 40000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Environment/Crystal/Desc_CrystalShard.Desc_CrystalShard_C",
+        "perMin": 2.5
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IonizedFuel/Desc_IonizedFuel.Desc_IonizedFuel_C",
+        "perMin": 40000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CompactedCoal/Desc_CompactedCoal.Desc_CompactedCoal_C",
+        "perMin": 5.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SAMFluctuator_C",
+    "name": "SAM Fluctuator",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C",
+        "perMin": 60.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Wire/Desc_Wire.Desc_Wire_C",
+        "perMin": 50.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPipe/Desc_SteelPipe.Desc_SteelPipe_C",
+        "perMin": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SAMFluctuator/Desc_SAMFluctuator.Desc_SAMFluctuator_C",
+        "perMin": 10.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_FicsiteMesh_C",
+    "name": "Ficsite Trigon",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/FicsiteIngot/Desc_FicsiteIngot.Desc_FicsiteIngot_C",
+        "perMin": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/FicsiteMesh/Desc_FicsiteMesh.Desc_FicsiteMesh_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_FicsiteIngot_Iron_C",
+    "name": "Ficsite Ingot (Iron)",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C",
+        "perMin": 40.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronIngot/Desc_IronIngot.Desc_IronIngot_C",
+        "perMin": 240.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/FicsiteIngot/Desc_FicsiteIngot.Desc_FicsiteIngot_C",
+        "perMin": 10.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_TimeCrystal_C",
+    "name": "Time Crystal",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Diamond/Desc_Diamond.Desc_Diamond_C",
+        "perMin": 12.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/TimeCrystal/Desc_TimeCrystal.Desc_TimeCrystal_C",
+        "perMin": 6.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Diamond_C",
+    "name": "Diamonds",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Coal/Desc_Coal.Desc_Coal_C",
+        "perMin": 600.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Diamond/Desc_Diamond.Desc_Diamond_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_IngotSAM_C",
+    "name": "Reanimated SAM",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/SAM/Desc_SAM.Desc_SAM_C",
+        "perMin": 120.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_10_C",
+    "name": "Biochemical Sculptor",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_7.Desc_SpaceElevatorPart_7_C",
+        "perMin": 0.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/FicsiteMesh/Desc_FicsiteMesh.Desc_FicsiteMesh_C",
+        "perMin": 40.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Water/Desc_Water.Desc_Water_C",
+        "perMin": 10000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_10.Desc_SpaceElevatorPart_10_C",
+        "perMin": 2.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_CircuitBoard_C",
+    "name": "Circuit Board",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperSheet/Desc_CopperSheet.Desc_CopperSheet_C",
+        "perMin": 15.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Plastic/Desc_Plastic.Desc_Plastic_C",
+        "perMin": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CircuitBoard/Desc_CircuitBoard.Desc_CircuitBoard_C",
+        "perMin": 7.5
+      }
+    ]
+  },
+  {
+    "id": "Recipe_LiquidFuel_C",
+    "name": "Fuel",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/CrudeOil/Desc_LiquidOil.Desc_LiquidOil_C",
+        "perMin": 60000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Fuel/Desc_LiquidFuel.Desc_LiquidFuel_C",
+        "perMin": 40000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/PolymerResin/Desc_PolymerResin.Desc_PolymerResin_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_PetroleumCoke_C",
+    "name": "Petroleum Coke",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/HeavyOilResidue/Desc_HeavyOilResidue.Desc_HeavyOilResidue_C",
+        "perMin": 40000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/PetroleumCoke/Desc_PetroleumCoke.Desc_PetroleumCoke_C",
+        "perMin": 120.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Plastic_C",
+    "name": "Plastic",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/CrudeOil/Desc_LiquidOil.Desc_LiquidOil_C",
+        "perMin": 30000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Plastic/Desc_Plastic.Desc_Plastic_C",
+        "perMin": 20.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/HeavyOilResidue/Desc_HeavyOilResidue.Desc_HeavyOilResidue_C",
+        "perMin": 10000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Rubber_C",
+    "name": "Rubber",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/CrudeOil/Desc_LiquidOil.Desc_LiquidOil_C",
+        "perMin": 30000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Rubber/Desc_Rubber.Desc_Rubber_C",
+        "perMin": 20.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/HeavyOilResidue/Desc_HeavyOilResidue.Desc_HeavyOilResidue_C",
+        "perMin": 20000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SteelBeam_C",
+    "name": "Steel Beam",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelIngot/Desc_SteelIngot.Desc_SteelIngot_C",
+        "perMin": 60.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPlate/Desc_SteelPlate.Desc_SteelPlate_C",
+        "perMin": 15.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SteelPipe_C",
+    "name": "Steel Pipe",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelIngot/Desc_SteelIngot.Desc_SteelIngot_C",
+        "perMin": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPipe/Desc_SteelPipe.Desc_SteelPipe_C",
+        "perMin": 20.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_IngotSteel_C",
+    "name": "Steel Ingot",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/OreIron/Desc_OreIron.Desc_OreIron_C",
+        "perMin": 45.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Coal/Desc_Coal.Desc_Coal_C",
+        "perMin": 45.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelIngot/Desc_SteelIngot.Desc_SteelIngot_C",
+        "perMin": 45.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_2_C",
+    "name": "Versatile Framework",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrame/Desc_ModularFrame.Desc_ModularFrame_C",
+        "perMin": 2.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPlate/Desc_SteelPlate.Desc_SteelPlate_C",
+        "perMin": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_2.Desc_SpaceElevatorPart_2_C",
+        "perMin": 5.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_FluidCanister_C",
+    "name": "Empty Canister",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Plastic/Desc_Plastic.Desc_Plastic_C",
+        "perMin": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/FluidCanister/Desc_FluidCanister.Desc_FluidCanister_C",
+        "perMin": 60.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_LiquidBiofuel_C",
+    "name": "Liquid Biofuel",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/BioFuel/Desc_Biofuel.Desc_Biofuel_C",
+        "perMin": 90.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Water/Desc_Water.Desc_Water_C",
+        "perMin": 45000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/BioFuel/Desc_LiquidBiofuel.Desc_LiquidBiofuel_C",
+        "perMin": 60000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_QuartzCrystal_C",
+    "name": "Quartz Crystal",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/RawQuartz/Desc_RawQuartz.Desc_RawQuartz_C",
+        "perMin": 37.5
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/QuartzCrystal/Desc_QuartzCrystal.Desc_QuartzCrystal_C",
+        "perMin": 22.5
+      }
+    ]
+  },
+  {
+    "id": "Recipe_AluminumCasing_C",
+    "name": "Aluminum Casing",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumIngot/Desc_AluminumIngot.Desc_AluminumIngot_C",
+        "perMin": 90.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumCasing/Desc_AluminumCasing.Desc_AluminumCasing_C",
+        "perMin": 60.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_AluminumSheet_C",
+    "name": "Alclad Aluminum Sheet",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumIngot/Desc_AluminumIngot.Desc_AluminumIngot_C",
+        "perMin": 30.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperIngot/Desc_CopperIngot.Desc_CopperIngot_C",
+        "perMin": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumPlate/Desc_AluminumPlate.Desc_AluminumPlate_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_AluminaSolution_C",
+    "name": "Alumina Solution",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/OreBauxite/Desc_OreBauxite.Desc_OreBauxite_C",
+        "perMin": 120.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Water/Desc_Water.Desc_Water_C",
+        "perMin": 180000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Alumina/Desc_AluminaSolution.Desc_AluminaSolution_C",
+        "perMin": 120000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Silica/Desc_Silica.Desc_Silica_C",
+        "perMin": 50.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_AluminumScrap_C",
+    "name": "Aluminum Scrap",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Alumina/Desc_AluminaSolution.Desc_AluminaSolution_C",
+        "perMin": 240000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Coal/Desc_Coal.Desc_Coal_C",
+        "perMin": 120.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumScrap/Desc_AluminumScrap.Desc_AluminumScrap_C",
+        "perMin": 360.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_IngotAluminum_C",
+    "name": "Aluminum Ingot",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumScrap/Desc_AluminumScrap.Desc_AluminumScrap_C",
+        "perMin": 90.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Silica/Desc_Silica.Desc_Silica_C",
+        "perMin": 75.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumIngot/Desc_AluminumIngot.Desc_AluminumIngot_C",
+        "perMin": 60.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Silica_C",
+    "name": "Silica",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/RawQuartz/Desc_RawQuartz.Desc_RawQuartz_C",
+        "perMin": 22.5
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Silica/Desc_Silica.Desc_Silica_C",
+        "perMin": 37.5
+      }
+    ]
+  },
+  {
+    "id": "Recipe_CrystalOscillator_C",
+    "name": "Crystal Oscillator",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/QuartzCrystal/Desc_QuartzCrystal.Desc_QuartzCrystal_C",
+        "perMin": 18.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Cable/Desc_Cable.Desc_Cable_C",
+        "perMin": 14.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronPlateReinforced/Desc_IronPlateReinforced.Desc_IronPlateReinforced_C",
+        "perMin": 2.5
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CrystalOscillator/Desc_CrystalOscillator.Desc_CrystalOscillator_C",
+        "perMin": 1.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_EncasedIndustrialBeam_C",
+    "name": "Encased Industrial Beam",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPlate/Desc_SteelPlate.Desc_SteelPlate_C",
+        "perMin": 18.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Cement/Desc_Cement.Desc_Cement_C",
+        "perMin": 36.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPlateReinforced/Desc_SteelPlateReinforced.Desc_SteelPlateReinforced_C",
+        "perMin": 6.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Motor_C",
+    "name": "Motor",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Rotor/Desc_Rotor.Desc_Rotor_C",
+        "perMin": 10.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Stator/Desc_Stator.Desc_Stator_C",
+        "perMin": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Motor/Desc_Motor.Desc_Motor_C",
+        "perMin": 5.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Stator_C",
+    "name": "Stator",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPipe/Desc_SteelPipe.Desc_SteelPipe_C",
+        "perMin": 15.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Wire/Desc_Wire.Desc_Wire_C",
+        "perMin": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Stator/Desc_Stator.Desc_Stator_C",
+        "perMin": 5.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_3_C",
+    "name": "Automated Wiring",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Stator/Desc_Stator.Desc_Stator_C",
+        "perMin": 2.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Cable/Desc_Cable.Desc_Cable_C",
+        "perMin": 50.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_3.Desc_SpaceElevatorPart_3_C",
+        "perMin": 2.5
+      }
+    ]
+  },
+  {
+    "id": "Recipe_AILimiter_C",
+    "name": "AI Limiter",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperSheet/Desc_CopperSheet.Desc_CopperSheet_C",
+        "perMin": 25.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/HighSpeedWire/Desc_HighSpeedWire.Desc_HighSpeedWire_C",
+        "perMin": 100.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CircuitBoardHighSpeed/Desc_CircuitBoardHighSpeed.Desc_CircuitBoardHighSpeed_C",
+        "perMin": 5.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Computer_C",
+    "name": "Computer",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CircuitBoard/Desc_CircuitBoard.Desc_CircuitBoard_C",
+        "perMin": 10.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Cable/Desc_Cable.Desc_Cable_C",
+        "perMin": 20.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Plastic/Desc_Plastic.Desc_Plastic_C",
+        "perMin": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Computer/Desc_Computer.Desc_Computer_C",
+        "perMin": 2.5
+      }
+    ]
+  },
+  {
+    "id": "Recipe_ModularFrameHeavy_C",
+    "name": "Heavy Modular Frame",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrame/Desc_ModularFrame.Desc_ModularFrame_C",
+        "perMin": 10.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPipe/Desc_SteelPipe.Desc_SteelPipe_C",
+        "perMin": 40.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPlateReinforced/Desc_SteelPlateReinforced.Desc_SteelPlateReinforced_C",
+        "perMin": 10.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronScrew/Desc_IronScrew.Desc_IronScrew_C",
+        "perMin": 240.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrameHeavy/Desc_ModularFrameHeavy.Desc_ModularFrameHeavy_C",
+        "perMin": 2.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_4_C",
+    "name": "Modular Engine",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Motor/Desc_Motor.Desc_Motor_C",
+        "perMin": 2.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Rubber/Desc_Rubber.Desc_Rubber_C",
+        "perMin": 15.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_1.Desc_SpaceElevatorPart_1_C",
+        "perMin": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_4.Desc_SpaceElevatorPart_4_C",
+        "perMin": 1.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_5_C",
+    "name": "Adaptive Control Unit",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_3.Desc_SpaceElevatorPart_3_C",
+        "perMin": 5.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CircuitBoard/Desc_CircuitBoard.Desc_CircuitBoard_C",
+        "perMin": 5.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrameHeavy/Desc_ModularFrameHeavy.Desc_ModularFrameHeavy_C",
+        "perMin": 1.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Computer/Desc_Computer.Desc_Computer_C",
+        "perMin": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_5.Desc_SpaceElevatorPart_5_C",
+        "perMin": 1.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_ModularFrame_C",
+    "name": "Modular Frame",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronPlateReinforced/Desc_IronPlateReinforced.Desc_IronPlateReinforced_C",
+        "perMin": 3.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronRod/Desc_IronRod.Desc_IronRod_C",
+        "perMin": 12.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrame/Desc_ModularFrame.Desc_ModularFrame_C",
+        "perMin": 2.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Rotor_C",
+    "name": "Rotor",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronRod/Desc_IronRod.Desc_IronRod_C",
+        "perMin": 20.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronScrew/Desc_IronScrew.Desc_IronScrew_C",
+        "perMin": 100.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Rotor/Desc_Rotor.Desc_Rotor_C",
+        "perMin": 4.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_CopperSheet_C",
+    "name": "Copper Sheet",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperIngot/Desc_CopperIngot.Desc_CopperIngot_C",
+        "perMin": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperSheet/Desc_CopperSheet.Desc_CopperSheet_C",
+        "perMin": 10.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_1_C",
+    "name": "Smart Plating",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronPlateReinforced/Desc_IronPlateReinforced.Desc_IronPlateReinforced_C",
+        "perMin": 2.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Rotor/Desc_Rotor.Desc_Rotor_C",
+        "perMin": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_1.Desc_SpaceElevatorPart_1_C",
+        "perMin": 2.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_PlutoniumCell_C",
+    "name": "Encased Plutonium Cell",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/PlutoniumPellet/Desc_PlutoniumPellet.Desc_PlutoniumPellet_C",
+        "perMin": 10.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Cement/Desc_Cement.Desc_Cement_C",
+        "perMin": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/PlutoniumCell/Desc_PlutoniumCell.Desc_PlutoniumCell_C",
+        "perMin": 5.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_PressureConversionCube_C",
+    "name": "Pressure Conversion Cube",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrameFused/Desc_ModularFrameFused.Desc_ModularFrameFused_C",
+        "perMin": 1.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrameLightweight/Desc_ModularFrameLightweight.Desc_ModularFrameLightweight_C",
+        "perMin": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/PressureConversionCube/Desc_PressureConversionCube.Desc_PressureConversionCube_C",
+        "perMin": 1.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_NitricAcid_C",
+    "name": "Nitric Acid",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/NitrogenGas/Desc_NitrogenGas.Desc_NitrogenGas_C",
+        "perMin": 120000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Water/Desc_Water.Desc_Water_C",
+        "perMin": 30000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronPlate/Desc_IronPlate.Desc_IronPlate_C",
+        "perMin": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NitricAcid/Desc_NitricAcid.Desc_NitricAcid_C",
+        "perMin": 30000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_NonFissileUranium_C",
+    "name": "Non-Fissile Uranium",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NuclearWaste/Desc_NuclearWaste.Desc_NuclearWaste_C",
+        "perMin": 37.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Silica/Desc_Silica.Desc_Silica_C",
+        "perMin": 25.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NitricAcid/Desc_NitricAcid.Desc_NitricAcid_C",
+        "perMin": 15000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SulfuricAcid/Desc_SulfuricAcid.Desc_SulfuricAcid_C",
+        "perMin": 15000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Non-FissibleUranium/Desc_NonFissibleUranium.Desc_NonFissibleUranium_C",
+        "perMin": 50.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_CopperDust_C",
+    "name": "Copper Powder",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperIngot/Desc_CopperIngot.Desc_CopperIngot_C",
+        "perMin": 300.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperDust/Desc_CopperDust.Desc_CopperDust_C",
+        "perMin": 50.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Plutonium_C",
+    "name": "Plutonium Pellet",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Non-FissibleUranium/Desc_NonFissibleUranium.Desc_NonFissibleUranium_C",
+        "perMin": 100.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NuclearWaste/Desc_NuclearWaste.Desc_NuclearWaste_C",
+        "perMin": 25.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/PlutoniumPellet/Desc_PlutoniumPellet.Desc_PlutoniumPellet_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_PlutoniumFuelRod_C",
+    "name": "Plutonium Fuel Rod",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/PlutoniumCell/Desc_PlutoniumCell.Desc_PlutoniumCell_C",
+        "perMin": 7.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPlate/Desc_SteelPlate.Desc_SteelPlate_C",
+        "perMin": 4.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ElectromagneticControlRod/Desc_ElectromagneticControlRod.Desc_ElectromagneticControlRod_C",
+        "perMin": 1.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumPlateReinforced/Desc_AluminumPlateReinforced.Desc_AluminumPlateReinforced_C",
+        "perMin": 2.5
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/PlutoniumFuelRods/Desc_PlutoniumFuelRod.Desc_PlutoniumFuelRod_C",
+        "perMin": 0.25
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_9_C",
+    "name": "Nuclear Pasta",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperDust/Desc_CopperDust.Desc_CopperDust_C",
+        "perMin": 100.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/PressureConversionCube/Desc_PressureConversionCube.Desc_PressureConversionCube_C",
+        "perMin": 0.5
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_9.Desc_SpaceElevatorPart_9_C",
+        "perMin": 0.5
+      }
+    ]
+  },
+  {
+    "id": "Recipe_UraniumCell_C",
+    "name": "Encased Uranium Cell",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/OreUranium/Desc_OreUranium.Desc_OreUranium_C",
+        "perMin": 50.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Cement/Desc_Cement.Desc_Cement_C",
+        "perMin": 15.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SulfuricAcid/Desc_SulfuricAcid.Desc_SulfuricAcid_C",
+        "perMin": 40000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/UraniumCell/Desc_UraniumCell.Desc_UraniumCell_C",
+        "perMin": 25.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SulfuricAcid/Desc_SulfuricAcid.Desc_SulfuricAcid_C",
+        "perMin": 10000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_CoolingSystem_C",
+    "name": "Cooling System",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumPlateReinforced/Desc_AluminumPlateReinforced.Desc_AluminumPlateReinforced_C",
+        "perMin": 12.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Rubber/Desc_Rubber.Desc_Rubber_C",
+        "perMin": 12.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Water/Desc_Water.Desc_Water_C",
+        "perMin": 30000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/NitrogenGas/Desc_NitrogenGas.Desc_NitrogenGas_C",
+        "perMin": 150000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CoolingSystem/Desc_CoolingSystem.Desc_CoolingSystem_C",
+        "perMin": 6.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Battery_C",
+    "name": "Battery",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SulfuricAcid/Desc_SulfuricAcid.Desc_SulfuricAcid_C",
+        "perMin": 50000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Alumina/Desc_AluminaSolution.Desc_AluminaSolution_C",
+        "perMin": 40000.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumCasing/Desc_AluminumCasing.Desc_AluminumCasing_C",
+        "perMin": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Battery/Desc_Battery.Desc_Battery_C",
+        "perMin": 20.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_ComputerSuper_C",
+    "name": "Supercomputer",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Computer/Desc_Computer.Desc_Computer_C",
+        "perMin": 7.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CircuitBoardHighSpeed/Desc_CircuitBoardHighSpeed.Desc_CircuitBoardHighSpeed_C",
+        "perMin": 3.75
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/HighSpeedConnector/Desc_HighSpeedConnector.Desc_HighSpeedConnector_C",
+        "perMin": 5.62
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Plastic/Desc_Plastic.Desc_Plastic_C",
+        "perMin": 52.5
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ComputerSuper/Desc_ComputerSuper.Desc_ComputerSuper_C",
+        "perMin": 1.88
+      }
+    ]
+  },
+  {
+    "id": "Recipe_RadioControlUnit_C",
+    "name": "Radio Control Unit",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumCasing/Desc_AluminumCasing.Desc_AluminumCasing_C",
+        "perMin": 40.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CrystalOscillator/Desc_CrystalOscillator.Desc_CrystalOscillator_C",
+        "perMin": 1.25
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Computer/Desc_Computer.Desc_Computer_C",
+        "perMin": 2.5
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrameLightweight/Desc_ModularFrameLightweight.Desc_ModularFrameLightweight_C",
+        "perMin": 2.5
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SulfuricAcid_C",
+    "name": "Sulfuric Acid",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Sulfur/Desc_Sulfur.Desc_Sulfur_C",
+        "perMin": 50.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Water/Desc_Water.Desc_Water_C",
+        "perMin": 50000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SulfuricAcid/Desc_SulfuricAcid.Desc_SulfuricAcid_C",
+        "perMin": 50000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_7_C",
+    "name": "Assembly Director System",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_5.Desc_SpaceElevatorPart_5_C",
+        "perMin": 1.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ComputerSuper/Desc_ComputerSuper.Desc_ComputerSuper_C",
+        "perMin": 0.75
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_7.Desc_SpaceElevatorPart_7_C",
+        "perMin": 0.75
+      }
+    ]
+  },
+  {
+    "id": "Recipe_HighSpeedConnector_C",
+    "name": "High-Speed Connector",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/HighSpeedWire/Desc_HighSpeedWire.Desc_HighSpeedWire_C",
+        "perMin": 210.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Cable/Desc_Cable.Desc_Cable_C",
+        "perMin": 37.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CircuitBoard/Desc_CircuitBoard.Desc_CircuitBoard_C",
+        "perMin": 3.75
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/HighSpeedConnector/Desc_HighSpeedConnector.Desc_HighSpeedConnector_C",
+        "perMin": 3.75
+      }
+    ]
+  },
+  {
+    "id": "Recipe_ElectromagneticControlRod_C",
+    "name": "Electromagnetic Control Rod",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Stator/Desc_Stator.Desc_Stator_C",
+        "perMin": 6.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CircuitBoardHighSpeed/Desc_CircuitBoardHighSpeed.Desc_CircuitBoardHighSpeed_C",
+        "perMin": 4.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ElectromagneticControlRod/Desc_ElectromagneticControlRod.Desc_ElectromagneticControlRod_C",
+        "perMin": 4.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_NuclearFuelRod_C",
+    "name": "Uranium Fuel Rod",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/UraniumCell/Desc_UraniumCell.Desc_UraniumCell_C",
+        "perMin": 20.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPlateReinforced/Desc_SteelPlateReinforced.Desc_SteelPlateReinforced_C",
+        "perMin": 1.2
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ElectromagneticControlRod/Desc_ElectromagneticControlRod.Desc_ElectromagneticControlRod_C",
+        "perMin": 2.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NuclearFuelRod/Desc_NuclearFuelRod.Desc_NuclearFuelRod_C",
+        "perMin": 0.4
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_6_C",
+    "name": "Magnetic Field Generator",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_2.Desc_SpaceElevatorPart_2_C",
+        "perMin": 2.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ElectromagneticControlRod/Desc_ElectromagneticControlRod.Desc_ElectromagneticControlRod_C",
+        "perMin": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_6.Desc_SpaceElevatorPart_6_C",
+        "perMin": 1.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_HeatSink_C",
+    "name": "Heat Sink",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumPlate/Desc_AluminumPlate.Desc_AluminumPlate_C",
+        "perMin": 37.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperSheet/Desc_CopperSheet.Desc_CopperSheet_C",
+        "perMin": 22.5
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumPlateReinforced/Desc_AluminumPlateReinforced.Desc_AluminumPlateReinforced_C",
+        "perMin": 7.5
+      }
+    ]
+  },
+  {
+    "id": "Recipe_FusedModularFrame_C",
+    "name": "Fused Modular Frame",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrameHeavy/Desc_ModularFrameHeavy.Desc_ModularFrameHeavy_C",
+        "perMin": 1.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumCasing/Desc_AluminumCasing.Desc_AluminumCasing_C",
+        "perMin": 75.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/NitrogenGas/Desc_NitrogenGas.Desc_NitrogenGas_C",
+        "perMin": 37500.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrameFused/Desc_ModularFrameFused.Desc_ModularFrameFused_C",
+        "perMin": 1.5
+      }
+    ]
+  },
+  {
+    "id": "Recipe_GasTank_C",
+    "name": "Empty Fluid Tank",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumIngot/Desc_AluminumIngot.Desc_AluminumIngot_C",
+        "perMin": 60.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GasTank/Desc_GasTank.Desc_GasTank_C",
+        "perMin": 60.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_IngotCaterium_C",
+    "name": "Caterium Ingot",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/OreGold/Desc_OreGold.Desc_OreGold_C",
+        "perMin": 45.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GoldIngot/Desc_GoldIngot.Desc_GoldIngot_C",
+        "perMin": 15.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_MotorTurbo_C",
+    "name": "Turbo Motor",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CoolingSystem/Desc_CoolingSystem.Desc_CoolingSystem_C",
+        "perMin": 7.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrameLightweight/Desc_ModularFrameLightweight.Desc_ModularFrameLightweight_C",
+        "perMin": 3.75
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Motor/Desc_Motor.Desc_Motor_C",
+        "perMin": 7.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Rubber/Desc_Rubber.Desc_Rubber_C",
+        "perMin": 45.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/MotorLightweight/Desc_MotorLightweight.Desc_MotorLightweight_C",
+        "perMin": 1.88
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_8_C",
+    "name": "Thermal Propulsion Rocket",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_4.Desc_SpaceElevatorPart_4_C",
+        "perMin": 2.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/MotorLightweight/Desc_MotorLightweight.Desc_MotorLightweight_C",
+        "perMin": 1.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CoolingSystem/Desc_CoolingSystem.Desc_CoolingSystem_C",
+        "perMin": 3.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ModularFrameFused/Desc_ModularFrameFused.Desc_ModularFrameFused_C",
+        "perMin": 1.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_8.Desc_SpaceElevatorPart_8_C",
+        "perMin": 1.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Ficsonium_C",
+    "name": "Ficsonium",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NuclearWaste/Desc_PlutoniumWaste.Desc_PlutoniumWaste_C",
+        "perMin": 10.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SingularityCell/Desc_SingularityCell.Desc_SingularityCell_C",
+        "perMin": 10.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkEnergy/Desc_DarkEnergy.Desc_DarkEnergy_C",
+        "perMin": 200000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Ficsonium/Desc_Ficsonium.Desc_Ficsonium_C",
+        "perMin": 10.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_FicsoniumFuelRod_C",
+    "name": "Ficsonium Fuel Rod",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Ficsonium/Desc_Ficsonium.Desc_Ficsonium_C",
+        "perMin": 5.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/ElectromagneticControlRod/Desc_ElectromagneticControlRod.Desc_ElectromagneticControlRod_C",
+        "perMin": 5.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/FicsiteMesh/Desc_FicsiteMesh.Desc_FicsiteMesh_C",
+        "perMin": 100.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/QuantumEnergy/Desc_QuantumEnergy.Desc_QuantumEnergy_C",
+        "perMin": 50000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/FicsoniumFuelRod/Desc_FicsoniumFuelRod.Desc_FicsoniumFuelRod_C",
+        "perMin": 2.5
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkEnergy/Desc_DarkEnergy.Desc_DarkEnergy_C",
+        "perMin": 50000.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SingularityCell_C",
+    "name": "Singularity Cell",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_9.Desc_SpaceElevatorPart_9_C",
+        "perMin": 1.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkMatter/Desc_DarkMatter.Desc_DarkMatter_C",
+        "perMin": 20.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronPlate/Desc_IronPlate.Desc_IronPlate_C",
+        "perMin": 100.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Cement/Desc_Cement.Desc_Cement_C",
+        "perMin": 200.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SingularityCell/Desc_SingularityCell.Desc_SingularityCell_C",
+        "perMin": 10.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_SpaceElevatorPart_11_C",
+    "name": "Ballistic Warp Drive",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_8.Desc_SpaceElevatorPart_8_C",
+        "perMin": 1.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SingularityCell/Desc_SingularityCell.Desc_SingularityCell_C",
+        "perMin": 5.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/QuantumOscillator/Desc_QuantumOscillator.Desc_QuantumOscillator_C",
+        "perMin": 2.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/DarkMatter/Desc_DarkMatter.Desc_DarkMatter_C",
+        "perMin": 40.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_11.Desc_SpaceElevatorPart_11_C",
+        "perMin": 1.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Quickwire_C",
+    "name": "Quickwire",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GoldIngot/Desc_GoldIngot.Desc_GoldIngot_C",
+        "perMin": 12.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/HighSpeedWire/Desc_HighSpeedWire.Desc_HighSpeedWire_C",
+        "perMin": 60.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Fabric_C",
+    "name": "Fabric",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_Mycelia.Desc_Mycelia_C",
+        "perMin": 15.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_GenericBiomass.Desc_GenericBiomass_C",
+        "perMin": 75.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_Fabric.Desc_Fabric_C",
+        "perMin": 15.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_IronPlateReinforced_C",
+    "name": "Reinforced Iron Plate",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronPlate/Desc_IronPlate.Desc_IronPlate_C",
+        "perMin": 30.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronScrew/Desc_IronScrew.Desc_IronScrew_C",
+        "perMin": 60.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronPlateReinforced/Desc_IronPlateReinforced.Desc_IronPlateReinforced_C",
+        "perMin": 5.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Concrete_C",
+    "name": "Concrete",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Stone/Desc_Stone.Desc_Stone_C",
+        "perMin": 45.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Cement/Desc_Cement.Desc_Cement_C",
+        "perMin": 15.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Screw_C",
+    "name": "Screws",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronRod/Desc_IronRod.Desc_IronRod_C",
+        "perMin": 10.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronScrew/Desc_IronScrew.Desc_IronScrew_C",
+        "perMin": 40.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Cable_C",
+    "name": "Cable",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Wire/Desc_Wire.Desc_Wire_C",
+        "perMin": 60.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Cable/Desc_Cable.Desc_Cable_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Wire_C",
+    "name": "Wire",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperIngot/Desc_CopperIngot.Desc_CopperIngot_C",
+        "perMin": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Wire/Desc_Wire.Desc_Wire_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_IngotCopper_C",
+    "name": "Copper Ingot",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/OreCopper/Desc_OreCopper.Desc_OreCopper_C",
+        "perMin": 30.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/CopperIngot/Desc_CopperIngot.Desc_CopperIngot_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_UraniumWaste_C",
+    "name": "Uranium Waste",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NuclearFuelRod/Desc_NuclearFuelRod.Desc_NuclearFuelRod_C",
+        "perMin": 0.2
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NuclearWaste/Desc_NuclearWaste.Desc_NuclearWaste_C",
+        "perMin": 10.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_PlutoniumWaste_C",
+    "name": "Plutonium Waste",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/PlutoniumFuelRods/Desc_PlutoniumFuelRod.Desc_PlutoniumFuelRod_C",
+        "perMin": 0.1
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NuclearWaste/Desc_PlutoniumWaste.Desc_PlutoniumWaste_C",
+        "perMin": 1.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_FilterHazmat_C",
+    "name": "Iodine-Infused Filter",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Filter/Desc_Filter.Desc_Filter_C",
+        "perMin": 3.75
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/HighSpeedWire/Desc_HighSpeedWire.Desc_HighSpeedWire_C",
+        "perMin": 30.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/AluminumCasing/Desc_AluminumCasing.Desc_AluminumCasing_C",
+        "perMin": 3.75
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IodineInfusedFilter/Desc_HazmatFilter.Desc_HazmatFilter_C",
+        "perMin": 3.75
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Gunpowder_C",
+    "name": "Black Powder",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Coal/Desc_Coal.Desc_Coal_C",
+        "perMin": 15.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Sulfur/Desc_Sulfur.Desc_Sulfur_C",
+        "perMin": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GunPowder/Desc_Gunpowder.Desc_Gunpowder_C",
+        "perMin": 30.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_FilterGasMask_C",
+    "name": "Gas Filter",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_Fabric.Desc_Fabric_C",
+        "perMin": 15.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/RawResources/Coal/Desc_Coal.Desc_Coal_C",
+        "perMin": 30.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/IronPlate/Desc_IronPlate.Desc_IronPlate_C",
+        "perMin": 15.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/Filter/Desc_Filter.Desc_Filter_C",
+        "perMin": 7.5
+      }
+    ]
+  },
+  {
+    "id": "Recipe_Nobelisk_C",
+    "name": "Nobelisk",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GunPowder/Desc_Gunpowder.Desc_Gunpowder_C",
+        "perMin": 20.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/SteelPipe/Desc_SteelPipe.Desc_SteelPipe_C",
+        "perMin": 20.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/NobeliskExplosive/Desc_NobeliskExplosive.Desc_NobeliskExplosive_C",
+        "perMin": 10.0
+      }
+    ]
+  },
+  {
+    "id": "Recipe_GunpowderMK2_C",
+    "name": "Smokeless Powder",
+    "inputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GunPowder/Desc_Gunpowder.Desc_Gunpowder_C",
+        "perMin": 20.0
+      },
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/HeavyOilResidue/Desc_HeavyOilResidue.Desc_HeavyOilResidue_C",
+        "perMin": 10000.0
+      }
+    ],
+    "outputs": [
+      {
+        "item": "/Game/FactoryGame/Resource/Parts/GunPowder/Desc_GunpowderMK2.Desc_GunpowderMK2_C",
+        "perMin": 20.0
+      }
+    ]
+  }
+]

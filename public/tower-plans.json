@@ -1,0 +1,3291 @@
+[
+  {
+    "target": "Alumina Solution",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Alumina/Desc_AluminaSolution.Desc_AluminaSolution_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 0.001,
+        "isLiquid": false
+      },
+      {
+        "name": "Water",
+        "perMin": 1.5,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Alumina Solution"
+    ]
+  },
+  {
+    "target": "Aluminum Casing",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/AluminumCasing/Desc_AluminumCasing.Desc_AluminumCasing_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 1.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 1.5,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Aluminum Casing"
+    ]
+  },
+  {
+    "target": "Aluminum Ingot",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/AluminumIngot/Desc_AluminumIngot.Desc_AluminumIngot_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Aluminum Scrap",
+        "perMin": 1.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 0.75,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Scrap",
+        "rate": 1.5,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Aluminum Ingot",
+      "Silica"
+    ]
+  },
+  {
+    "target": "Alclad Aluminum Sheet",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/AluminumPlate/Desc_AluminumPlate.Desc_AluminumPlate_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 1.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 0.333333,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Alclad Aluminum Sheet",
+      "Copper Ingot"
+    ]
+  },
+  {
+    "target": "Heat Sink",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/AluminumPlateReinforced/Desc_AluminumPlateReinforced.Desc_AluminumPlateReinforced_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 5.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 7.666667,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 5.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Alclad Aluminum Sheet",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Heat Sink"
+    ]
+  },
+  {
+    "target": "Aluminum Scrap",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/AluminumScrap/Desc_AluminumScrap.Desc_AluminumScrap_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 0.666667,
+        "isLiquid": false
+      },
+      {
+        "name": "Coal",
+        "perMin": 0.333333,
+        "isLiquid": false
+      },
+      {
+        "name": "Water",
+        "perMin": 1000.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Alumina Solution",
+      "Aluminum Scrap"
+    ]
+  },
+  {
+    "target": "Battery",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Battery/Desc_Battery.Desc_Battery_C",
+    "rate": 1.0,
+    "achievedInputs": 5,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 3.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Coal",
+        "perMin": 0.75,
+        "isLiquid": false
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 1.125,
+        "isLiquid": false
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 2.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Water",
+        "perMin": 7750.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Battery",
+      "Silica",
+      "Sulfuric Acid"
+    ]
+  },
+  {
+    "target": "Liquid Biofuel",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/BioFuel/Desc_LiquidBiofuel.Desc_LiquidBiofuel_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Biofuel",
+        "perMin": 0.0015,
+        "isLiquid": true
+      },
+      {
+        "name": "Water",
+        "perMin": 0.75,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Liquid Biofuel"
+    ]
+  },
+  {
+    "target": "Cable",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Cable/Desc_Cable.Desc_Cable_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Cable",
+      "Copper Ingot",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Concrete",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Cement/Desc_Cement.Desc_Cement_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Limestone",
+        "perMin": 3.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Concrete"
+    ]
+  },
+  {
+    "target": "Circuit Board",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/CircuitBoard/Desc_CircuitBoard.Desc_CircuitBoard_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 4.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 6000.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Circuit Board",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Plastic"
+    ]
+  },
+  {
+    "target": "AI Limiter",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/CircuitBoardHighSpeed/Desc_CircuitBoardHighSpeed.Desc_CircuitBoardHighSpeed_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 10.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 12.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Quickwire"
+    ]
+  },
+  {
+    "target": "CompactedCoal",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/CompactedCoal/Desc_CompactedCoal.Desc_CompactedCoal_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "LiquidTurboFuel",
+        "perMin": 6000.0,
+        "isLiquid": true
+      },
+      {
+        "name": "Nitric Acid",
+        "perMin": 1000.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [
+      {
+        "name": "Nitric Acid",
+        "rate": 1000.0,
+        "isLiquid": true
+      }
+    ],
+    "recipesUsed": [
+      "Rocket Fuel"
+    ]
+  },
+  {
+    "target": "Computer",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Computer/Desc_Computer.Desc_Computer_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 24.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 48000.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Plastic",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Supercomputer",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/ComputerSuper/Desc_ComputerSuper.Desc_ComputerSuper_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 157.542553,
+        "isLiquid": false
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 124.378723,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 251313.829787,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "AI Limiter",
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Computer",
+      "Copper Ingot",
+      "Copper Sheet",
+      "High-Speed Connector",
+      "Plastic",
+      "Quickwire",
+      "Supercomputer",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Cooling System",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/CoolingSystem/Desc_CoolingSystem.Desc_CoolingSystem_C",
+    "rate": 1.0,
+    "achievedInputs": 5,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 10.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 15.333333,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 3000.0,
+        "isLiquid": true
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 25000.0,
+        "isLiquid": true
+      },
+      {
+        "name": "Water",
+        "perMin": 5000.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 10.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Alclad Aluminum Sheet",
+      "Cooling System",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Heat Sink",
+      "Rubber"
+    ]
+  },
+  {
+    "target": "Copper Powder",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/CopperDust/Desc_CopperDust.Desc_CopperDust_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 6.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Copper Ingot",
+      "Copper Powder"
+    ]
+  },
+  {
+    "target": "Copper Ingot",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/CopperIngot/Desc_CopperIngot.Desc_CopperIngot_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Copper Ingot"
+    ]
+  },
+  {
+    "target": "Copper Sheet",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/CopperSheet/Desc_CopperSheet.Desc_CopperSheet_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 2.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Copper Ingot",
+      "Copper Sheet"
+    ]
+  },
+  {
+    "target": "Crystal Oscillator",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/CrystalOscillator/Desc_CrystalOscillator.Desc_CrystalOscillator_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 14.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 30.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 30.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Cable",
+      "Copper Ingot",
+      "Crystal Oscillator",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Quartz Crystal",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Dark Matter Residue",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/DarkEnergy/Desc_DarkEnergy.Desc_DarkEnergy_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "SAM",
+        "perMin": 0.002,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Dark Matter Residue",
+      "Reanimated SAM"
+    ]
+  },
+  {
+    "target": "Dark Matter Crystal",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/DarkMatter/Desc_DarkMatter.Desc_DarkMatter_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 20.0,
+        "isLiquid": false
+      },
+      {
+        "name": "SAM",
+        "perMin": 10.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Reanimated SAM"
+    ]
+  },
+  {
+    "target": "Diamonds",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Diamond/Desc_Diamond.Desc_Diamond_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 20.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Diamonds"
+    ]
+  },
+  {
+    "target": "Electromagnetic Control Rod",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/ElectromagneticControlRod/Desc_ElectromagneticControlRod.Desc_ElectromagneticControlRod_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 16.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 12.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Steel Ingot",
+        "perMin": 6.75,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Steel Ingot",
+        "rate": 6.75,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Quickwire",
+      "Stator",
+      "Steel Pipe",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Ficsite Ingot (Iron)",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/FicsiteIngot/Desc_FicsiteIngot.Desc_FicsiteIngot_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 24.0,
+        "isLiquid": false
+      },
+      {
+        "name": "SAM",
+        "perMin": 16.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Ficsite Ingot (Iron)",
+      "Iron Ingot",
+      "Reanimated SAM"
+    ]
+  },
+  {
+    "target": "Ficsite Trigon",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/FicsiteMesh/Desc_FicsiteMesh.Desc_FicsiteMesh_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 8.0,
+        "isLiquid": false
+      },
+      {
+        "name": "SAM",
+        "perMin": 5.333333,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Ficsite Ingot (Iron)",
+      "Ficsite Trigon",
+      "Iron Ingot",
+      "Reanimated SAM"
+    ]
+  },
+  {
+    "target": "Ficsonium",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Ficsonium/Desc_Ficsonium.Desc_Ficsonium_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Plutonium Waste",
+        "perMin": 1.0,
+        "isLiquid": false
+      },
+      {
+        "name": "SAM",
+        "perMin": 40.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Singularity Cell",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Plutonium Waste",
+        "rate": 1.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Singularity Cell",
+        "rate": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Dark Matter Residue",
+      "Ficsonium",
+      "Reanimated SAM"
+    ]
+  },
+  {
+    "target": "Ficsonium Fuel Rod",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/FicsoniumFuelRod/Desc_FicsoniumFuelRod.Desc_FicsoniumFuelRod_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Electromagnetic Control Rod",
+        "perMin": 2.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Ficsite Ingot (Iron)",
+        "perMin": 13.333333,
+        "isLiquid": false
+      },
+      {
+        "name": "Ficsonium",
+        "perMin": 2.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Electromagnetic Control Rod",
+        "rate": 2.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Ficsite Ingot (Iron)",
+        "rate": 13.333333,
+        "isLiquid": false
+      },
+      {
+        "name": "Ficsonium",
+        "rate": 2.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Excited Photonic Matter",
+      "Ficsite Trigon",
+      "Ficsonium Fuel Rod"
+    ]
+  },
+  {
+    "target": "Gas Filter",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Filter/Desc_Filter.Desc_Filter_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Fabric",
+        "perMin": 2.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 3.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Fabric",
+        "rate": 2.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Gas Filter",
+      "Iron Ingot",
+      "Iron Plate"
+    ]
+  },
+  {
+    "target": "Empty Canister",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/FluidCanister/Desc_FluidCanister.Desc_FluidCanister_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 750.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Empty Canister",
+      "Plastic"
+    ]
+  },
+  {
+    "target": "Fuel",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Fuel/Desc_LiquidFuel.Desc_LiquidFuel_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 1.5,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Fuel"
+    ]
+  },
+  {
+    "target": "Empty Fluid Tank",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/GasTank/Desc_GasTank.Desc_GasTank_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Empty Fluid Tank"
+    ]
+  },
+  {
+    "target": "Fabric",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_Fabric.Desc_Fabric_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "GenericBiomass",
+        "perMin": 5.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Mycelia",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Fabric"
+    ]
+  },
+  {
+    "target": "Caterium Ingot",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/GoldIngot/Desc_GoldIngot.Desc_GoldIngot_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Gold Ore",
+        "perMin": 3.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Caterium Ingot"
+    ]
+  },
+  {
+    "target": "Black Powder",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/GunPowder/Desc_Gunpowder.Desc_Gunpowder_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 0.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 0.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Black Powder"
+    ]
+  },
+  {
+    "target": "Smokeless Powder",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/GunPowder/Desc_GunpowderMK2.Desc_GunpowderMK2_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 0.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 750.0,
+        "isLiquid": true
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 0.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Black Powder",
+      "Rubber",
+      "Smokeless Powder"
+    ]
+  },
+  {
+    "target": "HeavyOilResidue",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/HeavyOilResidue/Desc_HeavyOilResidue.Desc_HeavyOilResidue_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 1.5,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Rubber"
+    ]
+  },
+  {
+    "target": "High-Speed Connector",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/HighSpeedConnector/Desc_HighSpeedConnector.Desc_HighSpeedConnector_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 14.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 33.6,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 6000.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Copper Ingot",
+      "Copper Sheet",
+      "High-Speed Connector",
+      "Plastic",
+      "Quickwire",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Quickwire",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/HighSpeedWire/Desc_HighSpeedWire.Desc_HighSpeedWire_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Gold Ore",
+        "perMin": 0.6,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Caterium Ingot",
+      "Quickwire"
+    ]
+  },
+  {
+    "target": "Iodine-Infused Filter",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/IodineInfusedFilter/Desc_HazmatFilter.Desc_HazmatFilter_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 1.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Gas Filter",
+        "perMin": 1.0,
+        "isLiquid": true
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 4.8,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 1.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Gas Filter",
+        "rate": 1.0,
+        "isLiquid": true
+      }
+    ],
+    "recipesUsed": [
+      "Aluminum Casing",
+      "Caterium Ingot",
+      "Iodine-Infused Filter",
+      "Quickwire"
+    ]
+  },
+  {
+    "target": "Ionized Fuel",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/IonizedFuel/Desc_IonizedFuel.Desc_IonizedFuel_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "CrystalShard",
+        "perMin": 6.3e-05,
+        "isLiquid": false
+      },
+      {
+        "name": "Rocket Fuel",
+        "perMin": 1.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [
+      {
+        "name": "Rocket Fuel",
+        "rate": 1.0,
+        "isLiquid": true
+      }
+    ],
+    "recipesUsed": [
+      "Ionized Fuel"
+    ]
+  },
+  {
+    "target": "Iron Ingot",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/IronIngot/Desc_IronIngot.Desc_IronIngot_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Iron Ingot"
+    ]
+  },
+  {
+    "target": "Iron Plate",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/IronPlate/Desc_IronPlate.Desc_IronPlate_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 1.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Iron Ingot",
+      "Iron Plate"
+    ]
+  },
+  {
+    "target": "Reinforced Iron Plate",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/IronPlateReinforced/Desc_IronPlateReinforced.Desc_IronPlateReinforced_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 12.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Reinforced Iron Plate",
+      "Screws"
+    ]
+  },
+  {
+    "target": "Iron Rod",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/IronRod/Desc_IronRod.Desc_IronRod_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Iron Ingot",
+      "Iron Rod"
+    ]
+  },
+  {
+    "target": "Screws",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/IronScrew/Desc_IronScrew.Desc_IronScrew_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 0.25,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Iron Ingot",
+      "Iron Rod",
+      "Screws"
+    ]
+  },
+  {
+    "target": "Modular Frame",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/ModularFrame/Desc_ModularFrame.Desc_ModularFrame_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 24.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Reinforced Iron Plate",
+      "Screws"
+    ]
+  },
+  {
+    "target": "Fused Modular Frame",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/ModularFrameFused/Desc_ModularFrameFused.Desc_ModularFrameFused_C",
+    "rate": 1.0,
+    "achievedInputs": 5,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 75.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Coal",
+        "perMin": 90.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 240.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Limestone",
+        "perMin": 90.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 25000.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 75.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Aluminum Casing",
+      "Concrete",
+      "Encased Industrial Beam",
+      "Fused Modular Frame",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe"
+    ]
+  },
+  {
+    "target": "Heavy Modular Frame",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/ModularFrameHeavy/Desc_ModularFrameHeavy.Desc_ModularFrameHeavy_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 90.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 240.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Limestone",
+        "perMin": 90.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Concrete",
+      "Encased Industrial Beam",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe"
+    ]
+  },
+  {
+    "target": "Radio Control Unit",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/ModularFrameLightweight/Desc_ModularFrameLightweight.Desc_ModularFrameLightweight_C",
+    "rate": 1.0,
+    "achievedInputs": 5,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 24.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 31.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 15.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 48000.0,
+        "isLiquid": true
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 15.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 24.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Aluminum Casing",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Plastic",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Motor",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Motor/Desc_Motor.Desc_Motor_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 9.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 8.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 31.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Copper Ingot",
+      "Iron Ingot",
+      "Iron Rod",
+      "Motor",
+      "Rotor",
+      "Screws",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Turbo Motor",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/MotorLightweight/Desc_MotorLightweight.Desc_MotorLightweight_C",
+    "rate": 1.0,
+    "achievedInputs": 7,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 47.87234,
+        "isLiquid": false
+      },
+      {
+        "name": "Coal",
+        "perMin": 35.904255,
+        "isLiquid": false
+      },
+      {
+        "name": "Cooling System",
+        "perMin": 3.989362,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 93.75,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 155.585106,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 131648.93617,
+        "isLiquid": true
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 29.920213,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 47.87234,
+        "isLiquid": false
+      },
+      {
+        "name": "Cooling System",
+        "rate": 3.989362,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Aluminum Casing",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Motor",
+      "Plastic",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reinforced Iron Plate",
+      "Rotor",
+      "Rubber",
+      "Screws",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Turbo Motor",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Nitric Acid",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/NitricAcid/Desc_NitricAcid.Desc_NitricAcid_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 0.0005,
+        "isLiquid": false
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 4.0,
+        "isLiquid": true
+      },
+      {
+        "name": "Water",
+        "perMin": 1.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Nitric Acid"
+    ]
+  },
+  {
+    "target": "Nobelisk",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/NobeliskExplosive/Desc_NobeliskExplosive.Desc_NobeliskExplosive_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 3.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Black Powder",
+      "Nobelisk",
+      "Steel Ingot",
+      "Steel Pipe"
+    ]
+  },
+  {
+    "target": "Non-Fissile Uranium",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Non-FissibleUranium/Desc_NonFissibleUranium.Desc_NonFissibleUranium_C",
+    "rate": 1.0,
+    "achievedInputs": 5,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Nitric Acid",
+        "perMin": 300.0,
+        "isLiquid": true
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 0.3,
+        "isLiquid": false
+      },
+      {
+        "name": "Sulfur",
+        "perMin": 0.3,
+        "isLiquid": false
+      },
+      {
+        "name": "Uranium Waste",
+        "perMin": 0.75,
+        "isLiquid": false
+      },
+      {
+        "name": "Water",
+        "perMin": 300.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [
+      {
+        "name": "Nitric Acid",
+        "rate": 300.0,
+        "isLiquid": true
+      },
+      {
+        "name": "Uranium Waste",
+        "rate": 0.75,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Non-Fissile Uranium",
+      "Silica",
+      "Sulfuric Acid"
+    ]
+  },
+  {
+    "target": "Uranium Fuel Rod",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/NuclearFuelRod/Desc_NuclearFuelRod.Desc_NuclearFuelRod_C",
+    "rate": 1.0,
+    "achievedInputs": 6,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 69.75,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 80.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Encased Uranium Cell",
+        "perMin": 50.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 60.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 69.75,
+        "isLiquid": false
+      },
+      {
+        "name": "Limestone",
+        "perMin": 54.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Encased Uranium Cell",
+        "rate": 50.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Encased Industrial Beam",
+      "Quickwire",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Uranium Fuel Rod",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Uranium Waste",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/NuclearWaste/Desc_NuclearWaste.Desc_NuclearWaste_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Uranium Fuel Rod",
+        "perMin": 0.02,
+        "isLiquid": true
+      }
+    ],
+    "modules": [
+      {
+        "name": "Uranium Fuel Rod",
+        "rate": 0.02,
+        "isLiquid": true
+      }
+    ],
+    "recipesUsed": [
+      "Uranium Waste"
+    ]
+  },
+  {
+    "target": "Plutonium Waste",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/NuclearWaste/Desc_PlutoniumWaste.Desc_PlutoniumWaste_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Plutonium Fuel Rod",
+        "perMin": 0.1,
+        "isLiquid": true
+      }
+    ],
+    "modules": [
+      {
+        "name": "Plutonium Fuel Rod",
+        "rate": 0.1,
+        "isLiquid": true
+      }
+    ],
+    "recipesUsed": [
+      "Plutonium Waste"
+    ]
+  },
+  {
+    "target": "Petroleum Coke",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/PetroleumCoke/Desc_PetroleumCoke.Desc_PetroleumCoke_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 500.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Petroleum Coke",
+      "Rubber"
+    ]
+  },
+  {
+    "target": "Plastic",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Plastic/Desc_Plastic.Desc_Plastic_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 1500.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Plastic"
+    ]
+  },
+  {
+    "target": "Encased Plutonium Cell",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/PlutoniumCell/Desc_PlutoniumCell.Desc_PlutoniumCell_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Limestone",
+        "perMin": 12.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Plutonium Pellet",
+        "perMin": 2.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Plutonium Pellet",
+        "rate": 2.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Concrete",
+      "Encased Plutonium Cell"
+    ]
+  },
+  {
+    "target": "Plutonium Fuel Rod",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/PlutoniumFuelRods/Desc_PlutoniumFuelRod.Desc_PlutoniumFuelRod_C",
+    "rate": 1.0,
+    "achievedInputs": 6,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 50.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Coal",
+        "perMin": 112.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 172.666667,
+        "isLiquid": false
+      },
+      {
+        "name": "Encased Plutonium Cell",
+        "perMin": 30.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 72.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 112.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 50.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Encased Plutonium Cell",
+        "rate": 30.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "AI Limiter",
+      "Alclad Aluminum Sheet",
+      "Caterium Ingot",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Heat Sink",
+      "Plutonium Fuel Rod",
+      "Quickwire",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Plutonium Pellet",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/PlutoniumPellet/Desc_PlutoniumPellet.Desc_PlutoniumPellet_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Non-Fissile Uranium",
+        "perMin": 3.333333,
+        "isLiquid": false
+      },
+      {
+        "name": "Uranium Waste",
+        "perMin": 0.833333,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Non-Fissile Uranium",
+        "rate": 3.333333,
+        "isLiquid": false
+      },
+      {
+        "name": "Uranium Waste",
+        "rate": 0.833333,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Plutonium Pellet"
+    ]
+  },
+  {
+    "target": "PolymerResin",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/PolymerResin/Desc_PolymerResin.Desc_PolymerResin_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 2000.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Fuel"
+    ]
+  },
+  {
+    "target": "Pressure Conversion Cube",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/PressureConversionCube/Desc_PressureConversionCube.Desc_PressureConversionCube_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Fused Modular Frame",
+        "perMin": 1.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Radio Control Unit",
+        "perMin": 2.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Fused Modular Frame",
+        "rate": 1.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Radio Control Unit",
+        "rate": 2.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Pressure Conversion Cube"
+    ]
+  },
+  {
+    "target": "Excited Photonic Matter",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/QuantumEnergy/Desc_QuantumEnergy.Desc_QuantumEnergy_C",
+    "rate": 1.0,
+    "achievedInputs": 0,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [],
+    "modules": [],
+    "recipesUsed": [
+      "Excited Photonic Matter"
+    ]
+  },
+  {
+    "target": "Superposition Oscillator",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/QuantumOscillator/Desc_QuantumOscillator.Desc_QuantumOscillator_C",
+    "rate": 1.0,
+    "achievedInputs": 5,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 9.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 17.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Dark Matter Crystal",
+        "perMin": 6.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 30.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 30.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 9.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Dark Matter Crystal",
+        "rate": 6.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Alclad Aluminum Sheet",
+      "Cable",
+      "Copper Ingot",
+      "Crystal Oscillator",
+      "Excited Photonic Matter",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Quartz Crystal",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Superposition Oscillator",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Quartz Crystal",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/QuartzCrystal/Desc_QuartzCrystal.Desc_QuartzCrystal_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Raw Quartz",
+        "perMin": 1.666667,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Quartz Crystal"
+    ]
+  },
+  {
+    "target": "Rocket Fuel",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/RocketFuel/Desc_RocketFuel.Desc_RocketFuel_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "LiquidTurboFuel",
+        "perMin": 0.6,
+        "isLiquid": true
+      },
+      {
+        "name": "Nitric Acid",
+        "perMin": 0.1,
+        "isLiquid": true
+      }
+    ],
+    "modules": [
+      {
+        "name": "Nitric Acid",
+        "rate": 0.1,
+        "isLiquid": true
+      }
+    ],
+    "recipesUsed": [
+      "Rocket Fuel"
+    ]
+  },
+  {
+    "target": "Rotor",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Rotor/Desc_Rotor.Desc_Rotor_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 11.25,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Iron Ingot",
+      "Iron Rod",
+      "Rotor",
+      "Screws"
+    ]
+  },
+  {
+    "target": "Rubber",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Rubber/Desc_Rubber.Desc_Rubber_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Liquid Oil",
+        "perMin": 1500.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Rubber"
+    ]
+  },
+  {
+    "target": "SAM Fluctuator",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SAMFluctuator/Desc_SAMFluctuator.Desc_SAMFluctuator_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 2.5,
+        "isLiquid": false
+      },
+      {
+        "name": "SAM",
+        "perMin": 24.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Steel Ingot",
+        "perMin": 4.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Steel Ingot",
+        "rate": 4.5,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Copper Ingot",
+      "Reanimated SAM",
+      "SAM Fluctuator",
+      "Steel Pipe",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Reanimated SAM",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "SAM",
+        "perMin": 4.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Reanimated SAM"
+    ]
+  },
+  {
+    "target": "Silica",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Silica/Desc_Silica.Desc_Silica_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Raw Quartz",
+        "perMin": 0.6,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Silica"
+    ]
+  },
+  {
+    "target": "Singularity Cell",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SingularityCell/Desc_SingularityCell.Desc_SingularityCell_C",
+    "rate": 1.0,
+    "achievedInputs": 5,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 40.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 15.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Limestone",
+        "perMin": 60.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Nuclear Pasta",
+        "perMin": 0.1,
+        "isLiquid": false
+      },
+      {
+        "name": "SAM",
+        "perMin": 20.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Nuclear Pasta",
+        "rate": 0.1,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Concrete",
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Iron Ingot",
+      "Iron Plate",
+      "Reanimated SAM",
+      "Singularity Cell"
+    ]
+  },
+  {
+    "target": "Smart Plating",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_1.Desc_SpaceElevatorPart_1_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Iron Ore",
+        "perMin": 23.25,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Reinforced Iron Plate",
+      "Rotor",
+      "Screws",
+      "Smart Plating"
+    ]
+  },
+  {
+    "target": "Biochemical Sculptor",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_10.Desc_SpaceElevatorPart_10_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Assembly Director System",
+        "perMin": 0.25,
+        "isLiquid": false
+      },
+      {
+        "name": "Ficsite Ingot (Iron)",
+        "perMin": 6.666667,
+        "isLiquid": false
+      },
+      {
+        "name": "Water",
+        "perMin": 5000.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [
+      {
+        "name": "Assembly Director System",
+        "rate": 0.25,
+        "isLiquid": false
+      },
+      {
+        "name": "Ficsite Ingot (Iron)",
+        "rate": 6.666667,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Biochemical Sculptor",
+      "Ficsite Trigon"
+    ]
+  },
+  {
+    "target": "Ballistic Warp Drive",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_11.Desc_SpaceElevatorPart_11_C",
+    "rate": 1.0,
+    "achievedInputs": 10,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 272.265957,
+        "isLiquid": false
+      },
+      {
+        "name": "Coal",
+        "perMin": 1592.037234,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 905.920213,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 939.335106,
+        "isLiquid": false
+      },
+      {
+        "name": "Limestone",
+        "perMin": 435.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 256867.021277,
+        "isLiquid": true
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 212234.042553,
+        "isLiquid": true
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 309.119681,
+        "isLiquid": false
+      },
+      {
+        "name": "SAM",
+        "perMin": 620.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Water",
+        "perMin": 443345.744681,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Ballistic Warp Drive",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Cooling System",
+      "Copper Ingot",
+      "Copper Powder",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Encased Industrial Beam",
+      "Excited Photonic Matter",
+      "Fused Modular Frame",
+      "Heat Sink",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Engine",
+      "Modular Frame",
+      "Motor",
+      "Nuclear Pasta",
+      "Plastic",
+      "Pressure Conversion Cube",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reanimated SAM",
+      "Reinforced Iron Plate",
+      "Rotor",
+      "Rubber",
+      "Screws",
+      "Silica",
+      "Singularity Cell",
+      "Smart Plating",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Superposition Oscillator",
+      "Thermal Propulsion Rocket",
+      "Turbo Motor",
+      "Wire"
+    ]
+  },
+  {
+    "target": "AI Expansion Server",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_12.Desc_SpaceElevatorPart_12_C",
+    "rate": 1.0,
+    "achievedInputs": 8,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Aluminum Ingot",
+        "perMin": 9.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Coal",
+        "perMin": 386.75,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 190.542553,
+        "isLiquid": false
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 136.378723,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 246.75,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 251313.829787,
+        "isLiquid": true
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 30.0,
+        "isLiquid": false
+      },
+      {
+        "name": "SAM",
+        "perMin": 140.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Aluminum Ingot",
+        "rate": 9.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "AI Expansion Server",
+      "AI Limiter",
+      "Alclad Aluminum Sheet",
+      "Cable",
+      "Caterium Ingot",
+      "Circuit Board",
+      "Computer",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Dark Matter Crystal",
+      "Dark Matter Residue",
+      "Diamonds",
+      "Electromagnetic Control Rod",
+      "Excited Photonic Matter",
+      "Ficsite Ingot (Iron)",
+      "Ficsite Trigon",
+      "High-Speed Connector",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Magnetic Field Generator",
+      "Modular Frame",
+      "Neural-Quantum Processor",
+      "Plastic",
+      "Quartz Crystal",
+      "Quickwire",
+      "Reanimated SAM",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Supercomputer",
+      "Superposition Oscillator",
+      "Time Crystal",
+      "Versatile Framework",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Versatile Framework",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_2.Desc_SpaceElevatorPart_2_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 24.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 36.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Steel Beam",
+      "Steel Ingot",
+      "Versatile Framework"
+    ]
+  },
+  {
+    "target": "Automated Wiring",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_3.Desc_SpaceElevatorPart_3_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 24.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 4.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Automated Wiring",
+      "Cable",
+      "Copper Ingot",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Modular Engine",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_4.Desc_SpaceElevatorPart_4_C",
+    "rate": 1.0,
+    "achievedInputs": 4,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 18.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 16.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 109.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 22500.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Copper Ingot",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Engine",
+      "Motor",
+      "Reinforced Iron Plate",
+      "Rotor",
+      "Rubber",
+      "Screws",
+      "Smart Plating",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Adaptive Control Unit",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_5.Desc_SpaceElevatorPart_5_C",
+    "rate": 1.0,
+    "achievedInputs": 5,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 112.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 188.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 262.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Limestone",
+        "perMin": 90.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 126000.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Adaptive Control Unit",
+      "Automated Wiring",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Encased Industrial Beam",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Frame",
+      "Plastic",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Magnetic Field Generator",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_6.Desc_SpaceElevatorPart_6_C",
+    "rate": 1.0,
+    "achievedInputs": 4,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 66.75,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 16.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Gold Ore",
+        "perMin": 12.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 96.75,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "AI Limiter",
+      "Caterium Ingot",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Electromagnetic Control Rod",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Magnetic Field Generator",
+      "Modular Frame",
+      "Quickwire",
+      "Reinforced Iron Plate",
+      "Screws",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Versatile Framework",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Assembly Director System",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_7.Desc_SpaceElevatorPart_7_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Adaptive Control Unit",
+        "perMin": 2.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Supercomputer",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Adaptive Control Unit",
+        "rate": 2.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Supercomputer",
+        "rate": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Assembly Director System"
+    ]
+  },
+  {
+    "target": "Thermal Propulsion Rocket",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_8.Desc_SpaceElevatorPart_8_C",
+    "rate": 1.0,
+    "achievedInputs": 9,
+    "goalMax": 5,
+    "goalMode": "soft",
+    "externalInputs": [
+      {
+        "name": "Bauxite Ore",
+        "perMin": 192.765957,
+        "isLiquid": false
+      },
+      {
+        "name": "Coal",
+        "perMin": 267.287234,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 240.920213,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 669.335106,
+        "isLiquid": false
+      },
+      {
+        "name": "Limestone",
+        "perMin": 90.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Liquid Oil",
+        "perMin": 208867.021277,
+        "isLiquid": true
+      },
+      {
+        "name": "Nitrogen Gas",
+        "perMin": 199734.042553,
+        "isLiquid": true
+      },
+      {
+        "name": "Raw Quartz",
+        "perMin": 174.494681,
+        "isLiquid": false
+      },
+      {
+        "name": "Water",
+        "perMin": 324095.744681,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Alclad Aluminum Sheet",
+      "Alumina Solution",
+      "Aluminum Casing",
+      "Aluminum Ingot",
+      "Aluminum Scrap",
+      "Cable",
+      "Circuit Board",
+      "Computer",
+      "Concrete",
+      "Cooling System",
+      "Copper Ingot",
+      "Copper Sheet",
+      "Crystal Oscillator",
+      "Encased Industrial Beam",
+      "Fused Modular Frame",
+      "Heat Sink",
+      "Heavy Modular Frame",
+      "Iron Ingot",
+      "Iron Plate",
+      "Iron Rod",
+      "Modular Engine",
+      "Modular Frame",
+      "Motor",
+      "Plastic",
+      "Quartz Crystal",
+      "Radio Control Unit",
+      "Reinforced Iron Plate",
+      "Rotor",
+      "Rubber",
+      "Screws",
+      "Silica",
+      "Smart Plating",
+      "Stator",
+      "Steel Beam",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Thermal Propulsion Rocket",
+      "Turbo Motor",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Nuclear Pasta",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SpaceElevatorParts/Desc_SpaceElevatorPart_9.Desc_SpaceElevatorPart_9_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 1200.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Pressure Conversion Cube",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Pressure Conversion Cube",
+        "rate": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Copper Ingot",
+      "Copper Powder",
+      "Nuclear Pasta"
+    ]
+  },
+  {
+    "target": "Stator",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Stator/Desc_Stator.Desc_Stator_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Copper Ore",
+        "perMin": 4.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 4.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Copper Ingot",
+      "Stator",
+      "Steel Ingot",
+      "Steel Pipe",
+      "Wire"
+    ]
+  },
+  {
+    "target": "Steel Ingot",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SteelIngot/Desc_SteelIngot.Desc_SteelIngot_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 1.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Steel Ingot"
+    ]
+  },
+  {
+    "target": "Steel Pipe",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SteelPipe/Desc_SteelPipe.Desc_SteelPipe_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 1.5,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 1.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Steel Ingot",
+      "Steel Pipe"
+    ]
+  },
+  {
+    "target": "Steel Beam",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SteelPlate/Desc_SteelPlate.Desc_SteelPlate_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 4.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 4.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Steel Beam",
+      "Steel Ingot"
+    ]
+  },
+  {
+    "target": "Encased Industrial Beam",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SteelPlateReinforced/Desc_SteelPlateReinforced.Desc_SteelPlateReinforced_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 12.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Iron Ore",
+        "perMin": 12.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Limestone",
+        "perMin": 18.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Concrete",
+      "Encased Industrial Beam",
+      "Steel Beam",
+      "Steel Ingot"
+    ]
+  },
+  {
+    "target": "Sulfuric Acid",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/SulfuricAcid/Desc_SulfuricAcid.Desc_SulfuricAcid_C",
+    "rate": 1.0,
+    "achievedInputs": 2,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Sulfur",
+        "perMin": 0.001,
+        "isLiquid": false
+      },
+      {
+        "name": "Water",
+        "perMin": 1.0,
+        "isLiquid": true
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Sulfuric Acid"
+    ]
+  },
+  {
+    "target": "Neural-Quantum Processor",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/TemporalProcessor/Desc_TemporalProcessor.Desc_TemporalProcessor_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 200.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Ficsite Ingot (Iron)",
+        "perMin": 5.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Supercomputer",
+        "perMin": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Ficsite Ingot (Iron)",
+        "rate": 5.0,
+        "isLiquid": false
+      },
+      {
+        "name": "Supercomputer",
+        "rate": 1.0,
+        "isLiquid": false
+      }
+    ],
+    "recipesUsed": [
+      "Diamonds",
+      "Excited Photonic Matter",
+      "Ficsite Trigon",
+      "Neural-Quantum Processor",
+      "Time Crystal"
+    ]
+  },
+  {
+    "target": "Time Crystal",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/TimeCrystal/Desc_TimeCrystal.Desc_TimeCrystal_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Coal",
+        "perMin": 40.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Diamonds",
+      "Time Crystal"
+    ]
+  },
+  {
+    "target": "Encased Uranium Cell",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/UraniumCell/Desc_UraniumCell.Desc_UraniumCell_C",
+    "rate": 1.0,
+    "achievedInputs": 3,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Limestone",
+        "perMin": 1.8,
+        "isLiquid": false
+      },
+      {
+        "name": "Sulfuric Acid",
+        "perMin": 1600.0,
+        "isLiquid": true
+      },
+      {
+        "name": "Uranium Ore",
+        "perMin": 2.0,
+        "isLiquid": false
+      }
+    ],
+    "modules": [
+      {
+        "name": "Sulfuric Acid",
+        "rate": 1600.0,
+        "isLiquid": true
+      }
+    ],
+    "recipesUsed": [
+      "Concrete",
+      "Encased Uranium Cell"
+    ]
+  },
+  {
+    "target": "Wire",
+    "targetFull": "/Game/FactoryGame/Resource/Parts/Wire/Desc_Wire.Desc_Wire_C",
+    "rate": 1.0,
+    "achievedInputs": 1,
+    "goalMax": 3,
+    "goalMode": "hard",
+    "externalInputs": [
+      {
+        "name": "Copper Ore",
+        "perMin": 0.5,
+        "isLiquid": false
+      }
+    ],
+    "modules": [],
+    "recipesUsed": [
+      "Copper Ingot",
+      "Wire"
+    ]
+  }
+]

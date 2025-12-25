@@ -1,6 +1,3 @@
-// Simple SPA for viewing transformations.json with sorting and filtering
-// No external dependencies; vanilla JS only.
-
 const DATA_URL = '/satisfactory-planner/transformations.json';
 
 const el = {
@@ -9,12 +6,9 @@ const el = {
   counts: document.getElementById('counts'),
 };
 
-/** @typedef {{output:string, inputs?:{name:string, perMin:number}[], byProducts?:{name:string, perMin:number}[], Recipes?:string[], projectParts?: boolean, tier?: (string|null), index?: (number|null)}} Transformation */
-
-/** @type {Transformation[]} */
 let data = [];
 let view = [];
-let sortState = { key: 'index', dir: 'asc' }; // dir: 'asc' | 'desc'
+let sortState = { key: 'index', dir: 'asc' };
 
 init().catch(err => {
   console.error(err);
@@ -22,15 +16,55 @@ init().catch(err => {
 });
 
 async function init() {
-  data = await fetchJson(DATA_URL);
+  const raw = await fetchJson(DATA_URL);
+  data = raw.map(computePerMin);
   view = data.slice();
   wireSorting();
   wireFiltering();
   applyFilter();
 }
 
+function computePerMin(row) {
+  const steps = row.transformation_steps || [];
+  
+  const inputsWithPerMin = (row.inputs || []).map(input => {
+    let totalPerMin = 0;
+    for (const step of steps) {
+      if (step.requires && step.requires[input.name]) {
+        totalPerMin += step.requires[input.name];
+      }
+    }
+    return {
+      name: input.name,
+      perMin: totalPerMin
+    };
+  });
+  
+  const byproductsWithPerMin = (row.byproducts || []).map(byproduct => {
+    let totalPerMin = 0;
+    for (const step of steps) {
+      if (step.byproducts && step.byproducts[byproduct.name]) {
+        totalPerMin += step.byproducts[byproduct.name];
+      }
+    }
+    return {
+      name: byproduct.name,
+      perMin: totalPerMin
+    };
+  });
+  
+  const recipeNames = steps.map(s => s.recipe);
+  
+  return {
+    ...row,
+    inputs: inputsWithPerMin,
+    byproducts: byproductsWithPerMin,
+    recipes: recipeNames
+  };
+}
+
 function wireSorting() {
-  const headers = /** @type {NodeListOf<HTMLElement>} */(document.querySelectorAll('thead .sort'));
+  const headers = document.querySelectorAll('thead .sort');
   headers.forEach(h => {
     h.addEventListener('click', () => {
       const key = h.dataset.key || 'output';
@@ -44,7 +78,6 @@ function wireSorting() {
       render();
     });
   });
-  // Activate default
   const active = Array.from(headers).find(h => h.dataset.key === sortState.key);
   if (active) active.classList.add('active');
 }
@@ -72,30 +105,22 @@ function matchRow(row, q) {
   const output = String(row.output || '').toLowerCase();
   if (output.includes(q)) return true;
 
-  // match index
   if (row.index != null && String(row.index).toLowerCase().includes(q)) return true;
-  // match tier (string like "8" or "MAM")
   if (row.tier != null && String(row.tier).toLowerCase().includes(q)) return true;
 
   const inputs = (row.inputs || []).map(i => `${i.name} ${i.perMin}`).join(' ').toLowerCase();
   if (inputs.includes(q)) return true;
 
-  const byps = (row.byProducts || []).map(b => `${b.name} ${b.perMin}`).join(' ').toLowerCase();
+  const byps = (row.byproducts || []).map(b => `${b.name} ${b.perMin}`).join(' ').toLowerCase();
   if (byps.includes(q)) return true;
 
-  const recipes = (row.Recipes || []).join(' ').toLowerCase();
+  const recipes = (row.recipes || []).join(' ').toLowerCase();
   if (recipes.includes(q)) return true;
-
-  // allow filtering by project parts (e.g., "project", "yes", "true", "no", "false")
-  const pp = row.projectParts === true;
-  const ppText = pp ? 'project projectparts project-parts yes true 1' : 'not-project notproject no false 0';
-  if (ppText.includes(q)) return true;
 
   return false;
 }
 
 function render() {
-  // sort view
   const key = sortState.key;
   const dir = sortState.dir === 'asc' ? 1 : -1;
   const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
@@ -111,9 +136,8 @@ function render() {
       }
       case 'output': return row.output || '';
       case 'inputs': return (row.inputs || []).map(i => `${i.name}:${i.perMin}`).join(', ');
-      case 'byProducts': return (row.byProducts || []).map(b => `${b.name}:${b.perMin}`).join(', ');
-      case 'recipes': return (row.Recipes || []).length; // sort by count now that we display count
-      case 'projectParts': return row.projectParts === true ? 'Yes' : 'No';
+      case 'byProducts': return (row.byproducts || []).map(b => `${b.name}:${b.perMin}`).join(', ');
+      case 'recipes': return (row.recipes || []).length;
       default: return '';
     }
   };
@@ -123,18 +147,17 @@ function render() {
     const bv = getter(b);
     let cmp = 0;
     if (av == null && bv == null) cmp = 0;
-    else if (av == null) cmp = 1; // nulls last
+    else if (av == null) cmp = 1;
     else if (bv == null) cmp = -1;
     else if (typeof av === 'number' && typeof bv === 'number') cmp = av - bv;
     else cmp = collator.compare(String(av), String(bv));
     return cmp * dir;
   });
 
-  // counts
   el.counts.textContent = `${view.length} shown / ${data.length} total`;
 
   if (!view.length) {
-    el.rows.innerHTML = `<tr><td colspan="7" class="empty">No results</td></tr>`;
+    el.rows.innerHTML = `<tr><td colspan="6" class="empty">No results</td></tr>`;
     return;
   }
 
@@ -144,14 +167,16 @@ function render() {
 
 function rowHtml(row) {
   const inputs = (row.inputs || []).map(i => pill(i.name, i.perMin)).join('');
-  const byps = (row.byProducts || []).map(b => pill(b.name, b.perMin)).join('');
-  const recipesArr = (row.Recipes || []);
-  const recipesCount = recipesArr.length;
-  const recipesTitle = recipesArr.join('\n');
-  const recipesCell = `<span class="badge" title="${escapeHtml(recipesTitle)}">${recipesCount}</span>`;
-  const pp = row.projectParts === true;
+  const byps = (row.byproducts || []).map(b => pill(b.name, b.perMin)).join('');
+  
+  const steps = row.transformation_steps || [];
+  const buildingsArr = steps.map(s => s.building).filter(b => b);
+  const buildingsCount = buildingsArr.length;
+  const buildingsTitle = buildingsArr.join('\n');
+  const recipesCell = `<span class="badge" title="${escapeHtml(buildingsTitle)}">${buildingsCount}</span>`;
+  
   const idx = row.index == null ? '<span class="meta">—</span>' : String(row.index);
-  const tier = row.tier == null ? '<span class=\"meta\">—</span>' : escapeHtml(String(row.tier));
+  const tier = row.tier == null ? '<span class="meta">—</span>' : escapeHtml(String(row.tier));
   return `
     <tr>
       <td>${idx}</td>
@@ -160,7 +185,6 @@ function rowHtml(row) {
       <td>${inputs || '<span class="meta">—</span>'}</td>
       <td>${byps || '<span class="meta">—</span>'}</td>
       <td>${recipesCell}</td>
-      <td>${boolIcon(pp)}</td>
     </tr>
   `;
 }
@@ -185,8 +209,4 @@ async function fetchJson(url) {
 
 function escapeHtml(str) {
   return str.replace(/[&<>"]+/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[s]));
-}
-
-function boolIcon(v) {
-  return `<span class="bool ${v ? 'yes' : 'no'}" title="${v ? 'Project Part' : 'Not Project Part'}">${v ? '✓' : '—'}</span>`;
 }
