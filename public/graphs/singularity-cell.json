@@ -1,0 +1,2454 @@
+{
+  "target": "Singularity Cell",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 49,
+      "displayStep": 49,
+      "recipe": "Singularity Cell",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 20.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Dark Matter Crystal",
+          "perMin": 2.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Nuclear Pasta",
+          "perMin": 0.1,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 10.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Singularity Cell": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 48,
+      "displayStep": 48,
+      "recipe": "Nuclear Pasta",
+      "building": "HadronCollider",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 20.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Dark Matter Crystal",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Powder",
+          "perMin": 20.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 10.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Pressure Conversion Cube",
+          "perMin": 0.1,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Nuclear Pasta": 0.1
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 47,
+      "displayStep": 47,
+      "recipe": "Copper Powder",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 20.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Dark Matter Crystal",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 120.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 10.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Pressure Conversion Cube",
+          "perMin": 0.1,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Powder": 20.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 46,
+      "displayStep": 46,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 20.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Dark Matter Crystal",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 15.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Pressure Conversion Cube",
+          "perMin": 0.1,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 10.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 45,
+      "displayStep": 45,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 20.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Dark Matter Crystal",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Pressure Conversion Cube",
+          "perMin": 0.1,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 120.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 44,
+      "displayStep": 44,
+      "recipe": "Concrete",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Dark Matter Crystal",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Pressure Conversion Cube",
+          "perMin": 0.1,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Concrete": 20.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 43,
+      "displayStep": 43,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Dark Matter Crystal",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Pressure Conversion Cube",
+          "perMin": 0.1,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 15.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 42,
+      "displayStep": 42,
+      "recipe": "Pressure Conversion Cube",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Dark Matter Crystal",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Fused Modular Frame",
+          "perMin": 0.1,
+          "src": "req",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Pressure Conversion Cube": 0.1
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 41,
+      "displayStep": 41,
+      "recipe": "Dark Matter Crystal",
+      "building": "HadronCollider",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 0.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Fused Modular Frame",
+          "perMin": 0.1,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Dark Matter Crystal": 2.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 40,
+      "displayStep": 40,
+      "recipe": "Dark Matter Residue",
+      "building": "Converter",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 0.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Fused Modular Frame",
+          "perMin": 0.1,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Dark Matter Residue": 10000.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 39,
+      "displayStep": 39,
+      "recipe": "Reanimated SAM",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 0.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Fused Modular Frame",
+          "perMin": 0.1,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Reanimated SAM": 5.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 38,
+      "displayStep": 38,
+      "recipe": "Diamonds",
+      "building": "HadronCollider",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 0.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Fused Modular Frame",
+          "perMin": 0.1,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": true,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Diamonds": 2.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 37,
+      "displayStep": 37,
+      "recipe": "Fused Modular Frame",
+      "building": "Blender",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 0.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Fused Modular Frame": 0.1
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 36,
+      "displayStep": 36,
+      "recipe": "Aluminum Casing",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 0.2,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Aluminum Casing": 5.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 35,
+      "displayStep": 35,
+      "recipe": "Radio Control Unit",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Radio Control Unit": 0.2
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 34,
+      "displayStep": 34,
+      "recipe": "Aluminum Casing",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Aluminum Casing": 3.2
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 33,
+      "displayStep": 33,
+      "recipe": "Crystal Oscillator",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Crystal Oscillator": 0.1
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 32,
+      "displayStep": 32,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Cable": 1.4000000000000001
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 31,
+      "displayStep": 31,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 2.8000000000000003
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 30,
+      "displayStep": 30,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 1.4000000000000001
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 29,
+      "displayStep": 29,
+      "recipe": "Quartz Crystal",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Quartz Crystal": 1.8
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 28,
+      "displayStep": 28,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Reinforced Iron Plate": 0.25
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 27,
+      "displayStep": 27,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 3.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 26,
+      "displayStep": 26,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 1.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 25,
+      "displayStep": 25,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 0.75
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 24,
+      "displayStep": 24,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 3.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 23,
+      "displayStep": 23,
+      "recipe": "Computer",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Computer": 0.2
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 22,
+      "displayStep": 22,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Cable": 1.6
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 21,
+      "displayStep": 21,
+      "recipe": "Circuit Board",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 8,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 8,
+      "byproducts": {},
+      "outputs": {
+        "Circuit Board": 0.8
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 20,
+      "displayStep": 20,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 3.2
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 19,
+      "displayStep": 19,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Copper Sheet": 1.6
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 18,
+      "displayStep": 18,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 121.4,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 4.800000000000001
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 17,
+      "displayStep": 17,
+      "recipe": "Plastic",
+      "building": "OilRefinery",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {
+        "Heavy Oil Residue": 3200.0
+      },
+      "outputs": {
+        "Plastic": 6.4
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 16,
+      "displayStep": 16,
+      "recipe": "Heavy Modular Frame",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 8,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 8,
+      "byproducts": {},
+      "outputs": {
+        "Heavy Modular Frame": 0.1
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 15,
+      "displayStep": 15,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 8,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 8,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 12.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 14,
+      "displayStep": 14,
+      "recipe": "Modular Frame",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 9,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 9,
+      "byproducts": {},
+      "outputs": {
+        "Modular Frame": 0.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 13,
+      "displayStep": 13,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 8,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 8,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 6.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 12,
+      "displayStep": 12,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 8,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 8,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 6.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 11,
+      "displayStep": 11,
+      "recipe": "Steel Pipe",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 24.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Steel Pipe": 2.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 10,
+      "displayStep": 10,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 24.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 8,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 8,
+      "byproducts": {},
+      "outputs": {
+        "Steel Ingot": 3.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 9,
+      "displayStep": 9,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 43.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 27.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Reinforced Iron Plate": 0.75
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 8,
+      "displayStep": 8,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 43.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 27.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 9.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 7,
+      "displayStep": 7,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 43.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 27.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 4.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 6,
+      "displayStep": 6,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 43.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 27.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 2.25
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 5,
+      "displayStep": 5,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 43.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 27.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 9.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Encased Industrial Beam",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 43.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Encased Industrial Beam": 0.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Concrete",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Coal",
+          "perMin": 43.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Concrete": 3.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Steel Beam",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 69.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 43.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Steel Beam": 1.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "inputs5": [
+        {
+          "name": "Limestone",
+          "perMin": 69.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 43.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 126.2,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "SAM",
+          "perMin": 20.000375009375237,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Steel Ingot": 6.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "9",
+    "index": 40,
+    "slug": "singularity-cell",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

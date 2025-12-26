@@ -1,0 +1,71 @@
+{
+  "target": "Steel Beam",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Steel Beam",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Steel Ingot",
+          "perMin": 4.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Steel Beam": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Coal",
+          "perMin": 4.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 4.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Steel Ingot": 4.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "3",
+    "index": 11,
+    "slug": "steel-beam",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

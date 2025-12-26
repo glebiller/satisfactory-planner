@@ -1,0 +1,65 @@
+{
+  "target": "Quickwire",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Quickwire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Caterium Ingot",
+          "perMin": 0.2,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Quickwire": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Caterium Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Caterium Ore",
+          "perMin": 0.6000000000000001,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Caterium Ingot": 0.2
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "MAM",
+    "index": 42,
+    "slug": "quickwire",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

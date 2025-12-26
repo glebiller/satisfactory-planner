@@ -1,0 +1,556 @@
+{
+  "target": "Heavy Modular Frame",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 12,
+      "displayStep": 12,
+      "recipe": "Heavy Modular Frame",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Screws",
+          "perMin": 120.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Steel Pipe",
+          "perMin": 20.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Modular Frame",
+          "perMin": 5.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Encased Industrial Beam",
+          "perMin": 5.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Heavy Modular Frame": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 11,
+      "displayStep": 11,
+      "recipe": "Modular Frame",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Screws",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Steel Pipe",
+          "perMin": 20.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 7.5,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Encased Industrial Beam",
+          "perMin": 5.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Rod",
+          "perMin": 30.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Modular Frame": 5.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 10,
+      "displayStep": 10,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Screws",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Steel Pipe",
+          "perMin": 20.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 45.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Encased Industrial Beam",
+          "perMin": 5.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Rod",
+          "perMin": 30.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Reinforced Iron Plate": 7.5
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 9,
+      "displayStep": 9,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Rod",
+          "perMin": 52.5,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Steel Pipe",
+          "perMin": 20.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 45.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Encased Industrial Beam",
+          "perMin": 5.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Rod",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 210.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 8,
+      "displayStep": 8,
+      "recipe": "Encased Industrial Beam",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 30.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Steel Pipe",
+          "perMin": 20.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 45.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Steel Beam",
+          "perMin": 15.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Rod",
+          "perMin": 82.5,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Encased Industrial Beam": 5.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 7,
+      "displayStep": 7,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Steel Pipe",
+          "perMin": 20.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 45.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Steel Beam",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 82.5,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 82.5
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 6,
+      "displayStep": 6,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Steel Pipe",
+          "perMin": 20.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 67.5,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Steel Beam",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 82.5,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 45.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 5,
+      "displayStep": 5,
+      "recipe": "Steel Pipe",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null,
+        {
+          "name": "Steel Ingot",
+          "perMin": 30.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Steel Beam",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 150.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Steel Pipe": 20.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Steel Beam",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Steel Ingot",
+          "perMin": 60.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Steel Ingot",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 150.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Steel Beam": 15.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 150.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Steel Ingot",
+          "perMin": 90.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 150.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "inputs5": [
+        {
+          "name": "Concrete",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 150.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 90.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 90.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Steel Ingot": 90.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Concrete",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Limestone",
+          "perMin": 90.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 240.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 90.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Concrete": 30.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "6",
+    "index": 20,
+    "slug": "heavy-modular-frame",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

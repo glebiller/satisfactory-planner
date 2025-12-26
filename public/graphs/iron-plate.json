@@ -1,0 +1,65 @@
+{
+  "target": "Iron Plate",
+  "targetRatePerMin": 10.0,
+  "steps": [
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 15.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 10.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Iron Ore",
+          "perMin": 15.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 15.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "0",
+    "index": 1,
+    "slug": "iron-plate",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

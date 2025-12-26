@@ -1,0 +1,170 @@
+{
+  "target": "AI Limiter",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 5,
+      "displayStep": 5,
+      "recipe": "AI Limiter",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Quickwire",
+          "perMin": 20.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 5.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "AI Limiter": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Quickwire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Caterium Ingot",
+          "perMin": 4.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 5.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Quickwire": 20.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Caterium Ingot",
+          "perMin": 4.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 10.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Sheet": 5.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Caterium Ingot",
+          "perMin": 4.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 10.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 10.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Caterium Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 10.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Caterium Ingot": 4.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "MAM",
+    "index": 43,
+    "slug": "ai-limiter",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

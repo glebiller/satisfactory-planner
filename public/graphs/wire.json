@@ -1,0 +1,65 @@
+{
+  "target": "Wire",
+  "targetRatePerMin": 10.0,
+  "steps": [
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 5.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 10.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 5.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 5.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "0",
+    "index": 3,
+    "slug": "wire",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

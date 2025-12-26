@@ -1,0 +1,2031 @@
+{
+  "target": "Nuclear Pasta",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 41,
+      "displayStep": 41,
+      "recipe": "Nuclear Pasta",
+      "building": "HadronCollider",
+      "inputs5": [
+        null,
+        {
+          "name": "Pressure Conversion Cube",
+          "perMin": 1.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Powder",
+          "perMin": 200.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Nuclear Pasta": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 40,
+      "displayStep": 40,
+      "recipe": "Pressure Conversion Cube",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Fused Modular Frame",
+          "perMin": 1.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Powder",
+          "perMin": 200.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 2.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Pressure Conversion Cube": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 39,
+      "displayStep": 39,
+      "recipe": "Fused Modular Frame",
+      "building": "Blender",
+      "inputs5": [
+        {
+          "name": "Aluminum Casing",
+          "perMin": 50.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Powder",
+          "perMin": 200.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Fused Modular Frame": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 38,
+      "displayStep": 38,
+      "recipe": "Copper Powder",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Casing",
+          "perMin": 50.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 1200.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Powder": 200.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 37,
+      "displayStep": 37,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Casing",
+          "perMin": 50.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1200.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 1200.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 36,
+      "displayStep": 36,
+      "recipe": "Aluminum Casing",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 75.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1200.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Radio Control Unit",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Aluminum Casing": 50.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 35,
+      "displayStep": 35,
+      "recipe": "Radio Control Unit",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 75.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1200.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Aluminum Casing",
+          "perMin": 32.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Radio Control Unit": 2.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 34,
+      "displayStep": 34,
+      "recipe": "Aluminum Casing",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 75.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1200.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Aluminum Casing": 32.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 33,
+      "displayStep": 33,
+      "recipe": "Crystal Oscillator",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1200.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Crystal Oscillator": 1.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 32,
+      "displayStep": 32,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1200.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Cable": 14.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 31,
+      "displayStep": 31,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1200.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 28.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 30,
+      "displayStep": 30,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1200.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 14.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 29,
+      "displayStep": 29,
+      "recipe": "Quartz Crystal",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Quartz Crystal": 18.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 28,
+      "displayStep": 28,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Reinforced Iron Plate": 2.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 27,
+      "displayStep": 27,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 30.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 26,
+      "displayStep": 26,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 15.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 25,
+      "displayStep": 25,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 7.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 24,
+      "displayStep": 24,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 30.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 23,
+      "displayStep": 23,
+      "recipe": "Computer",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Computer": 2.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 22,
+      "displayStep": 22,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Cable": 16.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 21,
+      "displayStep": 21,
+      "recipe": "Circuit Board",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Circuit Board": 8.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 20,
+      "displayStep": 20,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 32.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 19,
+      "displayStep": 19,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Copper Sheet": 16.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 18,
+      "displayStep": 18,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1214.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 48.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 17,
+      "displayStep": 17,
+      "recipe": "Plastic",
+      "building": "OilRefinery",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {
+        "Heavy Oil Residue": 32000.0
+      },
+      "outputs": {
+        "Plastic": 64.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 16,
+      "displayStep": 16,
+      "recipe": "Heavy Modular Frame",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Heavy Modular Frame": 1.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 15,
+      "displayStep": 15,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 120.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 14,
+      "displayStep": 14,
+      "recipe": "Modular Frame",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Modular Frame": 5.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 13,
+      "displayStep": 13,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 60.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 12,
+      "displayStep": 12,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 60.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 11,
+      "displayStep": 11,
+      "recipe": "Steel Pipe",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 90.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Steel Pipe": 20.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 10,
+      "displayStep": 10,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 90.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Steel Ingot": 30.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 9,
+      "displayStep": 9,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Reinforced Iron Plate": 7.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 8,
+      "displayStep": 8,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 90.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 7,
+      "displayStep": 7,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 45.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 6,
+      "displayStep": 6,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 22.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 5,
+      "displayStep": 5,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 120.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 90.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Encased Industrial Beam",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 210.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Encased Industrial Beam": 5.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Steel Beam",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 210.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Steel Beam": 15.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 210.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Steel Ingot": 60.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Concrete",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 123.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 270.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 1262.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Nitrogen Gas",
+          "perMin": 25000.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Concrete": 30.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "8",
+    "index": 33,
+    "slug": "nuclear-pasta",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

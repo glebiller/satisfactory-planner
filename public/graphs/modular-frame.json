@@ -1,0 +1,207 @@
+{
+  "target": "Modular Frame",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 6,
+      "displayStep": 6,
+      "recipe": "Modular Frame",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 6.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 1.5,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Modular Frame": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 5,
+      "displayStep": 5,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 6.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 9.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Screws",
+          "perMin": 18.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Reinforced Iron Plate": 1.5
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 6.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 9.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Rod",
+          "perMin": 4.5,
+          "src": "req",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 18.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 10.5,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 9.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 10.5
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 10.5,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 13.5,
+          "src": "req",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 9.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Iron Ore",
+          "perMin": 24.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 24.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "2",
+    "index": 9,
+    "slug": "modular-frame",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

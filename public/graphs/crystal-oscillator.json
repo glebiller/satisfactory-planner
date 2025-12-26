@@ -1,0 +1,421 @@
+{
+  "target": "Crystal Oscillator",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 10,
+      "displayStep": 10,
+      "recipe": "Crystal Oscillator",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Cable",
+          "perMin": 14.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Quartz Crystal",
+          "perMin": 18.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 2.5,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Crystal Oscillator": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 9,
+      "displayStep": 9,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Screws",
+          "perMin": 30.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Cable",
+          "perMin": 14.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Quartz Crystal",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 15.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Reinforced Iron Plate": 2.5
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 8,
+      "displayStep": 8,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Rod",
+          "perMin": 7.5,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Cable",
+          "perMin": 14.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Quartz Crystal",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 30.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 7,
+      "displayStep": 7,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Rod",
+          "perMin": 7.5,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Wire",
+          "perMin": 28.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Quartz Crystal",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Cable": 14.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 6,
+      "displayStep": 6,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Rod",
+          "perMin": 7.5,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 14.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Quartz Crystal",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 15.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 28.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 5,
+      "displayStep": 5,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Rod",
+          "perMin": 7.5,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 14.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Quartz Crystal",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 22.5,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 15.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ingot",
+          "perMin": 7.5,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 14.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Quartz Crystal",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 22.5,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 7.5
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 14.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Quartz Crystal",
+          "perMin": 18.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 30.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Quartz Crystal",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 14.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Quartz Crystal": 18.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 14.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Raw Quartz",
+          "perMin": 29.999999999999996,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 14.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "MAM",
+    "index": 46,
+    "slug": "crystal-oscillator",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

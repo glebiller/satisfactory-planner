@@ -1,0 +1,151 @@
+{
+  "target": "Encased Industrial Beam",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Encased Industrial Beam",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Concrete",
+          "perMin": 6.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Steel Beam",
+          "perMin": 3.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Encased Industrial Beam": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Steel Beam",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Concrete",
+          "perMin": 6.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Steel Ingot",
+          "perMin": 12.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Steel Beam": 3.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Concrete",
+          "perMin": 6.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 12.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Coal",
+          "perMin": 12.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Steel Ingot": 12.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Concrete",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Limestone",
+          "perMin": 18.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Concrete": 6.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "4",
+    "index": 14,
+    "slug": "encased-industrial-beam",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

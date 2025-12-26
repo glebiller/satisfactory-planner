@@ -1,0 +1,77 @@
+{
+  "target": "Alclad Aluminum Sheet",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Alclad Aluminum Sheet",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 0.3333,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 1.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Alclad Aluminum Sheet": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 0.3333,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 0.3333
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "7",
+    "index": 23,
+    "slug": "alclad-aluminum-sheet",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

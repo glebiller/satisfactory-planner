@@ -1,48 +1,48 @@
-Tier,Name
-0,Iron Plate
-0,Iron Rod
-0,Wire
-0,Cable
-0,Concrete
-0,Reinforced Iron Plate
-2,Copper Sheet
-2,Rotor
-2,Modular Frame
-2,Smart Plating
-3,Steel Beam
-3,Steel Pipe
-3,Versatile Framework
-4,Encased Industrial Beam
-4,Motor
-4,Automated Wiring
-5,Plastic
-5,Rubber
-6,Computer
-6,Heavy Modular Frame
-6,Modular Engine
-6,Adaptive Control Unit
-7,Alclad Aluminum Sheet
-7,Aluminum Casing
-7,Radio Control Unit
-7,Supercomputer
-7,Assembly Director System
-8,Magnetic Field Generator
-8,Cooling System
-8,Fused Modular Frame
-8,Turbo Motor
-8,Thermal Propulsion Rocket
-8,Nuclear Pasta
-9,Time Crystal
-9,Ficsite Trigon
-9,Biochemical Sculptor
-9,Superposition Oscillator
-9,Neural-Quantum Processor
-9,AI Expansion Server
-9,Singularity Cell
-9,Ballistic Warp Drive
-MAM,Quickwire
-MAM,AI Limiter
-MAM,High-Speed Connector
-MAM,Quartz Crystal
-MAM,Crystal Oscillator
-MAM,SAM Fluctuator
+Tier,Name,Output
+0,Iron Plate,10
+0,Iron Rod,10
+0,Wire,10
+0,Cable,1
+0,Concrete,1
+0,Reinforced Iron Plate,1
+2,Copper Sheet,1
+2,Rotor,1
+2,Modular Frame,1
+2,Smart Plating,1
+3,Steel Beam,1
+3,Steel Pipe,1
+3,Versatile Framework,1
+4,Encased Industrial Beam,1
+4,Motor,1
+4,Automated Wiring,1
+5,Plastic,1
+5,Rubber,1
+6,Computer,1
+6,Heavy Modular Frame,1
+6,Modular Engine,1
+6,Adaptive Control Unit,1
+7,Alclad Aluminum Sheet,1
+7,Aluminum Casing,1
+7,Radio Control Unit,1
+7,Supercomputer,1
+7,Assembly Director System,1
+8,Magnetic Field Generator,1
+8,Cooling System,1
+8,Fused Modular Frame,1
+8,Turbo Motor,1
+8,Thermal Propulsion Rocket,1
+8,Nuclear Pasta,1
+9,Time Crystal,1
+9,Ficsite Trigon,1
+9,Biochemical Sculptor,1
+9,Superposition Oscillator,1
+9,Neural-Quantum Processor,1
+9,AI Expansion Server,1
+9,Singularity Cell,1
+9,Ballistic Warp Drive,1
+MAM,Quickwire,1
+MAM,AI Limiter,1
+MAM,High-Speed Connector,1
+MAM,Quartz Crystal,1
+MAM,Crystal Oscillator,1
+MAM,SAM Fluctuator,1

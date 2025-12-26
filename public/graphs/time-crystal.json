@@ -1,0 +1,65 @@
+{
+  "target": "Time Crystal",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Time Crystal",
+      "building": "Converter",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Diamonds",
+          "perMin": 2.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Time Crystal": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Diamonds",
+      "building": "HadronCollider",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Coal",
+          "perMin": 40.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Diamonds": 2.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "9",
+    "index": 34,
+    "slug": "time-crystal",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

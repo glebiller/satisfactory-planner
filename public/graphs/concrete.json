@@ -1,0 +1,40 @@
+{
+  "target": "Concrete",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Concrete",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Limestone",
+          "perMin": 3.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Concrete": 1.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "0",
+    "index": 5,
+    "slug": "concrete",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

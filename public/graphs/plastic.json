@@ -1,0 +1,42 @@
+{
+  "target": "Plastic",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Plastic",
+      "building": "OilRefinery",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Crude Oil",
+          "perMin": 1500.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {
+        "Heavy Oil Residue": 500.0
+      },
+      "outputs": {
+        "Plastic": 1.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "5",
+    "index": 17,
+    "slug": "plastic",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

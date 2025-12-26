@@ -1,0 +1,40 @@
+{
+  "target": "Aluminum Casing",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Aluminum Casing",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 1.5,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Aluminum Casing": 1.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "7",
+    "index": 24,
+    "slug": "aluminum-casing",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

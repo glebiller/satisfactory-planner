@@ -1,0 +1,127 @@
+{
+  "target": "Rotor",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Rotor",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Screws",
+          "perMin": 25.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Rod",
+          "perMin": 5.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Rotor": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 6.25,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Iron Rod",
+          "perMin": 5.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 25.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 11.25,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 11.25
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Iron Ore",
+          "perMin": 11.25,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 11.25
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "2",
+    "index": 8,
+    "slug": "rotor",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

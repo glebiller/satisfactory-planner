@@ -1,0 +1,3510 @@
+{
+  "target": "AI Expansion Server",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 70,
+      "displayStep": 70,
+      "recipe": "AI Expansion Server",
+      "building": "QuantumEncoder",
+      "inputs5": [
+        {
+          "name": "Excited Photonic Matter",
+          "perMin": 25000.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Magnetic Field Generator",
+          "perMin": 1.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {
+        "Dark Matter Residue": 25000.0
+      },
+      "outputs": {
+        "AI Expansion Server": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 69,
+      "displayStep": 69,
+      "recipe": "Magnetic Field Generator",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Excited Photonic Matter",
+          "perMin": 25000.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Versatile Framework",
+          "perMin": 2.5,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Magnetic Field Generator": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 68,
+      "displayStep": 68,
+      "recipe": "Excited Photonic Matter",
+      "building": "Converter",
+      "inputs5": [
+        null,
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Versatile Framework",
+          "perMin": 2.5,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Excited Photonic Matter": 25000.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 67,
+      "displayStep": 67,
+      "recipe": "Versatile Framework",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Steel Beam",
+          "perMin": 15.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Modular Frame",
+          "perMin": 1.25,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Versatile Framework": 2.5
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 66,
+      "displayStep": 66,
+      "recipe": "Steel Beam",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Steel Ingot",
+          "perMin": 60.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Modular Frame",
+          "perMin": 1.25,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Steel Beam": 15.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 65,
+      "displayStep": 65,
+      "recipe": "Modular Frame",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Steel Ingot",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 1.875,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Modular Frame": 1.25
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 64,
+      "displayStep": 64,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Steel Ingot",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 1.875,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 7.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 63,
+      "displayStep": 63,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Steel Ingot",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 1.875,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 7.5
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 62,
+      "displayStep": 62,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 7.5,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 1.875,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Steel Ingot": 60.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 61,
+      "displayStep": 61,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 67.5,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Reinforced Iron Plate": 1.875
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 60,
+      "displayStep": 60,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 67.5,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 22.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 59,
+      "displayStep": 59,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 67.5,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 11.25
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 58,
+      "displayStep": 58,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 67.5,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 5.625
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 57,
+      "displayStep": 57,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 67.5,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": true,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 22.5
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 56,
+      "displayStep": 56,
+      "recipe": "Electromagnetic Control Rod",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 90.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Stator",
+          "perMin": 1.5,
+          "src": "req",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": true,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Electromagnetic Control Rod": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 55,
+      "displayStep": 55,
+      "recipe": "Stator",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 90.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "AI Limiter",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Stator": 1.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 54,
+      "displayStep": 54,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 90.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "AI Limiter",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 12.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 53,
+      "displayStep": 53,
+      "recipe": "Steel Pipe",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 90.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "AI Limiter",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Steel Pipe": 4.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 52,
+      "displayStep": 52,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 90.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 60.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "AI Limiter",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Steel Ingot": 6.75
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 51,
+      "displayStep": 51,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "AI Limiter",
+          "perMin": 1.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": true,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 6.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 50,
+      "displayStep": 50,
+      "recipe": "AI Limiter",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 6.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "AI Limiter": 1.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 49,
+      "displayStep": 49,
+      "recipe": "Quickwire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 6.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Quickwire": 20.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 48,
+      "displayStep": 48,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 6.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Copper Sheet": 5.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 47,
+      "displayStep": 47,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 6.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 10.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 46,
+      "displayStep": 46,
+      "recipe": "Caterium Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Neural-Quantum Processor",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Caterium Ingot": 4.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 45,
+      "displayStep": 45,
+      "recipe": "Neural-Quantum Processor",
+      "building": "QuantumEncoder",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {
+        "Dark Matter Residue": 25000.0
+      },
+      "outputs": {
+        "Neural-Quantum Processor": 1.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 44,
+      "displayStep": 44,
+      "recipe": "Excited Photonic Matter",
+      "building": "Converter",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Excited Photonic Matter": 25000.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 43,
+      "displayStep": 43,
+      "recipe": "Ficsite Trigon",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Ficsite Trigon": 15.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 42,
+      "displayStep": 42,
+      "recipe": "Time Crystal",
+      "building": "Converter",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Time Crystal": 5.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 41,
+      "displayStep": 41,
+      "recipe": "Diamonds",
+      "building": "HadronCollider",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Diamonds": 10.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 40,
+      "displayStep": 40,
+      "recipe": "Ficsite Ingot (Iron)",
+      "building": "Converter",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 266.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Ficsite Ingot": 4.999499999999999
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 39,
+      "displayStep": 39,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 96.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 266.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 3,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 3,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 119.99999999999999
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 38,
+      "displayStep": 38,
+      "recipe": "Reanimated SAM",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 266.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "Reanimated SAM": 19.999499999999998
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 37,
+      "displayStep": 37,
+      "recipe": "Superposition Oscillator",
+      "building": "QuantumEncoder",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 266.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {
+        "Dark Matter Residue": 25000.0
+      },
+      "outputs": {
+        "Superposition Oscillator": 1.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 36,
+      "displayStep": 36,
+      "recipe": "Excited Photonic Matter",
+      "building": "Converter",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 266.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Excited Photonic Matter": 25000.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 35,
+      "displayStep": 35,
+      "recipe": "Dark Matter Crystal",
+      "building": "HadronCollider",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 266.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Dark Matter Crystal": 6.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 34,
+      "displayStep": 34,
+      "recipe": "Diamonds",
+      "building": "HadronCollider",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 266.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Diamonds": 6.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 33,
+      "displayStep": 33,
+      "recipe": "Dark Matter Residue",
+      "building": "Converter",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Dark Matter Residue": 30000.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 32,
+      "displayStep": 32,
+      "recipe": "Reanimated SAM",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Reanimated SAM": 15.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 31,
+      "displayStep": 31,
+      "recipe": "Alclad Aluminum Sheet",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Alclad Aluminum Sheet": 9.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 30,
+      "displayStep": 30,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 2.9997
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 29,
+      "displayStep": 29,
+      "recipe": "Crystal Oscillator",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 18.9997,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Crystal Oscillator": 1.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 28,
+      "displayStep": 28,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 18.9997,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Cable": 14.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 27,
+      "displayStep": 27,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 18.9997,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 28.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 26,
+      "displayStep": 26,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 18.9997,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 14.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 25,
+      "displayStep": 25,
+      "recipe": "Quartz Crystal",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Quartz Crystal": 18.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 24,
+      "displayStep": 24,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Reinforced Iron Plate": 2.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 23,
+      "displayStep": 23,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Screws": 30.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 22,
+      "displayStep": 22,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Iron Plate": 15.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 21,
+      "displayStep": 21,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Iron Rod": 7.5
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 20,
+      "displayStep": 20,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 216.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Supercomputer",
+          "perMin": 1.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 30.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 19,
+      "displayStep": 19,
+      "recipe": "Supercomputer",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Supercomputer": 1.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 18,
+      "displayStep": 18,
+      "recipe": "Plastic",
+      "building": "OilRefinery",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {
+        "Heavy Oil Residue": 14000.0
+      },
+      "outputs": {
+        "Plastic": 28.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 17,
+      "displayStep": 17,
+      "recipe": "AI Limiter",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "AI Limiter": 2.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 16,
+      "displayStep": 16,
+      "recipe": "Quickwire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Quickwire": 40.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 15,
+      "displayStep": 15,
+      "recipe": "Caterium Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Caterium Ingot": 8.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 14,
+      "displayStep": 14,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Copper Sheet": 10.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 13,
+      "displayStep": 13,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 32.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 20.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 12,
+      "displayStep": 12,
+      "recipe": "Computer",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 52.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {},
+      "outputs": {
+        "Computer": 4.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 11,
+      "displayStep": 11,
+      "recipe": "Plastic",
+      "building": "OilRefinery",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 52.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 7,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 7,
+      "byproducts": {
+        "Heavy Oil Residue": 32000.0
+      },
+      "outputs": {
+        "Plastic": 64.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 10,
+      "displayStep": 10,
+      "recipe": "High-Speed Connector",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 52.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 8,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 8,
+      "byproducts": {},
+      "outputs": {
+        "High-Speed Connector": 3.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 9,
+      "displayStep": 9,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 52.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Cable": 62.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 8,
+      "displayStep": 8,
+      "recipe": "Quickwire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 52.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Quickwire": 168.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 7,
+      "displayStep": 7,
+      "recipe": "Caterium Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 36.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 52.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 6,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 6,
+      "byproducts": {},
+      "outputs": {
+        "Caterium Ingot": 33.6
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 6,
+      "displayStep": 6,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 136.8,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 52.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 124.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 5,
+      "displayStep": 5,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 136.8,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 52.999700000000004,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 62.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Circuit Board",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 136.8,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 114.9997,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {},
+      "outputs": {
+        "Circuit Board": 19.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Plastic",
+      "building": "OilRefinery",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 136.8,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 114.9997,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 5,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 5,
+      "byproducts": {
+        "Heavy Oil Residue": 38000.0
+      },
+      "outputs": {
+        "Plastic": 76.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 136.8,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 114.9997,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Copper Sheet": 38.0
+      },
+      "rowHasPrevMatch": false
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        {
+          "name": "Iron Ore",
+          "perMin": 246.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 136.8,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 386.75,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 140.0006250281257,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 114.9997,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 4,
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 4,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 76.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "9",
+    "index": 39,
+    "slug": "ai-expansion-server",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

@@ -1,0 +1,549 @@
+{
+  "target": "Supercomputer",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 12,
+      "displayStep": 12,
+      "recipe": "Supercomputer",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Plastic",
+          "perMin": 28.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "AI Limiter",
+          "perMin": 2.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Computer",
+          "perMin": 4.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "High-Speed Connector",
+          "perMin": 3.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Supercomputer": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 11,
+      "displayStep": 11,
+      "recipe": "Computer",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Plastic",
+          "perMin": 28.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "AI Limiter",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Circuit Board",
+          "perMin": 16.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "High-Speed Connector",
+          "perMin": 3.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Cable",
+          "perMin": 32.0,
+          "src": "req",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Computer": 4.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 10,
+      "displayStep": 10,
+      "recipe": "High-Speed Connector",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        {
+          "name": "Plastic",
+          "perMin": 92.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "AI Limiter",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Circuit Board",
+          "perMin": 16.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Quickwire",
+          "perMin": 168.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Cable",
+          "perMin": 32.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 2,
+          "fromPrev": true,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 2,
+      "byproducts": {},
+      "outputs": {
+        "High-Speed Connector": 3.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 9,
+      "displayStep": 9,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Plastic",
+          "perMin": 92.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "AI Limiter",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Circuit Board",
+          "perMin": 19.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Quickwire",
+          "perMin": 168.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Wire",
+          "perMin": 124.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Cable": 62.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 8,
+      "displayStep": 8,
+      "recipe": "Circuit Board",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Plastic",
+          "perMin": 92.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "AI Limiter",
+          "perMin": 2.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 38.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Quickwire",
+          "perMin": 168.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Wire",
+          "perMin": 124.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "Circuit Board": 19.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 7,
+      "displayStep": 7,
+      "recipe": "AI Limiter",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Plastic",
+          "perMin": 168.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 10.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 38.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Quickwire",
+          "perMin": 168.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Wire",
+          "perMin": 124.0,
+          "src": "pass",
+          "hiddenCountOnThisSlot": 1,
+          "fromPrev": false,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 1,
+      "byproducts": {},
+      "outputs": {
+        "AI Limiter": 2.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 6,
+      "displayStep": 6,
+      "recipe": "Quickwire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Plastic",
+          "perMin": 168.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ingot",
+          "perMin": 41.6,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 48.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null,
+        {
+          "name": "Wire",
+          "perMin": 124.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        }
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Quickwire": 208.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 5,
+      "displayStep": 5,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Plastic",
+          "perMin": 168.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ingot",
+          "perMin": 41.6,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 48.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 62.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 124.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        {
+          "name": "Plastic",
+          "perMin": 168.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Caterium Ingot",
+          "perMin": 41.6,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 96.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 62.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Sheet": 48.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Plastic",
+      "building": "OilRefinery",
+      "inputs5": [
+        null,
+        {
+          "name": "Caterium Ingot",
+          "perMin": 41.6,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Crude Oil",
+          "perMin": 252000.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 158.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {
+        "Heavy Oil Residue": 84000.0
+      },
+      "outputs": {
+        "Plastic": 168.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Caterium Ingot",
+          "perMin": 41.6,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Crude Oil",
+          "perMin": 252000.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 158.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 158.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Caterium Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Caterium Ore",
+          "perMin": 124.80000000000001,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Crude Oil",
+          "perMin": 252000.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 158.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Caterium Ingot": 41.6
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "7",
+    "index": 26,
+    "slug": "supercomputer",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

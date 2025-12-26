@@ -1,0 +1,133 @@
+{
+  "target": "Ficsite Trigon",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Ficsite Trigon",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Ficsite Ingot",
+          "perMin": 0.3333,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Ficsite Trigon": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Ficsite Ingot (Iron)",
+      "building": "Converter",
+      "inputs5": [
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 8.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Reanimated SAM",
+          "perMin": 1.3333,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Ficsite Ingot": 0.3333
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Iron Ore",
+          "perMin": 8.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Reanimated SAM",
+          "perMin": 1.3333,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Iron Ingot": 8.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Reanimated SAM",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Iron Ore",
+          "perMin": 8.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 5.3333,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Reanimated SAM": 1.3333
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "9",
+    "index": 35,
+    "slug": "ficsite-trigon",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

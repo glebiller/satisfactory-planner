@@ -1,0 +1,42 @@
+{
+  "target": "Rubber",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Rubber",
+      "building": "OilRefinery",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Crude Oil",
+          "perMin": 1500.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {
+        "Heavy Oil Residue": 1000.0
+      },
+      "outputs": {
+        "Rubber": 1.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "5",
+    "index": 18,
+    "slug": "rubber",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "target": "Quartz Crystal",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Quartz Crystal",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        null,
+        {
+          "name": "Raw Quartz",
+          "perMin": 1.6666666666666665,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Quartz Crystal": 1.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "MAM",
+    "index": 45,
+    "slug": "quartz-crystal",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

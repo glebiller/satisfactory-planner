@@ -1,0 +1,270 @@
+{
+  "target": "Computer",
+  "targetRatePerMin": 1.0,
+  "steps": [
+    {
+      "level": 7,
+      "displayStep": 7,
+      "recipe": "Computer",
+      "building": "ManufacturerMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Cable",
+          "perMin": 8.0,
+          "src": "req",
+          "fromPrev": true,
+          "role": "normal"
+        },
+        {
+          "name": "Circuit Board",
+          "perMin": 4.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 16.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Computer": 1.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 6,
+      "displayStep": 6,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Wire",
+          "perMin": 16.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Circuit Board",
+          "perMin": 4.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 16.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Cable": 8.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 5,
+      "displayStep": 5,
+      "recipe": "Circuit Board",
+      "building": "AssemblerMk1",
+      "inputs5": [
+        {
+          "name": "Plastic",
+          "perMin": 16.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Wire",
+          "perMin": 16.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 8.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 16.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Circuit Board": 4.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 4,
+      "displayStep": 4,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 8.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 8.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Wire": 16.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 3,
+      "displayStep": 3,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 8.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 16.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Sheet": 8.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 2,
+      "displayStep": 2,
+      "recipe": "Plastic",
+      "building": "OilRefinery",
+      "inputs5": [
+        null,
+        {
+          "name": "Crude Oil",
+          "perMin": 48000.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 24.0,
+          "src": "pass",
+          "fromPrev": true,
+          "role": "pass"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {
+        "Heavy Oil Residue": 16000.0
+      },
+      "outputs": {
+        "Plastic": 32.0
+      },
+      "rowHasPrevMatch": true
+    },
+    {
+      "level": 1,
+      "displayStep": 1,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "inputs5": [
+        null,
+        {
+          "name": "Crude Oil",
+          "perMin": 48000.0,
+          "src": "pass",
+          "fromPrev": false,
+          "role": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 24.0,
+          "src": "req",
+          "fromPrev": false,
+          "role": "normal"
+        },
+        null,
+        null
+      ],
+      "hiddenInputsCount": 0,
+      "byproducts": {},
+      "outputs": {
+        "Copper Ingot": 24.0
+      },
+      "rowHasPrevMatch": false
+    }
+  ],
+  "meta": {
+    "source": "transformations.json",
+    "tier": "6",
+    "index": 19,
+    "slug": "computer",
+    "notes": [
+      "levelized_scheduler=true"
+    ]
+  }
+}

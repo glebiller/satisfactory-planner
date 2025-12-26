@@ -78,7 +78,7 @@
     /* Modal */
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: grid; place-items: center; z-index: 50; }
     .modal-overlay[hidden] { display: none !important; }
-    .modal { width: min(1000px, 92vw); max-height: 86vh; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); display: flex; flex-direction: column; overflow: hidden; }
+    .modal { width: min(1280px, 96vw); max-height: 86vh; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); display: flex; flex-direction: column; overflow: hidden; }
     .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-bottom: 1px solid var(--border); background: #0e1420; }
     .modal-header h2 { margin: 0; }
     .modal-content { padding: 10px; overflow: auto; }
@@ -94,6 +94,19 @@
     /* Make pill-styled buttons clickable for Recipes column */
     .pill-btn { cursor: pointer; }
     .pill-btn:hover { filter: brightness(1.08); }
+
+    /* Modal inputs layout (5 equal columns) */
+    .modal table { table-layout: fixed; }
+    .modal th.input-col, .modal td.input-col { width: 12%; }
+    .modal td.input-col { vertical-align: top; }
+
+    /* Matching styles */
+    .modal tr.row-matched { background: #121a28; }
+    .modal td.input-col.matched { background: rgba(74, 168, 255, 0.08); }
+    .modal .tag.match { border-color: #2a5ea3; background: #0c2138; color: #d7ecff; }
+    /* Role accents */
+    .modal .tag.role-pass { opacity: 0.85; background: #0f1a28; border-color: #1d2d42; color: #b9d4ff; }
+    .modal .tag.role-split { background: #1b2a1a; border-color: #274329; color: #bfe9c2; }
   </style>
 </head>
 <body>
