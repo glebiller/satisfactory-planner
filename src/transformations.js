@@ -35,11 +35,27 @@ init().catch(err => {
 async function init() {
   const raw = await fetchJson(DATA_URL);
   data = raw.map(computePerMin);
+  
+  await preloadGraphLayerCounts();
+  
   view = data.slice();
   wireSorting();
   wireFiltering();
   wireModal();
   applyFilter();
+}
+
+async function preloadGraphLayerCounts() {
+  for (const row of data) {
+    try {
+      const graph = await loadGraphForOutput(row.output);
+      if (graph && graph.rows) {
+        const layerCount = graph.rows.filter(r => r.rowType === 'layer').length;
+        row.graphLayerCount = layerCount;
+      }
+    } catch (e) {
+    }
+  }
 }
 
 function computePerMin(row) {
@@ -110,17 +126,13 @@ function wireFiltering() {
 }
 
 function wireModal() {
-  // Close button
   el.modalClose?.addEventListener('click', closeModal);
-  // Overlay click (outside dialog)
   el.modalOverlay?.addEventListener('click', (e) => {
     if (e.target === el.modalOverlay) closeModal();
   });
-  // Escape key
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !el.modalOverlay.hasAttribute('hidden')) closeModal();
   });
-  // Delegate clicks from table for opening the modal
   el.rows.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-open-modal]');
     if (!btn) return;
@@ -136,12 +148,11 @@ async function openModalForRow(row) {
   const titleRight = row.output || 'Transformation';
   el.modalTitle.textContent = `${titleLeft} • ${titleRight}`;
 
-  // Try to load precomputed graph JSON for this output
   let html = '';
   try {
     const graph = await loadGraphForOutput(row.output);
-    if (graph && graph.steps && Array.isArray(graph.steps) && graph.steps.length) {
-      html = buildModalHtmlFromGraph(graph);
+    if (graph && graph.rows && Array.isArray(graph.rows) && graph.rows.length) {
+      html = buildModalHtmlFromGraphV3(graph);
     }
   } catch (e) {
     console.warn('Graph load failed, falling back to inline steps:', e);
@@ -151,10 +162,8 @@ async function openModalForRow(row) {
   }
   el.modalContent.innerHTML = html;
   el.modalOverlay.removeAttribute('hidden');
-  // Prevent background scroll
   document.documentElement.style.overflow = 'hidden';
   document.body.style.overflow = 'hidden';
-  // Focus close button for accessibility
   el.modalClose?.focus();
 }
 
@@ -187,7 +196,6 @@ function buildModalHtml(row) {
   const rowsHtml = steps.map((s, i) => {
     const byps = kvTags(s.byproducts);
 
-    // Compute previous step outputs set for matching
     const prev = i > 0 ? steps[i - 1] : null;
     const prevOutNames = new Set(
       prev && prev.produces ? Object.keys(prev.produces) : []
@@ -227,68 +235,112 @@ async function loadGraphForOutput(outputName) {
   return graph;
 }
 
-function buildModalHtmlFromGraph(graph) {
-  const steps = Array.isArray(graph.steps) ? graph.steps : [];
+function buildModalHtmlFromGraphV3(graph) {
+  const rows = Array.isArray(graph.rows) ? graph.rows : [];
+  const maxLevel = Math.max(...rows.filter(r => r.level).map(r => r.level), 0);
+  
   const header = `
-    <table>
+    <table class="flow-table">
       <thead>
         <tr>
-          <th style="width:52px">Step</th>
-          <th>Recipe</th>
-          <th class="input-col">In‑1</th>
-          <th class="input-col">In‑2</th>
-          <th class="input-col">In‑3</th>
-          <th class="input-col">In‑4</th>
-          <th class="input-col">In‑5</th>
-          <th style="width:16%">By‑products</th>
+          <th style="width:50px">Lvl</th>
+          <th style="width:160px">Recipe/Building</th>
+          <th class="lane-col">Lane 1</th>
+          <th class="lane-col">Lane 2</th>
+          <th class="lane-col">Lane 3</th>
+          <th class="lane-col">Lane 4</th>
+          <th class="lane-col">Lane 5</th>
+          <th style="width:14%">By‑products</th>
         </tr>
       </thead>
       <tbody>
   `;
 
-  const rowsHtml = steps.map((s, i) => {
-    const inputs5 = s.inputs5 || [];
-    const anyPrev = inputs5.some(cell => cell && cell.fromPrev);
-    const inputTds = inputs5.map(cell => {
-      const cls = 'input-col' + (cell && cell.fromPrev ? ' matched' : '');
-      if (!cell) return `<td class="${cls}"><span class="meta">—</span></td>`;
-      const roleClass = cell.role === 'pass' ? ' role-pass' : (cell.role === 'split' ? ' role-split' : '');
-      const arrow = cell.fromPrev ? ' ↓' : '';
-      const hiddenNote = cell.hiddenCountOnThisSlot ? ` title="+${cell.hiddenCountOnThisSlot} more not shown"` : '';
-      return `<td class="${cls}"${hiddenNote}><span class="tag${cell.fromPrev ? ' match' : ''}${roleClass}">${escapeHtml(String(cell.name))} <small>${formatNumber(cell.perMin)}/min${arrow}</small></span></td>`;
-    }).join('');
-
-    const byps = kvTags(s.byproducts);
-    const building = s.building ? `<span class="tag">${escapeHtml(String(s.building))}</span>` : '<span class="meta">—</span>';
-    const stepNum = s.displayStep != null ? s.displayStep : (steps.length - i);
-    const recipe = s.recipe || '';
-
-    return `
-      <tr${anyPrev ? ' class="row-matched"' : ''}>
-        <td class="meta">${escapeHtml(String(stepNum))}</td>
-        <td>${escapeHtml(String(recipe))}<br/>${building}</td>
-        ${inputTds}
-        <td>${byps || '<span class="meta">—</span>'}</td>
-      </tr>
-    `;
+  const rowsHtml = rows.slice().reverse().map((row, i) => {
+    if (row.rowType === 'layer') {
+      return buildLayerRowV3(row);
+    } else if (row.rowType === 'belts') {
+      return buildBeltsRowV3(row);
+    }
+    return '';
   }).join('');
 
   const footer = '</tbody></table>';
   return header + rowsHtml + footer;
 }
 
+function buildLayerRowV3(row) {
+  const level = row.level != null ? row.level : '?';
+  const recipe = row.recipe || '';
+  const building = row.building ? escapeHtml(String(row.building)) : '<span class="meta">—</span>';
+  const byps = kvTags(row.byproducts);
+  
+  const lanes = row.lanes || [];
+  const laneTds = lanes.map(lane => {
+    if (!lane) return '<td class="lane-col"><span class="meta">—</span></td>';
+    
+    const action = lane.action || 'unknown';
+    let indicator = '';
+    let className = 'lane-item';
+    
+    if (action === 'consume') {
+      indicator = '↓';
+      className += ' lane-consume';
+    } else if (action === 'pass') {
+      indicator = '↑';
+      className += ' lane-pass';
+    }
+    
+    return `<td class="lane-col"><div class="${className}"><span class="lane-indicator">${indicator}</span>${escapeHtml(String(lane.name))}<br/><small>${formatNumber(lane.perMin)}/min</small></div></td>`;
+  }).join('');
+
+  return `
+    <tr class="layer-row">
+      <td class="level-cell">${level}</td>
+      <td class="recipe-cell"><strong>${escapeHtml(recipe)}</strong><br/><span class="building-tag">${building}</span></td>
+      ${laneTds}
+      <td>${byps || '<span class="meta">—</span>'}</td>
+    </tr>
+  `;
+}
+
+function buildBeltsRowV3(row) {
+  const lanes = row.lanes || [];
+  const laneTds = lanes.map(lane => {
+    if (!lane) return '<td class="lane-col belt-cell"></td>';
+    
+    const action = lane.action || '';
+    let className = 'belt-item';
+    let indicator = '';
+    
+    if (action === 'fromBelow') {
+      className += ' belt-produced';
+      indicator = '↑';
+    } else if (action === 'pass') {
+      className += ' belt-passthrough';
+      indicator = '↑';
+    }
+    
+    return `<td class="lane-col belt-cell"><div class="${className}"><span class="belt-indicator">${indicator}</span>${escapeHtml(String(lane.name))}<br/><small>${formatNumber(lane.perMin)}/min</small></div></td>`;
+  }).join('');
+
+  return `
+    <tr class="belt-row">
+      <td colspan="2" class="belt-label">Belts ↑</td>
+      ${laneTds}
+      <td></td>
+    </tr>
+  `;
+}
+
 function placeInputsIntoFive(requires, prevOutNames) {
-  // returns an array of 5 slots; each slot is either null or { name, perMin, matched, extraCount }
   const slots = new Array(5).fill(null);
   if (!requires || typeof requires !== 'object') return slots;
 
-  // Get inputs in their original order as provided
   const entries = Object.entries(requires).map(([name, perMin]) => ({ name, perMin }));
 
-  // Center-first order of slot indices
   const order = [2, 1, 3, 0, 4];
 
-  // Fill up to five inputs, preserving their relative order
   let extraCount = Math.max(0, entries.length - 5);
   entries.slice(0, 5).forEach((item, idx) => {
     const slotIndex = order[idx];
@@ -384,13 +436,16 @@ function rowHtml(row) {
   const inputs = (row.inputs || []).map(i => pill(i.name, i.perMin)).join('');
   const byps = (row.byproducts || []).map(b => pill(b.name, b.perMin)).join('');
   
-  const steps = row.transformation_steps || [];
-  // Prefer the precomputed `num_steps` (new) when available; otherwise fall back
-  // to counting non-empty building entries in `transformation_steps` to remain
-  // compatible with older data.
-  const buildingsArr = steps.map(s => s.building).filter(b => b);
-  const buildingsCountFallback = buildingsArr.length;
-  const stepsCount = (typeof row.num_steps === 'number') ? row.num_steps : buildingsCountFallback;
+  let stepsCount;
+  if (typeof row.graphLayerCount === 'number') {
+    stepsCount = row.graphLayerCount;
+  } else {
+    const steps = row.transformation_steps || [];
+    const buildingsArr = steps.map(s => s.building).filter(b => b);
+    const buildingsCountFallback = buildingsArr.length;
+    stepsCount = (typeof row.num_steps === 'number') ? row.num_steps : buildingsCountFallback;
+  }
+  
   const recipesCell = `<button type="button" class="pill pill-btn" data-open-modal data-row-index="${escapeHtml(String(row.index))}">${stepsCount}</button>`;
 
   const idx = row.index == null ? '<span class="meta">—</span>' : String(row.index);

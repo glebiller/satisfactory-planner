@@ -1,889 +1,914 @@
 {
   "target": "Magnetic Field Generator",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 19,
-      "displayStep": 19,
-      "recipe": "Magnetic Field Generator",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        null,
+      "rowType": "layer",
+      "level": 1,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Ingot": 30.0
+      },
+      "consumes": {
+        "Iron Ore": 30.0
+      },
+      "lanes": [
         {
-          "name": "Electromagnetic Control Rod",
-          "perMin": 1.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
         },
         {
-          "name": "Versatile Framework",
-          "perMin": 2.5,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
+          "name": "Coal",
+          "perMin": 66.75,
+          "action": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "action": "consume"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "action": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 66.75,
+          "action": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "action": "pass"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 30.0,
+          "action": "fromBelow"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Rod": 13.125
+      },
+      "consumes": {
+        "Iron Ingot": 13.125
+      },
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "action": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 66.75,
+          "action": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "action": "pass"
+        },
+        {
+          "name": "Iron Ingot",
+          "perMin": 13.125,
+          "action": "consume"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "action": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 66.75,
+          "action": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "action": "pass"
+        },
+        {
+          "name": "Iron Rod",
+          "perMin": 13.125,
+          "action": "fromBelow"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "operation": "produces",
+      "produces": {
+        "Steel Ingot": 66.75
+      },
+      "consumes": {
+        "Iron Ore": 66.75,
+        "Coal": 66.75
+      },
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 66.75,
+          "action": "consume"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 66.75,
+          "action": "consume"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Steel Ingot",
+          "perMin": 66.75,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Steel Pipe",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Steel Pipe": 4.5
+      },
+      "consumes": {
+        "Steel Ingot": 6.75
+      },
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Steel Ingot",
+          "perMin": 6.75,
+          "action": "consume"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Steel Pipe",
+          "perMin": 4.5,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 5,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Copper Ingot": 16.0
+      },
+      "consumes": {
+        "Copper Ore": 16.0
+      },
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
+        null,
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 16.0,
+          "action": "consume"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 5,
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 16.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 6,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Copper Sheet": 5.0
+      },
+      "consumes": {
+        "Copper Ingot": 10.0
+      },
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 10.0,
+          "action": "consume"
         },
         null,
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Magnetic Field Generator": 1.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 18,
-      "displayStep": 18,
-      "recipe": "Versatile Framework",
-      "building": "AssemblerMk1",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 6,
+      "lanes": [
+        {
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "pass"
+        },
         null,
         {
-          "name": "Electromagnetic Control Rod",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Copper Sheet",
+          "perMin": 5.0,
+          "action": "fromBelow"
         },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 7,
+      "recipe": "Caterium Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Caterium Ingot": 4.0
+      },
+      "consumes": {
+        "Caterium Ore": 12.0
+      },
+      "lanes": [
         {
-          "name": "Modular Frame",
-          "perMin": 1.25,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
+          "name": "Caterium Ore",
+          "perMin": 12.0,
+          "action": "consume"
         },
+        null,
+        null,
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 7,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Caterium Ingot",
+          "perMin": 4.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 8,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Plate": 11.25
+      },
+      "consumes": {
+        "Iron Ingot": 16.875
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 16.875,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 8,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Plate",
+          "perMin": 11.25,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 9,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Screws": 22.5
+      },
+      "consumes": {
+        "Iron Rod": 5.625
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 5.625,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 9,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Screws",
+          "perMin": 22.5,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 10,
+      "recipe": "Steel Beam",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Steel Beam": 15.0
+      },
+      "consumes": {
+        "Steel Ingot": 60.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Steel Ingot",
+          "perMin": 60.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 10,
+      "lanes": [
+        null,
+        null,
         {
           "name": "Steel Beam",
           "perMin": 15.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "fromBelow"
         },
+        null,
         null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Versatile Framework": 2.5
-      },
-      "rowHasPrevMatch": true
+      ]
     },
     {
-      "level": 17,
-      "displayStep": 17,
+      "rowType": "layer",
+      "level": 11,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Wire": 12.0
+      },
+      "consumes": {
+        "Copper Ingot": 6.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 6.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 11,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Wire",
+          "perMin": 12.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 12,
+      "recipe": "Quickwire",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Quickwire": 20.0
+      },
+      "consumes": {
+        "Caterium Ingot": 4.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Caterium Ingot",
+          "perMin": 4.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 12,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Quickwire",
+          "perMin": 20.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 13,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Reinforced Iron Plate": 1.875
+      },
+      "consumes": {
+        "Iron Plate": 11.25,
+        "Screws": 22.5
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Screws",
+          "perMin": 22.5,
+          "action": "consume"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 11.25,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 13,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 1.875,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 14,
+      "recipe": "Stator",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Stator": 1.5
+      },
+      "consumes": {
+        "Steel Pipe": 4.5,
+        "Wire": 12.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Wire",
+          "perMin": 12.0,
+          "action": "consume"
+        },
+        {
+          "name": "Steel Pipe",
+          "perMin": 4.5,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 14,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Stator",
+          "perMin": 1.5,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 15,
+      "recipe": "AI Limiter",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "AI Limiter": 1.0
+      },
+      "consumes": {
+        "Copper Sheet": 5.0,
+        "Quickwire": 20.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Quickwire",
+          "perMin": 20.0,
+          "action": "consume"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 5.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 15,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "AI Limiter",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 16,
       "recipe": "Modular Frame",
       "building": "AssemblerMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Modular Frame": 1.25
+      },
+      "consumes": {
+        "Reinforced Iron Plate": 1.875,
+        "Iron Rod": 7.5
+      },
+      "lanes": [
+        null,
         {
           "name": "Iron Rod",
           "perMin": 7.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Electromagnetic Control Rod",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "consume"
         },
         {
           "name": "Reinforced Iron Plate",
           "perMin": 1.875,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
+          "action": "consume"
         },
-        {
-          "name": "Steel Beam",
-          "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
+        null,
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Modular Frame": 1.25
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
+      "rowType": "belts",
       "level": 16,
-      "displayStep": 16,
-      "recipe": "Reinforced Iron Plate",
-      "building": "AssemblerMk1",
-      "inputs5": [
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Iron Rod",
-          "perMin": 7.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Modular Frame",
+          "perMin": 1.25,
+          "action": "fromBelow"
         },
-        {
-          "name": "Electromagnetic Control Rod",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 11.25,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Beam",
-          "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Screws",
-          "perMin": 22.5,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Reinforced Iron Plate": 1.875
-      },
-      "rowHasPrevMatch": true
+        null,
+        null
+      ]
     },
     {
-      "level": 15,
-      "displayStep": 15,
-      "recipe": "Screws",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Iron Rod",
-          "perMin": 7.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Electromagnetic Control Rod",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 11.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Beam",
-          "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Rod",
-          "perMin": 5.625,
-          "src": "req",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Screws": 22.5
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 14,
-      "displayStep": 14,
+      "rowType": "layer",
+      "level": 17,
       "recipe": "Electromagnetic Control Rod",
       "building": "AssemblerMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Electromagnetic Control Rod": 1.0
+      },
+      "consumes": {
+        "Stator": 1.5,
+        "AI Limiter": 1.0
+      },
+      "lanes": [
+        null,
         {
           "name": "AI Limiter",
           "perMin": 1.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         {
           "name": "Stator",
           "perMin": 1.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 17,
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Iron Plate",
-          "perMin": 11.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "action": "fromBelow"
         },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 18,
+      "recipe": "Versatile Framework",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Versatile Framework": 2.5
+      },
+      "consumes": {
+        "Modular Frame": 1.25,
+        "Steel Beam": 15.0
+      },
+      "lanes": [
+        null,
         {
           "name": "Steel Beam",
           "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
+          "action": "consume"
         },
         {
-          "name": "Iron Rod",
-          "perMin": 13.125,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
+          "name": "Modular Frame",
+          "perMin": 1.25,
+          "action": "consume"
+        },
+        null,
+        null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 18,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Versatile Framework",
+          "perMin": 2.5,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 19,
+      "recipe": "Magnetic Field Generator",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Magnetic Field Generator": 1.0
+      },
+      "consumes": {
+        "Versatile Framework": 2.5,
         "Electromagnetic Control Rod": 1.0
       },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 13,
-      "displayStep": 13,
-      "recipe": "Steel Beam",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "AI Limiter",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Stator",
-          "perMin": 1.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 11.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 60.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Rod",
-          "perMin": 13.125,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Steel Beam": 15.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 12,
-      "displayStep": 12,
-      "recipe": "Iron Rod",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "AI Limiter",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Stator",
-          "perMin": 1.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 11.25,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 60.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 13.125,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 13.125
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 11,
-      "displayStep": 11,
-      "recipe": "Iron Plate",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "AI Limiter",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Stator",
-          "perMin": 1.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 16.875,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 60.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 13.125,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Plate": 11.25
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 10,
-      "displayStep": 10,
-      "recipe": "Stator",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "AI Limiter",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Wire",
-          "perMin": 12.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Pipe",
-          "perMin": 4.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 60.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Stator": 1.5
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 9,
-      "displayStep": 9,
-      "recipe": "Wire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "AI Limiter",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 6.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Pipe",
-          "perMin": 4.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 60.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Wire": 12.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 8,
-      "displayStep": 8,
-      "recipe": "Steel Pipe",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "AI Limiter",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 6.75,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 60.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Steel Pipe": 4.5
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 7,
-      "displayStep": 7,
-      "recipe": "AI Limiter",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Quickwire",
-          "perMin": 20.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Sheet",
-          "perMin": 5.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 66.75,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "AI Limiter": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 6,
-      "displayStep": 6,
-      "recipe": "Quickwire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Caterium Ingot",
-          "perMin": 4.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Sheet",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 66.75,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Quickwire": 20.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 5,
-      "displayStep": 5,
-      "recipe": "Copper Sheet",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Caterium Ingot",
-          "perMin": 4.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 10.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 66.75,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Copper Sheet": 5.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 4,
-      "displayStep": 4,
-      "recipe": "Steel Ingot",
-      "building": "FoundryMk1",
-      "inputs5": [
-        {
-          "name": "Caterium Ingot",
-          "perMin": 4.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 66.75,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 16.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 66.75,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Steel Ingot": 66.75
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 3,
-      "displayStep": 3,
-      "recipe": "Iron Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Caterium Ingot",
-          "perMin": 4.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 66.75,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 16.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 66.75,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 30.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 30.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Copper Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Caterium Ingot",
-          "perMin": 4.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
+      "lanes": [
         null,
         {
-          "name": "Copper Ore",
-          "perMin": 16.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "name": "Electromagnetic Control Rod",
+          "perMin": 1.0,
+          "action": "consume"
         },
         {
-          "name": "Coal",
-          "perMin": 66.75,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Versatile Framework",
+          "perMin": 2.5,
+          "action": "consume"
         },
-        {
-          "name": "Iron Ore",
-          "perMin": 96.75,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
+        null,
+        null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Copper Ingot": 16.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 1,
-      "displayStep": 1,
-      "recipe": "Caterium Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 19,
+      "lanes": [
+        null,
         null,
         {
-          "name": "Caterium Ore",
-          "perMin": 12.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "name": "Magnetic Field Generator",
+          "perMin": 1.0,
+          "action": "fromBelow"
         },
-        {
-          "name": "Copper Ore",
-          "perMin": 16.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 66.75,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 96.75,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Caterium Ingot": 4.0
-      },
-      "rowHasPrevMatch": false
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -892,7 +917,7 @@
     "index": 28,
     "slug": "magnetic-field-generator",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

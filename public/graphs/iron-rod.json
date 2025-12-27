@@ -1,56 +1,86 @@
 {
   "target": "Iron Rod",
   "targetRatePerMin": 10.0,
-  "steps": [
+  "rows": [
     {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Iron Rod",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        null,
-        {
-          "name": "Iron Ingot",
-          "perMin": 10.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 10.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
+      "rowType": "layer",
       "level": 1,
-      "displayStep": 1,
       "recipe": "Iron Ingot",
       "building": "SmelterMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Iron Ingot": 10.0
+      },
+      "consumes": {
+        "Iron Ore": 10.0
+      },
+      "lanes": [
         null,
         null,
         {
           "name": "Iron Ore",
           "perMin": 10.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         null,
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 10.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Rod": 10.0
+      },
+      "consumes": {
         "Iron Ingot": 10.0
       },
-      "rowHasPrevMatch": false
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 10.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 10.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -59,7 +89,7 @@
     "index": 2,
     "slug": "iron-rod",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

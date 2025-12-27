@@ -1,142 +1,184 @@
 {
   "target": "Encased Industrial Beam",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 4,
-      "displayStep": 4,
-      "recipe": "Encased Industrial Beam",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Concrete",
-          "perMin": 6.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Beam",
-          "perMin": 3.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Encased Industrial Beam": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 3,
-      "displayStep": 3,
-      "recipe": "Steel Beam",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Concrete",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 12.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Steel Beam": 3.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 2,
-      "displayStep": 2,
+      "rowType": "layer",
+      "level": 1,
       "recipe": "Steel Ingot",
       "building": "FoundryMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Steel Ingot": 12.0
+      },
+      "consumes": {
+        "Iron Ore": 12.0,
+        "Coal": 12.0
+      },
+      "lanes": [
         null,
         {
-          "name": "Concrete",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
+          "name": "Coal",
+          "perMin": 12.0,
+          "action": "consume"
         },
         {
           "name": "Iron Ore",
           "perMin": 12.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         {
-          "name": "Coal",
-          "perMin": 12.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "name": "Limestone",
+          "perMin": 18.0,
+          "action": "pass"
         },
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Steel Ingot": 12.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
+      "rowType": "belts",
       "level": 1,
-      "displayStep": 1,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Steel Ingot",
+          "perMin": 12.0,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Limestone",
+          "perMin": 18.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
       "recipe": "Concrete",
       "building": "ConstructorMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Concrete": 6.0
+      },
+      "consumes": {
+        "Limestone": 18.0
+      },
+      "lanes": [
+        null,
+        null,
         null,
         {
           "name": "Limestone",
           "perMin": 18.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 12.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 12.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "consume"
         },
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Concrete",
+          "perMin": 6.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Steel Beam",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Steel Beam": 3.0
+      },
+      "consumes": {
+        "Steel Ingot": 12.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Steel Ingot",
+          "perMin": 12.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Steel Beam",
+          "perMin": 3.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Encased Industrial Beam",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Encased Industrial Beam": 1.0
+      },
+      "consumes": {
+        "Steel Beam": 3.0,
         "Concrete": 6.0
       },
-      "rowHasPrevMatch": false
+      "lanes": [
+        null,
+        {
+          "name": "Concrete",
+          "perMin": 6.0,
+          "action": "consume"
+        },
+        {
+          "name": "Steel Beam",
+          "perMin": 3.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Encased Industrial Beam",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -145,7 +187,7 @@
     "index": 14,
     "slug": "encased-industrial-beam",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

@@ -86,9 +86,14 @@ def main():
             skipped += 1
             continue
 
+        name = entry.get("name")
+        if "(" in name and ")" in name:
+            skipped += 1
+            continue
+
         result[class_name] = {
             "id": key,
-            "name": entry.get("name"),
+            "name": name,
             "ingredients": entry.get("ingredients", {}),
             "produce": entry.get("produce", {}),
             "mProducedIn": m_produced_in,

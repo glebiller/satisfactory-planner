@@ -1,412 +1,445 @@
 {
   "target": "Crystal Oscillator",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 10,
-      "displayStep": 10,
-      "recipe": "Crystal Oscillator",
-      "building": "ManufacturerMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Cable",
-          "perMin": 14.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Reinforced Iron Plate",
-          "perMin": 2.5,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Crystal Oscillator": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 9,
-      "displayStep": 9,
-      "recipe": "Reinforced Iron Plate",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Screws",
-          "perMin": 30.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Cable",
-          "perMin": 14.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 15.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Reinforced Iron Plate": 2.5
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 8,
-      "displayStep": 8,
-      "recipe": "Screws",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Iron Rod",
-          "perMin": 7.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Cable",
-          "perMin": 14.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Screws": 30.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 7,
-      "displayStep": 7,
-      "recipe": "Cable",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Iron Rod",
-          "perMin": 7.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Wire",
-          "perMin": 28.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Cable": 14.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 6,
-      "displayStep": 6,
-      "recipe": "Wire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Iron Rod",
-          "perMin": 7.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 14.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Wire": 28.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 5,
-      "displayStep": 5,
-      "recipe": "Iron Plate",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Iron Rod",
-          "perMin": 7.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 14.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 22.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Plate": 15.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 4,
-      "displayStep": 4,
-      "recipe": "Iron Rod",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Iron Ingot",
-          "perMin": 7.5,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 14.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 7.5
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 3,
-      "displayStep": 3,
-      "recipe": "Iron Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Copper Ingot",
-          "perMin": 14.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 30.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 30.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 2,
-      "displayStep": 2,
+      "rowType": "layer",
+      "level": 1,
       "recipe": "Quartz Crystal",
       "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Copper Ingot",
-          "perMin": 14.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Raw Quartz",
-          "perMin": 29.999999999999996,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
+      "operation": "produces",
+      "produces": {
         "Quartz Crystal": 18.0
       },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 1,
-      "displayStep": 1,
-      "recipe": "Copper Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
+      "consumes": {
+        "Raw Quartz": 30.0
+      },
+      "lanes": [
         null,
         {
           "name": "Copper Ore",
           "perMin": 14.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "pass"
         },
         {
           "name": "Raw Quartz",
-          "perMin": 29.999999999999996,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "perMin": 30.0,
+          "action": "consume"
         },
         {
           "name": "Iron Ore",
           "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
         },
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 14.0,
+          "action": "pass"
+        },
+        {
+          "name": "Quartz Crystal",
+          "perMin": 18.0,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
         "Copper Ingot": 14.0
       },
-      "rowHasPrevMatch": false
+      "consumes": {
+        "Copper Ore": 14.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 14.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 14.0,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Ingot": 30.0
+      },
+      "consumes": {
+        "Iron Ore": 30.0
+      },
+      "lanes": [
+        null,
+        null,
+        null,
+        {
+          "name": "Iron Ore",
+          "perMin": 30.0,
+          "action": "consume"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 30.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Rod": 7.5
+      },
+      "consumes": {
+        "Iron Ingot": 7.5
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 7.5,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 7.5,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 5,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Wire": 28.0
+      },
+      "consumes": {
+        "Copper Ingot": 14.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 14.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 5,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Wire",
+          "perMin": 28.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 6,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Plate": 15.0
+      },
+      "consumes": {
+        "Iron Ingot": 22.5
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 22.5,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 6,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Plate",
+          "perMin": 15.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 7,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Screws": 30.0
+      },
+      "consumes": {
+        "Iron Rod": 7.5
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 7.5,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 7,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Screws",
+          "perMin": 30.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 8,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Cable": 14.0
+      },
+      "consumes": {
+        "Wire": 28.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Wire",
+          "perMin": 28.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 8,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Cable",
+          "perMin": 14.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 9,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Reinforced Iron Plate": 2.5
+      },
+      "consumes": {
+        "Iron Plate": 15.0,
+        "Screws": 30.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Screws",
+          "perMin": 30.0,
+          "action": "consume"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 15.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 9,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 2.5,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 10,
+      "recipe": "Crystal Oscillator",
+      "building": "ManufacturerMk1",
+      "operation": "produces",
+      "produces": {
+        "Crystal Oscillator": 1.0
+      },
+      "consumes": {
+        "Quartz Crystal": 18.0,
+        "Cable": 14.0,
+        "Reinforced Iron Plate": 2.5
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Quartz Crystal",
+          "perMin": 18.0,
+          "action": "consume"
+        },
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 2.5,
+          "action": "consume"
+        },
+        {
+          "name": "Cable",
+          "perMin": 14.0,
+          "action": "consume"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 10,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -415,7 +448,7 @@
     "index": 46,
     "slug": "crystal-oscillator",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

@@ -1,241 +1,301 @@
 {
   "target": "Smart Plating",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 7,
-      "displayStep": 7,
-      "recipe": "Smart Plating",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Rotor",
-          "perMin": 1.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Reinforced Iron Plate",
-          "perMin": 1.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Smart Plating": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 6,
-      "displayStep": 6,
-      "recipe": "Reinforced Iron Plate",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Rotor",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 6.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Screws",
-          "perMin": 12.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Reinforced Iron Plate": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 5,
-      "displayStep": 5,
-      "recipe": "Rotor",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Screws",
-          "perMin": 25.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Rod",
-          "perMin": 5.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Screws",
-          "perMin": 12.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Rotor": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 4,
-      "displayStep": 4,
-      "recipe": "Screws",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Iron Rod",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Rod",
-          "perMin": 9.25,
-          "src": "req",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Screws": 37.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 3,
-      "displayStep": 3,
-      "recipe": "Iron Rod",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Iron Ingot",
-          "perMin": 14.25,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 14.25
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Iron Plate",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Iron Ingot",
-          "perMin": 14.25,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 9.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Plate": 6.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
+      "rowType": "layer",
       "level": 1,
-      "displayStep": 1,
       "recipe": "Iron Ingot",
       "building": "SmelterMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Iron Ingot": 23.25
+      },
+      "consumes": {
+        "Iron Ore": 23.25
+      },
+      "lanes": [
         null,
         null,
         {
           "name": "Iron Ore",
           "perMin": 23.25,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         null,
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 23.25
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 23.25,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Rod": 14.25
       },
-      "rowHasPrevMatch": false
+      "consumes": {
+        "Iron Ingot": 14.25
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 14.25,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 14.25,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Plate": 6.0
+      },
+      "consumes": {
+        "Iron Ingot": 9.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 9.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Plate",
+          "perMin": 6.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Screws": 37.0
+      },
+      "consumes": {
+        "Iron Rod": 9.25
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 9.25,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Screws",
+          "perMin": 37.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 5,
+      "recipe": "Rotor",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Rotor": 1.0
+      },
+      "consumes": {
+        "Iron Rod": 5.0,
+        "Screws": 25.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 5.0,
+          "action": "consume"
+        },
+        {
+          "name": "Screws",
+          "perMin": 25.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 5,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Rotor",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 6,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Reinforced Iron Plate": 1.0
+      },
+      "consumes": {
+        "Iron Plate": 6.0,
+        "Screws": 12.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Screws",
+          "perMin": 12.0,
+          "action": "consume"
+        },
+        {
+          "name": "Iron Plate",
+          "perMin": 6.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 6,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 7,
+      "recipe": "Smart Plating",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Smart Plating": 1.0
+      },
+      "consumes": {
+        "Reinforced Iron Plate": 1.0,
+        "Rotor": 1.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Rotor",
+          "perMin": 1.0,
+          "action": "consume"
+        },
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 1.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 7,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Smart Plating",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -244,7 +304,7 @@
     "index": 10,
     "slug": "smart-plating",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

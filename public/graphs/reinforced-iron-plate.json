@@ -1,155 +1,211 @@
 {
   "target": "Reinforced Iron Plate",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 5,
-      "displayStep": 5,
-      "recipe": "Reinforced Iron Plate",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Screws",
-          "perMin": 12.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 6.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Reinforced Iron Plate": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 4,
-      "displayStep": 4,
-      "recipe": "Screws",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Iron Rod",
-          "perMin": 3.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Plate",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Screws": 12.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 3,
-      "displayStep": 3,
-      "recipe": "Iron Plate",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Iron Rod",
-          "perMin": 3.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 9.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Plate": 6.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Iron Rod",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Iron Ingot",
-          "perMin": 3.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 3.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
+      "rowType": "layer",
       "level": 1,
-      "displayStep": 1,
       "recipe": "Iron Ingot",
       "building": "SmelterMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Iron Ingot": 12.0
+      },
+      "consumes": {
+        "Iron Ore": 12.0
+      },
+      "lanes": [
         null,
         null,
         {
           "name": "Iron Ore",
           "perMin": 12.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         null,
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 12.0
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 12.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Rod": 3.0
       },
-      "rowHasPrevMatch": false
+      "consumes": {
+        "Iron Ingot": 3.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 3.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 3.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Iron Plate",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Plate": 6.0
+      },
+      "consumes": {
+        "Iron Ingot": 9.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 9.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Plate",
+          "perMin": 6.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Screws": 12.0
+      },
+      "consumes": {
+        "Iron Rod": 3.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 3.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Screws",
+          "perMin": 12.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 5,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Reinforced Iron Plate": 1.0
+      },
+      "consumes": {
+        "Iron Plate": 6.0,
+        "Screws": 12.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Iron Plate",
+          "perMin": 6.0,
+          "action": "consume"
+        },
+        {
+          "name": "Screws",
+          "perMin": 12.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 5,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -158,7 +214,7 @@
     "index": 6,
     "slug": "reinforced-iron-plate",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

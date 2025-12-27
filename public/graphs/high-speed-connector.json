@@ -1,365 +1,389 @@
 {
   "target": "High-Speed Connector",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 9,
-      "displayStep": 9,
-      "recipe": "High-Speed Connector",
-      "building": "ManufacturerMk1",
-      "inputs5": [
+      "rowType": "layer",
+      "level": 1,
+      "recipe": "Caterium Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Caterium Ingot": 11.2
+      },
+      "consumes": {
+        "Caterium Ore": 33.6
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 14.0,
+          "action": "pass"
+        },
+        {
+          "name": "Caterium Ore",
+          "perMin": 33.6,
+          "action": "consume"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 14.0,
+          "action": "pass"
+        },
+        {
+          "name": "Caterium Ingot",
+          "perMin": 11.2,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Copper Ingot": 14.0
+      },
+      "consumes": {
+        "Copper Ore": 14.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 14.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 14.0,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Copper Sheet": 2.0
+      },
+      "consumes": {
+        "Copper Ingot": 4.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 4.0,
+          "action": "consume"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Sheet",
+          "perMin": 2.0,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Quickwire",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Quickwire": 56.0
+      },
+      "consumes": {
+        "Caterium Ingot": 11.2
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Caterium Ingot",
+          "perMin": 11.2,
+          "action": "consume"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Quickwire",
+          "perMin": 56.0,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 5,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Wire": 20.0
+      },
+      "consumes": {
+        "Copper Ingot": 10.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 10.0,
+          "action": "consume"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 5,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Wire",
+          "perMin": 20.0,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 6,
+      "recipe": "Circuit Board",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Circuit Board": 1.0
+      },
+      "consumes": {
+        "Copper Sheet": 2.0,
+        "Plastic": 4.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Sheet",
+          "perMin": 2.0,
+          "action": "consume"
+        },
+        {
+          "name": "Plastic",
+          "perMin": 4.0,
+          "action": "consume"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 6,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Circuit Board",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 7,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Cable": 10.0
+      },
+      "consumes": {
+        "Wire": 20.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Wire",
+          "perMin": 20.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 7,
+      "lanes": [
+        null,
         null,
         {
           "name": "Cable",
           "perMin": 10.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
+          "action": "fromBelow"
         },
-        {
-          "name": "Quickwire",
-          "perMin": 56.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Circuit Board",
-          "perMin": 1.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
+        null,
         null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 8,
+      "recipe": "High-Speed Connector",
+      "building": "ManufacturerMk1",
+      "operation": "produces",
+      "produces": {
         "High-Speed Connector": 1.0
       },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 8,
-      "displayStep": 8,
-      "recipe": "Cable",
-      "building": "ConstructorMk1",
-      "inputs5": [
+      "consumes": {
+        "Quickwire": 56.0,
+        "Cable": 10.0,
+        "Circuit Board": 1.0
+      },
+      "lanes": [
         null,
-        {
-          "name": "Wire",
-          "perMin": 20.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
         {
           "name": "Quickwire",
           "perMin": 56.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "consume"
+        },
+        {
+          "name": "Cable",
+          "perMin": 10.0,
+          "action": "consume"
         },
         {
           "name": "Circuit Board",
           "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
+          "action": "consume"
         },
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Cable": 10.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 7,
-      "displayStep": 7,
-      "recipe": "Circuit Board",
-      "building": "AssemblerMk1",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 8,
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Plastic",
-          "perMin": 4.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Wire",
-          "perMin": 20.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Quickwire",
-          "perMin": 56.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Sheet",
-          "perMin": 2.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Circuit Board": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 6,
-      "displayStep": 6,
-      "recipe": "Quickwire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Plastic",
-          "perMin": 4.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Wire",
-          "perMin": 20.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Caterium Ingot",
-          "perMin": 11.200000000000001,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Sheet",
-          "perMin": 2.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Quickwire": 56.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 5,
-      "displayStep": 5,
-      "recipe": "Wire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Plastic",
-          "perMin": 4.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 10.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Caterium Ingot",
-          "perMin": 11.200000000000001,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Sheet",
-          "perMin": 2.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Wire": 20.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 4,
-      "displayStep": 4,
-      "recipe": "Copper Sheet",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Plastic",
-          "perMin": 4.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 10.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Caterium Ingot",
-          "perMin": 11.200000000000001,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 4.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Copper Sheet": 2.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 3,
-      "displayStep": 3,
-      "recipe": "Copper Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Plastic",
-          "perMin": 4.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 14.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Caterium Ingot",
-          "perMin": 11.200000000000001,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
+          "name": "High-Speed Connector",
+          "perMin": 1.0,
+          "action": "fromBelow"
         },
         null,
         null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Copper Ingot": 14.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Caterium Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Plastic",
-          "perMin": 4.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 14.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Caterium Ore",
-          "perMin": 33.6,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Caterium Ingot": 11.200000000000001
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 1,
-      "displayStep": 1,
-      "recipe": "Plastic",
-      "building": "OilRefinery",
-      "inputs5": [
-        null,
-        {
-          "name": "Copper Ore",
-          "perMin": 14.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Caterium Ore",
-          "perMin": 33.6,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Crude Oil",
-          "perMin": 6000.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {
-        "Heavy Oil Residue": 2000.0
-      },
-      "outputs": {
-        "Plastic": 4.0
-      },
-      "rowHasPrevMatch": false
+      ]
     }
   ],
   "meta": {
@@ -368,7 +392,7 @@
     "index": 44,
     "slug": "high-speed-connector",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

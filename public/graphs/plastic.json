@@ -1,33 +1,48 @@
 {
   "target": "Plastic",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
+      "rowType": "layer",
       "level": 1,
-      "displayStep": 1,
       "recipe": "Plastic",
       "building": "OilRefinery",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Plastic": 1.0
+      },
+      "consumes": {
+        "Crude Oil": 1500.0
+      },
+      "lanes": [
         null,
         null,
         {
           "name": "Crude Oil",
           "perMin": 1500.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         null,
         null
       ],
-      "hiddenInputsCount": 0,
       "byproducts": {
         "Heavy Oil Residue": 500.0
-      },
-      "outputs": {
-        "Plastic": 1.0
-      },
-      "rowHasPrevMatch": false
+      }
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -36,7 +51,7 @@
     "index": 17,
     "slug": "plastic",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

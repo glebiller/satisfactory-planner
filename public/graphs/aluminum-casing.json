@@ -1,31 +1,46 @@
 {
   "target": "Aluminum Casing",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
+      "rowType": "layer",
       "level": 1,
-      "displayStep": 1,
       "recipe": "Aluminum Casing",
       "building": "ConstructorMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Aluminum Casing": 1.0
+      },
+      "consumes": {
+        "Aluminum Ingot": 1.5
+      },
+      "lanes": [
         null,
         null,
         {
           "name": "Aluminum Ingot",
           "perMin": 1.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         null,
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Aluminum Casing": 1.0
-      },
-      "rowHasPrevMatch": false
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Aluminum Casing",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -34,7 +49,7 @@
     "index": 24,
     "slug": "aluminum-casing",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

@@ -1,376 +1,454 @@
 {
   "target": "Motor",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 10,
-      "displayStep": 10,
-      "recipe": "Motor",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Stator",
-          "perMin": 2.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Rotor",
-          "perMin": 2.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Motor": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 9,
-      "displayStep": 9,
-      "recipe": "Rotor",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Stator",
-          "perMin": 2.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Rod",
-          "perMin": 10.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Screws",
-          "perMin": 50.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Rotor": 2.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 8,
-      "displayStep": 8,
-      "recipe": "Screws",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Stator",
-          "perMin": 2.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Rod",
-          "perMin": 10.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Rod",
-          "perMin": 12.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Screws": 50.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 7,
-      "displayStep": 7,
-      "recipe": "Stator",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Wire",
-          "perMin": 16.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Pipe",
-          "perMin": 6.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Rod",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Stator": 2.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 6,
-      "displayStep": 6,
-      "recipe": "Iron Rod",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Wire",
-          "perMin": 16.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Pipe",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 22.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 22.5
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 5,
-      "displayStep": 5,
-      "recipe": "Wire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Copper Ingot",
-          "perMin": 8.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Pipe",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Wire": 16.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 4,
-      "displayStep": 4,
-      "recipe": "Steel Pipe",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Copper Ingot",
-          "perMin": 8.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 9.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Ingot",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Steel Pipe": 6.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 3,
-      "displayStep": 3,
+      "rowType": "layer",
+      "level": 1,
       "recipe": "Iron Ingot",
       "building": "SmelterMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Iron Ingot": 22.5
+      },
+      "consumes": {
+        "Iron Ore": 22.5
+      },
+      "lanes": [
         null,
         {
-          "name": "Copper Ingot",
-          "perMin": 8.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Coal",
+          "perMin": 9.0,
+          "action": "pass"
         },
+        {
+          "name": "Iron Ore",
+          "perMin": 22.5,
+          "action": "consume"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 8.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        {
+          "name": "Iron Ingot",
+          "perMin": 22.5,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Coal",
+          "perMin": 9.0,
+          "action": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 9.0,
+          "action": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 8.0,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "operation": "produces",
+      "produces": {
+        "Steel Ingot": 9.0
+      },
+      "consumes": {
+        "Iron Ore": 9.0,
+        "Coal": 9.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Coal",
+          "perMin": 9.0,
+          "action": "consume"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 9.0,
+          "action": "consume"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 8.0,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        null,
+        null,
         {
           "name": "Steel Ingot",
           "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
+          "action": "fromBelow"
         },
         {
-          "name": "Iron Ore",
-          "perMin": 22.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 22.5
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Steel Ingot",
-      "building": "FoundryMk1",
-      "inputs5": [
-        {
-          "name": "Coal",
-          "perMin": 9.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Ingot",
+          "name": "Copper Ore",
           "perMin": 8.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 9.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
         },
         null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Steel Ingot": 9.0
-      },
-      "rowHasPrevMatch": true
+      ]
     },
     {
-      "level": 1,
-      "displayStep": 1,
+      "rowType": "layer",
+      "level": 3,
       "recipe": "Copper Ingot",
       "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Coal",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
+      "operation": "produces",
+      "produces": {
+        "Copper Ingot": 8.0
+      },
+      "consumes": {
+        "Copper Ore": 8.0
+      },
+      "lanes": [
+        null,
+        null,
         null,
         {
           "name": "Copper Ore",
           "perMin": 8.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 31.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "consume"
         },
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 8.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Rod": 22.5
+      },
+      "consumes": {
+        "Iron Ingot": 22.5
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 22.5,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 22.5,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 5,
+      "recipe": "Screws",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Screws": 50.0
+      },
+      "consumes": {
+        "Iron Rod": 12.5
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 12.5,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 5,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Screws",
+          "perMin": 50.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 6,
+      "recipe": "Steel Pipe",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Steel Pipe": 6.0
+      },
+      "consumes": {
+        "Steel Ingot": 9.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Steel Ingot",
+          "perMin": 9.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 6,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Steel Pipe",
+          "perMin": 6.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 7,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Wire": 16.0
+      },
+      "consumes": {
         "Copper Ingot": 8.0
       },
-      "rowHasPrevMatch": false
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 8.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 7,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Wire",
+          "perMin": 16.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 8,
+      "recipe": "Rotor",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Rotor": 2.0
+      },
+      "consumes": {
+        "Iron Rod": 10.0,
+        "Screws": 50.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Screws",
+          "perMin": 50.0,
+          "action": "consume"
+        },
+        {
+          "name": "Iron Rod",
+          "perMin": 10.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 8,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Rotor",
+          "perMin": 2.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 9,
+      "recipe": "Stator",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Stator": 2.0
+      },
+      "consumes": {
+        "Steel Pipe": 6.0,
+        "Wire": 16.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Wire",
+          "perMin": 16.0,
+          "action": "consume"
+        },
+        {
+          "name": "Steel Pipe",
+          "perMin": 6.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 9,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Stator",
+          "perMin": 2.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 10,
+      "recipe": "Motor",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Motor": 1.0
+      },
+      "consumes": {
+        "Rotor": 2.0,
+        "Stator": 2.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Rotor",
+          "perMin": 2.0,
+          "action": "consume"
+        },
+        {
+          "name": "Stator",
+          "perMin": 2.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 10,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Motor",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -379,7 +457,7 @@
     "index": 15,
     "slug": "motor",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

@@ -1,261 +1,297 @@
 {
   "target": "Computer",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 7,
-      "displayStep": 7,
-      "recipe": "Computer",
-      "building": "ManufacturerMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Cable",
-          "perMin": 8.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Circuit Board",
-          "perMin": 4.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Plastic",
-          "perMin": 16.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Computer": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 6,
-      "displayStep": 6,
-      "recipe": "Cable",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Wire",
-          "perMin": 16.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Circuit Board",
-          "perMin": 4.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Plastic",
-          "perMin": 16.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Cable": 8.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 5,
-      "displayStep": 5,
-      "recipe": "Circuit Board",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Plastic",
-          "perMin": 16.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Wire",
-          "perMin": 16.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Sheet",
-          "perMin": 8.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Plastic",
-          "perMin": 16.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Circuit Board": 4.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 4,
-      "displayStep": 4,
-      "recipe": "Wire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Copper Ingot",
-          "perMin": 8.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Sheet",
-          "perMin": 8.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Plastic",
-          "perMin": 32.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Wire": 16.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 3,
-      "displayStep": 3,
-      "recipe": "Copper Sheet",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        {
-          "name": "Copper Ingot",
-          "perMin": 8.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 16.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Plastic",
-          "perMin": 32.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Copper Sheet": 8.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Plastic",
-      "building": "OilRefinery",
-      "inputs5": [
-        null,
-        {
-          "name": "Crude Oil",
-          "perMin": 48000.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 24.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {
-        "Heavy Oil Residue": 16000.0
-      },
-      "outputs": {
-        "Plastic": 32.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
+      "rowType": "layer",
       "level": 1,
-      "displayStep": 1,
       "recipe": "Copper Ingot",
       "building": "SmelterMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Copper Ingot": 24.0
+      },
+      "consumes": {
+        "Copper Ore": 24.0
+      },
+      "lanes": [
         null,
         {
-          "name": "Crude Oil",
-          "perMin": 48000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
         },
         {
           "name": "Copper Ore",
           "perMin": 24.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         null,
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Copper Ingot": 24.0
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 24.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Wire": 16.0
       },
-      "rowHasPrevMatch": false
+      "consumes": {
+        "Copper Ingot": 8.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 8.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        },
+        {
+          "name": "Wire",
+          "perMin": 16.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Copper Sheet": 8.0
+      },
+      "consumes": {
+        "Copper Ingot": 16.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        },
+        {
+          "name": "Copper Ingot",
+          "perMin": 16.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 8.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Cable": 8.0
+      },
+      "consumes": {
+        "Wire": 16.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        },
+        {
+          "name": "Wire",
+          "perMin": 16.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        },
+        {
+          "name": "Cable",
+          "perMin": 8.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 5,
+      "recipe": "Circuit Board",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Circuit Board": 4.0
+      },
+      "consumes": {
+        "Copper Sheet": 8.0,
+        "Plastic": 16.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 16.0,
+          "action": "consume"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 8.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 5,
+      "lanes": [
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 16.0,
+          "action": "pass"
+        },
+        {
+          "name": "Circuit Board",
+          "perMin": 4.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 6,
+      "recipe": "Computer",
+      "building": "ManufacturerMk1",
+      "operation": "produces",
+      "produces": {
+        "Computer": 1.0
+      },
+      "consumes": {
+        "Circuit Board": 4.0,
+        "Cable": 8.0,
+        "Plastic": 16.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 16.0,
+          "action": "consume"
+        },
+        {
+          "name": "Circuit Board",
+          "perMin": 4.0,
+          "action": "consume"
+        },
+        {
+          "name": "Cable",
+          "perMin": 8.0,
+          "action": "consume"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 6,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Computer",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -264,7 +300,7 @@
     "index": 19,
     "slug": "computer",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

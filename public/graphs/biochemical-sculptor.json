@@ -1,2634 +1,293 @@
 {
   "target": "Biochemical Sculptor",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 53,
-      "displayStep": 53,
-      "recipe": "Biochemical Sculptor",
-      "building": "Blender",
-      "inputs5": [
-        null,
+      "rowType": "layer",
+      "level": 1,
+      "recipe": "Reanimated SAM",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Reanimated SAM": 26.6667
+      },
+      "consumes": {
+        "SAM": 106.6667
+      },
+      "lanes": [
         {
-          "name": "Ficsite Trigon",
-          "perMin": 20.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "name": "Water",
+          "perMin": 5000.0,
+          "action": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 160.0,
+          "action": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 106.6667,
+          "action": "consume"
         },
         {
           "name": "Assembly Director System",
           "perMin": 0.25,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "pass"
         },
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Biochemical Sculptor": 1.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 52,
-      "displayStep": 52,
-      "recipe": "Assembly Director System",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Ficsite Trigon",
-          "perMin": 20.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Adaptive Control Unit",
-          "perMin": 0.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
         {
           "name": "Water",
           "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Assembly Director System": 0.25
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 51,
-      "displayStep": 51,
-      "recipe": "Ficsite Trigon",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
         },
         {
-          "name": "Ficsite Ingot",
-          "perMin": 6.6659999999999995,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Adaptive Control Unit",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Ficsite Trigon": 20.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 50,
-      "displayStep": 50,
-      "recipe": "Ficsite Ingot (Iron)",
-      "building": "Converter",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Iron Ore",
+          "perMin": 160.0,
+          "action": "pass"
         },
         {
           "name": "Reanimated SAM",
-          "perMin": 26.665999999999997,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "perMin": 26.6667,
+          "action": "fromBelow"
         },
         {
-          "name": "Adaptive Control Unit",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Assembly Director System",
+          "perMin": 0.25,
+          "action": "pass"
         },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Ingot": 160.0
+      },
+      "consumes": {
+        "Iron Ore": 160.0
+      },
+      "lanes": [
         {
           "name": "Water",
           "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 160.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Assembly Director System",
+          "perMin": 0.25,
+          "action": "pass"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        {
+          "name": "Water",
+          "perMin": 5000.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 160.0,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Assembly Director System",
+          "perMin": 0.25,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Ficsite Ingot (Iron)",
+      "building": "Converter",
+      "operation": "produces",
+      "produces": {
+        "Ficsite Ingot": 6.6667
+      },
+      "consumes": {
+        "Reanimated SAM": 26.6667,
+        "Iron Ingot": 160.0
+      },
+      "lanes": [
+        {
+          "name": "Water",
+          "perMin": 5000.0,
+          "action": "pass"
+        },
+        {
+          "name": "Reanimated SAM",
+          "perMin": 26.6667,
+          "action": "consume"
         },
         {
           "name": "Iron Ingot",
           "perMin": 160.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Ficsite Ingot": 6.6659999999999995
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 49,
-      "displayStep": 49,
-      "recipe": "Iron Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
+          "action": "consume"
+        },
         {
-          "name": "Supercomputer",
+          "name": "Assembly Director System",
           "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
         },
-        {
-          "name": "Reanimated SAM",
-          "perMin": 26.665999999999997,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Adaptive Control Unit",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        }
+        null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 160.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 48,
-      "displayStep": 48,
-      "recipe": "Reanimated SAM",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Adaptive Control Unit",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Reanimated SAM": 26.665999999999997
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 47,
-      "displayStep": 47,
-      "recipe": "Adaptive Control Unit",
-      "building": "ManufacturerMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Automated Wiring",
-          "perMin": 2.5,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 3,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 3,
-      "byproducts": {},
-      "outputs": {
-        "Adaptive Control Unit": 0.5
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 46,
-      "displayStep": 46,
-      "recipe": "Automated Wiring",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Circuit Board",
-          "perMin": 2.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Automated Wiring": 2.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 45,
-      "displayStep": 45,
-      "recipe": "Computer",
-      "building": "ManufacturerMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Circuit Board",
-          "perMin": 2.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Computer": 1.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 44,
-      "displayStep": 44,
-      "recipe": "Cable",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Circuit Board",
-          "perMin": 6.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Cable": 58.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 43,
-      "displayStep": 43,
-      "recipe": "Circuit Board",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Circuit Board": 6.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 42,
-      "displayStep": 42,
-      "recipe": "Stator",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Stator": 2.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 41,
-      "displayStep": 41,
-      "recipe": "Wire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Wire": 136.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 40,
-      "displayStep": 40,
-      "recipe": "Copper Sheet",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Copper Sheet": 13.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 39,
-      "displayStep": 39,
-      "recipe": "Steel Pipe",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 3,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 3,
-      "byproducts": {},
-      "outputs": {
-        "Steel Pipe": 7.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 38,
-      "displayStep": 38,
-      "recipe": "Copper Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 3,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 3,
-      "byproducts": {},
-      "outputs": {
-        "Copper Ingot": 94.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 37,
-      "displayStep": 37,
-      "recipe": "Plastic",
-      "building": "OilRefinery",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 3,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 3,
-      "byproducts": {
-        "Heavy Oil Residue": 21000.0
-      },
-      "outputs": {
-        "Plastic": 42.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 36,
-      "displayStep": 36,
-      "recipe": "Steel Ingot",
-      "building": "FoundryMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 0.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 160.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Steel Ingot": 11.25
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 35,
-      "displayStep": 35,
-      "recipe": "Heavy Modular Frame",
-      "building": "ManufacturerMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 171.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Heavy Modular Frame": 0.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 34,
-      "displayStep": 34,
-      "recipe": "Screws",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 171.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Screws": 60.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 33,
-      "displayStep": 33,
-      "recipe": "Modular Frame",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 171.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 7,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 7,
-      "byproducts": {},
-      "outputs": {
-        "Modular Frame": 2.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 32,
-      "displayStep": 32,
-      "recipe": "Iron Rod",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 171.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 30.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 31,
-      "displayStep": 31,
-      "recipe": "Iron Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 171.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 30.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 30,
-      "displayStep": 30,
-      "recipe": "Steel Pipe",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 201.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Steel Pipe": 10.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 29,
-      "displayStep": 29,
-      "recipe": "Steel Ingot",
-      "building": "FoundryMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 201.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Steel Ingot": 15.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 28,
-      "displayStep": 28,
-      "recipe": "Reinforced Iron Plate",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 216.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Reinforced Iron Plate": 3.75
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 27,
-      "displayStep": 27,
-      "recipe": "Screws",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 216.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Screws": 45.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 26,
-      "displayStep": 26,
-      "recipe": "Iron Plate",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 216.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Iron Plate": 22.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 25,
-      "displayStep": 25,
-      "recipe": "Iron Rod",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 216.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 11.25
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 24,
-      "displayStep": 24,
-      "recipe": "Iron Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 216.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 45.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 23,
-      "displayStep": 23,
-      "recipe": "Encased Industrial Beam",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 261.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Encased Industrial Beam": 2.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 22,
-      "displayStep": 22,
-      "recipe": "Steel Beam",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 261.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Steel Beam": 7.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 21,
-      "displayStep": 21,
-      "recipe": "Steel Ingot",
-      "building": "FoundryMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 261.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Steel Ingot": 30.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 20,
-      "displayStep": 20,
-      "recipe": "Concrete",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Supercomputer",
-          "perMin": 0.25,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 3,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 3,
-      "byproducts": {},
-      "outputs": {
-        "Concrete": 15.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 19,
-      "displayStep": 19,
-      "recipe": "Supercomputer",
-      "building": "ManufacturerMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 63000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Supercomputer": 0.25
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 18,
-      "displayStep": 18,
-      "recipe": "Plastic",
-      "building": "OilRefinery",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 63000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {
-        "Heavy Oil Residue": 3500.0
-      },
-      "outputs": {
-        "Plastic": 7.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 17,
-      "displayStep": 17,
-      "recipe": "AI Limiter",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 73500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "AI Limiter": 0.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 16,
-      "displayStep": 16,
-      "recipe": "Quickwire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 73500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Quickwire": 10.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 15,
-      "displayStep": 15,
-      "recipe": "Copper Sheet",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 73500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Copper Sheet": 2.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 14,
-      "displayStep": 14,
-      "recipe": "Copper Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 73500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 94.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Copper Ingot": 5.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 13,
-      "displayStep": 13,
-      "recipe": "Caterium Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 73500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 99.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Caterium Ingot": 2.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 12,
-      "displayStep": 12,
-      "recipe": "Computer",
-      "building": "ManufacturerMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 73500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 99.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 7,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 7,
-      "byproducts": {},
-      "outputs": {
-        "Computer": 1.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 11,
-      "displayStep": 11,
-      "recipe": "Plastic",
-      "building": "OilRefinery",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 73500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 99.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 7,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 7,
-      "byproducts": {
-        "Heavy Oil Residue": 8000.0
-      },
-      "outputs": {
-        "Plastic": 16.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 10,
-      "displayStep": 10,
-      "recipe": "High-Speed Connector",
-      "building": "ManufacturerMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 97500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 99.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 8,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 8,
-      "byproducts": {},
-      "outputs": {
-        "High-Speed Connector": 0.75
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 9,
-      "displayStep": 9,
-      "recipe": "Cable",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 97500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 99.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Cable": 15.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 8,
-      "displayStep": 8,
-      "recipe": "Quickwire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 97500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 99.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Quickwire": 42.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 7,
-      "displayStep": 7,
-      "recipe": "Caterium Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 97500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 99.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 6,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 6,
-      "byproducts": {},
-      "outputs": {
-        "Caterium Ingot": 8.4
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 6,
-      "displayStep": 6,
-      "recipe": "Wire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 97500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 99.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Wire": 31.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 5,
-      "displayStep": 5,
-      "recipe": "Copper Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 97500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 99.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Copper Ingot": 15.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 4,
-      "displayStep": 4,
-      "recipe": "Circuit Board",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 97500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 114.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Water",
-          "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {},
-      "outputs": {
-        "Circuit Board": 4.75
-      },
-      "rowHasPrevMatch": false
-    },
-    {
+      "rowType": "belts",
       "level": 3,
-      "displayStep": 3,
-      "recipe": "Plastic",
-      "building": "OilRefinery",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 97500.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 114.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
+      "lanes": [
         {
           "name": "Water",
           "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Ficsite Ingot",
+          "perMin": 6.6667,
+          "action": "fromBelow"
         },
         {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 5,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 5,
-      "byproducts": {
-        "Heavy Oil Residue": 9500.0
-      },
-      "outputs": {
-        "Plastic": 19.0
-      },
-      "rowHasPrevMatch": false
+          "name": "Assembly Director System",
+          "perMin": 0.25,
+          "action": "pass"
+        },
+        null
+      ]
     },
     {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Copper Sheet",
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Ficsite Trigon",
       "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 114.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
+      "operation": "produces",
+      "produces": {
+        "Ficsite Trigon": 20.0
+      },
+      "consumes": {
+        "Ficsite Ingot": 6.6667
+      },
+      "lanes": [
         {
           "name": "Water",
           "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Ficsite Ingot",
+          "perMin": 6.6667,
+          "action": "consume"
         },
         {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "pass"
-        }
+          "name": "Assembly Director System",
+          "perMin": 0.25,
+          "action": "pass"
+        },
+        null
       ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Copper Sheet": 9.5
-      },
-      "rowHasPrevMatch": false
+      "byproducts": {}
     },
     {
-      "level": 1,
-      "displayStep": 1,
-      "recipe": "Copper Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 106.666,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 114.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
         {
           "name": "Water",
           "perMin": 5000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Ficsite Trigon",
+          "perMin": 20.0,
+          "action": "fromBelow"
         },
         {
-          "name": "Iron Ore",
-          "perMin": 291.25,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Copper Ingot": 19.0
+          "name": "Assembly Director System",
+          "perMin": 0.25,
+          "action": "pass"
+        },
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 5,
+      "recipe": "Biochemical Sculptor",
+      "building": "Blender",
+      "operation": "produces",
+      "produces": {
+        "Biochemical Sculptor": 1.0
       },
-      "rowHasPrevMatch": false
+      "consumes": {
+        "Assembly Director System": 0.25,
+        "Ficsite Trigon": 20.0,
+        "Water": 5000.0
+      },
+      "lanes": [
+        {
+          "name": "Water",
+          "perMin": 5000.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Ficsite Trigon",
+          "perMin": 20.0,
+          "action": "consume"
+        },
+        {
+          "name": "Assembly Director System",
+          "perMin": 0.25,
+          "action": "consume"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 5,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Biochemical Sculptor",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -2637,7 +296,7 @@
     "index": 36,
     "slug": "biochemical-sculptor",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

@@ -1,888 +1,467 @@
 {
   "target": "Superposition Oscillator",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 18,
-      "displayStep": 18,
-      "recipe": "Superposition Oscillator",
-      "building": "QuantumEncoder",
-      "inputs5": [
-        {
-          "name": "Excited Photonic Matter",
-          "perMin": 25000.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Crystal Oscillator",
-          "perMin": 1.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Dark Matter Crystal",
-          "perMin": 6.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Alclad Aluminum Sheet",
-          "perMin": 9.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {
-        "Dark Matter Residue": 25000.0
-      },
-      "outputs": {
-        "Superposition Oscillator": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 17,
-      "displayStep": 17,
-      "recipe": "Dark Matter Crystal",
+      "rowType": "layer",
+      "level": 1,
+      "recipe": "Diamonds",
       "building": "HadronCollider",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Diamonds": 6.0
+      },
+      "consumes": {
+        "Coal": 120.0
+      },
+      "lanes": [
         {
-          "name": "Excited Photonic Matter",
-          "perMin": 25000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 60.0,
+          "action": "pass"
+        },
+        {
+          "name": "Coal",
+          "perMin": 120.0,
+          "action": "consume"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 3.0,
+          "action": "pass"
         },
         {
           "name": "Crystal Oscillator",
           "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Diamonds",
-          "perMin": 6.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Alclad Aluminum Sheet",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Dark Matter Residue",
-          "perMin": 30000.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
+          "action": "pass"
         }
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Dark Matter Crystal": 6.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 16,
-      "displayStep": 16,
-      "recipe": "Dark Matter Residue",
-      "building": "Converter",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
         {
-          "name": "Excited Photonic Matter",
-          "perMin": 25000.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "pass"
         },
         {
-          "name": "Crystal Oscillator",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "SAM",
+          "perMin": 60.0,
+          "action": "pass"
         },
         {
           "name": "Diamonds",
           "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "fromBelow"
         },
         {
-          "name": "Alclad Aluminum Sheet",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Copper Ore",
+          "perMin": 3.0,
+          "action": "pass"
         },
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Reanimated SAM",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Reanimated SAM": 15.0
+      },
+      "consumes": {
+        "SAM": 60.0
+      },
+      "lanes": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "pass"
+        },
+        {
+          "name": "SAM",
+          "perMin": 60.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 3.0,
+          "action": "pass"
+        },
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "pass"
+        },
+        null,
         {
           "name": "Reanimated SAM",
           "perMin": 15.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "fromBelow"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 3.0,
+          "action": "pass"
+        },
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
         }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Dark Matter Residue": 30000.0
-      },
-      "rowHasPrevMatch": true
+      ]
     },
     {
-      "level": 15,
-      "displayStep": 15,
-      "recipe": "Excited Photonic Matter",
-      "building": "Converter",
-      "inputs5": [
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Copper Ingot": 3.0
+      },
+      "consumes": {
+        "Copper Ore": 3.0
+      },
+      "lanes": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "pass"
+        },
+        null,
+        null,
+        {
+          "name": "Copper Ore",
+          "perMin": 3.0,
+          "action": "consume"
+        },
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 3.0,
+          "action": "fromBelow"
+        },
         null,
         {
           "name": "Crystal Oscillator",
           "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Excited Photonic Matter",
+      "building": "Converter",
+      "operation": "produces",
+      "produces": {
+        "Excited Photonic Matter": 25000.0
+      },
+      "consumes": {},
+      "lanes": [
         {
-          "name": "Diamonds",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "pass"
         },
+        null,
+        null,
+        null,
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Excited Photonic Matter",
+          "perMin": 25000.0,
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 5,
+      "recipe": "Dark Matter Residue",
+      "building": "Converter",
+      "operation": "produces",
+      "produces": {
+        "Dark Matter Residue": 30000.0
+      },
+      "consumes": {
+        "Reanimated SAM": 15.0
+      },
+      "lanes": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Reanimated SAM",
+          "perMin": 15.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 5,
+      "lanes": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Dark Matter Residue",
+          "perMin": 30000.0,
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 6,
+      "recipe": "Alclad Aluminum Sheet",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Alclad Aluminum Sheet": 9.0
+      },
+      "consumes": {
+        "Aluminum Ingot": 9.0,
+        "Copper Ingot": 3.0
+      },
+      "lanes": [
+        {
+          "name": "Aluminum Ingot",
+          "perMin": 9.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 3.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 6,
+      "lanes": [
+        null,
+        null,
         {
           "name": "Alclad Aluminum Sheet",
           "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 7,
+      "recipe": "Dark Matter Crystal",
+      "building": "HadronCollider",
+      "operation": "produces",
+      "produces": {
+        "Dark Matter Crystal": 6.0
+      },
+      "consumes": {
+        "Diamonds": 6.0,
+        "Dark Matter Residue": 30000.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Dark Matter Residue",
+          "perMin": 30000.0,
+          "action": "consume"
         },
         {
-          "name": "Reanimated SAM",
-          "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Diamonds",
+          "perMin": 6.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
         }
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 7,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Dark Matter Crystal",
+          "perMin": 6.0,
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Crystal Oscillator",
+          "perMin": 1.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 8,
+      "recipe": "Superposition Oscillator",
+      "building": "QuantumEncoder",
+      "operation": "produces",
+      "produces": {
+        "Superposition Oscillator": 1.0
+      },
+      "consumes": {
+        "Dark Matter Crystal": 6.0,
+        "Crystal Oscillator": 1.0,
+        "Alclad Aluminum Sheet": 9.0,
         "Excited Photonic Matter": 25000.0
       },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 14,
-      "displayStep": 14,
-      "recipe": "Alclad Aluminum Sheet",
-      "building": "AssemblerMk1",
-      "inputs5": [
+      "lanes": [
+        null,
         {
-          "name": "Copper Ingot",
-          "perMin": 2.9997,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "name": "Alclad Aluminum Sheet",
+          "perMin": 9.0,
+          "action": "consume"
         },
         {
-          "name": "Crystal Oscillator",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Diamonds",
+          "name": "Dark Matter Crystal",
           "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "consume"
         },
         {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Reanimated SAM",
-          "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Alclad Aluminum Sheet": 9.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 13,
-      "displayStep": 13,
-      "recipe": "Reanimated SAM",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ingot",
-          "perMin": 2.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Excited Photonic Matter",
+          "perMin": 25000.0,
+          "action": "consume"
         },
         {
           "name": "Crystal Oscillator",
           "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Diamonds",
-          "perMin": 6.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         }
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Reanimated SAM": 15.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {
+        "Dark Matter Residue": 25000.0
+      }
     },
     {
-      "level": 12,
-      "displayStep": 12,
-      "recipe": "Diamonds",
-      "building": "HadronCollider",
-      "inputs5": [
-        {
-          "name": "Copper Ingot",
-          "perMin": 2.9997,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Crystal Oscillator",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Diamonds": 6.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 11,
-      "displayStep": 11,
-      "recipe": "Copper Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ore",
-          "perMin": 2.9997,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Crystal Oscillator",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Copper Ingot": 2.9997
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 10,
-      "displayStep": 10,
-      "recipe": "Crystal Oscillator",
-      "building": "ManufacturerMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ore",
-          "perMin": 2.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Crystal Oscillator": 1.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 9,
-      "displayStep": 9,
-      "recipe": "Cable",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ore",
-          "perMin": 2.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Cable": 14.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
+      "rowType": "belts",
       "level": 8,
-      "displayStep": 8,
-      "recipe": "Wire",
-      "building": "ConstructorMk1",
-      "inputs5": [
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Copper Ore",
-          "perMin": 2.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Superposition Oscillator",
+          "perMin": 1.0,
+          "action": "fromBelow"
         },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Wire": 28.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 7,
-      "displayStep": 7,
-      "recipe": "Copper Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ore",
-          "perMin": 2.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Quartz Crystal",
-          "perMin": 18.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Copper Ingot": 14.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 6,
-      "displayStep": 6,
-      "recipe": "Quartz Crystal",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ore",
-          "perMin": 16.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Reinforced Iron Plate",
-          "perMin": 2.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 1,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 1,
-      "byproducts": {},
-      "outputs": {
-        "Quartz Crystal": 18.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 5,
-      "displayStep": 5,
-      "recipe": "Reinforced Iron Plate",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ore",
-          "perMin": 16.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Raw Quartz",
-          "perMin": 29.999999999999996,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Reinforced Iron Plate": 2.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 4,
-      "displayStep": 4,
-      "recipe": "Screws",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ore",
-          "perMin": 16.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Raw Quartz",
-          "perMin": 29.999999999999996,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Screws": 30.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 3,
-      "displayStep": 3,
-      "recipe": "Iron Plate",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ore",
-          "perMin": 16.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Raw Quartz",
-          "perMin": 29.999999999999996,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Iron Plate": 15.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Iron Rod",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ore",
-          "perMin": 16.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Raw Quartz",
-          "perMin": 29.999999999999996,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 7.5
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 1,
-      "displayStep": 1,
-      "recipe": "Iron Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Copper Ore",
-          "perMin": 16.9997,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Raw Quartz",
-          "perMin": 29.999999999999996,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 120.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Aluminum Ingot",
-          "perMin": 9.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "SAM",
-          "perMin": 60.00112502812571,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 1,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 1,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 30.0
-      },
-      "rowHasPrevMatch": false
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -891,7 +470,7 @@
     "index": 37,
     "slug": "superposition-oscillator",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

@@ -1,56 +1,86 @@
 {
   "target": "Quickwire",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Quickwire",
-      "building": "ConstructorMk1",
-      "inputs5": [
+      "rowType": "layer",
+      "level": 1,
+      "recipe": "Caterium Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Caterium Ingot": 0.2
+      },
+      "consumes": {
+        "Caterium Ore": 0.6
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Caterium Ore",
+          "perMin": 0.6,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
         null,
         null,
         {
           "name": "Caterium Ingot",
           "perMin": 0.2,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
+          "action": "fromBelow"
         },
         null,
         null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Quickwire": 1.0
-      },
-      "rowHasPrevMatch": true
+      ]
     },
     {
-      "level": 1,
-      "displayStep": 1,
-      "recipe": "Caterium Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Quickwire",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Quickwire": 1.0
+      },
+      "consumes": {
+        "Caterium Ingot": 0.2
+      },
+      "lanes": [
         null,
         null,
         {
-          "name": "Caterium Ore",
-          "perMin": 0.6000000000000001,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "name": "Caterium Ingot",
+          "perMin": 0.2,
+          "action": "consume"
         },
         null,
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Caterium Ingot": 0.2
-      },
-      "rowHasPrevMatch": false
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Quickwire",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -59,7 +89,7 @@
     "index": 42,
     "slug": "quickwire",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

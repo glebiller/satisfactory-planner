@@ -1,81 +1,126 @@
 {
   "target": "Cable",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 3,
-      "displayStep": 3,
-      "recipe": "Cable",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        null,
-        {
-          "name": "Wire",
-          "perMin": 2.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Cable": 1.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Wire",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        null,
-        null,
-        {
-          "name": "Copper Ingot",
-          "perMin": 1.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        null,
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Wire": 2.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
+      "rowType": "layer",
       "level": 1,
-      "displayStep": 1,
       "recipe": "Copper Ingot",
       "building": "SmelterMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Copper Ingot": 1.0
+      },
+      "consumes": {
+        "Copper Ore": 1.0
+      },
+      "lanes": [
         null,
         null,
         {
           "name": "Copper Ore",
           "perMin": 1.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         null,
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Wire": 2.0
+      },
+      "consumes": {
         "Copper Ingot": 1.0
       },
-      "rowHasPrevMatch": false
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 1.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Wire",
+          "perMin": 2.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Cable": 1.0
+      },
+      "consumes": {
+        "Wire": 2.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Wire",
+          "perMin": 2.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Cable",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -84,7 +129,7 @@
     "index": 4,
     "slug": "cable",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

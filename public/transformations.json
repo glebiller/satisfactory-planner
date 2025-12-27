@@ -11,7 +11,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Iron Plate",
@@ -60,7 +60,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Iron Rod",
@@ -109,7 +109,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Wire",
@@ -158,7 +158,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 3,
+    "num_steps": 4,
     "transformation_steps": [
       {
         "recipe": "Cable",
@@ -218,7 +218,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 1,
+    "num_steps": 2,
     "transformation_steps": [
       {
         "recipe": "Concrete",
@@ -256,7 +256,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 5,
+    "num_steps": 8,
     "transformation_steps": [
       {
         "recipe": "Reinforced Iron Plate",
@@ -361,7 +361,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Copper Sheet",
@@ -410,7 +410,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 4,
+    "num_steps": 8,
     "transformation_steps": [
       {
         "recipe": "Rotor",
@@ -515,7 +515,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 6,
+    "num_steps": 12,
     "transformation_steps": [
       {
         "recipe": "Modular Frame",
@@ -665,7 +665,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 7,
+    "num_steps": 17,
     "transformation_steps": [
       {
         "recipe": "Smart Plating",
@@ -875,7 +875,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 4,
     "transformation_steps": [
       {
         "recipe": "Steel Beam",
@@ -940,7 +940,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 4,
     "transformation_steps": [
       {
         "recipe": "Steel Pipe",
@@ -1005,7 +1005,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 9,
+    "num_steps": 17,
     "transformation_steps": [
       {
         "recipe": "Versatile Framework",
@@ -1220,7 +1220,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 4,
+    "num_steps": 7,
     "transformation_steps": [
       {
         "recipe": "Encased Industrial Beam",
@@ -1323,7 +1323,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 10,
+    "num_steps": 17,
     "transformation_steps": [
       {
         "recipe": "Motor",
@@ -1538,7 +1538,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 7,
+    "num_steps": 13,
     "transformation_steps": [
       {
         "recipe": "Automated Wiring",
@@ -1705,7 +1705,7 @@
         "quantity": 500.0
       }
     ],
-    "num_steps": 1,
+    "num_steps": 2,
     "transformation_steps": [
       {
         "recipe": "Plastic",
@@ -1750,7 +1750,7 @@
         "quantity": 1000.0
       }
     ],
-    "num_steps": 1,
+    "num_steps": 2,
     "transformation_steps": [
       {
         "recipe": "Rubber",
@@ -1794,7 +1794,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 7,
+    "num_steps": 9,
     "transformation_steps": [
       {
         "recipe": "Computer",
@@ -1920,7 +1920,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 12,
+    "num_steps": 28,
     "transformation_steps": [
       {
         "recipe": "Heavy Modular Frame",
@@ -2264,7 +2264,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 15,
+    "num_steps": 35,
     "transformation_steps": [
       {
         "recipe": "Modular Engine",
@@ -2690,7 +2690,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 28,
+    "num_steps": 55,
     "transformation_steps": [
       {
         "recipe": "Adaptive Control Unit",
@@ -3333,7 +3333,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Alclad Aluminum Sheet",
@@ -3426,7 +3426,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 19,
+    "num_steps": 26,
     "transformation_steps": [
       {
         "recipe": "Radio Control Unit",
@@ -3744,7 +3744,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 12,
+    "num_steps": 29,
     "transformation_steps": [
       {
         "recipe": "Supercomputer",
@@ -4101,7 +4101,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 48,
+    "num_steps": 30,
     "transformation_steps": [
       {
         "recipe": "Assembly Director System",
@@ -4470,7 +4470,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 19,
+    "num_steps": 34,
     "transformation_steps": [
       {
         "recipe": "Magnetic Field Generator",
@@ -4885,7 +4885,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 6,
+    "num_steps": 10,
     "transformation_steps": [
       {
         "recipe": "Cooling System",
@@ -5032,7 +5032,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 18,
+    "num_steps": 31,
     "transformation_steps": [
       {
         "recipe": "Fused Modular Frame",
@@ -5411,7 +5411,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 39,
+    "num_steps": 1,
     "transformation_steps": [
       {
         "recipe": "Turbo Motor",
@@ -5453,7 +5453,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 65,
+    "num_steps": 1,
     "transformation_steps": [
       {
         "recipe": "Thermal Propulsion Rocket",
@@ -5491,7 +5491,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 41,
+    "num_steps": 5,
     "transformation_steps": [
       {
         "recipe": "Nuclear Pasta",
@@ -5564,7 +5564,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Time Crystal",
@@ -5617,7 +5617,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 4,
+    "num_steps": 6,
     "transformation_steps": [
       {
         "recipe": "Ficsite Trigon",
@@ -5712,7 +5712,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 53,
+    "num_steps": 8,
     "transformation_steps": [
       {
         "recipe": "Biochemical Sculptor",
@@ -5840,7 +5840,7 @@
         "quantity": 25000.0
       }
     ],
-    "num_steps": 18,
+    "num_steps": 11,
     "transformation_steps": [
       {
         "recipe": "Superposition Oscillator",
@@ -5999,7 +5999,7 @@
         "quantity": 25000.0
       }
     ],
-    "num_steps": 27,
+    "num_steps": 11,
     "transformation_steps": [
       {
         "recipe": "Neural-Quantum Processor",
@@ -6157,7 +6157,7 @@
         "quantity": 25000.0
       }
     ],
-    "num_steps": 70,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "AI Expansion Server",
@@ -6226,7 +6226,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 49,
+    "num_steps": 12,
     "transformation_steps": [
       {
         "recipe": "Singularity Cell",
@@ -6394,7 +6394,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 90,
+    "num_steps": 7,
     "transformation_steps": [
       {
         "recipe": "Ballistic Warp Drive",
@@ -6491,7 +6491,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 2,
+    "num_steps": 3,
     "transformation_steps": [
       {
         "recipe": "Quickwire",
@@ -6544,7 +6544,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 5,
+    "num_steps": 7,
     "transformation_steps": [
       {
         "recipe": "AI Limiter",
@@ -6646,7 +6646,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 9,
+    "num_steps": 12,
     "transformation_steps": [
       {
         "recipe": "High-Speed Connector",
@@ -6797,7 +6797,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 1,
+    "num_steps": 2,
     "transformation_steps": [
       {
         "recipe": "Quartz Crystal",
@@ -6843,7 +6843,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 10,
+    "num_steps": 15,
     "transformation_steps": [
       {
         "recipe": "Crystal Oscillator",
@@ -7039,7 +7039,7 @@
       }
     ],
     "byproducts": [],
-    "num_steps": 6,
+    "num_steps": 10,
     "transformation_steps": [
       {
         "recipe": "SAM Fluctuator",

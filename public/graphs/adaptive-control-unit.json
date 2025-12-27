@@ -1,1374 +1,1105 @@
 {
   "target": "Adaptive Control Unit",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
-      "level": 28,
-      "displayStep": 28,
-      "recipe": "Adaptive Control Unit",
-      "building": "ManufacturerMk1",
-      "inputs5": [
-        {
-          "name": "Computer",
-          "perMin": 2.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Circuit Board",
-          "perMin": 5.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Automated Wiring",
-          "perMin": 5.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Adaptive Control Unit": 1.0
+      "rowType": "layer",
+      "level": 1,
+      "recipe": "Steel Ingot",
+      "building": "FoundryMk1",
+      "operation": "produces",
+      "produces": {
+        "Steel Ingot": 112.5
       },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 27,
-      "displayStep": 27,
-      "recipe": "Automated Wiring",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Computer",
-          "perMin": 2.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Circuit Board",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Stator",
-          "perMin": 5.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Cable",
-          "perMin": 100.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Automated Wiring": 5.0
+      "consumes": {
+        "Iron Ore": 112.5,
+        "Coal": 112.5
       },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 26,
-      "displayStep": 26,
-      "recipe": "Computer",
-      "building": "ManufacturerMk1",
-      "inputs5": [
+      "lanes": [
         {
-          "name": "Circuit Board",
-          "perMin": 8.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
         },
         {
-          "name": "Circuit Board",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Coal",
+          "perMin": 112.5,
+          "action": "consume"
         },
         {
-          "name": "Stator",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Iron Ore",
+          "perMin": 112.5,
+          "action": "consume"
         },
         {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Copper Ore",
+          "perMin": 188.0,
+          "action": "pass"
         },
-        {
-          "name": "Cable",
-          "perMin": 100.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": true,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Computer": 2.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 25,
-      "displayStep": 25,
-      "recipe": "Cable",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Plastic",
-          "perMin": 32.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Circuit Board",
-          "perMin": 13.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Stator",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Wire",
-          "perMin": 232.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Cable": 116.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 24,
-      "displayStep": 24,
-      "recipe": "Circuit Board",
-      "building": "AssemblerMk1",
-      "inputs5": [
-        {
-          "name": "Plastic",
-          "perMin": 32.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Sheet",
-          "perMin": 26.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Stator",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Wire",
-          "perMin": 232.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 1,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 1,
-      "byproducts": {},
-      "outputs": {
-        "Circuit Board": 13.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 23,
-      "displayStep": 23,
-      "recipe": "Stator",
-      "building": "AssemblerMk1",
-      "inputs5": [
         {
           "name": "Plastic",
           "perMin": 84.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Sheet",
-          "perMin": 26.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Pipe",
-          "perMin": 15.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Wire",
-          "perMin": 232.0,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 1,
-          "fromPrev": true,
-          "role": "normal"
+          "action": "pass"
         }
       ],
-      "hiddenInputsCount": 1,
-      "byproducts": {},
-      "outputs": {
-        "Stator": 5.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 22,
-      "displayStep": 22,
-      "recipe": "Wire",
-      "building": "ConstructorMk1",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        {
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
+        },
+        {
+          "name": "Steel Ingot",
+          "perMin": 112.5,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 150.0,
+          "action": "pass"
+        },
+        {
+          "name": "Copper Ore",
+          "perMin": 188.0,
+          "action": "pass"
+        },
         {
           "name": "Plastic",
           "perMin": 84.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 2,
+      "recipe": "Copper Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Copper Ingot": 188.0
+      },
+      "consumes": {
+        "Copper Ore": 188.0
+      },
+      "lanes": [
+        {
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Iron Ore",
+          "perMin": 150.0,
+          "action": "pass"
         },
         {
-          "name": "Copper Sheet",
-          "perMin": 26.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
+          "name": "Copper Ore",
+          "perMin": 188.0,
+          "action": "consume"
         },
         {
-          "name": "Steel Pipe",
-          "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 2,
+      "lanes": [
         {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
         },
         {
           "name": "Copper Ingot",
-          "perMin": 136.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Wire": 272.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 21,
-      "displayStep": 21,
-      "recipe": "Copper Sheet",
-      "building": "ConstructorMk1",
-      "inputs5": [
+          "perMin": 188.0,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 150.0,
+          "action": "pass"
+        },
+        null,
         {
           "name": "Plastic",
           "perMin": 84.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 3,
+      "recipe": "Copper Sheet",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Copper Sheet": 26.0
+      },
+      "consumes": {
+        "Copper Ingot": 52.0
+      },
+      "lanes": [
+        {
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
         },
         {
           "name": "Copper Ingot",
           "perMin": 52.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         {
-          "name": "Steel Pipe",
-          "perMin": 15.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
+          "name": "Iron Ore",
+          "perMin": 150.0,
+          "action": "pass"
         },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 136.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Copper Sheet": 26.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 20,
-      "displayStep": 20,
-      "recipe": "Steel Pipe",
-      "building": "ConstructorMk1",
-      "inputs5": [
+        null,
         {
           "name": "Plastic",
           "perMin": 84.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 3,
+      "lanes": [
+        {
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
+        },
+        {
+          "name": "Copper Sheet",
+          "perMin": 26.0,
+          "action": "fromBelow"
+        },
+        {
+          "name": "Iron Ore",
+          "perMin": 150.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 4,
+      "recipe": "Iron Ingot",
+      "building": "SmelterMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Ingot": 150.0
+      },
+      "consumes": {
+        "Iron Ore": 150.0
+      },
+      "lanes": [
+        {
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Iron Ore",
+          "perMin": 150.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 4,
+      "lanes": [
+        {
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 150.0,
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 5,
+      "recipe": "Iron Rod",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Iron Rod": 82.5
+      },
+      "consumes": {
+        "Iron Ingot": 82.5
+      },
+      "lanes": [
+        {
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 82.5,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 5,
+      "lanes": [
+        {
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
+        },
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 82.5,
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 6,
+      "recipe": "Steel Beam",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Steel Beam": 15.0
+      },
+      "consumes": {
+        "Steel Ingot": 60.0
+      },
+      "lanes": [
+        {
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
         },
         null,
         {
           "name": "Steel Ingot",
-          "perMin": 22.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "perMin": 60.0,
+          "action": "consume"
         },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ingot",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Steel Pipe": 15.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 19,
-      "displayStep": 19,
-      "recipe": "Copper Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
+        null,
         {
           "name": "Plastic",
           "perMin": 84.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Copper Ingot": 188.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 18,
-      "displayStep": 18,
-      "recipe": "Plastic",
-      "building": "OilRefinery",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Ingot",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        null
-      ],
-      "hiddenInputsCount": 0,
-      "byproducts": {
-        "Heavy Oil Residue": 42000.0
-      },
-      "outputs": {
-        "Plastic": 84.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 17,
-      "displayStep": 17,
-      "recipe": "Steel Ingot",
-      "building": "FoundryMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 22.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Heavy Modular Frame",
-          "perMin": 1.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 22.5,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "pass"
         }
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Steel Ingot": 22.5
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 16,
-      "displayStep": 16,
-      "recipe": "Heavy Modular Frame",
-      "building": "ManufacturerMk1",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 6,
+      "lanes": [
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "pass"
         },
+        null,
         {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Steel Beam",
+          "perMin": 15.0,
+          "action": "fromBelow"
         },
+        null,
         {
-          "name": "Iron Ore",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Modular Frame",
-          "perMin": 5.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Coal",
-          "perMin": 22.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 3,
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
         }
-      ],
-      "hiddenInputsCount": 3,
-      "byproducts": {},
-      "outputs": {
-        "Heavy Modular Frame": 1.0
-      },
-      "rowHasPrevMatch": false
+      ]
     },
     {
-      "level": 15,
-      "displayStep": 15,
-      "recipe": "Screws",
+      "rowType": "layer",
+      "level": 7,
+      "recipe": "Concrete",
       "building": "ConstructorMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Concrete": 30.0
+      },
+      "consumes": {
+        "Limestone": 90.0
+      },
+      "lanes": [
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Limestone",
+          "perMin": 90.0,
+          "action": "consume"
         },
+        null,
+        null,
+        null,
         {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Modular Frame",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 22.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 3,
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
         }
       ],
-      "hiddenInputsCount": 3,
-      "byproducts": {},
-      "outputs": {
-        "Screws": 120.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 14,
-      "displayStep": 14,
-      "recipe": "Modular Frame",
-      "building": "AssemblerMk1",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 7,
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Concrete",
+          "perMin": 30.0,
+          "action": "fromBelow"
         },
+        null,
         {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Pipe",
-          "perMin": 20.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 22.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 4,
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
         }
-      ],
-      "hiddenInputsCount": 4,
-      "byproducts": {},
-      "outputs": {
-        "Modular Frame": 5.0
-      },
-      "rowHasPrevMatch": false
+      ]
     },
     {
-      "level": 13,
-      "displayStep": 13,
-      "recipe": "Iron Rod",
-      "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Steel Pipe",
-          "perMin": 20.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 22.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 3,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 3,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 60.0
-      },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 12,
-      "displayStep": 12,
-      "recipe": "Iron Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 22.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Steel Pipe",
-          "perMin": 20.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 22.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 3,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 3,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 60.0
-      },
-      "rowHasPrevMatch": true
-    },
-    {
-      "level": 11,
-      "displayStep": 11,
+      "rowType": "layer",
+      "level": 8,
       "recipe": "Steel Pipe",
       "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 82.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Encased Industrial Beam",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 22.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Steel Pipe": 20.0
+      "operation": "produces",
+      "produces": {
+        "Steel Pipe": 35.0
       },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 10,
-      "displayStep": 10,
-      "recipe": "Steel Ingot",
-      "building": "FoundryMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 82.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Encased Industrial Beam",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 22.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 3,
-          "fromPrev": false,
-          "role": "normal"
-        }
-      ],
-      "hiddenInputsCount": 3,
-      "byproducts": {},
-      "outputs": {
-        "Steel Ingot": 30.0
+      "consumes": {
+        "Steel Ingot": 52.5
       },
-      "rowHasPrevMatch": false
-    },
-    {
-      "level": 9,
-      "displayStep": 9,
-      "recipe": "Reinforced Iron Plate",
-      "building": "AssemblerMk1",
-      "inputs5": [
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 112.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Encased Industrial Beam",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
+          "name": "Steel Ingot",
           "perMin": 52.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
         }
       ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Reinforced Iron Plate": 7.5
-      },
-      "rowHasPrevMatch": false
+      "byproducts": {}
     },
     {
+      "rowType": "belts",
       "level": 8,
-      "displayStep": 8,
-      "recipe": "Screws",
-      "building": "ConstructorMk1",
-      "inputs5": [
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Steel Pipe",
+          "perMin": 35.0,
+          "action": "fromBelow"
         },
+        null,
         {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 112.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Encased Industrial Beam",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 52.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
         }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Screws": 90.0
-      },
-      "rowHasPrevMatch": false
+      ]
     },
     {
-      "level": 7,
-      "displayStep": 7,
+      "rowType": "layer",
+      "level": 9,
+      "recipe": "Wire",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Wire": 272.0
+      },
+      "consumes": {
+        "Copper Ingot": 136.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Ingot",
+          "perMin": 136.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 9,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Wire",
+          "perMin": 272.0,
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 10,
+      "recipe": "Cable",
+      "building": "ConstructorMk1",
+      "operation": "produces",
+      "produces": {
+        "Cable": 116.0
+      },
+      "consumes": {
+        "Wire": 232.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Wire",
+          "perMin": 232.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 10,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Cable",
+          "perMin": 116.0,
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 84.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 11,
+      "recipe": "Circuit Board",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Circuit Board": 13.0
+      },
+      "consumes": {
+        "Copper Sheet": 26.0,
+        "Plastic": 52.0
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Copper Sheet",
+          "perMin": 26.0,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 52.0,
+          "action": "consume"
+        }
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 11,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Circuit Board",
+          "perMin": 13.0,
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 12,
       "recipe": "Iron Plate",
       "building": "ConstructorMk1",
-      "inputs5": [
-        {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 112.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Encased Industrial Beam",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 52.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
-        }
-      ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
+      "operation": "produces",
+      "produces": {
         "Iron Plate": 45.0
       },
-      "rowHasPrevMatch": false
+      "consumes": {
+        "Iron Ingot": 67.5
+      },
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Ingot",
+          "perMin": 67.5,
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        }
+      ],
+      "byproducts": {}
     },
     {
-      "level": 6,
-      "displayStep": 6,
-      "recipe": "Iron Rod",
+      "rowType": "belts",
+      "level": 12,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Iron Plate",
+          "perMin": 45.0,
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 13,
+      "recipe": "Screws",
       "building": "ConstructorMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Screws": 210.0
+      },
+      "consumes": {
+        "Iron Rod": 52.5
+      },
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 112.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Encased Industrial Beam",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
+          "name": "Iron Rod",
           "perMin": 52.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "pass"
+          "action": "consume"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
         }
       ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Iron Rod": 22.5
-      },
-      "rowHasPrevMatch": false
+      "byproducts": {}
     },
     {
-      "level": 5,
-      "displayStep": 5,
-      "recipe": "Iron Ingot",
-      "building": "SmelterMk1",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 13,
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Screws",
+          "perMin": 210.0,
+          "action": "fromBelow"
         },
+        null,
         {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 112.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Encased Industrial Beam",
-          "perMin": 5.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 52.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 1,
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
         }
-      ],
-      "hiddenInputsCount": 1,
-      "byproducts": {},
-      "outputs": {
-        "Iron Ingot": 90.0
-      },
-      "rowHasPrevMatch": true
+      ]
     },
     {
-      "level": 4,
-      "displayStep": 4,
+      "rowType": "layer",
+      "level": 14,
       "recipe": "Encased Industrial Beam",
       "building": "AssemblerMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Encased Industrial Beam": 5.0
+      },
+      "consumes": {
+        "Steel Beam": 15.0,
+        "Concrete": 30.0
+      },
+      "lanes": [
+        null,
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 202.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Concrete",
+          "perMin": 30.0,
+          "action": "consume"
         },
         {
           "name": "Steel Beam",
           "perMin": 15.0,
-          "src": "req",
-          "fromPrev": true,
-          "role": "normal"
+          "action": "consume"
         },
+        null,
         {
-          "name": "Coal",
-          "perMin": 52.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 1,
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
         }
       ],
-      "hiddenInputsCount": 1,
-      "byproducts": {},
-      "outputs": {
-        "Encased Industrial Beam": 5.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 3,
-      "displayStep": 3,
-      "recipe": "Steel Beam",
-      "building": "ConstructorMk1",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 14,
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Encased Industrial Beam",
+          "perMin": 5.0,
+          "action": "fromBelow"
+        },
+        null,
+        {
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "pass"
+        }
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 15,
+      "recipe": "Computer",
+      "building": "ManufacturerMk1",
+      "operation": "produces",
+      "produces": {
+        "Computer": 2.0
+      },
+      "consumes": {
+        "Circuit Board": 8.0,
+        "Cable": 16.0,
+        "Plastic": 32.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Cable",
+          "perMin": 16.0,
+          "action": "consume"
         },
         {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Circuit Board",
+          "perMin": 8.0,
+          "action": "consume"
         },
+        null,
         {
-          "name": "Iron Ore",
-          "perMin": 202.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Concrete",
-          "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 52.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 1,
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Plastic",
+          "perMin": 32.0,
+          "action": "consume"
         }
       ],
-      "hiddenInputsCount": 1,
-      "byproducts": {},
-      "outputs": {
-        "Steel Beam": 15.0
-      },
-      "rowHasPrevMatch": false
+      "byproducts": {}
     },
     {
-      "level": 2,
-      "displayStep": 2,
-      "recipe": "Steel Ingot",
-      "building": "FoundryMk1",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 15,
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Computer",
+          "perMin": 2.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 16,
+      "recipe": "Stator",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Stator": 5.0
+      },
+      "consumes": {
+        "Steel Pipe": 15.0,
+        "Wire": 40.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Wire",
+          "perMin": 40.0,
+          "action": "consume"
         },
         {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Steel Pipe",
+          "perMin": 15.0,
+          "action": "consume"
         },
-        {
-          "name": "Iron Ore",
-          "perMin": 202.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "normal"
-        },
-        {
-          "name": "Concrete",
-          "perMin": 30.0,
-          "src": "pass",
-          "fromPrev": true,
-          "role": "pass"
-        },
-        {
-          "name": "Coal",
-          "perMin": 52.5,
-          "src": "pass",
-          "hiddenCountOnThisSlot": 2,
-          "fromPrev": false,
-          "role": "normal"
-        }
+        null,
+        null
       ],
-      "hiddenInputsCount": 2,
-      "byproducts": {},
-      "outputs": {
-        "Steel Ingot": 60.0
-      },
-      "rowHasPrevMatch": true
+      "byproducts": {}
     },
     {
-      "level": 1,
-      "displayStep": 1,
-      "recipe": "Concrete",
-      "building": "ConstructorMk1",
-      "inputs5": [
+      "rowType": "belts",
+      "level": 16,
+      "lanes": [
+        null,
+        null,
         {
-          "name": "Crude Oil",
-          "perMin": 126000.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
+          "name": "Stator",
+          "perMin": 5.0,
+          "action": "fromBelow"
         },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 17,
+      "recipe": "Reinforced Iron Plate",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Reinforced Iron Plate": 7.5
+      },
+      "consumes": {
+        "Iron Plate": 45.0,
+        "Screws": 90.0
+      },
+      "lanes": [
+        null,
         {
-          "name": "Copper Ore",
-          "perMin": 188.0,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Iron Ore",
-          "perMin": 262.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        },
-        {
-          "name": "Limestone",
+          "name": "Screws",
           "perMin": 90.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         {
-          "name": "Coal",
-          "perMin": 112.5,
-          "src": "pass",
-          "fromPrev": false,
-          "role": "pass"
-        }
+          "name": "Iron Plate",
+          "perMin": 45.0,
+          "action": "consume"
+        },
+        null,
+        null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Concrete": 30.0
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 17,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 7.5,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 18,
+      "recipe": "Automated Wiring",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Automated Wiring": 5.0
       },
-      "rowHasPrevMatch": false
+      "consumes": {
+        "Stator": 5.0,
+        "Cable": 100.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Cable",
+          "perMin": 100.0,
+          "action": "consume"
+        },
+        {
+          "name": "Stator",
+          "perMin": 5.0,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 18,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Automated Wiring",
+          "perMin": 5.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 19,
+      "recipe": "Modular Frame",
+      "building": "AssemblerMk1",
+      "operation": "produces",
+      "produces": {
+        "Modular Frame": 5.0
+      },
+      "consumes": {
+        "Reinforced Iron Plate": 7.5,
+        "Iron Rod": 30.0
+      },
+      "lanes": [
+        null,
+        {
+          "name": "Iron Rod",
+          "perMin": 30.0,
+          "action": "consume"
+        },
+        {
+          "name": "Reinforced Iron Plate",
+          "perMin": 7.5,
+          "action": "consume"
+        },
+        null,
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 19,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Modular Frame",
+          "perMin": 5.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 20,
+      "recipe": "Heavy Modular Frame",
+      "building": "ManufacturerMk1",
+      "operation": "produces",
+      "produces": {
+        "Heavy Modular Frame": 1.0
+      },
+      "consumes": {
+        "Modular Frame": 5.0,
+        "Steel Pipe": 20.0,
+        "Encased Industrial Beam": 5.0,
+        "Screws": 120.0
+      },
+      "lanes": [
+        {
+          "name": "Screws",
+          "perMin": 120.0,
+          "action": "consume"
+        },
+        {
+          "name": "Steel Pipe",
+          "perMin": 20.0,
+          "action": "consume"
+        },
+        {
+          "name": "Modular Frame",
+          "perMin": 5.0,
+          "action": "consume"
+        },
+        {
+          "name": "Encased Industrial Beam",
+          "perMin": 5.0,
+          "action": "consume"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 20,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "rowType": "layer",
+      "level": 21,
+      "recipe": "Adaptive Control Unit",
+      "building": "ManufacturerMk1",
+      "operation": "produces",
+      "produces": {
+        "Adaptive Control Unit": 1.0
+      },
+      "consumes": {
+        "Automated Wiring": 5.0,
+        "Circuit Board": 5.0,
+        "Heavy Modular Frame": 1.0,
+        "Computer": 2.0
+      },
+      "lanes": [
+        {
+          "name": "Computer",
+          "perMin": 2.0,
+          "action": "consume"
+        },
+        {
+          "name": "Automated Wiring",
+          "perMin": 5.0,
+          "action": "consume"
+        },
+        {
+          "name": "Heavy Modular Frame",
+          "perMin": 1.0,
+          "action": "consume"
+        },
+        {
+          "name": "Circuit Board",
+          "perMin": 5.0,
+          "action": "consume"
+        },
+        null
+      ],
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 21,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Adaptive Control Unit",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -1377,7 +1108,7 @@
     "index": 22,
     "slug": "adaptive-control-unit",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

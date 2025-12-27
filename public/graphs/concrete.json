@@ -1,31 +1,46 @@
 {
   "target": "Concrete",
   "targetRatePerMin": 1.0,
-  "steps": [
+  "rows": [
     {
+      "rowType": "layer",
       "level": 1,
-      "displayStep": 1,
       "recipe": "Concrete",
       "building": "ConstructorMk1",
-      "inputs5": [
+      "operation": "produces",
+      "produces": {
+        "Concrete": 1.0
+      },
+      "consumes": {
+        "Limestone": 3.0
+      },
+      "lanes": [
         null,
         null,
         {
           "name": "Limestone",
           "perMin": 3.0,
-          "src": "req",
-          "fromPrev": false,
-          "role": "normal"
+          "action": "consume"
         },
         null,
         null
       ],
-      "hiddenInputsCount": 0,
-      "byproducts": {},
-      "outputs": {
-        "Concrete": 1.0
-      },
-      "rowHasPrevMatch": false
+      "byproducts": {}
+    },
+    {
+      "rowType": "belts",
+      "level": 1,
+      "lanes": [
+        null,
+        null,
+        {
+          "name": "Concrete",
+          "perMin": 1.0,
+          "action": "fromBelow"
+        },
+        null,
+        null
+      ]
     }
   ],
   "meta": {
@@ -34,7 +49,7 @@
     "index": 5,
     "slug": "concrete",
     "notes": [
-      "levelized_scheduler=true"
+      "topologically_sorted_v7"
     ]
   }
 }

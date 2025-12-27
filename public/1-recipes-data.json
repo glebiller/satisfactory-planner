@@ -404,20 +404,6 @@
       "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
     ]
   },
-  "/Game/FactoryGame/Recipes/Converter/Recipe_FicsiteIngot_Iron.Recipe_FicsiteIngot_Iron_C": {
-    "id": "Recipe_FicsiteIngot_Iron_C",
-    "name": "Ficsite Ingot (Iron)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 4,
-      "/Game/FactoryGame/Resource/Parts/IronIngot/Desc_IronIngot.Desc_IronIngot_C": 24
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/Parts/FicsiteIngot/Desc_FicsiteIngot.Desc_FicsiteIngot_C": 1
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
   "/Game/FactoryGame/Recipes/Converter/Recipe_TimeCrystal.Recipe_TimeCrystal_C": {
     "id": "Recipe_TimeCrystal_C",
     "name": "Time Crystal",
@@ -470,272 +456,6 @@
     },
     "mProducedIn": [
       "/Game/FactoryGame/Buildable/Factory/Blender/Build_Blender.Build_Blender_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/Recipe_FicsiteIngot_AL.Recipe_FicsiteIngot_AL_C": {
-    "id": "Recipe_FicsiteIngot_AL_C",
-    "name": "Ficsite Ingot (Aluminum)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 2,
-      "/Game/FactoryGame/Resource/Parts/AluminumIngot/Desc_AluminumIngot.Desc_AluminumIngot_C": 4
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/Parts/FicsiteIngot/Desc_FicsiteIngot.Desc_FicsiteIngot_C": 1
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/Recipe_FicsiteIngot_CAT.Recipe_FicsiteIngot_CAT_C": {
-    "id": "Recipe_FicsiteIngot_CAT_C",
-    "name": "Ficsite Ingot (Caterium)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 3,
-      "/Game/FactoryGame/Resource/Parts/GoldIngot/Desc_GoldIngot.Desc_GoldIngot_C": 4
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/Parts/FicsiteIngot/Desc_FicsiteIngot.Desc_FicsiteIngot_C": 1
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Bauxite_Caterium.Recipe_Bauxite_Caterium_C": {
-    "id": "Recipe_Bauxite_Caterium_C",
-    "name": "Bauxite (Caterium)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/OreGold/Desc_OreGold.Desc_OreGold_C": 15
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/OreBauxite/Desc_OreBauxite.Desc_OreBauxite_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Bauxite_Copper.Recipe_Bauxite_Copper_C": {
-    "id": "Recipe_Bauxite_Copper_C",
-    "name": "Bauxite (Copper)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/OreCopper/Desc_OreCopper.Desc_OreCopper_C": 18
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/OreBauxite/Desc_OreBauxite.Desc_OreBauxite_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Caterium_Copper.Recipe_Caterium_Copper_C": {
-    "id": "Recipe_Caterium_Copper_C",
-    "name": "Caterium Ore (Copper)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/OreCopper/Desc_OreCopper.Desc_OreCopper_C": 15
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/OreGold/Desc_OreGold.Desc_OreGold_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Caterium_Quartz.Recipe_Caterium_Quartz_C": {
-    "id": "Recipe_Caterium_Quartz_C",
-    "name": "Caterium Ore (Quartz)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/RawQuartz/Desc_RawQuartz.Desc_RawQuartz_C": 12
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/OreGold/Desc_OreGold.Desc_OreGold_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Coal_Iron.Recipe_Coal_Iron_C": {
-    "id": "Recipe_Coal_Iron_C",
-    "name": "Coal (Iron)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/OreIron/Desc_OreIron.Desc_OreIron_C": 18
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/Coal/Desc_Coal.Desc_Coal_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Coal_Limestone.Recipe_Coal_Limestone_C": {
-    "id": "Recipe_Coal_Limestone_C",
-    "name": "Coal (Limestone)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/Stone/Desc_Stone.Desc_Stone_C": 36
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/Coal/Desc_Coal.Desc_Coal_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Copper_Quartz.Recipe_Copper_Quartz_C": {
-    "id": "Recipe_Copper_Quartz_C",
-    "name": "Copper Ore (Quartz)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/RawQuartz/Desc_RawQuartz.Desc_RawQuartz_C": 10
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/OreCopper/Desc_OreCopper.Desc_OreCopper_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Copper_Sulfur.Recipe_Copper_Sulfur_C": {
-    "id": "Recipe_Copper_Sulfur_C",
-    "name": "Copper Ore (Sulfur)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/Sulfur/Desc_Sulfur.Desc_Sulfur_C": 12
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/OreCopper/Desc_OreCopper.Desc_OreCopper_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Iron_Limestone.Recipe_Iron_Limestone_C": {
-    "id": "Recipe_Iron_Limestone_C",
-    "name": "Iron Ore (Limestone)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/Stone/Desc_Stone.Desc_Stone_C": 24
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/OreIron/Desc_OreIron.Desc_OreIron_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Limestone_Sulfur.Recipe_Limestone_Sulfur_C": {
-    "id": "Recipe_Limestone_Sulfur_C",
-    "name": "Limestone (Sulfur)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/Sulfur/Desc_Sulfur.Desc_Sulfur_C": 2
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/Stone/Desc_Stone.Desc_Stone_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Nitrogen_Bauxite.Recipe_Nitrogen_Bauxite_C": {
-    "id": "Recipe_Nitrogen_Bauxite_C",
-    "name": "Nitrogen Gas (Bauxite)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/OreBauxite/Desc_OreBauxite.Desc_OreBauxite_C": 10
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/NitrogenGas/Desc_NitrogenGas.Desc_NitrogenGas_C": 12000
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Nitrogen_Caterium.Recipe_Nitrogen_Caterium_C": {
-    "id": "Recipe_Nitrogen_Caterium_C",
-    "name": "Nitrogen Gas (Caterium)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/OreGold/Desc_OreGold.Desc_OreGold_C": 12
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/NitrogenGas/Desc_NitrogenGas.Desc_NitrogenGas_C": 12000
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Quartz_Bauxite.Recipe_Quartz_Bauxite_C": {
-    "id": "Recipe_Quartz_Bauxite_C",
-    "name": "Raw Quartz (Bauxite)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/OreBauxite/Desc_OreBauxite.Desc_OreBauxite_C": 10
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/RawQuartz/Desc_RawQuartz.Desc_RawQuartz_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Quartz_Coal.Recipe_Quartz_Coal_C": {
-    "id": "Recipe_Quartz_Coal_C",
-    "name": "Raw Quartz (Coal)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/Coal/Desc_Coal.Desc_Coal_C": 24
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/RawQuartz/Desc_RawQuartz.Desc_RawQuartz_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Sulfur_Coal.Recipe_Sulfur_Coal_C": {
-    "id": "Recipe_Sulfur_Coal_C",
-    "name": "Sulfur (Coal)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/Coal/Desc_Coal.Desc_Coal_C": 20
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/Sulfur/Desc_Sulfur.Desc_Sulfur_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Sulfur_Iron.Recipe_Sulfur_Iron_C": {
-    "id": "Recipe_Sulfur_Iron_C",
-    "name": "Sulfur (Iron)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/OreIron/Desc_OreIron.Desc_OreIron_C": 30
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/Sulfur/Desc_Sulfur.Desc_Sulfur_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Converter/ResourceConversion/Recipe_Uranium_Bauxite.Recipe_Uranium_Bauxite_C": {
-    "id": "Recipe_Uranium_Bauxite_C",
-    "name": "Uranium Ore (Bauxite)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/SAMIngot/Desc_SAMIngot.Desc_SAMIngot_C": 1,
-      "/Game/FactoryGame/Resource/RawResources/OreBauxite/Desc_OreBauxite.Desc_OreBauxite_C": 48
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/RawResources/OreUranium/Desc_OreUranium.Desc_OreUranium_C": 12
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/Converter/Build_Converter.Build_Converter_C"
     ]
   },
   "/Game/FactoryGame/Recipes/OilRefinery/Recipe_PackagedTurboFuel.Recipe_PackagedTurboFuel_C": {
@@ -1854,32 +1574,6 @@
       "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
     ]
   },
-  "/Game/FactoryGame/Recipes/Constructor/Recipe_Biomass_Mycelia.Recipe_Biomass_Mycelia_C": {
-    "id": "Recipe_Biomass_Mycelia_C",
-    "name": "Biomass (Mycelia)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_Mycelia.Desc_Mycelia_C": 1
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_GenericBiomass.Desc_GenericBiomass_C": 10
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Constructor/Recipe_PowerCrystalShard_1.Recipe_PowerCrystalShard_1_C": {
-    "id": "Recipe_PowerCrystalShard_1_C",
-    "name": "Power Shard (1)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Environment/Crystal/Desc_Crystal.Desc_Crystal_C": 1
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/Environment/Crystal/Desc_CrystalShard.Desc_CrystalShard_C": 1
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
-    ]
-  },
   "/Game/FactoryGame/Recipes/Constructor/Recipe_Protein_Stinger.Recipe_Protein_Stinger_C": {
     "id": "Recipe_Protein_Stinger_C",
     "name": "Stinger Protein",
@@ -1914,19 +1608,6 @@
     },
     "produce": {
       "/Game/FactoryGame/Resource/Parts/AlienDNACapsule/Desc_AlienDNACapsule.Desc_AlienDNACapsule_C": 1
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Constructor/Recipe_Biomass_AlienProtein.Recipe_Biomass_AlienProtein_C": {
-    "id": "Recipe_Biomass_AlienProtein_C",
-    "name": "Biomass (Alien Protein)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/AlienProtein/Desc_AlienProtein.Desc_AlienProtein_C": 1
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_GenericBiomass.Desc_GenericBiomass_C": 100
     },
     "mProducedIn": [
       "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
@@ -2023,32 +1704,6 @@
     },
     "mProducedIn": [
       "/Game/FactoryGame/Buildable/Factory/QuantumEncoder/Build_QuantumEncoder.Build_QuantumEncoder_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Constructor/Recipe_PowerCrystalShard_3.Recipe_PowerCrystalShard_3_C": {
-    "id": "Recipe_PowerCrystalShard_3_C",
-    "name": "Power Shard (5)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Environment/Crystal/Desc_Crystal_mk3.Desc_Crystal_mk3_C": 1
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/Environment/Crystal/Desc_CrystalShard.Desc_CrystalShard_C": 5
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Constructor/Recipe_PowerCrystalShard_2.Recipe_PowerCrystalShard_2_C": {
-    "id": "Recipe_PowerCrystalShard_2_C",
-    "name": "Power Shard (2)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Environment/Crystal/Desc_Crystal_mk2.Desc_Crystal_mk2_C": 1
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/Environment/Crystal/Desc_CrystalShard.Desc_CrystalShard_C": 2
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
     ]
   },
   "/Game/FactoryGame/Equipment/NobeliskDetonator/Ammo/Recipe_NobeliskShockwave.Recipe_NobeliskShockwave_C": {
@@ -2168,32 +1823,6 @@
     },
     "produce": {
       "/Game/FactoryGame/Resource/Parts/SnowballProjectile/Desc_SnowballProjectile.Desc_SnowballProjectile_C": 1
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Constructor/Recipe_Biomass_Leaves.Recipe_Biomass_Leaves_C": {
-    "id": "Recipe_Biomass_Leaves_C",
-    "name": "Biomass (Leaves)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_Leaves.Desc_Leaves_C": 10
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_GenericBiomass.Desc_GenericBiomass_C": 5
-    },
-    "mProducedIn": [
-      "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
-    ]
-  },
-  "/Game/FactoryGame/Recipes/Constructor/Recipe_Biomass_Wood.Recipe_Biomass_Wood_C": {
-    "id": "Recipe_Biomass_Wood_C",
-    "name": "Biomass (Wood)",
-    "ingredients": {
-      "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_Wood.Desc_Wood_C": 4
-    },
-    "produce": {
-      "/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_GenericBiomass.Desc_GenericBiomass_C": 20
     },
     "mProducedIn": [
       "/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Build_ConstructorMk1.Build_ConstructorMk1_C"
