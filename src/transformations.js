@@ -1,17 +1,4 @@
-const DATA_URL = '/satisfactory-planner/transformations.json';
-const GRAPHS_BASE = '/satisfactory-planner/graphs';
-const graphCache = new Map();
-
-function slugifyName(name) {
-  if (!name) return '';
-  return String(name)
-    .trim()
-    .toLowerCase()
-    .replace(/ \//g, '-')
-    .replace(/\//g, '-')
-    .replace(/\s+/g, '-')
-    .replace(/'/g, '');
-}
+const DATA_URL = '/satisfactory-planner/transformations_graphs.json';
 
 const el = {
   rows: document.getElementById('rows'),
@@ -34,67 +21,13 @@ init().catch(err => {
 
 async function init() {
   const raw = await fetchJson(DATA_URL);
-  data = raw.map(computePerMin);
-  
-  await preloadGraphLayerCounts();
+  data = raw;
   
   view = data.slice();
   wireSorting();
   wireFiltering();
   wireModal();
   applyFilter();
-}
-
-async function preloadGraphLayerCounts() {
-  for (const row of data) {
-    try {
-      const graph = await loadGraphForOutput(row.output);
-      if (graph && graph.rows) {
-        const layerCount = graph.rows.filter(r => r.rowType === 'layer').length;
-        row.graphLayerCount = layerCount;
-      }
-    } catch (e) {
-    }
-  }
-}
-
-function computePerMin(row) {
-  const steps = row.transformation_steps || [];
-  
-  const inputsWithPerMin = (row.inputs || []).map(input => {
-    let totalPerMin = 0;
-    for (const step of steps) {
-      if (step.requires && step.requires[input.name]) {
-        totalPerMin += step.requires[input.name];
-      }
-    }
-    return {
-      name: input.name,
-      perMin: totalPerMin
-    };
-  });
-  
-  const byproductsWithPerMin = (row.byproducts || []).map(byproduct => {
-    let totalPerMin = 0;
-    for (const step of steps) {
-      if (step.byproducts && step.byproducts[byproduct.name]) {
-        totalPerMin += step.byproducts[byproduct.name];
-      }
-    }
-    return {
-      name: byproduct.name,
-      perMin: totalPerMin
-    };
-  });
-  
-  const recipeNames = steps.map(s => s.recipe);
-  
-  return {
-    ...row,
-    inputs: inputsWithPerMin,
-    byproducts: byproductsWithPerMin,
-    recipes: recipeNames
-  };
 }
 
 function wireSorting() {
@@ -143,23 +76,18 @@ function wireModal() {
   });
 }
 
-async function openModalForRow(row) {
+function openModalForRow(row) {
   const titleLeft = row.tier != null ? `Tier ${escapeHtml(String(row.tier))}` : '';
   const titleRight = row.output || 'Transformation';
   el.modalTitle.textContent = `${titleLeft} • ${titleRight}`;
 
   let html = '';
-  try {
-    const graph = await loadGraphForOutput(row.output);
-    if (graph && graph.rows && Array.isArray(graph.rows) && graph.rows.length) {
-      html = buildModalHtmlFromGraphV3(graph);
-    }
-  } catch (e) {
-    console.warn('Graph load failed, falling back to inline steps:', e);
+  if (row.graph && Array.isArray(row.graph) && row.graph.length) {
+      html = buildModalHtmlFromGraphV3(row.graph, row.inputs);
+  } else {
+      html = '<div class="empty">No graph data available</div>';
   }
-  if (!html) {
-    html = buildModalHtml(row);
-  }
+
   el.modalContent.innerHTML = html;
   el.modalOverlay.removeAttribute('hidden');
   document.documentElement.style.overflow = 'hidden';
@@ -174,188 +102,408 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-function buildModalHtml(row) {
-  const steps = row.transformation_steps || [];
-  const header = `
-    <table>
-      <thead>
-        <tr>
-          <th style="width:52px">Step</th>
-          <th>Recipe</th>
-          <th class="input-col">In‑1</th>
-          <th class="input-col">In‑2</th>
-          <th class="input-col">In‑3</th>
-          <th class="input-col">In‑4</th>
-          <th class="input-col">In‑5</th>
-          <th style="width:16%">By‑products</th>
-        </tr>
-      </thead>
-      <tbody>
-  `;
-
-  const rowsHtml = steps.map((s, i) => {
-    const byps = kvTags(s.byproducts);
-
-    const prev = i > 0 ? steps[i - 1] : null;
-    const prevOutNames = new Set(
-      prev && prev.produces ? Object.keys(prev.produces) : []
-    );
-
-    const inputCells = placeInputsIntoFive(s.requires, prevOutNames);
-    const anyMatched = inputCells.some(cell => cell && cell.matched);
-
-    const inputTds = inputCells.map(cell => {
-      const cls = 'input-col' + (cell && cell.matched ? ' matched' : '');
-      if (!cell) return `<td class="${cls}"><span class="meta">—</span></td>`;
-      const pill = `<span class="tag${cell.matched ? ' match' : ''}">${escapeHtml(String(cell.name))} <small>${formatNumber(cell.perMin)}/min</small></span>`;
-      const title = cell.extraCount && cell.extraCount > 0 ? ` title="+${cell.extraCount} more not shown"` : '';
-      return `<td class="${cls}"${title}>${pill}</td>`;
-    }).join('');
-
-    return `
-      <tr${anyMatched ? ' class="row-matched"' : ''}>
-        <td class="meta">${i + 1}</td>
-        <td>${escapeHtml(String(s.recipe || ''))}<br/><span class="tag">${escapeHtml(String(s.building || ''))}</span></td>
-        ${inputTds}
-        <td>${byps || '<span class="meta">—</span>'}</td>
-      </tr>
-    `;
-  }).join('');
-
-  const footer = '</tbody></table>';
-  return header + rowsHtml + footer;
-}
-
-async function loadGraphForOutput(outputName) {
-  const slug = slugifyName(outputName);
-  if (graphCache.has(slug)) return graphCache.get(slug);
-  const url = `${GRAPHS_BASE}/${slug}.json`;
-  const graph = await fetchJson(url);
-  graphCache.set(slug, graph);
-  return graph;
-}
-
-function buildModalHtmlFromGraphV3(graph) {
-  const rows = Array.isArray(graph.rows) ? graph.rows : [];
-  const maxLevel = Math.max(...rows.filter(r => r.level).map(r => r.level), 0);
+function buildModalHtmlFromGraphV3(rows, rawInputs) {
+  // rows is the array of layers from the JSON
+  // We want to display them in reverse order (top to bottom)
+  // But wait, the user said: "the table should represent a tower from the bottom to the top, the top is the first row and the final item produced, while the last row is the bottom with all the raw materials coming in."
+  // The JSON 'rows' are ordered by step 1, 2, 3... where step 1 is the first processing step (closest to raw inputs usually).
+  // If we want the FINAL item at the TOP, we should reverse the array.
+  // Step N (Final Product) -> Row 1
+  // ...
+  // Step 1 (First Processing) -> Row N-1
+  // Raw Inputs -> Row N (Bottom)
+  
+  const reversedRows = rows.slice().reverse();
   
   const header = `
     <table class="flow-table">
       <thead>
         <tr>
-          <th style="width:50px">Lvl</th>
-          <th style="width:160px">Recipe/Building</th>
+          <th style="width:50px">Step</th>
+          <th style="width:160px">Recipe</th>
           <th class="lane-col">Lane 1</th>
           <th class="lane-col">Lane 2</th>
           <th class="lane-col">Lane 3</th>
           <th class="lane-col">Lane 4</th>
           <th class="lane-col">Lane 5</th>
-          <th style="width:14%">By‑products</th>
         </tr>
       </thead>
       <tbody>
   `;
 
-  const rowsHtml = rows.slice().reverse().map((row, i) => {
-    if (row.rowType === 'layer') {
-      return buildLayerRowV3(row);
-    } else if (row.rowType === 'belts') {
-      return buildBeltsRowV3(row);
-    }
-    return '';
+  const displayOrder = [3, 1, 0, 2, 4];
+
+  // Build processing rows
+  let rowsHtml = reversedRows.map((row, index) => {
+    // We need to know the NEXT row (which is logically below in the table, so previous step in processing)
+    // to draw lines FROM below TO current.
+    // Actually, lines should go from Source (Below) to Destination (Above).
+    // In this table, "Below" is higher index in the table (Raw inputs at bottom).
+    // "Above" is lower index (Final product at top).
+    
+    // Let's pass the 'next' logical step (which is the row below in the table) to calculate connections.
+    // The row below in the table corresponds to the PREVIOUS processing step (step - 1).
+    // Or if it's the last row, it connects to Raw Inputs.
+    
+    const nextRowInTable = reversedRows[index + 1]; // This is the step BEFORE current step
+    const isLastProcessingRow = index === reversedRows.length - 1;
+    
+    return buildLayerRowV3(row, displayOrder, nextRowInTable, isLastProcessingRow ? rawInputs : null);
   }).join('');
+
+  // Add Raw Inputs Row at the bottom
+  rowsHtml += buildRawInputsRow(rawInputs, displayOrder);
 
   const footer = '</tbody></table>';
   return header + rowsHtml + footer;
 }
 
-function buildLayerRowV3(row) {
-  const level = row.level != null ? row.level : '?';
+function buildLayerRowV3(row, displayOrder, nextRowInTable, rawInputsForConnection) {
+  const stepNum = row.step != null ? row.step : '?';
   const recipe = row.recipe || '';
-  const building = row.building ? escapeHtml(String(row.building)) : '<span class="meta">—</span>';
-  const byps = kvTags(row.byproducts);
   
-  const lanes = row.lanes || [];
-  const laneTds = lanes.map(lane => {
-    if (!lane) return '<td class="lane-col"><span class="meta">—</span></td>';
+  const laneMap = {};
+  if (row.inputs) {
+      row.inputs.forEach(input => {
+          laneMap[input.index] = input;
+      });
+  }
+  
+  const output = row.output;
+  const targetLaneIdx = output ? output.target_lane : -1;
+
+  const laneTds = displayOrder.map(laneIdx => {
+    const input = laneMap[laneIdx];
+    const isTarget = (laneIdx === targetLaneIdx);
     
-    const action = lane.action || 'unknown';
-    let indicator = '';
+    if (!input && !isTarget) return '<td class="lane-col"></td>';
+    
+    const action = input ? input.action : 'empty';
+    
+    if (action === 'empty' && !isTarget) {
+         return '<td class="lane-col"></td>';
+    }
+
+    let content = '';
     let className = 'lane-item';
+    let lines = '';
+
+    // Logic for drawing lines FROM the row below (source) TO this cell (destination)
+    // Sources can be:
+    // 1. Passing item from below (same lane)
+    // 2. Consumed item from below (same lane)
+    // 3. Split item from below (same lane) -> but wait, split happens AT the source.
     
-    if (action === 'consume') {
-      indicator = '↓';
-      className += ' lane-consume';
-    } else if (action === 'pass') {
-      indicator = '↑';
-      className += ' lane-pass';
+    // Let's look at it from the perspective of the current cell.
+    // If I am 'passing', I receive from the same lane below.
+    // If I am 'consumed', I receive from the same lane below.
+    // If I am 'produce' (target), I am created here. I don't receive from below in the same lane (usually).
+    // Wait, the 'produce' puts the item into the lane for the NEXT step (Row Above).
+    // So in THIS row, the 'target' cell shows the item being CREATED.
+    // The inputs for this creation come from the 'consumed' cells in THIS row.
+    // So we need lines connecting 'consumed' cells in THIS row to the 'target' cell in THIS row?
+    // No, the user said: "lines ... to link outputs of the previous layer, to inputs of this layer."
+    // Previous layer = Row Below.
+    // Inputs of this layer = The items available to be consumed/passed.
+    
+    // Actually, the JSON structure is:
+    // Step N:
+    //   Inputs: [ {index: 0, item: "Iron Ore", action: "consumed"}, ... ]
+    //   Output: { item: "Iron Ingot", target_lane: 0 }
+    
+    // This means at Step N, "Iron Ore" was sitting in Lane 0. It got consumed.
+    // "Iron Ingot" was produced and put into Lane 0.
+    // So visually:
+    // Row N (Step N): Shows "Iron Ingot" (Produced) ? Or "Iron Ore" (Consumed)?
+    // The user wants "each rows will show the expected outputs only for each lane".
+    // This implies the row should show the STATE of the lanes AFTER the step?
+    // Or maybe the row represents the ACTION?
+    
+    // "I want some lines ... to link outputs of the previous layer, to inputs of this layer."
+    // "In case of an item is created from one or multiple items, it should show the lines coming from all items, and maybe a circle in the middle to show it's a transformation."
+    
+    // Let's interpret:
+    // Row N (Step N):
+    // Shows the OUTPUT of Step N. i.e. The item produced.
+    // And also shows items that are just passing through.
+    // The "Inputs" for Step N came from Row N+1 (Step N-1).
+    
+    // So, for a specific lane in Row N:
+    // - If it's the target lane: Show the Produced Item.
+    // - If it's a passing lane: Show the Passing Item.
+    // - If it was consumed: It shouldn't be shown as an "output" of this row? 
+    //   Wait, if it's consumed, it's GONE. It doesn't exist in the output of this step.
+    //   But we need to visualize the consumption.
+    
+    // Let's try this:
+    // The row represents the OPERATION.
+    // We display the RESULT of the operation in the lanes.
+    // But we also need to show what was consumed to create that result.
+    // The "consumed" items were present in the Previous Row (Row Below).
+    // So we draw lines from the specific lanes in Row Below (where ingredients were) 
+    // converging to the Target Lane in Current Row (where product is).
+    
+    // If an item is "passing", we draw a vertical line from Row Below (same lane) to Current Row (same lane).
+    
+    // If an item is "split":
+    // It means in this step, some amount was taken, but some remains.
+    // The remaining amount appears in Current Row (same lane).
+    // The taken amount contributes to the production (Target Lane).
+    // So we need a line from Row Below (same lane) to Current Row (same lane) [for the remainder]
+    // AND a line from Row Below (same lane) to Current Row (Target Lane) [for the consumption].
+    
+    // Implementation details:
+    // We need to look at the 'inputs' of the CURRENT step to know where connections come from.
+    // The 'inputs' array tells us which lanes had items that were used/passed.
+    
+    // For the current cell (laneIdx):
+    // 1. Am I the Target Lane?
+    //    If yes, I need lines coming from ALL lanes that were 'consumed' or 'split' in this step.
+    //    I display the Produced Item.
+    
+    // 2. Am I a Passing Lane? (action == 'passing')
+    //    If yes, I need a vertical line from the same lane below.
+    //    I display the Item.
+    
+    // 3. Am I a Split Lane? (action == 'split')
+    //    If yes, I need a vertical line from the same lane below (carrying the remainder).
+    //    I display the Item (remainder).
+    //    (The 'split' portion line is handled by the Target Lane logic).
+    
+    // 4. Was I fully Consumed? (action == 'consumed')
+    //    Then I am empty in THIS row (the output row).
+    //    I display nothing (or empty placeholder).
+    //    (The connection line goes to the Target Lane).
+    
+    // Wait, if I am fully consumed, I don't appear in this row. 
+    // But the line from the row below needs to go SOMEWHERE.
+    // It goes to the Target Lane of THIS row.
+    
+    // So, drawing logic is mostly on the Target Lane Cell.
+    // It draws SVG lines from the coordinates of the source lanes in the row below.
+    // Since we are in a table, absolute coordinates are tricky.
+    // But we can use relative CSS positioning if we assume standard column widths.
+    // Or simpler: We can use a small SVG overlay in the Target Cell that reaches out? No, that's hard with overflow.
+    // Better: Use a dedicated container for lines?
+    
+    // Simplified approach for lines using CSS borders/pseudo-elements is hard for diagonal/converging.
+    // SVG is best. We can put an SVG in the `td` that is absolutely positioned to cover the area between rows?
+    // Or just use simple CSS lines for vertical, and maybe horizontal connectors?
+    // User said: "ideally following vertical / horizontal only, no diagonal".
+    // This implies a "circuit board" style trace.
+    // Vertical up from source, Horizontal to target column, Vertical up to target.
+    
+    // Let's try to render lines within the cell if possible, or use a background SVG.
+    // Given the constraints, maybe we just render the lines on the Target Cell?
+    // "In case of an item is created ... lines coming from all items".
+    
+    // Let's calculate the "Sources" for the current Target.
+    const sources = [];
+    if (isTarget) {
+        // Find all inputs that contributed
+        if (row.inputs) {
+            row.inputs.forEach(inp => {
+                if (['consumed', 'consumed_partial', 'split'].includes(inp.action)) {
+                    // This lane contributed.
+                    // We need to find its visual column index.
+                    const sourceVisualIdx = displayOrder.indexOf(inp.index);
+                    sources.push(sourceVisualIdx);
+                }
+            });
+        }
     }
     
-    return `<td class="lane-col"><div class="${className}"><span class="lane-indicator">${indicator}</span>${escapeHtml(String(lane.name))}<br/><small>${formatNumber(lane.perMin)}/min</small></div></td>`;
+    // Current visual index
+    const currentVisualIdx = displayOrder.indexOf(laneIdx);
+    
+    // Generate SVG for connections if this is the target
+    if (isTarget && sources.length > 0) {
+        // We need to draw lines from the bottom of the cell (which connects to row below)
+        // The sources are at different columns.
+        // We need to go Down, then Horizontal, then Up (from the perspective of the source).
+        // Since we are drawing IN the target cell, we are looking "Down".
+        // We need to reach the columns of the sources.
+        
+        // Calculate offsets.
+        // Assuming each column is 13% width (from CSS).
+        // This is tricky to get exact pixels.
+        // But we can use percentages if the SVG covers the whole row width?
+        // No, SVG in TD is confined to TD.
+        
+        // Alternative: Render the lines as a separate row? No, user wants cleaner display.
+        // Alternative: Render lines in the "Recipe" cell? No.
+        
+        // Let's try a full-width SVG overlay for the row?
+        // We can put a <tr> with height 0, and a <td> spanning all cols, containing an SVG that overflows upwards?
+        // Or just put the SVG in the Target Cell and make it `position: absolute; width: 500%; left: -200%;` etc?
+        // Let's try the absolute positioning approach on the Target Cell content.
+        
+        // We need to know the relative distance to sources.
+        // distance = (sourceVisualIdx - currentVisualIdx) * 100% (of cell width).
+        
+        const paths = sources.map(srcIdx => {
+            const diff = srcIdx - currentVisualIdx;
+            // We want to go from Center of Source (diff * 100% + 50%) to Center of Target (50%).
+            // Vertical / Horizontal style.
+            // From Source: Up (which is bottom of this cell + some padding).
+            // Then Horizontal to Target.
+            // Then Up to Target Center.
+            
+            // Coordinates in the SVG (0,0 is top-left of Target Cell):
+            // Target Center: 50%, 50%
+            // Source Center: (diff * 100%) + 50%, 150% (assuming row height is similar and we draw below)
+            
+            // Wait, we are drawing lines FROM the row below.
+            // So the lines start at y=100% (bottom of current cell) and x = source_center.
+            // And go to y=50% (middle of current cell) and x = 50%.
+            
+            // Path:
+            // MoveTo (diff*100% + 50%, 100%)  [Bottom of source col]
+            // LineTo (diff*100% + 50%, 75%)   [Up a bit]
+            // LineTo (50%, 75%)               [Horizontal to target col]
+            // LineTo (50%, 50%)               [Up to target center]
+            
+            // We need to handle the width of the SVG.
+            // Let's make the SVG wide enough to cover all columns.
+            // But `overflow: visible` on the cell might be easier.
+            
+            const xStart = (diff * 100) + 50;
+            const xEnd = 50;
+            
+            return `<path d="M ${xStart} 100 L ${xStart} 75 L ${xEnd} 75 L ${xEnd} 50" fill="none" stroke="#4aa8ff" stroke-width="2" />`;
+        }).join('');
+        
+        // Circle in the middle
+        const circle = `<circle cx="50" cy="50" r="4" fill="#4aa8ff" />`;
+        
+        // We need a wrapper that allows the SVG to spill out horizontally
+        lines = `
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 1;">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="overflow: visible;">
+                    ${paths}
+                    ${circle}
+                </svg>
+            </div>
+        `;
+    }
+    
+    // Vertical lines for Passing / Split-Remainder
+    // These just go straight down to the bottom (connecting to row below).
+    if (action === 'passing' || action === 'split') {
+         lines = `
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 1;">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="overflow: visible;">
+                    <path d="M 50 100 L 50 50" fill="none" stroke="#3a4a5a" stroke-width="2" stroke-dasharray="4" />
+                </svg>
+            </div>
+         `;
+         // Note: The item is "passing", so it comes from below and goes up.
+         // In this row (Output of Step N), the item IS here.
+         // So we draw a line from bottom (Row N+1) to center.
+         // And presumably a line from center to top (Row N-1) will be drawn by the row above?
+         // Yes, the row above will look down and draw the line.
+         // So we only need to draw the line coming FROM below.
+    }
+
+    if (isTarget) {
+        className += ' lane-produce';
+        content = `
+            <div class="${className}">
+                <strong>${escapeHtml(String(output.item))}</strong><br/>
+                <small>+${formatNumber(output.amount)}</small>
+            </div>
+        `;
+    } else if (action === 'passing') {
+        className += ' lane-pass';
+        content = `
+            <div class="${className}">
+                ${escapeHtml(String(input.item))}
+            </div>
+        `;
+    } else if (action === 'split') {
+         className += ' lane-split';
+         content = `
+            <div class="${className}">
+                ${escapeHtml(String(input.item))}<br/>
+                <small>${formatNumber(input.amount)}</small>
+            </div>
+         `;
+    } else if (action === 'consumed' || action === 'consumed_partial') {
+        // Consumed items are NOT shown in the output row, because they are gone.
+        // But we might want to show a ghost or just the line originating from below?
+        // The line logic is handled by the Target cell.
+        // So here we render nothing.
+        return '<td class="lane-col"></td>';
+    }
+    
+    return `<td class="lane-col">${lines}${content}</td>`;
   }).join('');
 
   return `
     <tr class="layer-row">
-      <td class="level-cell">${level}</td>
-      <td class="recipe-cell"><strong>${escapeHtml(recipe)}</strong><br/><span class="building-tag">${building}</span></td>
+      <td class="level-cell">${stepNum}</td>
+      <td class="recipe-cell"><strong>${escapeHtml(recipe)}</strong></td>
       ${laneTds}
-      <td>${byps || '<span class="meta">—</span>'}</td>
     </tr>
   `;
 }
 
-function buildBeltsRowV3(row) {
-  const lanes = row.lanes || [];
-  const laneTds = lanes.map(lane => {
-    if (!lane) return '<td class="lane-col belt-cell"></td>';
+function buildRawInputsRow(inputs, displayOrder) {
+    if (!inputs) return '';
     
-    const action = lane.action || '';
-    let className = 'belt-item';
-    let indicator = '';
+    // Map inputs to lanes.
+    // The inputs array is a summary list: [{name, quantity}, ...].
+    // But we need to know which LANE they are in.
+    // The 'inputs' summary in JSON doesn't have lane info.
+    // However, the first step of the graph (which is the last in our reversed list)
+    // has 'inputs' with 'amount' (current amount before step).
+    // Wait, the solver initializes lanes with raw inputs.
+    // So we can infer the raw inputs from the 'inputs' of the FIRST step (Step 1).
+    // Step 1 is the LAST row in our reversed table (before we add this raw row).
+    // Actually, we can just look at the 'inputs' of Step 1.
+    // Any item with 'amount' > 0 in Step 1 inputs is a raw input (or intermediate if we started mid-way, but usually raw).
     
-    if (action === 'fromBelow') {
-      className += ' belt-produced';
-      indicator = '↑';
-    } else if (action === 'pass') {
-      className += ' belt-passthrough';
-      indicator = '↑';
+    // We need to pass the Step 1 data to this function?
+    // Or just pass the rawInputs summary and try to map?
+    // The rawInputs summary doesn't have lane index.
+    // Let's use the logic: The row below Step 1 is the "Initial State".
+    // We can reconstruct it from Step 1's inputs.
+    
+    // But wait, `buildModalHtmlFromGraphV3` doesn't have easy access to Step 1 data inside this helper unless passed.
+    // Let's assume `rawInputs` passed here is actually the `inputs` array from Step 1 of the graph.
+    
+    // Let's adjust `buildModalHtmlFromGraphV3` to pass the right data.
+    
+    // In `buildRawInputsRow`, `inputs` is `row.inputs` from Step 1.
+    const laneMap = {};
+    if (inputs) {
+        inputs.forEach(inp => {
+            laneMap[inp.index] = inp;
+        });
     }
-    
-    return `<td class="lane-col belt-cell"><div class="${className}"><span class="belt-indicator">${indicator}</span>${escapeHtml(String(lane.name))}<br/><small>${formatNumber(lane.perMin)}/min</small></div></td>`;
-  }).join('');
 
-  return `
-    <tr class="belt-row">
-      <td colspan="2" class="belt-label">Belts ↑</td>
-      ${laneTds}
-      <td></td>
-    </tr>
-  `;
-}
+    const laneTds = displayOrder.map(laneIdx => {
+        const input = laneMap[laneIdx];
+        if (!input || !input.item) return '<td class="lane-col"></td>';
+        
+        // This is the starting amount
+        return `
+            <td class="lane-col">
+                <div class="lane-item lane-pass" style="border-style: dashed;">
+                    ${escapeHtml(String(input.item))}<br/>
+                    <small>${formatNumber(input.amount)}</small>
+                </div>
+            </td>
+        `;
+    }).join('');
 
-function placeInputsIntoFive(requires, prevOutNames) {
-  const slots = new Array(5).fill(null);
-  if (!requires || typeof requires !== 'object') return slots;
-
-  const entries = Object.entries(requires).map(([name, perMin]) => ({ name, perMin }));
-
-  const order = [2, 1, 3, 0, 4];
-
-  let extraCount = Math.max(0, entries.length - 5);
-  entries.slice(0, 5).forEach((item, idx) => {
-    const slotIndex = order[idx];
-    const matched = prevOutNames && prevOutNames.has(item.name);
-    slots[slotIndex] = { name: item.name, perMin: item.perMin, matched, extraCount: idx === 4 ? extraCount : 0 };
-  });
-
-  return slots;
-}
-
-function kvTags(obj) {
-  if (!obj || typeof obj !== 'object') return '';
-  return Object.entries(obj)
-    .map(([k, v]) => `<span class="tag">${escapeHtml(String(k))} <small>${formatNumber(v)}/min</small></span>`) 
-    .join('');
+    return `
+        <tr class="raw-inputs-row">
+            <td class="level-cell">0</td>
+            <td class="recipe-cell"><span class="meta">Raw Inputs</span></td>
+            ${laneTds}
+        </tr>
+    `;
 }
 
 function applyFilter() {
@@ -375,14 +523,11 @@ function matchRow(row, q) {
   if (row.index != null && String(row.index).toLowerCase().includes(q)) return true;
   if (row.tier != null && String(row.tier).toLowerCase().includes(q)) return true;
 
-  const inputs = (row.inputs || []).map(i => `${i.name} ${i.perMin}`).join(' ').toLowerCase();
+  const inputs = (row.inputs || []).map(i => `${i.name} ${i.quantity}`).join(' ').toLowerCase();
   if (inputs.includes(q)) return true;
 
-  const byps = (row.byproducts || []).map(b => `${b.name} ${b.perMin}`).join(' ').toLowerCase();
+  const byps = (row.byproducts || []).map(b => `${b.name} ${b.quantity}`).join(' ').toLowerCase();
   if (byps.includes(q)) return true;
-
-  const recipes = (row.recipes || []).join(' ').toLowerCase();
-  if (recipes.includes(q)) return true;
 
   return false;
 }
@@ -402,9 +547,9 @@ function render() {
         return Number.isFinite(n) ? n : String(t);
       }
       case 'output': return row.output || '';
-      case 'inputs': return (row.inputs || []).map(i => `${i.name}:${i.perMin}`).join(', ');
-      case 'byProducts': return (row.byproducts || []).map(b => `${b.name}:${b.perMin}`).join(', ');
-      case 'recipes': return (row.recipes || []).length;
+      case 'inputs': return (row.inputs || []).map(i => `${i.name}:${i.quantity}`).join(', ');
+      case 'byProducts': return (row.byproducts || []).map(b => `${b.name}:${b.quantity}`).join(', ');
+      case 'recipes': return (row.graph || []).length;
       default: return '';
     }
   };
@@ -433,18 +578,10 @@ function render() {
 }
 
 function rowHtml(row) {
-  const inputs = (row.inputs || []).map(i => pill(i.name, i.perMin)).join('');
-  const byps = (row.byproducts || []).map(b => pill(b.name, b.perMin)).join('');
+  const inputs = (row.inputs || []).map(i => pill(i.name, i.quantity)).join('');
+  const byps = (row.byproducts || []).map(b => pill(b.name, b.quantity)).join('');
   
-  let stepsCount;
-  if (typeof row.graphLayerCount === 'number') {
-    stepsCount = row.graphLayerCount;
-  } else {
-    const steps = row.transformation_steps || [];
-    const buildingsArr = steps.map(s => s.building).filter(b => b);
-    const buildingsCountFallback = buildingsArr.length;
-    stepsCount = (typeof row.num_steps === 'number') ? row.num_steps : buildingsCountFallback;
-  }
+  const stepsCount = (row.graph || []).length;
   
   const recipesCell = `<button type="button" class="pill pill-btn" data-open-modal data-row-index="${escapeHtml(String(row.index))}">${stepsCount}</button>`;
 
@@ -462,8 +599,8 @@ function rowHtml(row) {
   `;
 }
 
-function pill(name, perMin) {
-  const qty = perMin == null ? '' : ` <small>${formatNumber(perMin)}/min</small>`;
+function pill(name, quantity) {
+  const qty = quantity == null ? '' : ` <small>${formatNumber(quantity)}/min</small>`;
   return `<span class="pill">${escapeHtml(String(name))}${qty}</span>`;
 }
 

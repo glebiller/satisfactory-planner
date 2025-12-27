@@ -27,14 +27,12 @@ ITEM_SPECIFIC_STOPS = {
 RAW_CATEGORIES = {'ore', 'fluid', 'gas', 'raw'}
 
 # --- Paths ---
-# Adjusting to use the structure you provided
 ROOT = Path(__file__).resolve().parent.parent if '__file__' in locals() else Path('.').resolve()
 PUBLIC_DIR = ROOT / 'public'
-# Ensure public dir exists if running locally
 PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
 
 TIERS_CSV_PATH = PUBLIC_DIR / 'tiers.csv'
-TRANSFORMATIONS_PATH = PUBLIC_DIR / 'transformation_plan.json'
+TRANSFORMATIONS_PATH = PUBLIC_DIR / 'transformations_graphs.json'
 ITEM_DATA_PATH = PUBLIC_DIR / '1-items-data.json'
 RECIPES_DATA_PATH = PUBLIC_DIR / '1-recipes-data.json'
 
@@ -71,7 +69,7 @@ class DataManager:
             for recipe in data.values():
                 if 'produce' in recipe:
                     for prod_id, amount in recipe['produce'].items():
-                        # Filter self-loops (e.g. Ore -> Ore) to prevent infinite mining loops
+                        # Filter self-loops (e.g. Ore -> Ore)
                         if prod_id in recipe.get('ingredients', {}):
                             continue
 
@@ -79,6 +77,7 @@ class DataManager:
                             'id': recipe.get('id'),
                             'name': recipe.get('name'),
                             'ingredients': recipe.get('ingredients', {}),
+                            'produce': recipe.get('produce', {}), # Store full produce for byproducts
                             'product_amount': amount,
                             'produce_id': prod_id
                         }
@@ -93,7 +92,6 @@ class DataManager:
         return self.recipes_by_product.get(product_id)
 
     def is_raw_resource(self, item_id):
-        # Check explicit category or if no recipe exists
         cat = self.item_categories.get(item_id, '')
         if cat in RAW_CATEGORIES:
             return True
@@ -108,12 +106,9 @@ class ProductionSolver:
     def solve(self, target_name, target_amount):
         target_id = self.mgr.get_id(target_name)
         if not target_id:
-            return None
+            return None, None, None
 
         # --- Phase 1: Backward Search (Planning) ---
-        # Finds the optimal sequence of recipes to decompose the target into raw resources
-        # while respecting the bus size limit of 5 unique items.
-
         current_bus = collections.Counter()
         current_bus[target_id] = float(target_amount)
 
@@ -124,7 +119,6 @@ class ProductionSolver:
         while step_count < MAX_STEPS:
             step_count += 1
 
-            # Detect cycles
             state_key = tuple(sorted([(k, round(v, 4)) for k, v in current_bus.items() if v > 1e-6]))
             if state_key in visited_states:
                 break
@@ -134,13 +128,11 @@ class ProductionSolver:
             bus_items = [k for k, v in current_bus.items() if v > 1e-6]
 
             if not bus_items:
-                break # Done (Bus empty?)
+                break 
 
-            # Try to decompose each item on the bus
             for item_id in bus_items:
                 item_name = self.mgr.get_name(item_id)
 
-                # Check Stops
                 if item_name in ALWAYS_STOP:
                     continue
                 if self.mgr.is_raw_resource(item_id):
@@ -153,8 +145,6 @@ class ProductionSolver:
                 if not recipe:
                     continue
 
-                # Check Bus Width Limit
-                # New Size = Current Unique Items - 1 (Product) + N (Unique Ingredients)
                 ingredients = recipe['ingredients']
                 current_keys = {k for k, v in current_bus.items() if v > 1e-6}
                 potential_keys = set(current_keys)
@@ -170,9 +160,8 @@ class ProductionSolver:
                     })
 
             if not candidates:
-                break # No more decompositions possible
+                break 
 
-            # Greedy Heuristic: Choose decomposition resulting in smallest bus size
             candidates.sort(key=lambda x: x['new_size'])
             best = candidates[0]
 
@@ -185,41 +174,66 @@ class ProductionSolver:
                 'recipe_name': recipe['name'],
                 'output_item_id': product_id,
                 'output_amount': amount_needed,
-                'ingredients': {}
+                'ingredients': {},
+                'byproducts': {}
             }
 
-            # Apply transformation to bus
             del current_bus[product_id]
             for ing_id, ing_qty in recipe['ingredients'].items():
                 total_ing = ing_qty * runs
                 current_bus[ing_id] += total_ing
                 step_record['ingredients'][ing_id] = total_ing
+            
+            # Calculate byproducts (other items produced by this recipe)
+            for prod_id, prod_qty in recipe.get('produce', {}).items():
+                if prod_id != product_id:
+                    total_byp = prod_qty * runs
+                    # Byproducts are effectively "negative ingredients" on the bus? 
+                    # Or just side outputs. In this backward search, we are decomposing.
+                    # If a recipe produces X and Y, and we needed X. We ran the recipe.
+                    # We consumed ingredients. We "produced" X (which satisfied the need).
+                    # We also "produced" Y. So Y should appear on the bus?
+                    # If Y is on the bus, it might satisfy another need?
+                    # For simplicity, let's just record it as byproduct but NOT put it on the bus 
+                    # to satisfy other needs, unless we want to handle joint production logic which is complex.
+                    # Actually, if we produce Y, we have Y. If we needed Y, we could use it.
+                    # But the current logic is greedy decomposition.
+                    # Let's just record it for display.
+                    step_record['byproducts'][prod_id] = total_byp
 
             steps.append(step_record)
 
-        # Reverse to get Forward Order (Raw -> Product)
         steps.reverse()
 
         # --- Phase 2: Forward Lane Simulation ---
-        # Assigns items to specific lanes (0-4) to ensure stability.
-
-        # Initial State: What remains in 'current_bus' is the raw inputs.
         current_inventory = dict(current_bus)
+        
+        # Prepare inputs summary
+        inputs_summary = []
+        for item_id, amt in current_inventory.items():
+            if amt > 1e-6:
+                inputs_summary.append({
+                    'name': self.mgr.get_name(item_id),
+                    'quantity': amt
+                })
 
-        # Lanes: Array of 5 slots. Each slot is {'item_id': ..., 'amount': ...} or None
         lanes = [None] * 5
-
-        # Load initial raw inputs into lanes
         for i, (item_id, amt) in enumerate(current_inventory.items()):
             if i < 5:
                 lanes[i] = {'item_id': item_id, 'amount': amt}
 
         final_layers = []
+        
+        # Track total byproducts
+        total_byproducts = collections.Counter()
 
         for step_idx, step in enumerate(steps):
-            required_inputs = step['ingredients'] # Map: ID -> Amount
+            required_inputs = step['ingredients']
+            
+            # Add step byproducts to total
+            for bp_id, bp_amt in step['byproducts'].items():
+                total_byproducts[bp_id] += bp_amt
 
-            # 1. Determine Lane Actions (Consumed, Split, Passing)
             step_lanes_output = []
             consumed_indices = []
 
@@ -236,16 +250,13 @@ class ProductionSolver:
                     req_amt = required_inputs[item_id]
 
                     if abs(current_amt - req_amt) < 1e-6:
-                        # Full Consumption
                         action = 'consumed'
                         consumed_indices.append(idx)
-                        lane['amount'] = 0 # Mark empty
+                        lane['amount'] = 0 
                     elif current_amt > req_amt:
-                        # Partial Consumption (Split)
                         action = 'split'
-                        lane['amount'] -= req_amt # Remaining amount stays
+                        lane['amount'] -= req_amt 
                     else:
-                        # Should not happen if math is right
                         action = 'consumed_partial'
                         consumed_indices.append(idx)
                         lane['amount'] = 0
@@ -253,12 +264,11 @@ class ProductionSolver:
                     step_lanes_output.append({
                         'index': idx,
                         'item': item_name,
-                        'amount': current_amt,      # Amount BEFORE this step
+                        'amount': current_amt,
                         'used_amount': req_amt,
                         'action': action
                     })
                 else:
-                    # Not used in this recipe
                     step_lanes_output.append({
                         'index': idx,
                         'item': item_name,
@@ -266,32 +276,25 @@ class ProductionSolver:
                         'action': 'passing'
                     })
 
-            # 2. Assign Output to a Lane
             prod_id = step['output_item_id']
             prod_amt = step['output_amount']
             prod_name = self.mgr.get_name(prod_id)
 
-            # Heuristic: Reuse a lane that was just fully consumed (keeps flow clean)
             target_idx = -1
-
-            # Check consumed slots
             for idx in consumed_indices:
-                if lanes[idx]['amount'] < 1e-6: # Verify it's truly empty
+                if lanes[idx]['amount'] < 1e-6: 
                     target_idx = idx
                     break
 
-            # If no consumed slot (e.g. everything was split), find any empty slot
             if target_idx == -1:
                 for idx, lane in enumerate(lanes):
                     if lane is None or lane['amount'] < 1e-6:
                         target_idx = idx
                         break
 
-            # Assign
             if target_idx != -1:
                 lanes[target_idx] = {'item_id': prod_id, 'amount': prod_amt}
 
-            # 3. Save Layer
             final_layers.append({
                 "step": step_idx + 1,
                 "recipe": step['recipe_name'],
@@ -303,12 +306,18 @@ class ProductionSolver:
                 }
             })
 
-            # Clean up empty lanes for next iteration
             for i in range(5):
                 if lanes[i] is not None and lanes[i]['amount'] < 1e-6:
                     lanes[i] = None
+        
+        byproducts_summary = []
+        for bp_id, bp_amt in total_byproducts.items():
+            byproducts_summary.append({
+                'name': self.mgr.get_name(bp_id),
+                'quantity': bp_amt
+            })
 
-        return final_layers
+        return final_layers, inputs_summary, byproducts_summary
 
 # --- Main Execution ---
 
@@ -317,7 +326,7 @@ def main():
     mgr = DataManager(ITEM_DATA_PATH, RECIPES_DATA_PATH)
     solver = ProductionSolver(mgr)
 
-    all_plans = {}
+    all_data = []
 
     if not TIERS_CSV_PATH.exists():
         print("Tiers CSV not found, skipping processing.")
@@ -326,22 +335,35 @@ def main():
     print("Processing Tiers...")
     with open(TIERS_CSV_PATH, 'r') as f:
         reader = csv.DictReader(f)
-        for row in reader:
+        # Use enumerate to get an index, starting from 1 or 0 as preferred. 
+        # transformations.json used 1-based index.
+        for i, row in enumerate(reader, start=1):
             target = row['Name']
+            tier = row['Tier']
             try:
                 amount = float(row['Output'])
             except ValueError:
                 continue
 
-            print(f"  Calculating: {target}")
-            plan = solver.solve(target, amount)
-            if plan:
-                all_plans[target] = plan
+            print(f"  Calculating: {target} (Tier {tier})")
+            layers, inputs, byproducts = solver.solve(target, amount)
+            
+            if layers is not None:
+                entry = {
+                    "index": i,
+                    "tier": tier,
+                    "output": target,
+                    "output_quantity": amount,
+                    "inputs": inputs,
+                    "byproducts": byproducts,
+                    "graph": layers
+                }
+                all_data.append(entry)
             else:
                 print(f"    [!] Could not solve for {target}")
 
     with open(TRANSFORMATIONS_PATH, 'w') as f:
-        json.dump(all_plans, f, indent=2)
+        json.dump(all_data, f, indent=2)
 
     print(f"Success! Transformation plan saved to {TRANSFORMATIONS_PATH}")
 
